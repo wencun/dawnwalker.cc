@@ -24,22 +24,23 @@ export default function Home() {
   ), [query, filter]);
 
   return <main>
-    <nav className="nav"><a className="brand" href="#top">Dawn<span>Archive</span></a><div className="links"><a href="#routes">任务路线</a><a href="#library">资料库</a><a href="#planner">时间规划</a><a href="#updates">更新</a></div><button className="spoiler" onClick={() => setMode(mode === "无剧透" ? "剧透" : "无剧透")}>◉ {mode}模式</button></nav>
+    <nav className="nav"><a className="brand" href="#top">THE BLOOD OF <span>DAWNWALKER</span><small>攻略档案</small></a><div className="links"><a href="#routes">Vale Sangora</a><a href="#library">图鉴档案</a><a href="#planner">时间之砂</a><a href="#updates">公报</a></div><button className="spoiler" onClick={() => setMode(mode === "无剧透" ? "剧透" : "无剧透")}>◉ {mode}模式</button></nav>
 
     <section id="top" className="hero">
-      <div className="hero-copy"><p className="eyebrow">THE BLOOD OF DAWNWALKER · 中文攻略资料库</p><h1>在日光与鲜血之间，<em>做出值得的选择。</em></h1><p className="lead">专为时间资源、昼夜能力与剧情分支设计的攻略站。少走弯路，但保留属于你的故事。</p><div className="hero-actions"><a className="primary" href="#planner">开始规划 30 天</a><a className="secondary" href="#routes">查询任务后果</a></div></div>
+      <div className="hero-art" aria-hidden="true"><img src="/dawnwalker-hero.jpg" alt="" /></div>
+      <div className="hero-copy"><p className="eyebrow">VALE SANGORA FIELD ARCHIVE · 14 世纪暗黑奇幻</p><p className="hero-kicker">COEN · DAWNWALKER</p><h1>白昼为人。<em>黑夜为猎手。</em></h1><p className="lead">欢迎来到 Sangora 山谷。追踪吸血鬼领主、规划 30 天的时间资源，决定谁能活到黎明。</p><div className="hero-actions"><a className="primary" href="#planner">规划救援路线</a><a className="secondary" href="#routes">检视任务档案</a></div></div>
       <aside className="clock-card"><p>家庭的命运</p><div className="day">30 <span>日 / 夜</span></div><div className="bar"><i /></div><small>时间只会在关键行动后推进<br />先看沙漏，再做决定。</small></aside>
-      <div className="moon" aria-hidden="true" />
+      <div className="hero-seal" aria-hidden="true">RW<br/><span>V.S.</span><br/>1476</div>
     </section>
 
     <section className="signal"><span>✦ 官方确认</span><p>探索不会消耗时间；任务和昼夜切换才会推进世界进程。</p><a href="#planner">查看机制 →</a></section>
 
-    <section className="section intro"><div><p className="eyebrow">为探索者准备</p><h2>攻略，不该替你做决定。</h2></div><p>每条信息都标明版本、验证状态与剧透等级。你可以只知道“代价”，也可以展开查看“结果”。</p></section>
+    <section className="section intro"><div><p className="eyebrow">THE DAWNWALKER'S DILEMMA</p><h2>攻略，不该替你做决定。</h2></div><div className="intro-copy"><p>每条信息都标明版本、验证状态与剧透等级。你可以只知道“代价”，也可以展开查看“结果”。</p><span>人类的白昼 · 吸血鬼的黑夜</span></div></section>
 
     <section id="routes" className="section grid-section"><div className="section-head"><div><p className="eyebrow">任务与选择</p><h2>下一步，去哪里？</h2></div><a href="#planner">全部任务库 →</a></div><div className="route-grid">
-      <article className="feature-card crimson"><span>01</span><h3>无剧透主线</h3><p>知道准备什么、会花多少时间，不提前知道故事的答案。</p><a href="#planner">查看开局路线 →</a></article>
-      <article className="feature-card"><span>02</span><h3>分支后果</h3><p>从任务、角色、阵营到结局，追踪每个选择的回响。</p><a href="#planner">查询选择 →</a></article>
-      <article className="feature-card"><span>03</span><h3>查漏补缺</h3><p>地图、配方、装备与可错过内容，按地区和条件筛选。</p><a href="#library">打开资料库 →</a></article>
+      <article className="feature-card crimson"><img src="/dawnwalker-coen.png" alt="Coen 官方游戏画面"/><span>01 · 白昼</span><h3>人类的路径</h3><p>剑术、黑暗魔法、对人类世界的调查。无剧透地规划每一步。</p><a href="#planner">查看开局路线 →</a></article>
+      <article className="feature-card night-card"><img src="/dawnwalker-night.png" alt="夜晚行动官方游戏画面"/><span>02 · 黑夜</span><h3>猎手的路径</h3><p>夜行、攀爬与吸血鬼能力。查找只能在黑暗中进入的地点。</p><a href="#planner">查询夜间行动 →</a></article>
+      <article className="feature-card archive-card"><span>03 · 血之档案</span><h3>选择的代价</h3><p>从 Brencis 的势力到失落的盟友，追踪每一次行动的回响。</p><a href="#library">打开 Sangora 图鉴 →</a></article>
     </div></section>
 
     <section id="planner" className="section planner"><div className="planner-copy"><p className="eyebrow">30 天资源面板</p><h2>把时间，当作你的第二条生命。</h2><p>每项行动的沙漏成本、昼夜限制、解锁收益与可错过风险，全部放在同一张路线表中。</p><div className="chips"><button className={filter === "全部" ? "active" : ""} onClick={() => setFilter("全部")}>全部</button><button className={filter === "白昼" ? "active" : ""} onClick={() => setFilter("白昼")}>白昼</button><button className={filter === "夜晚" ? "active" : ""} onClick={() => setFilter("夜晚")}>夜晚</button></div></div><div className="quest-panel"><div className="search"><span>⌕</span><input value={query} onChange={e => setQuery(e.target.value)} placeholder="搜索任务、区域或奖励" aria-label="搜索攻略" /></div><div className="quest-list">{results.map((q) => <div className="quest" key={q.name}><div><b>{q.name}</b><small>{q.region} · {q.phase}</small></div><div className="time">⌛ {q.time}</div><div className="reward">{mode === "剧透" ? q.spoiler : q.reward}</div></div>)}{!results.length && <p className="empty">未找到匹配的记录。</p>}</div></div></section>
