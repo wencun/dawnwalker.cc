@@ -49,6 +49,6 @@ export default function Home() {
 
     <section id="updates" className="section updates"><div className="section-head"><div><p className="eyebrow">最新收录</p><h2>先读这些。</h2></div><a href="#top">更新日志 →</a></div><div className="updates-list">{updates.map(([tag, title, date]) => <article key={title}><span>{tag}</span><h3>{title}</h3><time>{date}</time><b>→</b></article>)}</div></section>
 
-    <footer><a className="brand" href="#top">Dawn<span>Archive</span></a><p>非官方粉丝攻略站 · 《The Blood of Dawnwalker》相关商标与素材归其权利人所有。</p><span>建立于 2026</span></footer>
+    <footer><a className="brand" href="#top">Dawn<span>Archive</span></a><p>非官方粉丝攻略站 · 《The Blood of Dawnwalker》相关商标与素材归其权利人所有。<br/><a href="/privacy">隐私政策</a> · <a href="https://github.com/wencun/dawnwalker.cc/issues" target="_blank" rel="noreferrer">勘误与反馈</a></p><span>建立于 2026</span></footer>
   </main>;
 }
