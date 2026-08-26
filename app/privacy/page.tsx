@@ -1,12 +1,12 @@
 import { guideMetadata, GuidePage } from "../guide-page";
 
-export const metadata = guideMetadata("Privacy Policy", "DawnArchive privacy policy for its independent The Blood of Dawnwalker guide and Adsterra display advertising.", "/privacy", ["DawnArchive privacy policy", "DawnArchive advertising cookies"]);
+export const metadata = guideMetadata("Privacy Policy", "Dawnwalker Guide privacy policy for its independent The Blood of Dawnwalker guide and Adsterra display advertising.", "/privacy", ["Dawnwalker Guide privacy policy", "Dawnwalker Guide advertising cookies"]);
 
 export default function PrivacyPage() {
   return <GuidePage
     eyebrow="PRIVACY NOTICE"
     title="Privacy policy"
-    dek="DawnArchive is an independent fan guide. We aim to collect as little personal information as possible and ask before loading advertising scripts."
+    dek="Dawnwalker Guide is an independent fan guide. We aim to collect as little personal information as possible and ask before loading advertising scripts."
     checked="August 26, 2026"
     sources={[{ label: "Adsterra cookie policy", href: "https://adsterra.com/cookies/" }]}
     sections={[
