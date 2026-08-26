@@ -14,10 +14,24 @@ const units = {
 function AdFrame({ unit }: { unit: Unit }) {
   const consent = useAdConsent();
   const hostRef = useRef<HTMLDivElement>(null);
+  const [nearViewport, setNearViewport] = useState(false);
 
   useEffect(() => {
     const host = hostRef.current;
-    if (consent !== "accepted" || !host) return;
+    if (consent !== "accepted" || !host || nearViewport) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setNearViewport(true);
+        observer.disconnect();
+      }
+    }, { rootMargin: "500px 0px" });
+    observer.observe(host);
+    return () => observer.disconnect();
+  }, [consent, nearViewport]);
+
+  useEffect(() => {
+    const host = hostRef.current;
+    if (consent !== "accepted" || !nearViewport || !host) return;
 
     // Third-party ad scripts are intentionally deferred. They must never compete
     // with the document, font and hero image during a mobile visitor's first paint.
@@ -30,9 +44,9 @@ function AdFrame({ unit }: { unit: Unit }) {
       adScript.async = false;
       host.append(options, adScript);
     };
-    const timeout = window.setTimeout(loadAd, 2500);
+    const timeout = window.setTimeout(loadAd, 1200);
     return () => { window.clearTimeout(timeout); host.replaceChildren(); };
-  }, [consent, unit]);
+  }, [consent, nearViewport, unit]);
 
   if (consent !== "accepted") return null;
   return <div ref={hostRef} className="ad-frame" style={{ width: unit.width, height: unit.height }} aria-label="Advertisement" />;
