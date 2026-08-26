@@ -4,7 +4,8 @@ export const metadata = guideMetadata(
   "The Blood of Dawnwalker Release Date, Time & Preload",
   "The Blood of Dawnwalker releases September 3, 2026. Confirmed PC, PS5 and Xbox Series X|S details, release timing rules and a source-led launch checklist.",
   "/release-date",
-  ["The Blood of Dawnwalker release date", "Blood of Dawnwalker release time", "Blood of Dawnwalker preload"]
+  ["The Blood of Dawnwalker release date", "Blood of Dawnwalker release time", "Blood of Dawnwalker preload"],
+  "/pl/release-date"
 );
 
 export default function Page() {

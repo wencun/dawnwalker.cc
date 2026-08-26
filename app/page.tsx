@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { MiddleAd } from "./ad-slot";
 
-export const metadata: Metadata = { alternates: { canonical: "/" } };
+export const metadata: Metadata = { alternates: { canonical: "/", languages: { en: "/", pl: "/pl", "x-default": "/" } } };
 
 const cards = [
   ["Release date", "When does The Blood of Dawnwalker release?", "September 3, 2026. See supported platforms, time zones and official sources.", "/release-date"],
