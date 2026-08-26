@@ -19,26 +19,19 @@ function AdFrame({ unit }: { unit: Unit }) {
     const host = hostRef.current;
     if (consent !== "accepted" || !host) return;
 
-    host.replaceChildren();
-
-    const options = document.createElement("script");
-    options.text = `var atOptions = ${JSON.stringify({
-      key: unit.key,
-      format: "iframe",
-      height: unit.height,
-      width: unit.width,
-      params: {},
-    })};`;
-
-    const adScript = document.createElement("script");
-    adScript.src = `https://www.highrevenueformat.com/${unit.key}/invoke.js`;
-    // Adsterra reads the global `atOptions` value while its script starts. Keep
-    // dynamically inserted units ordered so simultaneous page placements do
-    // not overwrite each other's configuration.
-    adScript.async = false;
-
-    host.append(options, adScript);
-    return () => host.replaceChildren();
+    // Third-party ad scripts are intentionally deferred. They must never compete
+    // with the document, font and hero image during a mobile visitor's first paint.
+    const loadAd = () => {
+      host.replaceChildren();
+      const options = document.createElement("script");
+      options.text = `var atOptions = ${JSON.stringify({ key: unit.key, format: "iframe", height: unit.height, width: unit.width, params: {} })};`;
+      const adScript = document.createElement("script");
+      adScript.src = `https://www.highrevenueformat.com/${unit.key}/invoke.js`;
+      adScript.async = false;
+      host.append(options, adScript);
+    };
+    const timeout = window.setTimeout(loadAd, 2500);
+    return () => { window.clearTimeout(timeout); host.replaceChildren(); };
   }, [consent, unit]);
 
   if (consent !== "accepted") return null;
