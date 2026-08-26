@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAdConsent } from "./ad-consent";
 
 type Unit = { key: string; width: number; height: number };
@@ -13,10 +13,36 @@ const units = {
 
 function AdFrame({ unit }: { unit: Unit }) {
   const consent = useAdConsent();
-  const source = `<!doctype html><html><head><base target="_blank"></head><body style="margin:0;overflow:hidden"><script>var atOptions=${JSON.stringify({ key: unit.key, format: "iframe", height: unit.height, width: unit.width, params: {} })};</script><script src="https://www.highrevenueformat.com/${unit.key}/invoke.js"></script></body></html>`;
+  const hostRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const host = hostRef.current;
+    if (consent !== "accepted" || !host) return;
+
+    host.replaceChildren();
+
+    const options = document.createElement("script");
+    options.text = `var atOptions = ${JSON.stringify({
+      key: unit.key,
+      format: "iframe",
+      height: unit.height,
+      width: unit.width,
+      params: {},
+    })};`;
+
+    const adScript = document.createElement("script");
+    adScript.src = `https://www.highrevenueformat.com/${unit.key}/invoke.js`;
+    // Adsterra reads the global `atOptions` value while its script starts. Keep
+    // dynamically inserted units ordered so simultaneous page placements do
+    // not overwrite each other's configuration.
+    adScript.async = false;
+
+    host.append(options, adScript);
+    return () => host.replaceChildren();
+  }, [consent, unit]);
 
   if (consent !== "accepted") return null;
-  return <iframe title="Advertisement" className="ad-frame" width={unit.width} height={unit.height} srcDoc={source} sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox" referrerPolicy="strict-origin-when-cross-origin" />;
+  return <div ref={hostRef} className="ad-frame" style={{ width: unit.width, height: unit.height }} aria-label="Advertisement" />;
 }
 
 function AdLabel() {
