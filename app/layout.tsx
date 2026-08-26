@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { AdConsentProvider } from "./ad-consent";
+import { TopAd } from "./ad-slot";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dawnwalker.cc"),
@@ -15,5 +17,5 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const siteSchema = { "@context": "https://schema.org", "@type": "WebSite", name: "DawnArchive", url: "https://www.dawnwalker.cc/", inLanguage: "en", description: "Independent guides for The Blood of Dawnwalker" };
-  return <html lang="en"><body><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }} />{children}</body></html>;
+  return <html lang="en"><body><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }} /><AdConsentProvider><TopAd />{children}</AdConsentProvider></body></html>;
 }
