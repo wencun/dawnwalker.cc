@@ -11,7 +11,7 @@ export function polishMetadata(title: string, description: string, path: string,
     keywords,
     alternates: {
       canonical: path,
-      languages: { en: englishPath, pl: path, "x-default": englishPath },
+      languages: { en: englishPath, pl: path, ru: path.replace("/pl", "/ru"), cs: path.replace("/pl", "/cs"), "x-default": englishPath },
     },
     openGraph: { locale: "pl_PL", title, description, url: path, images: ["/og.png"] },
     twitter: { card: "summary_large_image", title, description, images: ["/og.png"] },

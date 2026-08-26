@@ -6,7 +6,7 @@ export type GuideSection = { title: string; body: React.ReactNode };
 export function guideMetadata(title: string, description: string, path: string, keywords: string[], polishPath?: string): Metadata {
   return {
     title: { absolute: title }, description, keywords,
-    alternates: { canonical: path, languages: polishPath ? { en: path, pl: polishPath, "x-default": path } : undefined },
+    alternates: { canonical: path, languages: polishPath ? { en: path, pl: polishPath, ru: polishPath.replace("/pl", "/ru"), cs: polishPath.replace("/pl", "/cs"), "x-default": path } : undefined },
     openGraph: { title, description, url: path, images: ["/og.png"] },
     twitter: { card: "summary_large_image", title, description, images: ["/og.png"] },
   };

@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import { AdConsentProvider } from "./ad-consent";
 import { TopAd } from "./ad-slot";
+import { LanguageSwitcher } from "./language-switcher";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dawnwalker.cc"),
@@ -22,8 +23,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <body>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }} />
       <Script id="adsense-loader" async strategy="afterInteractive" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4539826019899948" crossOrigin="anonymous" />
-      <style>{`.library:before{content:"VALE SANGORA · FIELD NOTES"}@media(max-width:760px){.links{display:flex;gap:0}.links a:not(:last-child){display:none}}`}</style>
-      <AdConsentProvider><TopAd />{children}</AdConsentProvider>
+      <style>{`.library:before{content:"VALE SANGORA · FIELD NOTES"}.language-switcher{position:fixed;z-index:60;top:18px;right:5vw;color:#eee3d1;font:14px "DM Mono",monospace}.language-switcher summary{list-style:none;display:flex;align-items:center;gap:9px;min-width:136px;padding:12px 14px;background:#171721;border:1px solid #393649;border-radius:8px;cursor:pointer}.language-switcher summary::-webkit-details-marker{display:none}.language-switcher summary:after{content:"▾";margin-left:auto;color:#c9a66c}.language-switcher>div{position:absolute;right:0;margin-top:7px;min-width:200px;padding:7px;background:#171721;border:1px solid #393649;border-radius:8px;box-shadow:0 18px 45px #000}.language-switcher a{display:block;padding:12px 14px;color:#c8c0b9}.language-switcher a:hover,.language-switcher a[aria-current="page"]{background:#3a1c29;color:#e7c694}@media(max-width:760px){.links{display:flex;gap:0}.links a:not(:last-child){display:none}.language-switcher{top:14px;right:5vw}.language-switcher summary{min-width:100px;padding:9px 11px;font-size:12px}}`}</style>
+      <AdConsentProvider><TopAd /><LanguageSwitcher />{children}</AdConsentProvider>
     </body>
   </html>;
 }
