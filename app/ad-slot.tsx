@@ -74,6 +74,16 @@ export function TopAd() {
 
 export function MiddleAd() {
   const consent = useAdConsent();
-  if (consent !== "accepted") return null;
-  return <aside className="ad-slot ad-slot-middle"><AdLabel /><AdFrame unit={units.rectangle} /></aside>;
+  const [compact, setCompact] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 759px)");
+    const update = () => setCompact(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+
+  if (consent !== "accepted" || compact === null) return null;
+  return <aside className="ad-slot ad-slot-middle"><AdLabel /><AdFrame unit={compact ? units.mobile : units.leaderboard} /></aside>;
 }
