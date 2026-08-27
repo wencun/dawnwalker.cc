@@ -10,11 +10,11 @@ const languages = [
   { code: "cs", label: "Čeština" },
 ] as const;
 
-const translatedPaths = new Set(["/", "/release-date", "/release-times", "/console-performance"]);
+const translatedPaths = new Set(["/", "/release-date", "/console-performance"]);
 const navigation = {
-  pl: [["Godziny premiery", "release-times"], ["Czy uruchomię?", "can-i-run"], ["Konsole", "console-performance"], ["Edycje", "editions"], ["System czasu", "time-system"], ["Znane problemy", "known-issues"]],
-  ru: [["Время выхода", "release-times"], ["Запустится ли?", "can-i-run"], ["Консоли", "console-performance"], ["Издания", "editions"], ["Система времени", "time-system"], ["Проблемы", "known-issues"]],
-  cs: [["Časy vydání", "release-times"], ["Spustím hru?", "can-i-run"], ["Konzole", "console-performance"], ["Edice", "editions"], ["Systém času", "time-system"], ["Známé problémy", "known-issues"]],
+  pl: [["Data premiery", "release-date"], ["Czy uruchomię?", "can-i-run"], ["Konsole", "console-performance"], ["Edycje", "editions"], ["System czasu", "time-system"], ["Znane problemy", "known-issues"]],
+  ru: [["Дата выхода", "release-date"], ["Запустится ли?", "can-i-run"], ["Консоли", "console-performance"], ["Издания", "editions"], ["Система времени", "time-system"], ["Проблемы", "known-issues"]],
+  cs: [["Datum vydání", "release-date"], ["Spustím hru?", "can-i-run"], ["Konzole", "console-performance"], ["Edice", "editions"], ["Systém času", "time-system"], ["Známé problémy", "known-issues"]],
 } as const;
 
 export function LanguageSwitcher() {

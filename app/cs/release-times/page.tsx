@@ -1,4 +1,5 @@
-import { RegionalGuidePage, regionalMetadata } from "../../regional-guide";
+import { redirect } from "next/navigation";
 
-export const metadata = regionalMetadata("cs", "The Blood of Dawnwalker – časy vydání", "Časy odemčení The Blood of Dawnwalker na PC, PS5 a Xboxu podle pravidel pro platformy a regiony.", "/cs/release-times", ["The Blood of Dawnwalker čas vydání", "Dawnwalker odemčení"]);
-export default function Page() { return <RegionalGuidePage locale="cs" eyebrow="ČASY VYDÁNÍ · OFICIÁLNÍ PRAVIDLA" title="Časy vydání The Blood of Dawnwalker" dek="PC a konzole nepoužívají stejné pravidlo spuštění. Tato stránka vychází z oznámení vydavatele, ne z odhadu podle odpočtu v obchodě." checked="26. srpna 2026" homeLabel="Domů" releaseLabel="Vydání" consoleLabel="Konzole" checkedLabel="Ověřeno" sourcesLabel="Zdroje" footer="Neoficiální fanouškovský průvodce." sources={[{ label: "Rebel Wolves – globální časy vydání", href: "https://www.reddit.com/r/DawnwalkerOfficial/comments/1vxyko5/dawnwalker_global_release_timings_are_here/" }]} sections={[{ title: "PC: jeden okamžik pro celý svět", body: <p>PC verze se odemkne o půlnoci CEST (UTC+2, Varšava). Jde o jeden globální okamžik, proto se v části Ameriky může v obchodě zobrazovat ještě 2. září.</p> }, { title: "Konzole: obvykle místní půlnoc", body: <p>Na konzolích se hra odemkne o půlnoci místního času. Austrálie, Indonésie a další země s více časovými pásmy používají čas hlavního města; Severní a Jižní Amerika půlnoc EDT (UTC−4, New York).</p> }, { title: "Co toto potvrzení neříká", body: <p>Oznámení nepotvrzuje předběžné stažení, velikost souboru ani neoficiální způsoby obcházení regionálních omezení.</p> }]} />; }
+export default function Page() {
+  redirect("/cs/release-date");
+}
