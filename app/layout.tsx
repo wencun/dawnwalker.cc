@@ -6,9 +6,9 @@ import { LanguageSwitcher } from "./language-switcher";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dawnwalker.cc"),
-  title: { default: "The Blood of Dawnwalker Guide & Release Date", template: "%s | Dawnwalker Guide" },
-  description: "Independent, spoiler-aware guides for The Blood of Dawnwalker: release date, PC, PS5 and Xbox platforms, builds, choices and verified launch updates.",
-  keywords: ["The Blood of Dawnwalker", "Blood of Dawnwalker release date", "The Blood of Dawnwalker guide", "Blood of Dawnwalker PS5", "Blood of Dawnwalker Xbox", "Blood of Dawnwalker PC"],
+  title: { default: "The Blood of Dawnwalker Guide: Release Date, Gameplay & Launch Help", template: "%s | Dawnwalker Guide" },
+  description: "Independent English guide for The Blood of Dawnwalker: release date, gameplay, editions, PC requirements, console performance and verified launch-week fixes.",
+  keywords: ["The Blood of Dawnwalker", "Blood of Dawnwalker release date", "The Blood of Dawnwalker gameplay", "The Blood of Dawnwalker guide", "Blood of Dawnwalker PS5", "Blood of Dawnwalker Xbox", "Blood of Dawnwalker PC", "Blood of Dawnwalker editions"],
   alternates: { canonical: "/" },
   openGraph: { type: "website", siteName: "Dawnwalker Guide", locale: "en_US", title: "The Blood of Dawnwalker Guides, Release Date & Platforms", description: "Spoiler-aware, verified guides and launch updates.", images: ["/og.png"] },
   twitter: { card: "summary_large_image", title: "The Blood of Dawnwalker Guides | Dawnwalker Guide", description: "Release, platforms and verified player guides.", images: ["/og.png"] },
