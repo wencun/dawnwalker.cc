@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 const languages = [
@@ -10,6 +11,11 @@ const languages = [
 ] as const;
 
 const translatedPaths = new Set(["/", "/release-date", "/release-times", "/console-performance"]);
+const navigation = {
+  pl: [["Godziny premiery", "release-times"], ["Czy uruchomię?", "can-i-run"], ["Konsole", "console-performance"], ["Edycje", "editions"], ["System czasu", "time-system"], ["Znane problemy", "known-issues"]],
+  ru: [["Время выхода", "release-times"], ["Запустится ли?", "can-i-run"], ["Консоли", "console-performance"], ["Издания", "editions"], ["Система времени", "time-system"], ["Проблемы", "known-issues"]],
+  cs: [["Časy vydání", "release-times"], ["Spustím hru?", "can-i-run"], ["Konzole", "console-performance"], ["Edice", "editions"], ["Systém času", "time-system"], ["Známé problémy", "known-issues"]],
+} as const;
 
 export function LanguageSwitcher() {
   const pathname = usePathname() || "/";
@@ -19,10 +25,15 @@ export function LanguageSwitcher() {
   const path = translatedPaths.has(currentPath) ? currentPath : "/";
   const href = (code: string) => code === "en" ? path : path === "/" ? `/${code}` : `/${code}${path}`;
 
-  return <details className="language-switcher">
+  useEffect(() => {
+    document.documentElement.dataset.locale = current;
+    return () => { delete document.documentElement.dataset.locale; };
+  }, [current]);
+
+  return <><details className="language-switcher">
     <summary aria-label="Choose language"><span aria-hidden="true">◎</span>{languages.find((item) => item.code === current)?.label}</summary>
     <div role="menu" aria-label="Languages">
       {languages.map((language) => <a key={language.code} href={href(language.code)} lang={language.code} aria-current={language.code === current ? "page" : undefined}>{language.label}</a>)}
     </div>
-  </details>;
+  </details>{current !== "en" && <nav className="locale-links">{navigation[current].map(([label, topic]) => <a key={topic} href={`/${current}/${topic}`}>{label}</a>)}</nav>}</>;
 }

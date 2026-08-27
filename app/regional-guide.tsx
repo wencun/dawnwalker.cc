@@ -3,10 +3,11 @@ import { Fragment } from "react";
 import { MiddleAd } from "./ad-slot";
 
 export type RegionalSection = { title: string; body: React.ReactNode };
-type RegionalGuideProps = { locale: "ru" | "cs"; eyebrow: string; title: string; dek: string; checked: string; sections: RegionalSection[]; sources: { label: string; href: string }[]; homeLabel: string; releaseLabel: string; consoleLabel: string; checkedLabel: string; sourcesLabel: string; footer: string };
+type RegionalGuideProps = { locale: "pl" | "ru" | "cs"; eyebrow: string; title: string; dek: string; checked: string; sections: RegionalSection[]; sources: { label: string; href: string }[]; homeLabel: string; releaseLabel: string; consoleLabel: string; checkedLabel: string; sourcesLabel: string; footer: string };
 
-export function regionalMetadata(locale: "ru" | "cs", title: string, description: string, path: string, keywords: string[]): Metadata {
-  return { title: { absolute: title }, description, keywords, alternates: { canonical: path, languages: { en: path.replace(`/${locale}`, ""), pl: `/pl${path.replace(`/${locale}`, "")}`, ru: `/ru${path.replace(`/${locale}`, "")}`, cs: `/cs${path.replace(`/${locale}`, "")}`, "x-default": path.replace(`/${locale}`, "") } }, openGraph: { locale: locale === "ru" ? "ru_RU" : "cs_CZ", title, description, url: path, images: ["/og.png"] }, twitter: { card: "summary_large_image", title, description, images: ["/og.png"] } };
+export function regionalMetadata(locale: "pl" | "ru" | "cs", title: string, description: string, path: string, keywords: string[]): Metadata {
+  const openGraphLocale = locale === "pl" ? "pl_PL" : locale === "ru" ? "ru_RU" : "cs_CZ";
+  return { title: { absolute: title }, description, keywords, alternates: { canonical: path, languages: { en: path.replace(`/${locale}`, ""), pl: `/pl${path.replace(`/${locale}`, "")}`, ru: `/ru${path.replace(`/${locale}`, "")}`, cs: `/cs${path.replace(`/${locale}`, "")}`, "x-default": path.replace(`/${locale}`, "") } }, openGraph: { locale: openGraphLocale, title, description, url: path, images: ["/og.png"] }, twitter: { card: "summary_large_image", title, description, images: ["/og.png"] } };
 }
 
 export function RegionalGuidePage({ locale, eyebrow, title, dek, checked, sections, sources, homeLabel, releaseLabel, consoleLabel, checkedLabel, sourcesLabel, footer }: RegionalGuideProps) {
