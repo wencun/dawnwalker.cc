@@ -34,7 +34,10 @@ export function SiteNav() {
   return <nav className="site-nav" aria-label="Main navigation">
     <a className="brand" href={home}>DAWNWALKER <span>GUIDE</span><small>{subtitle}</small></a>
     <div className="site-nav-links">
-      {navigation[locale].map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
+      {navigation[locale].map((item) => {
+        const active = pathname === item.href;
+        return <a key={item.href} href={item.href} className={active ? "active" : undefined} aria-current={active ? "page" : undefined}>{item.label}</a>;
+      })}
     </div>
     <LanguageSwitcher />
   </nav>;
