@@ -38,3 +38,12 @@
   .ad-slot-middle { margin: 28px 0; }
   .ad-consent { max-height: calc(100dvh - 24px); overflow-y: auto; }
 }
+
+/* One header across home and guide pages. The navigation remains available
+   without covering the article, and long mobile menus scroll horizontally. */
+.site-nav{position:sticky;top:0;z-index:60;min-height:88px;padding:0 6vw;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:28px;background:#0b0d0e;border-bottom:1px solid var(--line)}
+.nav,.doc-nav{display:none!important}
+.site-nav-links{display:flex;justify-content:flex-end;gap:clamp(16px,2vw,30px);min-width:0;overflow-x:auto;scrollbar-width:none;color:#b5aa9d;font-size:13px;white-space:nowrap}
+.site-nav-links::-webkit-scrollbar{display:none}.site-nav-links a{flex:0 0 auto}.site-nav-links a:hover{color:#ebd4ad}
+.site-nav .language-switcher{position:relative;z-index:2;color:#eee3d1;font:14px "DM Mono",monospace}.language-switcher summary{list-style:none;display:flex;align-items:center;gap:9px;min-width:136px;padding:12px 14px;background:#171721;border:1px solid #393649;border-radius:8px;cursor:pointer}.language-switcher summary::-webkit-details-marker{display:none}.language-switcher summary:after{content:"▾";margin-left:auto;color:#c9a66c}.language-switcher>div{position:absolute;right:0;margin-top:7px;min-width:200px;padding:7px;background:#171721;border:1px solid #393649;border-radius:8px;box-shadow:0 18px 45px #000}.language-switcher a{display:block;padding:12px 14px;color:#c8c0b9}.language-switcher a:hover,.language-switcher a[aria-current="page"]{background:#3a1c29;color:#e7c694}
+@media(max-width:760px){.site-nav{min-height:0;padding:11px 5vw 0;grid-template-columns:minmax(0,1fr) auto;gap:9px}.site-nav .brand{max-width:100%;font-size:12px}.site-nav .brand small{font-size:7px;letter-spacing:1.6px}.site-nav-links{grid-column:1/-1;grid-row:2;width:100%;justify-content:flex-start;gap:18px;padding:8px 0 11px;border-top:1px solid var(--line);font-size:12px}.site-nav .language-switcher{grid-column:2;grid-row:1}.site-nav .language-switcher summary{min-width:104px;padding:9px 11px;font-size:12px}.site-nav .language-switcher>div{min-width:172px}}

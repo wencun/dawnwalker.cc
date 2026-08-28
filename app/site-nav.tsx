@@ -1,0 +1,41 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+import { LanguageSwitcher } from "./language-switcher";
+
+type Locale = "en" | "pl" | "ru";
+
+const navigation: Record<Locale, { href: string; label: string }[]> = {
+  en: [
+    { href: "/release-date", label: "Release date" },
+    { href: "/can-i-run", label: "Can I run it?" },
+    { href: "/console-performance", label: "Performance" },
+    { href: "/editions", label: "Editions" },
+    { href: "/time-system", label: "Time system" },
+    { href: "/known-issues", label: "Issue tracker" },
+  ],
+  pl: [
+    { href: "/pl/release-date", label: "Data premiery" },
+    { href: "/pl/can-i-run", label: "Czy uruchomię?" },
+    { href: "/pl/console-performance", label: "Konsole" },
+  ],
+  ru: [
+    { href: "/ru/release-date", label: "Дата выхода" },
+    { href: "/ru/console-performance", label: "Консоли" },
+  ],
+};
+
+export function SiteNav() {
+  const pathname = usePathname() || "/";
+  const locale: Locale = pathname === "/pl" || pathname.startsWith("/pl/") ? "pl" : pathname === "/ru" || pathname.startsWith("/ru/") ? "ru" : "en";
+  const home = locale === "en" ? "/" : `/${locale}`;
+  const subtitle = locale === "en" ? "UNOFFICIAL FAN GUIDE" : locale === "pl" ? "NIEOFICJALNY PORADNIK FANOWSKI" : "НЕОФИЦИАЛЬНЫЙ ФАН-ГИД";
+
+  return <nav className="site-nav" aria-label="Main navigation">
+    <a className="brand" href={home}>DAWNWALKER <span>GUIDE</span><small>{subtitle}</small></a>
+    <div className="site-nav-links">
+      {navigation[locale].map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
+    </div>
+    <LanguageSwitcher />
+  </nav>;
+}

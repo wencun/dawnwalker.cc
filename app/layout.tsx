@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { AdConsentProvider } from "./ad-consent";
 import { AdsenseLoader } from "./adsense-loader";
-import { LanguageSwitcher } from "./language-switcher";
+import { SiteNav } from "./site-nav";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dawnwalker.cc"),
@@ -21,8 +21,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return <html lang="en">
     <body>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }} />
-      <style>{`html{scroll-behavior:auto}.library:before{content:"VALE SANGORA · FIELD NOTES"}.language-switcher{position:absolute;z-index:60;top:18px;right:5vw;color:#eee3d1;font:14px "DM Mono",monospace}.nav .links,.doc-nav>div{margin-right:170px}.language-switcher summary{list-style:none;display:flex;align-items:center;gap:9px;min-width:136px;padding:12px 14px;background:#171721;border:1px solid #393649;border-radius:8px;cursor:pointer}.language-switcher summary::-webkit-details-marker{display:none}.language-switcher summary:after{content:"▾";margin-left:auto;color:#c9a66c}.language-switcher>div{position:absolute;right:0;margin-top:7px;min-width:200px;padding:7px;background:#171721;border:1px solid #393649;border-radius:8px;box-shadow:0 18px 45px #000}.language-switcher a{display:block;padding:12px 14px;color:#c8c0b9}.language-switcher a:hover,.language-switcher a[aria-current="page"]{background:#3a1c29;color:#e7c694}@media(max-width:760px){.nav{height:auto;min-height:72px;padding:12px 5vw 0;align-items:flex-start;flex-wrap:wrap;gap:10px}.nav .brand{padding:7px 0;max-width:calc(100% - 126px)}.nav .links{display:flex!important;order:3;width:100%;margin:0!important;padding:0 0 12px;gap:18px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;white-space:nowrap;font-size:12px}.nav .links::-webkit-scrollbar{display:none}.nav .links a{display:block!important;flex:0 0 auto;padding:5px 0}.doc-nav>div{display:none}.language-switcher{top:14px;right:5vw}.language-switcher summary{min-width:100px;padding:9px 11px;font-size:12px}.section:not(.intro){content-visibility:auto;contain-intrinsic-size:auto 700px}}`}</style>
-      <AdConsentProvider><AdsenseLoader /><LanguageSwitcher />{children}</AdConsentProvider>
+      <AdConsentProvider><AdsenseLoader /><SiteNav />{children}</AdConsentProvider>
     </body>
   </html>;
 }
