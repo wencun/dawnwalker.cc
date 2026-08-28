@@ -18,10 +18,17 @@ const navigation: Record<Locale, { href: string; label: string }[]> = {
     { href: "/pl/release-date", label: "Data premiery" },
     { href: "/pl/can-i-run", label: "Czy uruchomię?" },
     { href: "/pl/console-performance", label: "Konsole" },
+    { href: "/pl/editions", label: "Edycje" },
+    { href: "/pl/time-system", label: "System czasu" },
+    { href: "/pl/known-issues", label: "Znane problemy" },
   ],
   ru: [
     { href: "/ru/release-date", label: "Дата выхода" },
+    { href: "/ru/can-i-run", label: "Запустится ли?" },
     { href: "/ru/console-performance", label: "Консоли" },
+    { href: "/ru/editions", label: "Издания" },
+    { href: "/ru/time-system", label: "Система времени" },
+    { href: "/ru/known-issues", label: "Известные проблемы" },
   ],
 };
 
