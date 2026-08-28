@@ -10,8 +10,11 @@ export const metadata: Metadata = {
 
 const cards = [
   ["Premiera", "Kiedy wychodzi The Blood of Dawnwalker?", "Data, platformy, godziny odblokowania i oficjalne źródła.", "/pl/release-date"],
+  ["Rozgrywka", "Jak działa The Blood of Dawnwalker?", "Informacje o dniu i nocy, walce, wyborach oraz 30-dniowym systemie czasu — bez wymyślania mechanik.", "/pl/time-system"],
   ["PC", "Czy mój komputer uruchomi grę?", "Porównaj podzespoły z wymaganiami wydawcy bez wysyłania danych.", "/pl/can-i-run"],
   ["Konsole", "PS5, PS5 Pro i Xbox – tryby wydajności", "Cele FPS od twórców, wyraźnie oddzielone od testów graczy.", "/pl/console-performance"],
+  ["Edycje", "Którą edycję warto kupić?", "Porównaj Standard, Eclipse, Day One i Collector’s Edition oraz bonus za preorder.", "/pl/editions"],
+  ["Problemy", "Co wiadomo o problemach gry?", "Sprawdzone zgłoszenia, obejścia i aktualizacje po premierze.", "/pl/known-issues"],
 ];
 
 export default function PolishHome() {
