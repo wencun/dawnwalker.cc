@@ -9,6 +9,7 @@ const cards = [
   ["PC tool", "Can I run it?", "A local-only official requirements checker. Compare CPU, GPU, RAM, VRAM and SSD space without uploading your information.", "/can-i-run"],
   ["Performance", "PS5 & Xbox modes", "Official launch targets for PS5, PS5 Pro, Xbox Series X and Series S—kept separate from player benchmarks.", "/console-performance"],
   ["Editions", "Which edition should I buy?", "Compare Standard, Eclipse, Day One and Collector's contents, the pre-order bonus and the shared release date.", "/editions"],
+  ["Reviews", "When do reviews go live?", "The reported August 31 review-embargo schedule, local time conversions and what to verify before buying.", "/review-embargo"],
 ];
 
 export default function Home() {
