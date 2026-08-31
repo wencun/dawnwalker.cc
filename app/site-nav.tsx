@@ -17,6 +17,7 @@ const navigation: Record<Locale, { href: string; label: string }[]> = {
   ],
   pl: [
     { href: "/pl/release-date", label: "Data premiery" },
+    { href: "/pl/review-embargo", label: "Recenzje" },
     { href: "/pl/can-i-run", label: "Czy uruchomię?" },
     { href: "/pl/console-performance", label: "Konsole" },
     { href: "/pl/editions", label: "Edycje" },
@@ -25,6 +26,7 @@ const navigation: Record<Locale, { href: string; label: string }[]> = {
   ],
   ru: [
     { href: "/ru/release-date", label: "Дата выхода" },
+    { href: "/ru/review-embargo", label: "Обзоры" },
     { href: "/ru/can-i-run", label: "Запустится ли?" },
     { href: "/ru/console-performance", label: "Консоли" },
     { href: "/ru/editions", label: "Издания" },

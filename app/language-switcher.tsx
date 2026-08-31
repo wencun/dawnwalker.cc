@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
+import Link from "next/link";
+import { useEffect, type MouseEvent } from "react";
 import { usePathname } from "next/navigation";
 
 const languages = [
@@ -13,8 +14,8 @@ const languages = [
 // Everything else returns to that language's home instead of a thin fallback page.
 const translatedPaths = {
   en: new Set(["/", "/release-date", "/console-performance", "/can-i-run", "/editions", "/time-system", "/known-issues", "/gameplay", "/review-embargo"]),
-  pl: new Set(["/", "/release-date", "/console-performance", "/can-i-run"]),
-  ru: new Set(["/", "/release-date", "/console-performance"]),
+  pl: new Set(["/", "/release-date", "/console-performance", "/can-i-run", "/review-embargo"]),
+  ru: new Set(["/", "/release-date", "/console-performance", "/can-i-run", "/review-embargo"]),
 } as const;
 
 export function LanguageSwitcher() {
@@ -32,10 +33,14 @@ export function LanguageSwitcher() {
     return () => { delete document.documentElement.dataset.locale; };
   }, [current]);
 
+  const closeMenu = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.currentTarget.closest("details")?.removeAttribute("open");
+  };
+
   return <details className="language-switcher">
     <summary aria-label="Choose language"><span aria-hidden="true">◎</span>{languages.find((item) => item.code === current)?.label}</summary>
     <div role="menu" aria-label="Languages">
-      {languages.map((language) => <a key={language.code} href={href(language.code)} lang={language.code} aria-current={language.code === current ? "page" : undefined}>{language.label}</a>)}
+      {languages.map((language) => <Link key={language.code} href={href(language.code)} prefetch={false} onClick={closeMenu} lang={language.code} aria-current={language.code === current ? "page" : undefined}>{language.label}</Link>)}
     </div>
   </details>;
 }
