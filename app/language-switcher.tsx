@@ -15,7 +15,7 @@ const languages = [
 const translatedPaths = {
   en: new Set(["/", "/release-date", "/console-performance", "/can-i-run", "/editions", "/time-system", "/known-issues", "/gameplay", "/review-embargo"]),
   pl: new Set(["/", "/release-date", "/console-performance", "/can-i-run", "/review-embargo"]),
-  ru: new Set(["/", "/release-date", "/console-performance", "/can-i-run", "/review-embargo"]),
+  ru: new Set(["/", "/release-date", "/console-performance", "/can-i-run", "/review-embargo", "/russian-language"]),
 } as const;
 
 export function LanguageSwitcher() {
