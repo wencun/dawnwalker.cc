@@ -1,3 +1,31 @@
 import { GuidePage, guideMetadata } from "../guide-page";
-export const metadata = guideMetadata("The Blood of Dawnwalker Platforms: PC, PS5 & Xbox", "Is The Blood of Dawnwalker on PC, PS5 or Xbox? Confirmed platforms and the day-one 60 FPS performance-mode announcement.", "/platforms", ["The Blood of Dawnwalker PS5", "The Blood of Dawnwalker Xbox Series X", "The Blood of Dawnwalker PC", "Blood of Dawnwalker platforms"]);
-export default function Page() { return <GuidePage eyebrow="PLATFORM GUIDE · CONFIRMED" title="The Blood of Dawnwalker platforms: PC, PS5 and Xbox" dek="The Blood of Dawnwalker is confirmed for PC, PlayStation 5 and Xbox Series X|S. It is not announced for PS4, Xbox One, Nintendo Switch or Switch 2 on this page because we have no official confirmation for those versions." checked="August 26, 2026" sources={[{label:"Official purchase page",href:"https://dawnwalkergame.com/us/en/buy"},{label:"PlayStation Store",href:"https://www.playstation.com/en-us/games/the-blood-of-dawnwalker/"},{label:"Xbox game page",href:"https://www.xbox.com/en-US/games/the-blood-of-dawnwalker"},{label:"Official community — day-one performance update",href:"https://www.reddit.com/r/DawnwalkerOfficial/comments/1vwxe1r/the_blood_of_dawnwalker_will_receive_a/"}]} sections={[{title:"Confirmed platform support",body:<div className="fact-grid"><p><b>PC</b>Confirmed</p><p><b>PlayStation 5</b>Confirmed</p><p><b>Xbox Series X|S</b>Confirmed</p><p><b>Last-gen / Switch</b>Not confirmed</p></div>},{title:"Console performance",body:<p>Rebel Wolves announced a day-one performance mode targeting 60 FPS for PS5, PS5 Pro and Xbox Series X. A target is not the same as a guarantee in every scene; launch-week testing will track actual game version, mode and platform separately.</p>},{title:"Before you buy",body:<ul><li>Use the store page for your region to confirm price, edition and local release availability.</li><li>Wait for the official PC system requirements before judging hardware compatibility.</li><li>Do not assume cross-save, cross-progression or a physical edition unless it is explicitly announced.</li></ul>}]}/>; }
+
+export const metadata = guideMetadata(
+  "The Blood of Dawnwalker Platforms: Steam PC, PS5 & Xbox",
+  "Is The Blood of Dawnwalker on Steam PC, PS5 or Xbox? Confirmed platforms, official store links, release availability and the stated console performance targets.",
+  "/platforms",
+  ["The Blood of Dawnwalker Steam", "The Blood of Dawnwalker PS5", "The Blood of Dawnwalker Xbox", "Blood of Dawnwalker platforms"]
+);
+
+export default function Page() {
+  return <GuidePage
+    eyebrow="PLATFORM GUIDE · OFFICIAL STORES"
+    title="The Blood of Dawnwalker platforms: Steam PC, PS5 and Xbox"
+    dek="The Blood of Dawnwalker is confirmed for Steam on PC, PlayStation 5 and Xbox Series X|S. Use the official store linked for your account region; platform, edition, language and release countdown can differ by storefront."
+    checked="September 1, 2026"
+    sources={[
+      { label: "Official purchase page", href: "https://dawnwalkergame.com/us/en/buy" },
+      { label: "Steam — The Blood of Dawnwalker", href: "https://store.steampowered.com/app/3751260/The_Blood_of_Dawnwalker/" },
+      { label: "PlayStation Store", href: "https://www.playstation.com/en-us/games/the-blood-of-dawnwalker/" },
+      { label: "Xbox — game page", href: "https://www.xbox.com/en-US/games/the-blood-of-dawnwalker" },
+      { label: "Official community — day-one performance update", href: "https://www.reddit.com/r/DawnwalkerOfficial/comments/1vwxe1r/the_blood_of_dawnwalker_will_receive_a/" },
+    ]}
+    sections={[
+      { title: "Where can you play The Blood of Dawnwalker?", body: <div className="fact-grid"><p><b>Steam / PC</b>Confirmed. Use Steam to verify your exact PC language list, price and account-region release display.</p><p><b>PlayStation 5</b>Confirmed. The PlayStation Store is the final source for your region&apos;s product page and countdown.</p><p><b>Xbox Series X|S</b>Confirmed. Check the Xbox product page with the account that will buy or play the game.</p><p><b>PS4, Xbox One, Switch / Switch 2</b>Not confirmed. Do not treat an unrelated retailer listing or a search snippet as an official platform announcement.</p></div> },
+      { title: "Official store links by platform", body: <ul><li><b>PC:</b> <a href="https://store.steampowered.com/app/3751260/The_Blood_of_Dawnwalker/" target="_blank" rel="noreferrer">Open The Blood of Dawnwalker on Steam</a>.</li><li><b>PS5:</b> <a href="https://www.playstation.com/en-us/games/the-blood-of-dawnwalker/" target="_blank" rel="noreferrer">Open the PlayStation product page</a>.</li><li><b>Xbox Series X|S:</b> <a href="https://www.xbox.com/en-US/games/the-blood-of-dawnwalker" target="_blank" rel="noreferrer">Open the Xbox product page</a>.</li></ul> },
+      { title: "Steam date, PC unlock and console timing are not identical", body: <p>Steam can show <b>September 2</b> in parts of the Americas because PC unlocks at one global moment: midnight CEST / Warsaw time on September 3. Console release generally follows local midnight, with publisher-listed regional exceptions. That means the date shown by a PC store is not proof of early access, and a console countdown should not be inferred from the PC time. See the <a href="/release-date">release date and unlock-time guide</a> for the rules and city conversions.</p> },
+      { title: "PS5 and Xbox performance: confirmed target, not a benchmark", body: <p>Rebel Wolves announced a Day One performance mode targeting 60 FPS for PS5, PS5 Pro and Xbox Series X; Series S targets 30 FPS. Those are developer targets, not proof of locked performance in every scene or a substitute for a versioned launch test. See the <a href="/console-performance">console performance page</a> for the exact distinction and evidence links.</p> },
+      { title: "Before buying on any platform", body: <ul><li>Check your own store&apos;s price, edition, supported languages, age rating and countdown.</li><li>On PC, compare the exact CPU, GPU, VRAM, RAM and SSD requirements with the <a href="/can-i-run">official-requirements checker</a>; passing it is not an FPS guarantee.</li><li>Do not assume cross-save, cross-progression, a physical edition, preload or early access unless your platform store or the publisher explicitly lists it.</li><li>For editions and pre-order extras, use the <a href="/editions">source-based edition comparison</a> rather than retailer copy.</li></ul> },
+    ]}
+  />;
+}
