@@ -4,7 +4,7 @@ export const metadata = guideMetadata(
   "The Blood of Dawnwalker Gameplay Explained: Day, Night, Hunger, Combat & Time",
   "What official gameplay material confirms about The Blood of Dawnwalker: Coen's day-and-night abilities, vampire hunger, combat, the time system and choices.",
   "/gameplay",
-  ["The Blood of Dawnwalker gameplay", "Blood of Dawnwalker combat", "Blood of Dawnwalker day night cycle", "Blood of Dawnwalker engine", "The Blood of Dawnwalker Unreal Engine 5", "Blood of Dawnwalker hunger system", "Blood of Dawnwalker vampire hunger", "Blood of Dawnwalker gameplay features"]
+  ["The Blood of Dawnwalker gameplay", "Is The Blood of Dawnwalker open world", "The Blood of Dawnwalker character creation", "Blood of Dawnwalker trailer", "Blood of Dawnwalker combat", "Blood of Dawnwalker day night cycle", "Blood of Dawnwalker engine", "The Blood of Dawnwalker Unreal Engine 5", "Blood of Dawnwalker hunger system", "Blood of Dawnwalker vampire hunger"]
 );
 
 export default function GameplayPage() {
@@ -12,7 +12,7 @@ export default function GameplayPage() {
     eyebrow="GAMEPLAY EXPLAINED · OFFICIAL FOOTAGE"
     title="The Blood of Dawnwalker gameplay: day, night, hunger and time"
     dek="A spoiler-aware explanation of the gameplay systems shown or stated by the developer. This page separates confirmed features from details that need launch-day testing."
-    checked="August 28, 2026"
+    checked="September 1, 2026"
     sources={[
       { label: "Official Gameplay Reveal Recap", href: "https://en.bandainamcoent.eu/dawnwalker/news/the-blood-of-dawnwalker-gameplay-reveal-recap" },
       { label: "Official game page", href: "https://www.bandainamcoent.com/games/dawnwalker" },
@@ -20,6 +20,9 @@ export default function GameplayPage() {
     ]}
     sections={[
       { title: "The core setup", body: <p>You play Coen, a young man turned into a Dawnwalker: human by day and vampire by night. The official material presents this as more than a visual change—day and night provide different abilities, approaches and ways to investigate Vale Sangora.</p> },
+      { title: "Is The Blood of Dawnwalker open world?", body: <p><b>Yes.</b> The publisher describes it as an open-world dark-fantasy action RPG and says Vale Sangora is a hand-crafted open world with forests, plains, swamps, mountains, settlements and ruins to explore. “Open world” does not confirm every usual open-world feature, however: the publisher has not published a full pre-launch list of map size, fast travel, activities or collectible counts.</p> },
+      { title: "Character creation: what is and is not confirmed", body: <p>The official material identifies the player character as Coen and describes his human-by-day, vampire-by-night forms. It does <b>not</b> currently confirm a player character creator, appearance sliders, selectable protagonist, or a full set of cosmetic options. Do not take a thumbnail, fan mock-up or another RPG&apos;s system as confirmation; this section will be updated only if the publisher or the release build shows it.</p> },
+      { title: "Where to watch the official trailers", body: <p>Use the publisher&apos;s <a href="https://dawnwalkergame.com/us/en/home" target="_blank" rel="noreferrer">official game hub</a> for the current launch trailer, gameplay videos and earlier trailers. A trailer can show tone and selected systems, but it cannot prove final performance, every quest outcome or an unannounced feature.</p> },
       { title: "What engine does The Blood of Dawnwalker use?", body: <p><b>The game is built with Unreal Engine 5.</b> That confirms the technology behind the game, but it does not by itself predict PC performance, console frame rate, mod support or a specific visual feature. Use the <a href="/can-i-run">PC requirements checker</a> and <a href="/console-performance">console performance guide</a> for the hardware information that is actually confirmed.</p> },
       { title: "Day and night are two problem-solving loops", body: <div className="fact-grid"><p><b>By day</b>Coen is human. Official material frames daytime as one set of skills and approaches for exploration, investigation and quests.</p><p><b>By night</b>Coen becomes a vampire, gaining a different set of abilities and routes. The official recap shows night traversal and a different approach to encounters.</p><p><b>What not to assume</b>Official footage does not make every route, ability number or quest outcome public. Treat unverified build claims as speculation until tested.</p></div> },
       { title: "Vampire hunger: what is officially confirmed", body: <div className="fact-grid"><p><b>Feeding is a choice</b>The official gameplay recap says Coen can feed on unsuspecting NPCs, non-human creatures or animals.</p><p><b>How much you drain matters</b>Official material says you can drain enough to kill a victim or stop after rendering them unconscious.</p><p><b>Consequences are not fully mapped</b>The developer has not published a complete pre-launch table of reputation, quest or ending consequences for every feeding decision.</p><p><b>Do not import rules from another vampire game</b>There is no basis to assume a Hunger meter, penalty or morality system works like Vampyr or Bloodlines until the release build proves it.</p></div> },
