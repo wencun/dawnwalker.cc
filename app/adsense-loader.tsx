@@ -21,11 +21,18 @@ export function AdsenseLoader() {
       document.head.appendChild(script);
     };
 
-    const idle = window.requestIdleCallback?.(load, { timeout: 6000 });
-    const timeout = idle === undefined ? window.setTimeout(load, 4000) : undefined;
+    // A browser may consider a partially loaded mobile page "idle" far too
+    // early. Wait until the content is visible first, then use a genuine idle
+    // period to load the optional AdSense library.
+    const timeout = window.setTimeout(() => {
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(load, { timeout: 3500 });
+      } else {
+        load();
+      }
+    }, 6500);
     return () => {
-      if (idle !== undefined) window.cancelIdleCallback?.(idle);
-      if (timeout !== undefined) window.clearTimeout(timeout);
+      window.clearTimeout(timeout);
     };
   }, [consent]);
 

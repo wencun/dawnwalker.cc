@@ -44,7 +44,16 @@ function AdFrame({ unit }: { unit: Unit }) {
       adScript.async = false;
       host.append(options, adScript);
     };
-    const timeout = window.setTimeout(loadAd, 1200);
+    // The ad is intentionally kept out of the critical rendering window. On a
+    // phone this slot can be close to the first screen, but the third-party
+    // iframe must never contend with the navigation, answer and hero image.
+    const timeout = window.setTimeout(() => {
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(loadAd, { timeout: 3500 });
+      } else {
+        loadAd();
+      }
+    }, 5000);
     return () => { window.clearTimeout(timeout); host.replaceChildren(); };
   }, [consent, nearViewport, unit]);
 
