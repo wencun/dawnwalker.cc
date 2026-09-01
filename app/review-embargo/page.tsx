@@ -2,8 +2,8 @@ import { GuidePage, guideMetadata } from "../guide-page";
 import Link from "next/link";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Reviews Live: PC, PS5 & Performance",
-  "Reviews are live. Compare original The Blood of Dawnwalker review links, each outlet's test platform or hardware, and stated performance notes—without a copied score roundup.",
+  "The Blood of Dawnwalker Review Embargo: Reviews Live & Tests",
+  "The Blood of Dawnwalker review embargo has lifted. Compare original reviews, each outlet's PC or PS5 test platform, disclosed hardware and stated performance notes.",
   "/review-embargo",
   ["The Blood of Dawnwalker review embargo", "Blood of Dawnwalker reviews", "When do Blood of Dawnwalker reviews come out", "Blood of Dawnwalker Metacritic"]
 );
