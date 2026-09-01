@@ -87,3 +87,21 @@ export function MiddleAd() {
   if (consent !== "accepted" || compact === null) return null;
   return <aside className="ad-slot ad-slot-middle"><AdLabel /><AdFrame unit={compact ? units.mobile : units.leaderboard} /></aside>;
 }
+
+// Kept separate from the header ad: this unit belongs immediately after the
+// page's opening answer, where it is visible without delaying the answer.
+export function ContentAd() {
+  const consent = useAdConsent();
+  const [compact, setCompact] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 759px)");
+    const update = () => setCompact(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+
+  if (consent !== "accepted" || compact === null) return null;
+  return <aside className="ad-slot ad-slot-content"><AdLabel /><AdFrame unit={compact ? units.mobile : units.leaderboard} /></aside>;
+}
