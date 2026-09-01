@@ -19,7 +19,7 @@ export default function CanIRunPage() {
     <aside className="reader-next" aria-label="How to use this checker"><p className="eyebrow">USE THIS PAGE IN ORDER</p><h2>Get a useful answer in three steps.</h2><div>
       <a href="#checker"><span>01</span><b>Enter your exact hardware</b><small>Use the model names shown in Windows, not a generic “gaming PC” label.</small></a>
       <a href="#limits"><span>02</span><b>Read what the result means</b><small>Passing the requirements is compatibility evidence, not a 60 FPS promise.</small></a>
-      <a href="/known-issues"><span>03</span><b>Check launch-day reports</b><small>Compare current performance evidence by platform, patch and settings.</small></a>
+      <a href="/review-embargo"><span>03</span><b>Read disclosed PC review tests</b><small>See which hardware, settings and game-version details reviewers actually state.</small></a>
     </div></aside>
     <div id="checker"><CompatibilityChecker /></div>
     <MiddleAd />
