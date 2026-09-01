@@ -1,8 +1,8 @@
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Platforms: Steam, PS5, Xbox & Game Pass",
-  "Is The Blood of Dawnwalker on Steam, PS5, Xbox or Game Pass? Confirmed stores, regional release availability and what has not been officially announced.",
+  "The Blood of Dawnwalker Platforms: Steam PC, PS5, Xbox & Game Pass",
+  "Is The Blood of Dawnwalker on Steam PC, PS5, Xbox or Game Pass? Confirmed store links, regional availability and what has not been officially announced.",
   "/platforms",
   ["The Blood of Dawnwalker Steam", "The Blood of Dawnwalker Xbox Series X and Series S store", "The Blood of Dawnwalker PlayStation 5 store", "The Blood of Dawnwalker Microsoft Windows Store", "The Blood of Dawnwalker Game Pass", "The Blood of Dawnwalker PS5", "The Blood of Dawnwalker Xbox", "Blood of Dawnwalker platforms"]
 );
