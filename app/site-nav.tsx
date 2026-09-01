@@ -8,6 +8,8 @@ type Locale = "en" | "pl" | "ru";
 const navigation: Record<Locale, { href: string; label: string }[]> = {
   en: [
     { href: "/release-date", label: "Release date" },
+    { href: "/platforms", label: "Platforms" },
+    { href: "/gameplay", label: "Gameplay" },
     { href: "/review-embargo", label: "Reviews" },
     { href: "/can-i-run", label: "Can I run it?" },
     { href: "/console-performance", label: "Performance" },
@@ -17,6 +19,8 @@ const navigation: Record<Locale, { href: string; label: string }[]> = {
   ],
   pl: [
     { href: "/pl/release-date", label: "Data premiery" },
+    { href: "/pl/platforms", label: "Platformy" },
+    { href: "/pl/gameplay", label: "Rozgrywka" },
     { href: "/pl/review-embargo", label: "Recenzje" },
     { href: "/pl/can-i-run", label: "Czy uruchomię?" },
     { href: "/pl/console-performance", label: "Konsole" },
@@ -26,6 +30,8 @@ const navigation: Record<Locale, { href: string; label: string }[]> = {
   ],
   ru: [
     { href: "/ru/release-date", label: "Дата выхода" },
+    { href: "/ru/platforms", label: "Платформы" },
+    { href: "/ru/gameplay", label: "Геймплей" },
     { href: "/ru/review-embargo", label: "Обзоры" },
     { href: "/ru/can-i-run", label: "Запустится ли?" },
     { href: "/ru/console-performance", label: "Консоли" },
