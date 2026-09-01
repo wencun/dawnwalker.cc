@@ -5,9 +5,9 @@ import { useEffect, type MouseEvent } from "react";
 import { usePathname } from "next/navigation";
 
 const languages = [
-  { code: "en", label: "English" },
-  { code: "pl", label: "Polski" },
-  { code: "ru", label: "Русский" },
+  { code: "en", label: "English", native: "English", flag: "🇬🇧" },
+  { code: "pl", label: "Polish", native: "Polski", flag: "🇵🇱" },
+  { code: "ru", label: "Russian", native: "Русский", flag: "🇷🇺" },
 ] as const;
 
 // Only route visitors to localized pages that have a real, localized answer.
@@ -37,10 +37,12 @@ export function LanguageSwitcher() {
     event.currentTarget.closest("details")?.removeAttribute("open");
   };
 
+  const currentLanguage = languages.find((item) => item.code === current) || languages[0];
+
   return <details className="language-switcher">
-    <summary aria-label="Choose language"><span aria-hidden="true">◎</span>{languages.find((item) => item.code === current)?.label}</summary>
+    <summary aria-label="Choose language"><span className="language-flag" aria-hidden="true">{currentLanguage.flag}</span><span className="language-current">{currentLanguage.label}</span></summary>
     <div role="menu" aria-label="Languages">
-      {languages.map((language) => <Link key={language.code} href={href(language.code)} prefetch={false} onClick={closeMenu} lang={language.code} aria-current={language.code === current ? "page" : undefined}>{language.label}</Link>)}
+      {languages.map((language) => <Link key={language.code} href={href(language.code)} prefetch={false} onClick={closeMenu} lang={language.code} aria-current={language.code === current ? "page" : undefined}><span className="language-flag" aria-hidden="true">{language.flag}</span><span className="language-copy"><span className="language-name">{language.label}</span><span className="language-native">{language.native}</span></span></Link>)}
     </div>
   </details>;
 }
