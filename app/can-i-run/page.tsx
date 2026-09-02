@@ -15,7 +15,7 @@ export default function CanIRunPage() {
     <p className="eyebrow">PC COMPATIBILITY TOOL · OFFICIAL REQUIREMENTS</p>
     <h1>Can I run The Blood of Dawnwalker? PC requirements checker</h1>
     <p className="doc-dek">Compare your CPU, GPU, RAM, VRAM and SSD against the official The Blood of Dawnwalker system requirements. First check compatibility; then use launch-day tests to judge the FPS and image quality you can expect.</p>
-    <p className="checked">Last checked: August 31, 2026 · <span>Official requirements are separate from independent performance testing.</span></p>
+    <p className="checked">Last checked: September 2, 2026 · <span>Official requirements are separate from independent performance testing.</span></p>
     <ContentAd />
     <aside className="reader-next" aria-label="How to use this checker"><p className="eyebrow">USE THIS PAGE IN ORDER</p><h2>Get a useful answer in three steps.</h2><div>
       <a href="#checker"><span>01</span><b>Enter your exact hardware</b><small>Use the model names shown in Windows, not a generic “gaming PC” label.</small></a>

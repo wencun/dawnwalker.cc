@@ -9,7 +9,8 @@ const cards = [
   ["PC tool", "Can I run it?", "A local-only official requirements checker. Compare CPU, GPU, RAM, VRAM and SSD space without uploading your information.", "/can-i-run"],
   ["Performance", "PS5 & Xbox modes", "Official launch targets for PS5, PS5 Pro, Xbox Series X and Series S—kept separate from player benchmarks.", "/console-performance"],
   ["Editions", "Which edition should I buy?", "Compare Standard, Eclipse, Day One and Collector's contents, the pre-order bonus and the shared release date.", "/editions"],
-  ["Reviews", "When do reviews go live?", "The reported August 31 review-embargo schedule, local time conversions and what to verify before buying.", "/review-embargo"],
+  ["Reviews", "The Blood of Dawnwalker reviews are live", "The review embargo lifted August 31. Compare original PC and PS5 reviews, disclosed hardware and performance context.", "/review-embargo"],
+  ["Time limit", "How does the 30-day time limit work?", "Official answers on 8 daytime parts, what advances time, exploration and whether you can complete every quest.", "/time-system"],
 ];
 
 export default function Home() {
