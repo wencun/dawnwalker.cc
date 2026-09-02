@@ -13,6 +13,7 @@ export default function GameplayPage() {
     title="The Blood of Dawnwalker gameplay: day, night, hunger and time"
     dek="A spoiler-aware explanation of the gameplay systems shown or stated by the developer. This page separates confirmed features from details that need launch-day testing."
     checked="September 1, 2026"
+    nativeAdAfter="Day and night are two problem-solving loops"
     sources={[
       { label: "Official Gameplay Reveal Recap", href: "https://en.bandainamcoent.eu/dawnwalker/news/the-blood-of-dawnwalker-gameplay-reveal-recap" },
       { label: "Official game page", href: "https://www.bandainamcoent.com/games/dawnwalker" },

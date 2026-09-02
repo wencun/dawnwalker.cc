@@ -14,6 +14,7 @@ export default function ReviewEmbargoPage() {
     title="The Blood of Dawnwalker review embargo lifted: reviews are live"
     dek="The review embargo lifted on August 31, 2026 at the reported time of 5:00 PM CEST. Compare the original PC and PS5 reviews, disclosed test hardware and the performance conclusions each source can actually support."
     checked="September 2, 2026"
+    nativeAdAfter="First attributable full reviews"
     nextSteps={[
       { label: "Compare your PC to official requirements", href: "/can-i-run", description: "Use your exact CPU, GPU, RAM and SSD—not a reviewer's result." },
       { label: "Check PS5 and Xbox launch targets", href: "/console-performance", description: "Separate official FPS targets from independent testing." },

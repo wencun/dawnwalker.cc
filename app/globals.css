@@ -59,3 +59,9 @@
    accessibility, then renders them normally as the visitor approaches. */
 .home-deferred{content-visibility:auto;contain-intrinsic-size:auto 680px}
 @media(max-width:760px){.home-deferred{contain-intrinsic-size:auto 520px}}
+
+/* Native inventory is reserved for the middle of long answer pages. A stable
+   frame prevents the article from jumping while the third-party cards load. */
+.ad-slot-native{margin:56px 0;padding:18px 0 22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0b0d0e}
+.ad-native-frame{width:100%;min-height:280px}
+@media(max-width:759px){.ad-slot-native{margin:40px 0;padding:14px 0 18px}.ad-native-frame{min-height:360px}}

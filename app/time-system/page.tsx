@@ -13,6 +13,7 @@ export default function TimeSystemPage() {
     title="Does The Blood of Dawnwalker’s 30-day limit make you rush?"
     dek="No. It is not a real-world countdown: exploration can be time-neutral, while specific choices and quest actions spend in-game time. The official opening example divides daylight into 8 parts."
     checked="September 2, 2026"
+    nativeAdAfter="What advances the in-game time?"
     faqs={[
       { question: "Is The Blood of Dawnwalker's 30-day limit a real-time countdown?", answer: "No. Official explanations say you can spend unlimited real-world time exploring between time-advancing choices and checkpoints." },
       { question: "How many time units are in a day in The Blood of Dawnwalker?", answer: "The official PlayStation Blog describes the opening day between dawn and sunset as 8 parts. It does not yet confirm that every later day and night uses an identical 8-unit structure." },

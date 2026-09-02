@@ -14,6 +14,7 @@ export default function ReleaseTimesPage() {
     title="The Blood of Dawnwalker release times: PC, PS5 and Xbox"
     dek="Seeing September 2 on Steam? It is a time-zone conversion, not early access. Find the confirmed PC unlock moment, console-region rules and the practical store checks for your platform."
     checked="August 31, 2026"
+    nativeAdAfter="PC release time by city"
     sources={[
       { label: "Official community — global release timings", href: "https://www.reddit.com/r/DawnwalkerOfficial/comments/1vxyko5/dawnwalker_global_release_timings_are_here/" },
       { label: "Bandai Namco Europe — release announcement", href: "https://en.bandainamcoent.eu/dawnwalker/news/the-blood-of-dawnwalker-will-launch-september-3-rebel-wolves-revealed-key-details" },
