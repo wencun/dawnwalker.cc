@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { AdConsentProvider } from "./ad-consent";
-import { AdsenseLoader } from "./adsense-loader";
 import { SiteNav } from "./site-nav";
 
 export const metadata: Metadata = {
@@ -21,7 +20,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return <html lang="en">
     <body>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }} />
-      <AdConsentProvider><AdsenseLoader /><SiteNav />{children}</AdConsentProvider>
+      <AdConsentProvider><SiteNav />{children}</AdConsentProvider>
     </body>
   </html>;
 }
