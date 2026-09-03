@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: "The Blood of Dawnwalker Guides | Dawnwalker Guide", description: "Release, platforms and verified player guides.", images: ["/og.png"] },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+  other: { "google-adsense-account": "ca-pub-4539826019899948" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

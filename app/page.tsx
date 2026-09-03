@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ContentAd } from "./ad-slot";
+import { ContentAd, NativeContentAd } from "./ad-slot";
 
 export const metadata: Metadata = { alternates: { canonical: "/", languages: { en: "/", pl: "/pl", ru: "/ru", cs: "/cs", "x-default": "/" } } };
 
@@ -24,6 +24,7 @@ export default function Home() {
     <ContentAd />
     <section className="section intro"><div><p className="eyebrow">USEFUL, NOT NOISY</p><h2>Answers for the moment you need them.</h2></div><div className="intro-copy"><p>We build pages around a player&apos;s question—not a list of duplicate keywords. Every guide names its evidence, date checked and spoiler level.</p><span>OFFICIAL · VERIFIED · COMMUNITY REPORT</span></div></section>
     <section className="section"><div className="section-head"><div><p className="eyebrow">START HERE</p><h2>High-intent guides.</h2></div></div><div className="route-grid">{cards.map(([tag,title,text,href], index) => <article className={`feature-card ${index === 0 ? "crimson" : index === 1 ? "night-card" : "archive-card"}`} key={href}><span>0{index + 1} · {tag}</span><h3>{title}</h3><p>{text}</p><Link href={href}>Open guide →</Link></article>)}</div></section>
+    <NativeContentAd />
     <section className="section library home-deferred"><div className="section-head"><div><p className="eyebrow">EDITORIAL STANDARD</p><h2>Built for citation and trust.</h2></div></div><div className="library-grid"><div><strong>01</strong><span>Official source links</span></div><div><strong>02</strong><span>Last-checked dates</span></div><div><strong>03</strong><span>Spoiler labels</span></div><div><strong>04</strong><span>Corrections welcome</span></div></div></section>
     <footer><Link className="brand" href="/">Dawnwalker <span>Guide</span></Link><p>Unofficial fan guide. The Blood of Dawnwalker and related marks belong to their respective owners.<br/><Link href="/privacy">Privacy</Link> · <a href="https://github.com/wencun/dawnwalker.cc/issues" target="_blank" rel="noreferrer">Corrections & feedback</a></p><span>EST. 2026</span></footer>
   </main>;

@@ -8,6 +8,7 @@ export default function PrivacyPage() {
     title="Privacy policy"
     dek="Dawnwalker Guide is an independent fan guide. We aim to collect as little personal information as possible and ask before loading advertising scripts."
     checked="August 26, 2026"
+    showAds={false}
     sources={[{ label: "Adsterra cookie policy", href: "https://adsterra.com/cookies/" }]}
     sections={[
       { title: "Information we collect", body: <p>We do not offer accounts, comments, contact forms, email subscriptions or payments, and we do not ask for your name or email address. Our hosting provider may process routine technical information such as IP address, browser type, device information, request time and logs to deliver and protect the site.</p> },

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ContentAd } from "../ad-slot";
+import { ContentAd, NativeContentAd } from "../ad-slot";
 
 export const metadata: Metadata = {
   title: "The Blood of Dawnwalker – poradniki i data premiery",
@@ -25,6 +25,7 @@ export default function PolishHome() {
     <ContentAd />
     <section className="section intro"><div><p className="eyebrow">KONKRET, NIE SZUM</p><h2>Odpowiedzi wtedy, gdy są potrzebne.</h2></div><div className="intro-copy"><p>Strony budujemy wokół rzeczywistych pytań graczy, a nie wokół powtarzania tych samych słów kluczowych.</p><span>OFICJALNE · SPRAWDZONE · SPOŁECZNOŚĆ</span></div></section>
     <section className="section"><div className="section-head"><div><p className="eyebrow">ZACZNIJ TUTAJ</p><h2>Najważniejsze poradniki.</h2></div></div><div className="route-grid">{cards.map(([tag, title, text, href], index) => <article className={`feature-card ${index === 0 ? "crimson" : index === 1 ? "night-card" : "archive-card"}`} key={href}><span>0{index + 1} · {tag}</span><h3>{title}</h3><p>{text}</p><a href={href}>Otwórz poradnik →</a></article>)}</div></section>
+    <NativeContentAd />
     <section id="pomoc" className="section planner"><div className="planner-copy"><p className="eyebrow">POMOC W DNIU PREMIERY</p><h2>Raport gracza zamieniony w użyteczną odpowiedź.</h2><p>W tygodniu premiery śledzimy publiczne zgłoszenia awarii, wydajności, zadań i problemów z platformami. Publikujemy tylko rozwiązania z opisem wersji gry i kroków do odtworzenia błędu.</p><div className="hero-actions"><a className="primary" href="https://github.com/wencun/dawnwalker.cc/issues/new/choose" target="_blank" rel="noreferrer">Zgłoś problem</a><a className="secondary" href="/known-issues">Znane problemy</a></div></div><div className="quest-panel launch-panel"><p className="eyebrow">JAK PRACUJEMY</p><ol><li><b>Zbieramy</b><span>Zgłoszenie gracza lub sygnał ze społeczności</span></li><li><b>Sprawdzamy</b><span>Platformę, wersję gry i kroki do odtworzenia</span></li><li><b>Publikujemy</b><span>Rozwiązanie, obejście albo jasny status</span></li></ol><p className="note">Nie publikujemy wymyślonych napraw.</p></div></section>
     <section className="section library"><div className="section-head"><div><p className="eyebrow">STANDARD REDAKCYJNY</p><h2>Najpierw źródło, potem wniosek.</h2></div></div><div className="library-grid"><div><strong>01</strong><span>Oficjalne linki źródłowe</span></div><div><strong>02</strong><span>Data ostatniej weryfikacji</span></div><div><strong>03</strong><span>Oznaczenia spoilerów</span></div><div><strong>04</strong><span>Otwarte poprawki</span></div></div></section>
     <footer><a className="brand" href="/pl">Dawnwalker <span>Guide</span></a><p>Nieoficjalny poradnik fanowski. <a href="/privacy">Prywatność</a> · <a href="https://github.com/wencun/dawnwalker.cc/issues" target="_blank" rel="noreferrer">Poprawki i opinie</a></p><span>POLSKI</span></footer>

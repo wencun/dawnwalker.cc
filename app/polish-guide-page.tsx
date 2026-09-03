@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { ContentAd } from "./ad-slot";
+import { Fragment } from "react";
+import { ContentAd, NativeContentAd } from "./ad-slot";
 
 export type PolishGuideSection = { title: string; body: React.ReactNode };
 
@@ -19,5 +20,6 @@ export function polishMetadata(title: string, description: string, path: string,
 
 export function PolishGuidePage({ eyebrow, title, dek, checked, sections, sources, englishPath }: { eyebrow: string; title: string; dek: string; checked: string; sections: PolishGuideSection[]; sources: { label: string; href: string }[]; englishPath: string }) {
   const schema = { "@context": "https://schema.org", "@type": "Article", headline: title, description: dek, dateModified: checked, inLanguage: "pl", author: { "@type": "Organization", name: "Dawnwalker Guide" } };
-  return <main className="doc-shell"><article className="doc"><p className="eyebrow">{eyebrow}</p><h1>{title}</h1><p className="doc-dek">{dek}</p><p className="checked">Sprawdzono: {checked} · <span>Aktualizujemy fakty i źródła, gdy tylko się zmieniają.</span></p><ContentAd />{sections.map((section) => <section key={section.title}><h2>{section.title}</h2>{section.body}</section>)}<section><h2>Źródła</h2><ul className="sources">{sources.map((source) => <li key={source.href}><a href={source.href} target="_blank" rel="noreferrer">{source.label} ↗</a></li>)}</ul></section></article><footer><a className="brand" href="/pl">Dawnwalker <span>Guide</span></a><p>Nieoficjalny poradnik fanowski. <a href="/privacy">Prywatność</a> · <a href="https://github.com/wencun/dawnwalker.cc/issues" target="_blank" rel="noreferrer">Poprawki i opinie</a></p></footer><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} /></main>;
+  const middleSectionIndex = Math.max(0, Math.floor((sections.length - 1) / 2));
+  return <main className="doc-shell"><article className="doc"><p className="eyebrow">{eyebrow}</p><h1>{title}</h1><p className="doc-dek">{dek}</p><p className="checked">Sprawdzono: {checked} · <span>Aktualizujemy fakty i źródła, gdy tylko się zmieniają.</span></p><ContentAd />{sections.map((section, index) => <Fragment key={section.title}><section><h2>{section.title}</h2>{section.body}</section>{index === middleSectionIndex && <NativeContentAd />}</Fragment>)}<section><h2>Źródła</h2><ul className="sources">{sources.map((source) => <li key={source.href}><a href={source.href} target="_blank" rel="noreferrer">{source.label} ↗</a></li>)}</ul></section></article><footer><a className="brand" href="/pl">Dawnwalker <span>Guide</span></a><p>Nieoficjalny poradnik fanowski. <a href="/privacy">Prywatność</a> · <a href="https://github.com/wencun/dawnwalker.cc/issues" target="_blank" rel="noreferrer">Poprawki i opinie</a></p></footer><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} /></main>;
 }
