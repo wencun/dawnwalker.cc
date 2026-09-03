@@ -8,6 +8,7 @@ type Locale = "en" | "pl" | "ru";
 const navigation: Record<Locale, { href: string; label: string }[]> = {
   en: [
     { href: "/controller-movement-fix", label: "Controller fix" },
+    { href: "/how-many-spoonfuls-of-herbs", label: "Herbs answer" },
     { href: "/release-date", label: "Release date" },
     { href: "/platforms", label: "Platforms" },
     { href: "/gameplay", label: "Gameplay" },
