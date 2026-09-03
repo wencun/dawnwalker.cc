@@ -7,6 +7,7 @@ type Locale = "en" | "pl" | "ru";
 
 const navigation: Record<Locale, { href: string; label: string }[]> = {
   en: [
+    { href: "/controller-movement-fix", label: "Controller fix" },
     { href: "/release-date", label: "Release date" },
     { href: "/platforms", label: "Platforms" },
     { href: "/gameplay", label: "Gameplay" },
@@ -15,6 +16,7 @@ const navigation: Record<Locale, { href: string; label: string }[]> = {
     { href: "/console-performance", label: "Performance" },
     { href: "/editions", label: "Editions" },
     { href: "/time-system", label: "Time system" },
+    { href: "/romance", label: "Romance" },
     { href: "/known-issues", label: "Issue tracker" },
   ],
   pl: [

@@ -11,6 +11,11 @@ const units = {
   leaderboard: { key: "2e3058c827b1327717a77c750c89ade9", width: 728, height: 90 },
 } satisfies Record<string, Unit>;
 
+const nativeUnit = {
+  containerId: "container-278334cfa83cd5121dbb0c49b86a4a7e",
+  src: "https://pl31150408.profitableratecpmnetwork.com/278334cfa83cd5121dbb0c49b86a4a7e/invoke.js",
+};
+
 function AdFrame({ unit }: { unit: Unit }) {
   const consent = useAdConsent();
   const hostRef = useRef<HTMLDivElement>(null);
@@ -65,6 +70,56 @@ function AdLabel() {
   return <span className="ad-label">ADVERTISEMENT</span>;
 }
 
+function NativeAdFrame() {
+  const consent = useAdConsent();
+  const hostRef = useRef<HTMLDivElement>(null);
+  const [nearViewport, setNearViewport] = useState(false);
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    const host = hostRef.current;
+    if (consent !== "accepted" || !host || nearViewport) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setNearViewport(true);
+        observer.disconnect();
+      }
+    }, { rootMargin: "600px 0px" });
+    observer.observe(host);
+    return () => observer.disconnect();
+  }, [consent, nearViewport]);
+
+  useEffect(() => {
+    const host = hostRef.current;
+    if (consent !== "accepted" || !nearViewport || !host || failed) return;
+
+    const loadAd = () => {
+      host.replaceChildren();
+      const container = document.createElement("div");
+      container.id = nativeUnit.containerId;
+      const script = document.createElement("script");
+      script.async = true;
+      script.dataset.cfasync = "false";
+      script.src = nativeUnit.src;
+      script.onerror = () => setFailed(true);
+      host.append(container, script);
+    };
+    let idleId: number | undefined;
+    if ("requestIdleCallback" in window) {
+      idleId = window.requestIdleCallback(loadAd, { timeout: 1800 });
+    } else {
+      loadAd();
+    }
+    return () => {
+      if (idleId !== undefined && "cancelIdleCallback" in window) window.cancelIdleCallback(idleId);
+      host.replaceChildren();
+    };
+  }, [consent, failed, nearViewport]);
+
+  if (consent !== "accepted" || failed) return null;
+  return <div ref={hostRef} className="ad-native-frame" aria-label="Advertisement" />;
+}
+
 export function TopAd() {
   const consent = useAdConsent();
   const [compact, setCompact] = useState<boolean | null>(null);
@@ -113,4 +168,12 @@ export function ContentAd() {
 
   if (consent !== "accepted" || compact === null) return null;
   return <aside className="ad-slot ad-slot-content"><AdLabel /><AdFrame unit={compact ? units.mobile : units.leaderboard} /></aside>;
+}
+
+// Native inventory gets more room than a fixed banner, so it belongs between
+// substantial guide sections rather than beside the opening answer.
+export function NativeContentAd() {
+  const consent = useAdConsent();
+  if (consent !== "accepted") return null;
+  return <aside className="ad-slot ad-slot-native"><AdLabel /><NativeAdFrame /></aside>;
 }

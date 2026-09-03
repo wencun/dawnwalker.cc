@@ -1,23 +1,71 @@
 import { GuidePage, guideMetadata } from "../guide-page";
+import Link from "next/link";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Known Issues & Fix Tracker",
-  "Track verified The Blood of Dawnwalker launch issues, workarounds and community reports by platform and game version.",
+  "The Blood of Dawnwalker Known Issues & Launch Fixes",
+  "Track The Blood of Dawnwalker controller bugs, startup crashes, black screens, stutter, 30 FPS cutscenes and evidence-backed community workarounds.",
   "/known-issues",
-  ["The Blood of Dawnwalker known issues", "Blood of Dawnwalker crash fix", "Blood of Dawnwalker stuttering fix"]
+  [
+    "The Blood of Dawnwalker known issues",
+    "Blood of Dawnwalker crash fix",
+    "Blood of Dawnwalker black screen",
+    "Blood of Dawnwalker stuttering fix",
+    "Dawnwalker controller bug",
+  ],
 );
 
 export default function KnownIssuesPage() {
   return <GuidePage
-    eyebrow="LAUNCH HELP DESK · EVIDENCE REQUIRED"
-    title="The Blood of Dawnwalker known issues and fixes"
-    dek="Use this page to decide whether a launch problem is verified, what to check first, and what evidence is needed before a workaround is worth trying."
-    checked="August 31, 2026"
-    sources={[{ label: "Official community — Day One performance update", href: "https://www.reddit.com/r/DawnwalkerOfficial/comments/1vwxe1r/the_blood_of_dawnwalker_will_receive_a/" }]}
+    eyebrow="LAUNCH HELP DESK · REPORTS SEPARATED FROM FIXES"
+    title="The Blood of Dawnwalker known issues and launch fixes"
+    dek="Launch reports currently cluster around controller movement, startup or cutscene crashes, stutter and uneven console performance. This tracker separates repeated reports, community workarounds and official fixes."
+    checked="September 3, 2026"
+    faqs={[
+      { question: "Why does my Dawnwalker character stop sprinting with a controller?", answer: "Multiple PC and PS5 players report that diagonal stick movement can interrupt sprinting or cause slow walking. PC players can try the separate Steam Input Square-deadzone workaround; it is not an official patch and does not apply to PS5 system settings." },
+      { question: "Why does The Blood of Dawnwalker crash during cutscenes?", answer: "Several launch-day players report black screens, startup crashes or repeatable cutscene crashes. No universal cause or official fix was verified when this page was checked. Record the platform, game version and exact cutscene before troubleshooting." },
+      { question: "Are Dawnwalker cutscenes limited to 30 FPS?", answer: "Launch players and a PC technical report describe a 30 FPS cinematic cap. This tracker does not recommend modifying game files until an official option or a versioned, reversible method is verified." },
+    ]}
+    nextSteps={[
+      { label: "Fix controller movement", href: "/controller-movement-fix", description: "Use the illustrated PC deadzone workaround for sprint interruption." },
+      { label: "Check PC requirements", href: "/can-i-run", description: "Separate compatibility limits from a launch bug or stutter." },
+      { label: "Check console modes", href: "/console-performance", description: "Compare official targets with early player reports." },
+    ]}
+    sources={[
+      { label: "Reddit — repeated controller movement and deadzone reports", href: "https://www.reddit.com/r/DawnwalkerOfficial/comments/1w5q862/movementcontroller_deadzone_problem_and_fix/" },
+      { label: "Reddit — launch crash and black-screen reports", href: "https://www.reddit.com/r/DawnwalkerOfficial/comments/1w5q75s/anyone_else_crashing/" },
+      { label: "Steam — player performance and stutter discussion", href: "https://steamcommunity.com/app/3751260/discussions/0/588436355615549822/" },
+      { label: "DSOGaming — PC stutter and cinematic frame-cap test", href: "https://www.dsogaming.com/news/the-blood-of-dawnwalker-suffers-from-major-stutters-and-a-30fps-cinematic-cap/" },
+      { label: "Rebel Wolves — official Day One console performance targets", href: "https://www.reddit.com/r/DawnwalkerOfficial/comments/1vwxe1r/the_blood_of_dawnwalker_will_receive_a/" },
+    ]}
     sections={[
-      { title: "Current status", body: <div className="fact-grid"><p><b>Officially announced launch update</b>Performance mode targeting 60 FPS on PS5, PS5 Pro and Xbox Series X.</p><p><b>Verified launch bugs</b>None recorded yet — game has not launched.</p><p><b>Community speculation</b>Not treated as a fix or a known issue.</p><p><b>Report handling</b>Platform + version + steps + evidence required.</p></div> },
-      { title: "Before you try a fix", body: <ol><li><b>Confirm the basics:</b> check that your platform has unlocked in your region, then restart the game and platform client once.</li><li><b>Capture the context:</b> write down platform, game version, patch, settings, exact symptom and the last action before it occurred.</li><li><b>Look for a matching verified report:</b> do not apply an unrelated PC workaround to a console issue, or a pre-patch fix to a newer build.</li><li><b>Escalate safely:</b> use the <a href="https://github.com/wencun/dawnwalker.cc/issues/new/choose" target="_blank" rel="noreferrer">structured feedback form</a> for crashes, performance issues, progression blockers, store problems or missing guide information. Do not include personal data, account credentials or private save files.</li></ol> },
-      { title: "How we publish a workaround", body: <ul><li>Official fix: linked to a publisher, platform-holder or patch-note source.</li><li>Community workaround: requires reproducible steps plus two independent reports, or one report with clear versioned video evidence.</li><li>Unverified reports stay labelled as unverified and are never presented as a solution.</li></ul> },
+      {
+        title: "Current launch status",
+        body: <div className="fact-grid"><p><b>Repeated report</b>Controller movement can slow or stop during diagonal input on PC and PS5.</p><p><b>Community workaround</b>PC Steam players report success changing the left-stick deadzone shape to Square/Raw.</p><p><b>Repeated report</b>Some PC players report startup black screens, cutscene crashes or crashes returning on the same scene.</p><p><b>Performance reports</b>Stutter, frame pacing and a 30 FPS cinematic cap are reported; results vary by system.</p></div>,
+      },
+      {
+        title: "Controller movement: the clearest reproducible workaround",
+        body: <><p><b>If straight movement works but Coen slows or stops sprinting while turning diagonally, use the dedicated <Link href="/controller-movement-fix">illustrated controller movement guide</Link>.</b> It shows the exact Steam Input path, how to test the change and when to restore defaults.</p><p className="note">The Square/Raw deadzone change is a community workaround supported by several independent player reports. It is not an official Rebel Wolves fix, and the Steam steps do not apply to PS5.</p></>,
+      },
+      {
+        title: "Startup crash, black screen or repeatable cutscene crash",
+        body: <ol><li><b>Record the failure:</b> platform, game version, storefront, GPU driver, exact scene and whether it fails at the same point.</li><li><b>Restart once:</b> close the game and storefront completely, then retry without adding mods or launch arguments.</li><li><b>Verify the installation:</b> use the storefront&apos;s file verification feature. This is a safe integrity check, not a guaranteed fix.</li><li><b>Remove one variable at a time:</b> disable overlays or third-party injectors temporarily, retest, and avoid changing several graphics or system settings together.</li><li><b>Stop after repeatable failure:</b> preserve the crash report and wait for an official update instead of applying unrelated registry edits, driver downgrades or copied configuration files.</li></ol>,
+      },
+      {
+        title: "Stutter, low FPS and 30 FPS cutscenes",
+        body: <><p>Early results are mixed: some players report smooth play, while others report camera-turn or traversal stutter on high-end hardware. A technical report also describes a 30 FPS cinematic cap. That makes <b>system + settings + scene + patch version</b> essential context.</p><ul><li>Do not call every low frame rate a bug before comparing resolution, preset, DLSS/FSR mode and Frame Generation state.</li><li>Do not promise that shader-cache deletion, a mod or a hidden configuration line fixes every system.</li><li>For a useful benchmark, include average FPS, frame-time behavior and the tested location—not only the GPU name.</li></ul></>,
+      },
+      {
+        title: "Controller menus, wrong button prompts and wireless detection",
+        body: <p>These may be separate from the movement deadzone symptom. Players report selections jumping, confirm buttons failing, input switching between mouse/keyboard and controller, Xbox glyphs with DualSense, or wireless detection problems. Test one controller, one connection method and one Steam Input state at a time, and report the exact combination.</p>,
+      },
+      {
+        title: "Official fix versus community workaround",
+        body: <div className="fact-grid"><p><b>Official fix</b>A dated publisher or developer patch note identifies the issue and changed version.</p><p><b>Community workaround</b>Reversible steps are reproduced by independent players but not confirmed by the developer.</p><p><b>Repeated report</b>More than one player describes the same symptom, but the cause and solution remain unknown.</p><p><b>Unverified claim</b>A single unsourced comment, copied fix list or video without platform and version context.</p></div>,
+      },
+      {
+        title: "Before submitting a report",
+        body: <p>Include platform, storefront, game version, controller or hardware model, graphics settings, steps to reproduce and a short clip where possible. Use the <a href="https://github.com/wencun/dawnwalker.cc/issues/new/choose" target="_blank" rel="noreferrer">structured feedback form</a> without account credentials, personal information or private save files.</p>,
+      },
     ]}
   />;
 }
