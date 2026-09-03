@@ -7,6 +7,7 @@ export const metadata: Metadata = { alternates: { canonical: "/", languages: { e
 
 const cards = [
   ["Launch fix", "Controller stops sprinting or slows down?", "Follow the illustrated Steam Input deadzone workaround for diagonal movement, with separate PC and PS5 guidance.", "/controller-movement-fix"],
+  ["Prologue answer", "How many spoonfuls of herbs?", "Choose hot water and three spoonfuls in Withering Away to prepare Esme's medicine correctly.", "/how-many-spoonfuls-of-herbs"],
   ["Release date", "When does The Blood of Dawnwalker release?", "September 3, 2026. See supported platforms, time zones and official sources.", "/release-date"],
   ["Gameplay", "How does The Blood of Dawnwalker play?", "A source-led overview of day and night, combat, choices and the 30-day time pressure—without inventing mechanics.", "/gameplay"],
   ["PC tool", "Can I run it?", "A local-only official requirements checker. Compare CPU, GPU, RAM, VRAM and SSD space without uploading your information.", "/can-i-run"],
