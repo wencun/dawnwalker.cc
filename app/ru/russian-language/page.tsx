@@ -16,7 +16,7 @@ export default function RussianLanguagePage() {
     eyebrow="ЯЗЫК И ЛОКАЛИЗАЦИЯ · СПИСОК STEAM"
     title="Есть ли русский язык в The Blood of Dawnwalker?"
     dek="Короткий ответ: в текущем списке поддерживаемых языков Steam русский не указан ни для интерфейса, ни для субтитров, ни для полной озвучки. Перед покупкой проверяйте страницу магазина ещё раз: список может измениться с обновлением."
-    checked="1 сентября 2026"
+    checked="4 сентября 2026"
     homeLabel=""
     releaseLabel=""
     consoleLabel=""

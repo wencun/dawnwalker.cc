@@ -19,9 +19,9 @@ export default function KnownIssuesPage() {
     eyebrow="LAUNCH HELP DESK · REPORTS SEPARATED FROM FIXES"
     title="The Blood of Dawnwalker known issues and launch fixes"
     dek="Launch reports currently cluster around controller movement, startup or cutscene crashes, stutter and uneven console performance. This tracker separates repeated reports, community workarounds and official fixes."
-    checked="September 3, 2026"
+    checked="September 4, 2026"
     faqs={[
-      { question: "Why does my Dawnwalker character stop sprinting with a controller?", answer: "Multiple PC and PS5 players report that diagonal stick movement can interrupt sprinting or cause slow walking. PC players can try the separate Steam Input Square-deadzone workaround; it is not an official patch and does not apply to PS5 system settings." },
+      { question: "Why does my Dawnwalker character stop sprinting with a controller?", answer: "The developer now lists gamepad sprint interruption as a known issue and recommends lowering controller sensitivity from 1.0 to 0.8 temporarily. PC Steam players can also try the separate Square-deadzone workaround." },
       { question: "Why does The Blood of Dawnwalker crash during cutscenes?", answer: "Several launch-day players report black screens, startup crashes or repeatable cutscene crashes. No universal cause or official fix was verified when this page was checked. Record the platform, game version and exact cutscene before troubleshooting." },
       { question: "Are Dawnwalker cutscenes limited to 30 FPS?", answer: "Launch players and a PC technical report describe a 30 FPS cinematic cap. This tracker does not recommend modifying game files until an official option or a versioned, reversible method is verified." },
     ]}
@@ -31,6 +31,7 @@ export default function KnownIssuesPage() {
       { label: "Check console modes", href: "/console-performance", description: "Compare official targets with early player reports." },
     ]}
     sources={[
+      { label: "Steam — developer Known Issues, fixes and workarounds (September 3)", href: "https://steamcommunity.com/app/3751260/discussions/0/588436698284819211/" },
       { label: "Reddit — repeated controller movement and deadzone reports", href: "https://www.reddit.com/r/DawnwalkerOfficial/comments/1w5q862/movementcontroller_deadzone_problem_and_fix/" },
       { label: "Reddit — launch crash and black-screen reports", href: "https://www.reddit.com/r/DawnwalkerOfficial/comments/1w5q75s/anyone_else_crashing/" },
       { label: "Steam — player performance and stutter discussion", href: "https://steamcommunity.com/app/3751260/discussions/0/588436355615549822/" },
@@ -40,11 +41,11 @@ export default function KnownIssuesPage() {
     sections={[
       {
         title: "Current launch status",
-        body: <div className="fact-grid"><p><b>Repeated report</b>Controller movement can slow or stop during diagonal input on PC and PS5.</p><p><b>Community workaround</b>PC Steam players report success changing the left-stick deadzone shape to Square/Raw.</p><p><b>Repeated report</b>Some PC players report startup black screens, cutscene crashes or crashes returning on the same scene.</p><p><b>Performance reports</b>Stutter, frame pacing and a 30 FPS cinematic cap are reported; results vary by system.</p></div>,
+        body: <div className="fact-grid"><p><b>Developer acknowledged</b>Gamepad sprint interruption is listed in the September 3 Known Issues thread.</p><p><b>Temporary workaround</b>Lower controller sensitivity from 1.0 to 0.8; PC Steam users can also test Square/Raw input.</p><p><b>Repeated report</b>Some PC players report startup black screens, cutscene crashes or crashes returning on the same scene.</p><p><b>Performance reports</b>Stutter, frame pacing and a 30 FPS cinematic cap are reported; results vary by system.</p></div>,
       },
       {
         title: "Controller movement: the clearest reproducible workaround",
-        body: <><p><b>If straight movement works but Coen slows or stops sprinting while turning diagonally, use the dedicated <Link href="/controller-movement-fix">illustrated controller movement guide</Link>.</b> It shows the exact Steam Input path, how to test the change and when to restore defaults.</p><p className="note">The Square/Raw deadzone change is a community workaround supported by several independent player reports. It is not an official Rebel Wolves fix, and the Steam steps do not apply to PS5.</p></>,
+        body: <><p><b>First lower controller sensitivity from 1.0 to 0.8, as listed in the developer Known Issues thread.</b> If diagonal turning still interrupts sprint on PC Steam, use the dedicated <Link href="/controller-movement-fix">illustrated controller movement guide</Link> for the additional Square-deadzone path.</p><p className="note">The sensitivity setting is the developer-listed temporary workaround. The Square/Raw remap remains a separate community workaround and the Steam steps do not apply to console system settings.</p></>,
       },
       {
         title: "Startup crash, black screen or repeatable cutscene crash",

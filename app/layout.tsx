@@ -5,8 +5,8 @@ import { SiteNav } from "./site-nav";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dawnwalker.cc"),
-  title: { default: "The Blood of Dawnwalker Guide: Release Date, Gameplay & Launch Help", template: "%s | Dawnwalker Guide" },
-  description: "Independent English guide for The Blood of Dawnwalker: release date, gameplay, editions, PC requirements, console performance and verified launch-week fixes.",
+  title: { default: "The Blood of Dawnwalker Guides, Quest Answers & Fixes", template: "%s | Dawnwalker Guide" },
+  description: "Independent The Blood of Dawnwalker guides for quests, mods, romance, PC requirements, console performance, the time system and verified fixes.",
   keywords: ["The Blood of Dawnwalker", "Blood of Dawnwalker release date", "The Blood of Dawnwalker gameplay", "The Blood of Dawnwalker guide", "Blood of Dawnwalker PS5", "Blood of Dawnwalker Xbox", "Blood of Dawnwalker PC", "Blood of Dawnwalker editions"],
   alternates: { canonical: "/" },
   openGraph: { type: "website", siteName: "Dawnwalker Guide", locale: "en_US", title: "The Blood of Dawnwalker Guides, Release Date & Platforms", description: "Spoiler-aware, verified guides and launch updates.", images: ["/og.png"] },

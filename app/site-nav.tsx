@@ -12,16 +12,18 @@ type Navigation = { primary: NavLink[]; groups: NavGroup[] };
 const navigation: Record<Locale, Navigation> = {
   en: {
     primary: [
-      { href: "/review-embargo", label: "Reviews" },
-      { href: "/can-i-run", label: "Can I run?" },
+      { href: "/walkthrough", label: "Walkthrough" },
+      { href: "/mods", label: "Mods" },
     ],
     groups: [
       { label: "Launch help", items: [
+        { href: "/can-i-run", label: "Can I run?" },
         { href: "/controller-movement-fix", label: "Controller fix" },
         { href: "/known-issues", label: "Known issues" },
         { href: "/console-performance", label: "Console performance" },
       ] },
       { label: "Quest answers", items: [
+        { href: "/prologue-quest-order", label: "Prologue quest order" },
         { href: "/how-many-spoonfuls-of-herbs", label: "Herbs recipe for Esme" },
       ] },
       { label: "Game guide", items: [
@@ -31,6 +33,8 @@ const navigation: Record<Locale, Navigation> = {
         { href: "/time-system", label: "Time system" },
         { href: "/editions", label: "Editions" },
         { href: "/romance", label: "Romance options" },
+        { href: "/how-long-to-beat", label: "How long to beat" },
+        { href: "/review-embargo", label: "Reviews" },
       ] },
     ],
   },
@@ -64,6 +68,7 @@ const navigation: Record<Locale, Navigation> = {
         { href: "/ru/console-performance", label: "Консоли" },
       ] },
       { label: "Гид по игре", items: [
+        { href: "/ru/russian-language", label: "Русский язык" },
         { href: "/ru/release-date", label: "Дата выхода" },
         { href: "/ru/platforms", label: "Платформы" },
         { href: "/ru/gameplay", label: "Геймплей" },
