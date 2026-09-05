@@ -11,13 +11,14 @@ export const metadata: Metadata = {
 };
 
 const cards = [
+  ["Visual issue", "Screen flickering or shimmering?", "Use a separate PC and PS5 Pro diagnostic path instead of treating every display symptom as the same bug.", "/flickering-fix"],
   ["Patch 1.0.2", "What did the latest hotfix fix?", "Check the official quest, controller and known-issue changes before trying an old workaround.", "/patch-notes"],
   ["PC fix", "Crashing or stuttering?", "Match the exact symptom to the official Full Screen workaround or safe crash checks.", "/crash-and-stutter-fix"],
   ["Quest route", "Forge It Anew sword shards", "Follow the illustrated route from St. Mihai's note to all three shards, Uriashi and the ritual.", "/forge-it-anew"],
   ["Time consequence", "What happens after 30 days?", "See the story consequence, what remains playable and the two-save plan before the deadline.", "/what-happens-after-30-days"],
   ["Endings", "How many endings are there?", "Use a spoiler-marked outcome guide and save plan instead of replaying the whole opening blind.", "/endings"],
   ["Walkthrough", "Quest order, choices and missable answers", "Start with the prologue route, then open a focused answer for the exact quest or choice blocking your run.", "/walkthrough"],
-  ["PC mods", "Current mods and safe installation", "Find current Nexus releases, installation paths, version checks and the risks to consider before changing a save.", "/mods"],
+  ["PC mods", "Dawnwalker mods on Nexus", "Open the live Nexus directory, then use version, dependency and save-safety checks before installing.", "/mods"],
   ["Launch fix", "Controller stops sprinting or slows down?", "Follow the illustrated Steam Input deadzone workaround for diagonal movement, with separate PC and PS5 guidance.", "/controller-movement-fix"],
   ["Prologue answer", "How many spoonfuls of herbs?", "Choose hot water and three spoonfuls in Withering Away to prepare Esme's medicine correctly.", "/how-many-spoonfuls-of-herbs"],
   ["Release date", "When does The Blood of Dawnwalker release?", "September 3, 2026. See supported platforms, time zones and official sources.", "/release-date"],

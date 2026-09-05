@@ -11,6 +11,7 @@ export const metadata = guideMetadata(
     "Blood of Dawnwalker black screen",
     "Blood of Dawnwalker stuttering fix",
     "Dawnwalker controller bug",
+    "Dawnwalker flickering",
   ],
 );
 
@@ -41,7 +42,7 @@ export default function KnownIssuesPage() {
     sections={[
       {
         title: "Current launch status",
-        body: <div className="fact-grid"><p><b>Developer acknowledged</b>Gamepad sprint interruption is listed in the September 3 Known Issues thread.</p><p><b>Temporary workaround</b>Lower controller sensitivity from 1.0 to 0.8; PC Steam users can also test Square/Raw input.</p><p><b>Repeated report</b>Some PC players report startup black screens, cutscene crashes or crashes returning on the same scene.</p><p><b>Performance reports</b>Stutter, frame pacing and a 30 FPS cinematic cap are reported; results vary by system.</p></div>,
+        body: <div className="fact-grid"><p><b>Developer acknowledged</b>Gamepad sprint interruption is listed in the September 3 Known Issues thread.</p><p><b>Temporary workaround</b>Lower controller sensitivity from 1.0 to 0.8; PC Steam users can also test Square/Raw input.</p><p><b>Repeated report</b>Some PC players report startup black screens, cutscene crashes or crashes returning on the same scene.</p><p><b>Performance reports</b>Stutter, frame pacing and a 30 FPS cinematic cap are reported; results vary by system.</p><p><b>Visual reports</b>PC shimmer and PS5 Pro flicker reports now have a separate <Link href="/flickering-fix">platform-specific diagnostic guide</Link>.</p></div>,
       },
       {
         title: "Controller movement: the clearest reproducible workaround",
