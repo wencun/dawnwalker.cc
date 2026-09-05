@@ -18,7 +18,13 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const siteSchema = { "@context": "https://schema.org", "@type": "WebSite", name: "Dawnwalker Guide", url: "https://www.dawnwalker.cc/", inLanguage: "en", description: "Independent guides for The Blood of Dawnwalker" };
+  const siteSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "Organization", "@id": "https://www.dawnwalker.cc/#publisher", name: "Dawnwalker Guide", url: "https://www.dawnwalker.cc/", sameAs: ["https://github.com/wencun/dawnwalker.cc"] },
+      { "@type": "WebSite", "@id": "https://www.dawnwalker.cc/#website", name: "Dawnwalker Guide", url: "https://www.dawnwalker.cc/", inLanguage: "en", description: "Independent guides for The Blood of Dawnwalker", publisher: { "@id": "https://www.dawnwalker.cc/#publisher" }, sameAs: ["https://github.com/wencun/dawnwalker.cc"] },
+    ],
+  };
   return <html lang="en">
     <body>
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-21QC2EJC4L" strategy="afterInteractive" />
