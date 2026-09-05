@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { AdConsentProvider } from "./ad-consent";
 import { SiteNav } from "./site-nav";
@@ -20,6 +21,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   const siteSchema = { "@context": "https://schema.org", "@type": "WebSite", name: "Dawnwalker Guide", url: "https://www.dawnwalker.cc/", inLanguage: "en", description: "Independent guides for The Blood of Dawnwalker" };
   return <html lang="en">
     <body>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-21QC2EJC4L" strategy="afterInteractive" />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-21QC2EJC4L');`}
+      </Script>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }} />
       <AdConsentProvider><SiteNav />{children}</AdConsentProvider>
     </body>
