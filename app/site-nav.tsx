@@ -17,6 +17,8 @@ const navigation: Record<Locale, Navigation> = {
     ],
     groups: [
       { label: "Launch help", items: [
+        { href: "/patch-notes", label: "Patch notes" },
+        { href: "/crash-and-stutter-fix", label: "Crash & stutter fix" },
         { href: "/can-i-run", label: "Can I run?" },
         { href: "/controller-movement-fix", label: "Controller fix" },
         { href: "/known-issues", label: "Known issues" },
@@ -25,12 +27,15 @@ const navigation: Record<Locale, Navigation> = {
       { label: "Quest answers", items: [
         { href: "/prologue-quest-order", label: "Prologue quest order" },
         { href: "/how-many-spoonfuls-of-herbs", label: "Herbs recipe for Esme" },
+        { href: "/forge-it-anew", label: "Forge It Anew" },
       ] },
       { label: "Game guide", items: [
         { href: "/release-date", label: "Release date" },
         { href: "/platforms", label: "Platforms" },
         { href: "/gameplay", label: "Gameplay" },
         { href: "/time-system", label: "Time system" },
+        { href: "/what-happens-after-30-days", label: "What happens after 30 days" },
+        { href: "/endings", label: "Endings" },
         { href: "/editions", label: "Editions" },
         { href: "/romance", label: "Romance options" },
         { href: "/how-long-to-beat", label: "How long to beat" },

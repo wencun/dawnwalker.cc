@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
@@ -35,7 +36,7 @@ export default function AfterThirtyDaysPage() {
       { title: "What remains after the timer expires", body: <div className="fact-grid"><p><b>Story ending</b>Time running out is an ending route rather than an immediate game-over screen, according to launch-build guides.</p><p><b>Family main quests</b>Those objectives cannot be recovered after the ceremony outcome. Use an earlier manual save if you want the rescue route.</p><p><b>Side activities</b>Third-party guides report that some side content and trophies can still be finished. Availability can depend on the activity and current patch.</p><p><b>Completionist warning</b>Do not assume that continued exploration restores every missed story state. Keep separate saves for a no-spoiler run and ending cleanup.</p></div> },
       { title: "A spoiler-safe save plan", body: <ol className="install-flow"><li><span>01</span><b>Day 28–29</b><small>Create a manual save before committing to the final family push.</small></li><li><span>02</span><b>Before the finale</b><small>Make a second save before the last major dialogue or quest hand-in.</small></li><li><span>03</span><b>Finish once</b><small>Let the credits resolve so you know which branch you received.</small></li><li><span>04</span><b>Reload deliberately</b><small>Use the earlier save for a different outcome instead of relying on an unverified NG+ claim.</small></li></ol> },
       { title: "Does the game have New Game Plus?", body: <p><b>There was no official New Game Plus announcement or verified carry-over mode when this page was checked.</b> The cited launch guides describe starting a fresh game or reloading an earlier save after a completed ending. That is not proof a future patch cannot add NG+, but it is not a reason to plan your first run around a feature that has not been confirmed.</p> },
-      { title: "Why time pressure creates search demand", body: <p>Players searching <b>time limit</b>, <b>what happens after 30 days</b> or <b>can you save everyone</b> are not looking for a lore summary. They need a consequence, a save point and a clear statement of what is verified. The <a href="/endings">endings guide</a> continues from this answer without making you hunt through a generic wiki page.</p> },
+      { title: "Why time pressure creates search demand", body: <p>Players searching <b>time limit</b>, <b>what happens after 30 days</b> or <b>can you save everyone</b> are not looking for a lore summary. They need a consequence, a save point and a clear statement of what is verified. The <Link href="/endings">endings guide</Link> continues from this answer without making you hunt through a generic wiki page.</p> },
     ]}
   />;
 }
