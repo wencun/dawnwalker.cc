@@ -10,6 +10,11 @@ export const metadata: Metadata = {
 };
 
 const cards = [
+  ["Patch 1.0.2", "What did the latest hotfix fix?", "Check the official quest, controller and known-issue changes before trying an old workaround.", "/patch-notes"],
+  ["PC fix", "Crashing or stuttering?", "Match the exact symptom to the official Full Screen workaround or safe crash checks.", "/crash-and-stutter-fix"],
+  ["Quest route", "Forge It Anew sword shards", "Follow the illustrated route from St. Mihai's note to all three shards, Uriashi and the ritual.", "/forge-it-anew"],
+  ["Time consequence", "What happens after 30 days?", "See the story consequence, what remains playable and the two-save plan before the deadline.", "/what-happens-after-30-days"],
+  ["Endings", "How many endings are there?", "Use a spoiler-marked outcome guide and save plan instead of replaying the whole opening blind.", "/endings"],
   ["Walkthrough", "Quest order, choices and missable answers", "Start with the prologue route, then open a focused answer for the exact quest or choice blocking your run.", "/walkthrough"],
   ["PC mods", "Current mods and safe installation", "Find current Nexus releases, installation paths, version checks and the risks to consider before changing a save.", "/mods"],
   ["Launch fix", "Controller stops sprinting or slows down?", "Follow the illustrated Steam Input deadzone workaround for diagonal movement, with separate PC and PS5 guidance.", "/controller-movement-fix"],
@@ -28,7 +33,7 @@ const cards = [
 export default function Home() {
   return <main>
     <section className="hero" id="top"><div className="hero-art" aria-hidden="true"><Image src="/dawnwalker-hero.jpg" alt="" width={1920} height={1080} priority sizes="100vw" /></div><div className="hero-copy"><p className="eyebrow">THE BLOOD OF DAWNWALKER · INDEPENDENT GUIDE</p><p className="hero-kicker">QUEST ANSWERS · VERIFIED FIXES</p><h1>The Blood of Dawnwalker <em>guides that answer the question.</em></h1><p className="lead">Spoiler-aware quest routes, mods, romance choices, performance help and launch fixes—each separated into confirmed facts, tested reporting and unresolved claims.</p><div className="hero-actions"><Link className="primary" href="/walkthrough">Open walkthrough</Link><Link className="secondary" href="/known-issues">Known issues</Link></div></div><aside className="clock-card"><p>GAME STATUS</p><div className="day">LIVE</div><div className="bar"><i /></div><small>PC · PlayStation 5<br />Xbox Series X|S</small></aside></section>
-    <section className="signal"><span>✦ LAUNCH HELP</span><p>The game is live. If Coen slows down or stops sprinting while turning a controller stick, follow the <Link href="/controller-movement-fix">illustrated Steam Input deadzone workaround</Link>. For crashes and stutter, use the <Link href="/known-issues">launch issue tracker</Link>.</p><Link href="/controller-movement-fix">Fix controller movement →</Link></section>
+    <section className="signal"><span>✦ HOTFIX 1.0.2</span><p>Update first, then match the symptom. Read the <Link href="/patch-notes">illustrated patch notes</Link>, use the <Link href="/crash-and-stutter-fix">crash and stutter guide</Link>, or follow the controller fix if sprint still stops.</p><Link href="/patch-notes">See what changed →</Link></section>
     <ContentAd />
     <section className="section intro"><div><p className="eyebrow">USEFUL, NOT NOISY</p><h2>Answers for the moment you need them.</h2></div><div className="intro-copy"><p>We build pages around a player&apos;s question—not a list of duplicate keywords. Every guide names its evidence, date checked and spoiler level.</p><span>OFFICIAL · VERIFIED · COMMUNITY REPORT</span></div></section>
     <section className="section"><div className="section-head"><div><p className="eyebrow">START HERE</p><h2>High-intent guides.</h2></div></div><div className="route-grid">{cards.map(([tag,title,text,href], index) => <article className={`feature-card ${index === 0 ? "crimson" : index === 1 ? "night-card" : "archive-card"}`} key={href}><span>0{index + 1} · {tag}</span><h3>{title}</h3><p>{text}</p><Link href={href}>Open guide →</Link></article>)}</div></section>
