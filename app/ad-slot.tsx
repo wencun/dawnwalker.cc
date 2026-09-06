@@ -16,14 +16,18 @@ const nativeUnit = {
   src: "https://pl31150408.profitableratecpmnetwork.com/278334cfa83cd5121dbb0c49b86a4a7e/invoke.js",
 };
 
-function AdFrame({ unit }: { unit: Unit }) {
+function trackAdRequest(slot: string, format: "display" | "native") {
+  window.gtag?.("event", "ad_slot_requested", { ad_format: format, ad_slot: slot });
+}
+
+function AdFrame({ unit, eager = false }: { unit: Unit; eager?: boolean }) {
   const consent = useAdConsent();
   const hostRef = useRef<HTMLDivElement>(null);
   const [nearViewport, setNearViewport] = useState(false);
 
   useEffect(() => {
     const host = hostRef.current;
-    if (consent !== "accepted" || !host || nearViewport) return;
+    if (consent !== "accepted" || !host || nearViewport || eager) return;
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setNearViewport(true);
@@ -32,14 +36,12 @@ function AdFrame({ unit }: { unit: Unit }) {
     }, { rootMargin: "500px 0px" });
     observer.observe(host);
     return () => observer.disconnect();
-  }, [consent, nearViewport]);
+  }, [consent, eager, nearViewport]);
 
   useEffect(() => {
     const host = hostRef.current;
-    if (consent !== "accepted" || !nearViewport || !host) return;
+    if (consent !== "accepted" || (!eager && !nearViewport) || !host) return;
 
-    // Third-party ad scripts are intentionally deferred. They must never compete
-    // with the document, font and hero image during a mobile visitor's first paint.
     const loadAd = () => {
       host.replaceChildren();
       const options = document.createElement("script");
@@ -48,19 +50,14 @@ function AdFrame({ unit }: { unit: Unit }) {
       adScript.src = `https://www.highrevenueformat.com/${unit.key}/invoke.js`;
       adScript.async = false;
       host.append(options, adScript);
+      trackAdRequest(`${unit.width}x${unit.height}`, "display");
     };
-    // The ad is intentionally kept out of the critical rendering window. On a
-    // phone this slot can be close to the first screen, but the third-party
-    // iframe must never contend with the navigation, answer and hero image.
-    const timeout = window.setTimeout(() => {
-      if ("requestIdleCallback" in window) {
-        window.requestIdleCallback(loadAd, { timeout: 3500 });
-      } else {
-        loadAd();
-      }
-    }, 5000);
+    // A visible header slot may request immediately after consent. All other
+    // slots still wait until they approach the viewport, then use a short delay
+    // so answer-first visitors can generate a viewable impression.
+    const timeout = window.setTimeout(loadAd, eager ? 0 : 1200);
     return () => { window.clearTimeout(timeout); host.replaceChildren(); };
-  }, [consent, nearViewport, unit]);
+  }, [consent, eager, nearViewport, unit]);
 
   if (consent !== "accepted") return null;
   return <div ref={hostRef} className="ad-frame" style={{ width: unit.width, height: unit.height }} aria-label="Advertisement" />;
@@ -103,6 +100,7 @@ function NativeAdFrame() {
       script.src = nativeUnit.src;
       script.onerror = () => setFailed(true);
       host.append(container, script);
+      trackAdRequest("native-content", "native");
     };
     let idleId: number | undefined;
     if ("requestIdleCallback" in window) {
@@ -133,7 +131,7 @@ export function TopAd() {
   }, []);
 
   if (consent !== "accepted" || compact === null) return null;
-  return <aside className="ad-slot ad-slot-top"><AdLabel /><AdFrame unit={compact ? units.mobile : units.leaderboard} /></aside>;
+  return <aside className="ad-slot ad-slot-top"><AdLabel /><AdFrame unit={compact ? units.mobile : units.leaderboard} eager /></aside>;
 }
 
 export function MiddleAd() {

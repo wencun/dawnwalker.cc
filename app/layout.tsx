@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import { AdConsentProvider } from "./ad-consent";
+import { TopAd } from "./ad-slot";
 import { SiteNav } from "./site-nav";
 
 export const metadata: Metadata = {
@@ -35,7 +36,7 @@ gtag('js', new Date());
 gtag('config', 'G-21QC2EJC4L');`}
       </Script>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }} />
-      <AdConsentProvider><SiteNav />{children}</AdConsentProvider>
+      <AdConsentProvider><SiteNav /><TopAd />{children}</AdConsentProvider>
     </body>
   </html>;
 }
