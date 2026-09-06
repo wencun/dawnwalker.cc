@@ -9,6 +9,7 @@ const units = {
   mobile: { key: "5aaba314fde053601f466656789e427e", width: 320, height: 50 },
   rectangle: { key: "8613f0fda70bbca87c39de32c63f5980", width: 300, height: 250 },
   leaderboard: { key: "2e3058c827b1327717a77c750c89ade9", width: 728, height: 90 },
+  rail: { key: "e8790d6d483b7a56fb1a4de75931fe50", width: 160, height: 600 },
 } satisfies Record<string, Unit>;
 
 const nativeUnit = {
@@ -148,6 +149,25 @@ export function MiddleAd() {
 
   if (consent !== "accepted" || compact === null) return null;
   return <aside className="ad-slot ad-slot-middle"><AdLabel /><AdFrame unit={compact ? units.mobile : units.leaderboard} /></aside>;
+}
+
+// A single rail is reserved for very wide desktop viewports only. It never
+// appears on mobile or typical laptop widths, where it would compete with the
+// guide content rather than add a genuinely viewable placement.
+export function DesktopRailAd() {
+  const consent = useAdConsent();
+  const [wideDesktop, setWideDesktop] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const query = window.matchMedia("(min-width: 1900px)");
+    const update = () => setWideDesktop(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+
+  if (consent !== "accepted" || !wideDesktop) return null;
+  return <aside className="ad-slot ad-slot-rail"><AdLabel /><AdFrame unit={units.rail} /></aside>;
 }
 
 // Kept separate from the header ad: this unit belongs immediately after the
