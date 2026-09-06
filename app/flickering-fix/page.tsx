@@ -2,8 +2,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "Dawnwalker Flickering Fix: PC, PS5 Pro and VRR Tests",
-  "Safe, evidence-labelled checks for The Blood of Dawnwalker screen flickering, shimmering and lighting flicker on PC and PS5 Pro.",
+  "The Blood of Dawnwalker Flickering Fix: PC, PS5 Pro & VRR",
+  "Try safe The Blood of Dawnwalker flickering fixes for PC shimmer, lighting flicker above 60 FPS, and PS5 Pro VRR display flicker.",
   "/flickering-fix",
   ["Dawnwalker flickering fix", "The Blood of Dawnwalker screen flickering", "Blood of Dawnwalker shimmering", "Dawnwalker PS5 Pro VRR flickering"],
 );
@@ -11,9 +11,10 @@ export const metadata = guideMetadata(
 export default function FlickeringFixPage() {
   return <GuidePage
     eyebrow="VISUAL ISSUE CHECK · COMMUNITY REPORTS, NOT AN OFFICIAL FIX"
-    title="How do you test Dawnwalker screen flickering safely?"
-    dek="Players are reporting camera-movement shimmer and lighting flicker on PC, plus a separate PS5 Pro VRR report. These are not one confirmed bug, so use a reversible, one-setting-at-a-time test rather than a copied tweak list."
-    checked="September 5, 2026"
+    title="The Blood of Dawnwalker flickering fix: PC, PS5 Pro and VRR tests"
+    dek="Seeing Dawnwalker screen flickering? Match the symptom first: PC shimmer while moving, lighting flicker above 60 FPS, or a separate PS5 Pro VRR display issue. Each check below is reversible and evidence-labelled."
+    checked="September 6, 2026"
+    quickAnswer={<div className="fix-callout"><span>FLICKERING QUICK TEST</span><p><b>PC:</b> record your current settings, then compare the same scene with a temporary 60 FPS cap if the flicker appears at high frame rates. <b>PS5 Pro:</b> record the display setting, temporarily test VRR off, then restore it if nothing changes. Neither is an official universal fix.</p></div>}
     faqs={[
       { question: "Is there an official Dawnwalker flickering fix?", answer: "No official universal fix was verified when this page was checked. Current evidence is player reporting across PC and PS5 Pro, so each suggested change is a diagnostic test rather than a guaranteed solution." },
       { question: "Should I turn off VRR to fix Dawnwalker flickering on PS5 Pro?", answer: "One PS5 Pro community report says disabling VRR stopped its flickering. Treat that as a reversible test for that platform, not a universal fix or a PC recommendation." },

@@ -3,37 +3,41 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "Dawnwalker Mods (Nexus): Categories, Install Guide & Safety Checks",
-  "Find The Blood of Dawnwalker mods on Nexus Mods, compare current mod categories, check game-version compatibility and install or remove mods safely.",
+  "The Blood of Dawnwalker Mods: Best Current Nexus Mods (2026)",
+  "Find current The Blood of Dawnwalker Nexus Mods for the story timer, performance and fast travel, with version checks, source links and safe install notes.",
   "/mods",
   ["Dawnwalker mods", "The Blood of Dawnwalker mods", "Blood of Dawnwalker Nexus Mods", "Dawnwalker Nexus Mods", "Dawnwalker performance mod", "Dawnwalker disable timer mod", "how to install Dawnwalker mods"],
 );
 
 export default function ModsPage() {
   return <GuidePage
-    eyebrow="DAWNWALKER MODS · NEXUS DIRECTORY"
-    title="Dawnwalker mods: Nexus categories and safe installation"
-    dek="Looking for Dawnwalker mods? Start with the live Nexus Mods directory, then match each download to your game version, required tools and save-risk level before installing it."
-    checked="September 5, 2026"
-    quickAnswer={<div className="answer-visual"><div><span>START HERE · NEXUS MODS</span><h2>Where can you find current Dawnwalker mods?</h2><p>The live Nexus directory is the right starting point for current downloads. This guide helps you check the version, requirements and removal path before a file touches your save.</p><a className="primary" href="https://www.nexusmods.com/games/thebloodofdawnwalker/mods" target="_blank" rel="noreferrer">Open Dawnwalker mods on Nexus ↗</a></div><Image src="/dawnwalker-night.png" alt="Coen using a vampire traversal ability at night in The Blood of Dawnwalker" width={1280} height={720} priority /></div>}
+    eyebrow="THE BLOOD OF DAWNWALKER MODS · CURRENT NEXUS PICKS"
+    title="The Blood of Dawnwalker mods: current Nexus picks and safe install"
+    dek="Looking for the best current Dawnwalker mods? Compare live Nexus options for the story timer, performance and fast travel before installing, then check the exact game version and save risk."
+    checked="September 6, 2026"
+    quickAnswer={<div className="answer-visual"><div><span>START HERE · CURRENT NEXUS MODS</span><h2>Which Dawnwalker mod should you inspect first?</h2><p>Start with the live directory, then choose one proven category: more story time, a performance configuration, or fast travel between unlocked shrines. These are third-party files, not official patches.</p><a className="primary" href="https://www.nexusmods.com/games/thebloodofdawnwalker/mods" target="_blank" rel="noreferrer">Open current Dawnwalker mods on Nexus ↗</a></div><Image src="/dawnwalker-night.png" alt="Coen using a vampire traversal ability at night in The Blood of Dawnwalker" width={1280} height={720} priority /></div>}
     nextSteps={[
       { label: "Find current Nexus releases", href: "#current-mods", description: "Use the live directory link and its update-date filters, not an undated download mirror." },
       { label: "Install without guessing", href: "#install", description: "Follow the author page and verify the exact game version." },
       { label: "Fix a launch problem", href: "/known-issues", description: "Rule out a base-game crash before blaming a mod." },
     ]}
     faqs={[
+      { question: "What are the best current Dawnwalker mods?", answer: "Current Nexus options include Better Story Timer for players who want more time, a performance configuration example, and Fast Travel Anywhere for already unlocked shrines. They are examples to inspect, not universal recommendations: verify version, requirements and recent posts before installing." },
       { question: "Where can I download Dawnwalker mods?", answer: "Use the dedicated The Blood of Dawnwalker directory on Nexus Mods. Check each file's game version, requirements, recent posts and update date before downloading." },
       { question: "Does The Blood of Dawnwalker support mods?", answer: "A dedicated Nexus Mods directory is live, and Nexus released open-source Unreal Engine mod-author tools for the game. Individual files can still break after game updates." },
       { question: "Is there a Dawnwalker performance mod?", answer: "A launch-day Nexus upload advertises performance and frame-time changes. Treat it as a third-party configuration, not an official patch, and verify its current compatibility and user reports first." },
-      { question: "Is there a mod that disables the 30-day timer?", answer: "Players are actively requesting timer-control mods, but this guide does not recommend one until a current release can be inspected and reproduced on the live game version." },
+      { question: "Is there a mod that changes the 30-day timer?", answer: "Better Story Timer is a current Nexus option that advertises adjustable story days and optional skill-time changes. Its author warns against combining timer-changing files and cannot guarantee a save remains unaffected, so back up first and install only one timer mod." },
     ]}
     sources={[
       { label: "Nexus Mods — The Blood of Dawnwalker mod directory", href: "https://www.nexusmods.com/games/thebloodofdawnwalker/mods" },
+      { label: "Nexus Mods — Better Story Timer", href: "https://www.nexusmods.com/thebloodofdawnwalker/mods/10" },
+      { label: "Nexus Mods — Fast Travel Anywhere", href: "https://www.nexusmods.com/thebloodofdawnwalker/mods/117?tab=description" },
       { label: "Nexus Mods — open-source author tools launch announcement", href: "https://www.nexusmods.com/news/15600" },
       { label: "Nexus Mods — launch-day performance mod example", href: "https://www.nexusmods.com/thebloodofdawnwalker/mods/59?tab=description" },
       { label: "Bandai Namco — official gameplay and time-system recap", href: "https://en.bandainamcoent.eu/dawnwalker/news/the-blood-of-dawnwalker-gameplay-reveal-recap" },
     ]}
     sections={[
+      { title: "What are the current Dawnwalker mods worth checking?", body: <table className="editorial-table"><caption>Examples checked on September 6, 2026 — inspect the live author page before download</caption><thead><tr><th scope="col">If you want…</th><th scope="col">Current Nexus option</th><th scope="col">Read before installing</th></tr></thead><tbody><tr><th scope="row">More story time or no skill-time cost</th><td><a href="https://www.nexusmods.com/thebloodofdawnwalker/mods/10" target="_blank" rel="noreferrer">Better Story Timer ↗</a></td><td>Choose one timer setup, back up the save and do not combine timer-changing files.</td></tr><tr><th scope="row">Performance or frame-time experiments</th><td><a href="https://www.nexusmods.com/thebloodofdawnwalker/mods/59?tab=description" target="_blank" rel="noreferrer">optimyzer_tbod_byAiorro ↗</a></td><td>Match the listed hardware profile; this is a third-party configuration, not an official fix.</td></tr><tr><th scope="row">Fast travel from the map</th><td><a href="https://www.nexusmods.com/thebloodofdawnwalker/mods/117?tab=description" target="_blank" rel="noreferrer">Fast Travel Anywhere ↗</a></td><td>It only uses shrines already unlocked in your save; review the current posts after game patches.</td></tr></tbody></table> },
       { title: "Where are the current Dawnwalker mods?", body: <><div id="current-mods" className="mod-status"><div><b>01</b><span>NEXUS DIRECTORY</span><p>Use the live category and update-date filters.</p></div><div><b>02</b><span>AUTHOR TOOLS</span><p>Open-source Unreal Engine packaging support is available.</p></div><div><b>03</b><span>COMPATIBILITY</span><p>Every file still needs its own version and dependency check.</p></div></div><p className="note"><a href="https://www.nexusmods.com/games/thebloodofdawnwalker/mods" target="_blank" rel="noreferrer">Open the live Dawnwalker Nexus Mods directory ↗</a>. This guide links to original author pages and does not mirror executable files, trainers or archives.</p></> },
       { title: "Which Dawnwalker mod category do you need?", body: <table className="editorial-table"><caption>Use the live Nexus listing to verify each individual download</caption><thead><tr><th scope="col">If you want…</th><th scope="col">Check on the mod page</th><th scope="col">Avoid assuming</th></tr></thead><tbody><tr><th scope="row">Performance or frame-time changes</th><td>Your game version, rendering settings, dependencies and recent user reports.</td><td>That a third-party tweak is an official fix or works on every GPU.</td></tr><tr><th scope="row">Visual or post-processing changes</th><td>Preview images, required tools, compatibility notes and how to restore defaults.</td><td>That a visual preset fixes base-game flicker or stutter.</td></tr><tr><th scope="row">UI, camera or accessibility changes</th><td>Load instructions, controller support and conflicts with other interface mods.</td><td>That all quality-of-life files work together without testing.</td></tr><tr><th scope="row">Timer, cheat or progression tools</th><td>Save-game impact, achievement notes and the exact uninstall procedure.</td><td>That removing the file reverses a progression change.</td></tr></tbody></table> },
       { title: "How do you evaluate a mod before downloading?", body: <div className="visual-checklist"><div><span>1</span><b>Update date</b><small>Was it updated for your current game build?</small></div><div><span>2</span><b>Requirements</b><small>Does it require UE4SS, another loader or a specific edition?</small></div><div><span>3</span><b>Recent posts</b><small>Are players reporting crashes, broken saves or a clean launch?</small></div><div><span>4</span><b>Reversal</b><small>Can you remove it without abandoning the save?</small></div></div> },

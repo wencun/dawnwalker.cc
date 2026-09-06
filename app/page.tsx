@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 };
 
 const cards = [
+  ["Quest escape", "Home Sweet Home time loop", "Find the well that ends the repeating dream, avoid the trap and see the reward without a broad walkthrough.", "/home-sweet-home"],
   ["Visual issue", "Screen flickering or shimmering?", "Use a separate PC and PS5 Pro diagnostic path instead of treating every display symptom as the same bug.", "/flickering-fix"],
   ["Patch 1.0.2", "What did the latest hotfix fix?", "Check the official quest, controller and known-issue changes before trying an old workaround.", "/patch-notes"],
   ["PC fix", "Crashing or stuttering?", "Match the exact symptom to the official Full Screen workaround or safe crash checks.", "/crash-and-stutter-fix"],
