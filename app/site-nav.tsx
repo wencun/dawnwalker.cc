@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import type { MouseEvent } from "react";
+import { useEffect, useRef, useState, type SyntheticEvent } from "react";
 import { LanguageSwitcher } from "./language-switcher";
 
 type Locale = "en" | "pl" | "ru";
@@ -86,13 +86,24 @@ const navigation: Record<Locale, Navigation> = {
 
 export function SiteNav() {
   const pathname = usePathname() || "/";
+  const navRef = useRef<HTMLElement>(null);
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
   const locale: Locale = pathname === "/pl" || pathname.startsWith("/pl/") ? "pl" : pathname === "/ru" || pathname.startsWith("/ru/") ? "ru" : "en";
   const home = locale === "en" ? "/" : `/${locale}`;
   const subtitle = locale === "en" ? "UNOFFICIAL FAN GUIDE" : locale === "pl" ? "NIEOFICJALNY PORADNIK FANOWSKI" : "НЕОФИЦИАЛЬНЫЙ ФАН-ГИД";
   const menu = navigation[locale];
-  const closeMenu = (event: MouseEvent<HTMLAnchorElement>) => event.currentTarget.closest("details")?.removeAttribute("open");
+  const closeMenu = () => setOpenGroup(null);
+  const toggleMenu = (label: string) => (event: SyntheticEvent<HTMLDetailsElement>) => setOpenGroup(event.currentTarget.open ? label : null);
 
-  return <nav className="site-nav" aria-label="Main navigation">
+  useEffect(() => {
+    const closeOnOutsidePointer = (event: PointerEvent) => {
+      if (!navRef.current?.contains(event.target as Node)) setOpenGroup(null);
+    };
+    document.addEventListener("pointerdown", closeOnOutsidePointer);
+    return () => document.removeEventListener("pointerdown", closeOnOutsidePointer);
+  }, []);
+
+  return <nav className="site-nav" aria-label="Main navigation" ref={navRef} onKeyDown={(event) => { if (event.key === "Escape") setOpenGroup(null); }}>
     <a className="brand" href={home}>DAWNWALKER <span>GUIDE</span><small>{subtitle}</small></a>
     <div className="site-nav-links">
       {menu.primary.map((item) => {
@@ -101,7 +112,7 @@ export function SiteNav() {
       })}
       {menu.groups.map((group) => {
         const active = group.items.some((item) => pathname === item.href);
-        return <details className={`site-nav-menu${active ? " active" : ""}`} key={group.label}>
+        return <details className={`site-nav-menu${active ? " active" : ""}`} key={group.label} open={openGroup === group.label} onToggle={toggleMenu(group.label)}>
           <summary>{group.label}</summary>
           <div role="menu" aria-label={group.label}>
             {group.items.map((item) => <a key={item.href} href={item.href} role="menuitem" onClick={closeMenu} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</a>)}
