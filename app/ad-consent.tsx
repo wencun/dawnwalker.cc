@@ -15,8 +15,14 @@ declare global {
 const AdConsentContext = createContext<ConsentContextValue>({ consent: "loading", choose: () => undefined });
 const storageKey = "dawnarchive-ad-consent";
 const consentEvent = "dawnarchive-ad-consent-change";
+const regionalConsentCookie = "dawnwalker-ad-consent-required";
+
+function requiresRegionalConsent() {
+  return !document.cookie.split("; ").includes(`${regionalConsentCookie}=0`);
+}
 
 function readConsent(): Consent {
+  if (!requiresRegionalConsent()) return "accepted";
   const saved = window.localStorage.getItem(storageKey);
   return saved === "accepted" || saved === "declined" ? saved : "loading";
 }
