@@ -42,7 +42,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   if (!locales.includes(locale as Locale)) return {};
   const item = copy[locale as Locale];
-  return regionalMetadata(locale as Locale, item.title, item.dek, `/${locale}/review-embargo`, ["The Blood of Dawnwalker review", "The Blood of Dawnwalker recenzje", "The Blood of Dawnwalker обзоры"]);
+  // Czech does not have a localized review page. Do not advertise a non-existent
+  // /cs/review-embargo URL through hreflang on the Polish/Russian pages.
+  return regionalMetadata(locale as Locale, item.title, item.dek, `/${locale}/review-embargo`, ["The Blood of Dawnwalker review", "The Blood of Dawnwalker recenzje", "The Blood of Dawnwalker обзоры"], false);
 }
 
 export default async function LocalizedReviewPage({ params }: { params: Promise<{ locale: string }> }) {
