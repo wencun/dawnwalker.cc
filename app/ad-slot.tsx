@@ -53,11 +53,10 @@ function AdFrame({ unit, eager = false }: { unit: Unit; eager?: boolean }) {
       host.append(options, adScript);
       trackAdRequest(`${unit.width}x${unit.height}`, "display");
     };
-    // A visible header slot may request immediately after consent. All other
-    // slots still wait until they approach the viewport, then use a short delay
-    // so answer-first visitors can generate a viewable impression.
-    const timeout = window.setTimeout(loadAd, eager ? 0 : 1200);
-    return () => { window.clearTimeout(timeout); host.replaceChildren(); };
+    // Request immediately once a slot is eligible to be seen. Keeping the
+    // viewport gate avoids loading ads the visitor will never view.
+    loadAd();
+    return () => { host.replaceChildren(); };
   }, [consent, eager, nearViewport, unit]);
 
   if (consent !== "accepted") return null;
@@ -103,14 +102,10 @@ function NativeAdFrame() {
       host.append(container, script);
       trackAdRequest("native-content", "native");
     };
-    let idleId: number | undefined;
-    if ("requestIdleCallback" in window) {
-      idleId = window.requestIdleCallback(loadAd, { timeout: 1800 });
-    } else {
-      loadAd();
-    }
+    // Native inventory is the only currently revenue-producing format, so do
+    // not defer it further once it is near the reader's viewport.
+    loadAd();
     return () => {
-      if (idleId !== undefined && "cancelIdleCallback" in window) window.cancelIdleCallback(idleId);
       host.replaceChildren();
     };
   }, [consent, failed, nearViewport]);
