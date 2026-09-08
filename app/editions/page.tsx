@@ -1,8 +1,8 @@
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Pre-Order Bonus & Editions: How to Claim",
-  "Compare Dawnwalker Standard, Eclipse, Day One and Collector's Edition contents, learn what the pre-order armor unlock includes and what to check if it is missing.",
+  "Blood of Dawnwalker Day One & Collector's Edition Contents",
+  "Compare Blood of Dawnwalker Day One Edition and Collector's Edition contents, plus Standard and Eclipse extras, pre-order armor and what to do if a bonus is missing.",
   "/editions",
   ["The Blood of Dawnwalker editions", "Blood of Dawnwalker pre order bonus", "Blood of Dawnwalker Day One Edition", "Blood of Dawnwalker Collector's Edition", "Blood of Dawnwalker Eclipse Edition"]
 );
@@ -10,9 +10,9 @@ export const metadata = guideMetadata(
 export default function EditionsPage() {
   return <GuidePage
     eyebrow="BONUS HELP · OFFICIAL EDITION LIST"
-    title="The Blood of Dawnwalker pre-order bonus and editions: what you should receive"
-    dek="Every edition includes the base game. Eligible pre-orders include an early unlock for the Sangoran Wayfarer's Armor—not an exclusive item. Use the purchase receipt and platform entitlement list if the bonus is missing."
-    checked="September 4, 2026"
+    title="Blood of Dawnwalker Day One and Collector&apos;s Edition: contents and bonus"
+    dek="Compare the Blood of Dawnwalker Day One Edition and Collector&apos;s Edition with Standard and Eclipse. Eligible pre-orders include an early armor unlock—not an exclusive item."
+    checked="September 8, 2026"
     sources={[
       { label: "Official Edition Guide", href: "https://en.bandainamcoent.eu/dawnwalker/news/the-blood-of-dawnwalker-edition-guide-choosing-the-best-version-you" },
       { label: "Official buy page", href: "https://dawnwalkergame.com/us/en/buy" },

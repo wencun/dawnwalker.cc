@@ -30,6 +30,8 @@ const navigation: Record<Locale, Navigation> = {
         { href: "/prologue-quest-order", label: "Prologue quest order" },
         { href: "/how-many-spoonfuls-of-herbs", label: "Herbs recipe for Esme" },
         { href: "/forge-it-anew", label: "Forge It Anew" },
+        { href: "/silver-trader", label: "Silver Trader" },
+        { href: "/xanthe-boss-guide", label: "Xanthe boss guide" },
       ] },
       { label: "Game guide", items: [
         { href: "/release-date", label: "Release date" },
@@ -37,6 +39,7 @@ const navigation: Record<Locale, Navigation> = {
         { href: "/gameplay", label: "Gameplay" },
         { href: "/time-system", label: "Time system" },
         { href: "/what-happens-after-30-days", label: "What happens after 30 days" },
+        { href: "/new-game-plus", label: "New Game Plus status" },
         { href: "/endings", label: "Endings" },
         { href: "/editions", label: "Editions" },
         { href: "/romance", label: "Romance options" },
