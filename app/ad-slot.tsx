@@ -13,7 +13,12 @@ const popunderUnit = {
   src: "https://pl31243884.profitableratecpmnetwork.com/6d/d8/a7/6dd8a759aa5970fc5c793dee1d0276d8.js",
 };
 
-type AdFormat = "native" | "popunder";
+const socialBarUnit = {
+  scriptId: "adsterra-social-bar",
+  src: "https://pl31243885.profitableratecpmnetwork.com/c1/0b/a0/c10ba0ad65df0cc63662c9743af2a3e0.js",
+};
+
+type AdFormat = "native" | "popunder" | "social-bar";
 
 function trackAdEvent(event: string, slot: string, format: AdFormat) {
   window.gtag?.("event", event, { ad_format: format, ad_slot: slot });
@@ -84,6 +89,27 @@ export function PopunderAd() {
     script.onerror = () => trackAdEvent("ad_slot_load_error", "popunder", "popunder");
     document.head.append(script);
     trackAdEvent("ad_slot_requested", "popunder", "popunder");
+  }, [consent]);
+
+  return null;
+}
+
+// Social Bar is a provider-managed overlay. The tag belongs at the end of the
+// document body and is loaded once only after advertising consent is granted.
+export function SocialBarAd() {
+  const consent = useAdConsent();
+
+  useEffect(() => {
+    if (consent !== "accepted" || document.getElementById(socialBarUnit.scriptId)) return;
+
+    const script = document.createElement("script");
+    script.id = socialBarUnit.scriptId;
+    script.async = true;
+    script.src = socialBarUnit.src;
+    script.onload = () => trackAdEvent("ad_slot_script_loaded", "social-bar", "social-bar");
+    script.onerror = () => trackAdEvent("ad_slot_load_error", "social-bar", "social-bar");
+    document.body.append(script);
+    trackAdEvent("ad_slot_requested", "social-bar", "social-bar");
   }, [consent]);
 
   return null;
