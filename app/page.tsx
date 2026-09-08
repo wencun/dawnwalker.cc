@@ -24,6 +24,7 @@ const cards = [
   ["Romance route", "How do you romance Lacra?", "Follow the spoiler-marked quest order, then protect the Mandrake choice with a manual save.", "/lacra-romance"],
   ["Anca quest", "Where is the Font of Life?", "Follow the late Anca route and save before the inn conversation that follows the Font objective.", "/font-of-life"],
   ["Completion", "Trophy and Platinum roadmap", "Plan the 47-trophy launch list, difficulty requirement and save rotation before locking a route.", "/trophy-guide"],
+  ["Gear", "What is the best armor?", "Compare confirmed legendary routes and pick sword, tank or vampire gear without chasing an unverified early set.", "/best-armor"],
   ["Endings", "How many endings are there?", "Use a spoiler-marked outcome guide and save plan instead of replaying the whole opening blind.", "/endings"],
   ["Walkthrough", "Quest order, choices and missable answers", "Start with the prologue route, then open a focused answer for the exact quest or choice blocking your run.", "/walkthrough"],
   ["PC mods", "Dawnwalker mods on Nexus", "Open the live Nexus directory, then use version, dependency and save-safety checks before installing.", "/mods"],

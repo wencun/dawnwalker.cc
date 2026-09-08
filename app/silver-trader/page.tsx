@@ -1,37 +1,39 @@
-import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "Blood of Dawnwalker Silver Trader: Location & How to Sell Silver",
-  "Find the Blood of Dawnwalker Silver Trader in Svartrau, complete the prerequisite that makes him trade, and sell contraband silver without wasting a trip.",
+  "Where to Sell Silver in The Blood of Dawnwalker: Silver Trader Location",
+  "Find the Blood of Dawnwalker Silver Trader in Svartrau, learn the Into the Den and Infamy prerequisites, and sell contraband silver without an unnecessary trip.",
   "/silver-trader",
-  ["Blood of Dawnwalker Silver Trader", "where to sell silver Blood of Dawnwalker", "Dawnwalker silver trader location", "how to sell silver Dawnwalker", "Into the Den Silver Trader"],
+  ["Blood of Dawnwalker silver trader", "where to sell silver Blood of Dawnwalker", "Blood of Dawnwalker silver merchant", "Dawnwalker sell silver"],
 );
 
 export default function SilverTraderPage() {
   return <GuidePage
-    eyebrow="MERCHANT LOCATION · EARLY-TO-MIDGAME ROUTE"
-    title="Blood of Dawnwalker Silver Trader: location and how to sell silver"
-    dek="To sell contraband silver, complete Into the Den first, then visit the Silver Trader in Svartrau&apos;s Neustadt District. If he will not trade, check the quest prerequisite before searching for another merchant."
+    eyebrow="MERCHANT ANSWER · LOCATION AND UNLOCK CHECK"
+    title="Where to sell silver in The Blood of Dawnwalker"
+    dek="Sell contraband silver to the Silver Trader in Svartrau City. Complete Into the Den first, or reach the required Infamy progression, before assuming the merchant is unavailable."
     checked="September 8, 2026"
-    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · SELLING SILVER</span><p><b>Finish Into the Den, then go to Svartrau&apos;s Neustadt District.</b> The Silver Trader is in the city&apos;s southwest area. Without the quest&apos;s information trigger, he may refuse to buy your contraband.</p></div>}
+    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER</span><p><b>The Silver Trader is in Svartrau City near the western gate.</b> Guides report that you must first complete Into the Den or meet the relevant Infamy progression before the trading option becomes available.</p></div>}
     faqs={[
-      { question: "Where is the Silver Trader in Blood of Dawnwalker?", answer: "The current published route places the Silver Trader in Svartrau City&apos;s Neustadt District, toward the southwest of the city." },
-      { question: "Why won&apos;t the Silver Trader buy my silver?", answer: "Complete Into the Den before making the trip. The published route reports that its information trigger is required before the merchant will trade." },
-      { question: "Can any merchant buy silver in Blood of Dawnwalker?", answer: "Silver is treated as contraband in the published route, so do not assume an ordinary merchant will buy it. Use the named Silver Trader after the prerequisite is complete." },
+      { question: "Where is the Silver Trader in The Blood of Dawnwalker?", answer: "Published guides place the Silver Trader in Svartrau City, near its western side." },
+      { question: "Why can’t I sell silver yet?", answer: "Check whether Into the Den was completed and whether your current Infamy progression meets the merchant’s dialogue requirement." },
+      { question: "Can ordinary vendors buy silver?", answer: "Silver is treated as contraband in launch guides, so ordinary vendors may not offer the relevant trade." },
     ]}
     nextSteps={[
-      { label: "Return to the main walkthrough", href: "/walkthrough", description: "Open the next focused quest answer after the merchant visit." },
-      { label: "Find sword shards", href: "/forge-it-anew", description: "Use the separate route for Uriashi and the holy-sword quest." },
-      { label: "Protect your save", href: "/cant-save", description: "Keep a save-lock issue separate from a quest prerequisite." },
+      { label: "Follow the prologue route", href: "/prologue-quest-order", description: "Find the safe place to take the prerequisite detour." },
+      { label: "Plan a quest-safe route", href: "/walkthrough", description: "Avoid spending time segments without knowing the consequence." },
+      { label: "Find a stronger weapon", href: "/forge-it-anew", description: "Use the verified sword-shard route." },
     ]}
     sources={[
-      { label: "PC Gamer — where to sell silver and the Into the Den prerequisite", href: "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-silver/" },
+      { label: "PC Gamer — How to sell silver", href: "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-silver/" },
+      { label: "PowerPyx — All Silver Trader locations", href: "https://www.powerpyx.com/blood-of-dawnwalker-all-silver-trader-locations/" },
+      { label: "The Big Lead — Where to sell silver items", href: "https://www.thebiglead.com/blood-of-dawnwalker-sell-silver/" },
+      { label: "All Things How — Silver Trader guide", href: "https://allthings.how/the-blood-of-dawnwalker-how-to-sell-silver-at-the-silver-trader/" },
     ]}
     sections={[
-      { title: "Silver Trader location at a glance", body: <div className="fact-grid"><p><b>City</b>Svartrau City.</p><p><b>District</b>Neustadt District, in the southwest part of the city.</p><p><b>Prerequisite</b>Complete Into the Den and inspect its information trigger before expecting the merchant to trade.</p><p><b>What he buys</b>Contraband silver, which ordinary merchants may not accept.</p></div> },
-      { title: "How do you unlock the Silver Trader?", body: <ol><li><b>Complete Into the Den:</b> finish the early quest before travelling specifically for the Silver Trader.</li><li><b>Inspect the quest information:</b> the published route identifies this as the trigger that lets Coen use the merchant&apos;s service.</li><li><b>Travel to Svartrau:</b> enter the Neustadt District and check the southwest part of the city.</li><li><b>Choose the informed dialogue:</b> if the trader is evasive, use the dialogue showing that Coen knows what he is doing.</li><li><b>Confirm the sale:</b> sell one item first to verify that the merchant inventory and silver category are available in your current state.</li></ol> },
-      { title: "If the Silver Trader still will not trade", body: <p>Do not immediately assume the game is broken. Recheck whether Into the Den is actually complete and whether the related information was inspected, then reload a recent save before the quest hand-in if the dialogue state looks wrong. If the prerequisite is complete and the same refusal persists, record the current game version, quest state and a screenshot before checking the <Link href="/known-issues">known-issues tracker</Link>.</p> },
+      { title: "The shortest route to the Silver Trader", body: <ol><li><b>Finish the prologue prerequisite.</b> Into the Den is the clearest published unlock path.</li><li><b>Travel to Svartrau City.</b> Check the western side of the city for the Silver Trader.</li><li><b>Open the dialogue after the unlock.</b> If no silver option appears, recheck the quest completion and current Infamy level.</li><li><b>Sell only after confirming the price.</b> Silver is contraband; do not discard it as ordinary junk.</li></ol> },
+      { title: "Why the merchant may not appear to work", body: <div className="fact-grid"><p><b>Missing prerequisite</b>Finish Into the Den and read the resulting lead before trying again.</p><p><b>Progression gate</b>Some guides report an Infamy-based alternative unlock.</p><p><b>Wrong vendor</b>Ordinary merchants are not necessarily silver buyers.</p><p><b>Patch differences</b>Record game version if the location or dialogue differs from current guides.</p></div> },
+      { title: "Before making a long trip", body: <p>Save first, verify the prerequisite in your journal, then travel. The answer is a merchant location and unlock check—not a reason to spend multiple time segments repeatedly testing unverified routes.</p> },
     ]}
   />;
 }
