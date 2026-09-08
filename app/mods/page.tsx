@@ -3,8 +3,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Mods: Best Current Nexus Mods (2026)",
-  "Find current The Blood of Dawnwalker Nexus Mods for the story timer, performance and fast travel, with version checks, source links and safe install notes.",
+  "Dawnwalker Mods: Best Nexus Mods & Safe Install (2026)",
+  "Dawnwalker mods on Nexus: find current story-timer, performance and fast-travel mods, then check game version, requirements and save safety before installing.",
   "/mods",
   ["Dawnwalker mods", "The Blood of Dawnwalker mods", "Blood of Dawnwalker Nexus Mods", "Dawnwalker Nexus Mods", "Dawnwalker performance mod", "Dawnwalker disable timer mod", "how to install Dawnwalker mods"],
 );
@@ -12,9 +12,9 @@ export const metadata = guideMetadata(
 export default function ModsPage() {
   return <GuidePage
     eyebrow="THE BLOOD OF DAWNWALKER MODS · CURRENT NEXUS PICKS"
-    title="The Blood of Dawnwalker mods: current Nexus picks and safe install"
-    dek="Looking for the best current Dawnwalker mods? Compare live Nexus options for the story timer, performance and fast travel before installing, then check the exact game version and save risk."
-    checked="September 6, 2026"
+    title="Dawnwalker mods: current Nexus Mods and safe install"
+    dek="Looking for Dawnwalker mods on Nexus? Compare current story-timer, performance and fast-travel options before installing, then check the exact game version, requirements and save risk."
+    checked="September 8, 2026"
     quickAnswer={<div className="answer-visual"><div><span>START HERE · CURRENT NEXUS MODS</span><h2>Which Dawnwalker mod should you inspect first?</h2><p>Start with the live directory, then choose one proven category: more story time, a performance configuration, or fast travel between unlocked shrines. These are third-party files, not official patches.</p><a className="primary" href="https://www.nexusmods.com/games/thebloodofdawnwalker/mods" target="_blank" rel="noreferrer">Open current Dawnwalker mods on Nexus ↗</a></div><Image src="/dawnwalker-night.png" alt="Coen using a vampire traversal ability at night in The Blood of Dawnwalker" width={1280} height={720} priority /></div>}
     nextSteps={[
       { label: "Find current Nexus releases", href: "#current-mods", description: "Use the live directory link and its update-date filters, not an undated download mirror." },
