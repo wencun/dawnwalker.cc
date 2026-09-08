@@ -1,6 +1,6 @@
 import { guideMetadata, GuidePage } from "../guide-page";
 
-export const metadata = guideMetadata("Privacy Policy", "Dawnwalker Guide privacy policy for its independent The Blood of Dawnwalker guide, Google Analytics and display advertising.", "/privacy", ["Dawnwalker Guide privacy policy", "Dawnwalker Guide Google Analytics", "Dawnwalker Guide advertising cookies"]);
+export const metadata = guideMetadata("Privacy Policy", "Dawnwalker Guide privacy policy for its independent The Blood of Dawnwalker guide, Google Analytics and advertising.", "/privacy", ["Dawnwalker Guide privacy policy", "Dawnwalker Guide Google Analytics", "Dawnwalker Guide advertising cookies"]);
 
 export default function PrivacyPage() {
   return <GuidePage

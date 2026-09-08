@@ -3,64 +3,20 @@
 import { useEffect, useRef, useState } from "react";
 import { useAdConsent } from "./ad-consent";
 
-type Unit = { key: string; width: number; height: number };
-
-const units = {
-  mobile: { key: "5aaba314fde053601f466656789e427e", width: 320, height: 50 },
-  rectangle: { key: "8613f0fda70bbca87c39de32c63f5980", width: 300, height: 250 },
-  leaderboard: { key: "2e3058c827b1327717a77c750c89ade9", width: 728, height: 90 },
-  rail: { key: "e8790d6d483b7a56fb1a4de75931fe50", width: 160, height: 600 },
-} satisfies Record<string, Unit>;
-
 const nativeUnit = {
   containerId: "container-278334cfa83cd5121dbb0c49b86a4a7e",
   src: "https://pl31150408.profitableratecpmnetwork.com/278334cfa83cd5121dbb0c49b86a4a7e/invoke.js",
 };
 
-function trackAdRequest(slot: string, format: "display" | "native") {
-  window.gtag?.("event", "ad_slot_requested", { ad_format: format, ad_slot: slot });
-}
+const popunderUnit = {
+  scriptId: "adsterra-popunder",
+  src: "https://pl31243884.profitableratecpmnetwork.com/6d/d8/a7/6dd8a759aa5970fc5c793dee1d0276d8.js",
+};
 
-function AdFrame({ unit, eager = false }: { unit: Unit; eager?: boolean }) {
-  const consent = useAdConsent();
-  const hostRef = useRef<HTMLDivElement>(null);
-  const [nearViewport, setNearViewport] = useState(false);
+type AdFormat = "native" | "popunder";
 
-  useEffect(() => {
-    const host = hostRef.current;
-    if (consent !== "accepted" || !host || nearViewport || eager) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setNearViewport(true);
-        observer.disconnect();
-      }
-    }, { rootMargin: "500px 0px" });
-    observer.observe(host);
-    return () => observer.disconnect();
-  }, [consent, eager, nearViewport]);
-
-  useEffect(() => {
-    const host = hostRef.current;
-    if (consent !== "accepted" || (!eager && !nearViewport) || !host) return;
-
-    const loadAd = () => {
-      host.replaceChildren();
-      const options = document.createElement("script");
-      options.text = `var atOptions = ${JSON.stringify({ key: unit.key, format: "iframe", height: unit.height, width: unit.width, params: {} })};`;
-      const adScript = document.createElement("script");
-      adScript.src = `https://www.highrevenueformat.com/${unit.key}/invoke.js`;
-      adScript.async = false;
-      host.append(options, adScript);
-      trackAdRequest(`${unit.width}x${unit.height}`, "display");
-    };
-    // Request immediately once a slot is eligible to be seen. Keeping the
-    // viewport gate avoids loading ads the visitor will never view.
-    loadAd();
-    return () => { host.replaceChildren(); };
-  }, [consent, eager, nearViewport, unit]);
-
-  if (consent !== "accepted") return null;
-  return <div ref={hostRef} className="ad-frame" style={{ width: unit.width, height: unit.height }} aria-label="Advertisement" />;
+function trackAdEvent(event: string, slot: string, format: AdFormat) {
+  window.gtag?.("event", event, { ad_format: format, ad_slot: slot });
 }
 
 function AdLabel() {
@@ -90,6 +46,8 @@ function NativeAdFrame() {
     const host = hostRef.current;
     if (consent !== "accepted" || !nearViewport || !host || failed) return;
 
+    let inspectionTimer: number | undefined;
+
     const loadAd = () => {
       host.replaceChildren();
       const container = document.createElement("div");
@@ -98,14 +56,24 @@ function NativeAdFrame() {
       script.async = true;
       script.dataset.cfasync = "false";
       script.src = nativeUnit.src;
-      script.onerror = () => setFailed(true);
+      script.onload = () => {
+        trackAdEvent("ad_slot_script_loaded", "native-content", "native");
+        inspectionTimer = window.setTimeout(() => {
+          trackAdEvent(host.querySelector("iframe") ? "ad_slot_rendered" : "ad_slot_empty", "native-content", "native");
+        }, 1500);
+      };
+      script.onerror = () => {
+        trackAdEvent("ad_slot_load_error", "native-content", "native");
+        setFailed(true);
+      };
       host.append(container, script);
-      trackAdRequest("native-content", "native");
+      trackAdEvent("ad_slot_requested", "native-content", "native");
     };
     // Native inventory is the only currently revenue-producing format, so do
     // not defer it further once it is near the reader's viewport.
     loadAd();
     return () => {
+      if (inspectionTimer) window.clearTimeout(inspectionTimer);
       host.replaceChildren();
     };
   }, [consent, failed, nearViewport]);
@@ -114,55 +82,26 @@ function NativeAdFrame() {
   return <div ref={hostRef} className="ad-native-frame" aria-label="Advertisement" />;
 }
 
-export function TopAd() {
+// Popunder has no visual placement in the document. It is loaded once from
+// the root layout, after the visitor has accepted advertising cookies, so it
+// cannot occupy or shift reading content on either mobile or desktop.
+export function PopunderAd() {
   const consent = useAdConsent();
-  const [compact, setCompact] = useState<boolean | null>(null);
 
   useEffect(() => {
-    const query = window.matchMedia("(max-width: 759px)");
-    const update = () => setCompact(query.matches);
-    update();
-    query.addEventListener("change", update);
-    return () => query.removeEventListener("change", update);
-  }, []);
+    if (consent !== "accepted" || document.getElementById(popunderUnit.scriptId)) return;
 
-  if (consent !== "accepted" || compact === null) return null;
-  return <aside className="ad-slot ad-slot-top"><AdLabel /><AdFrame unit={compact ? units.mobile : units.leaderboard} eager /></aside>;
-}
+    const script = document.createElement("script");
+    script.id = popunderUnit.scriptId;
+    script.async = true;
+    script.src = popunderUnit.src;
+    script.onload = () => trackAdEvent("ad_slot_script_loaded", "popunder", "popunder");
+    script.onerror = () => trackAdEvent("ad_slot_load_error", "popunder", "popunder");
+    document.head.append(script);
+    trackAdEvent("ad_slot_requested", "popunder", "popunder");
+  }, [consent]);
 
-export function MiddleAd() {
-  const consent = useAdConsent();
-  const [compact, setCompact] = useState<boolean | null>(null);
-
-  useEffect(() => {
-    const query = window.matchMedia("(max-width: 759px)");
-    const update = () => setCompact(query.matches);
-    update();
-    query.addEventListener("change", update);
-    return () => query.removeEventListener("change", update);
-  }, []);
-
-  if (consent !== "accepted" || compact === null) return null;
-  return <aside className="ad-slot ad-slot-middle"><AdLabel /><AdFrame unit={compact ? units.mobile : units.leaderboard} /></aside>;
-}
-
-// A single rail is reserved for wide desktop viewports only. It never appears
-// on mobile or typical laptop widths, where it would compete with the guide
-// content rather than add a genuinely viewable placement.
-export function DesktopRailAd() {
-  const consent = useAdConsent();
-  const [wideDesktop, setWideDesktop] = useState<boolean | null>(null);
-
-  useEffect(() => {
-    const query = window.matchMedia("(min-width: 1440px)");
-    const update = () => setWideDesktop(query.matches);
-    update();
-    query.addEventListener("change", update);
-    return () => query.removeEventListener("change", update);
-  }, []);
-
-  if (consent !== "accepted" || !wideDesktop) return null;
-  return <aside className="ad-slot ad-slot-rail"><AdLabel /><AdFrame unit={units.rail} /></aside>;
+  return null;
 }
 
 // The revenue-producing NativeBanner belongs immediately after the opening

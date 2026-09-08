@@ -47,7 +47,7 @@ export function AdConsentProvider({ children }: { children: React.ReactNode }) {
 
   return <AdConsentContext.Provider value={{ consent, choose }}>
     {children}
-    {consent === "loading" && <aside className="ad-consent" aria-label="Advertising cookie choice"><p>We use Adsterra display advertising. It may load third-party advertising cookies and pixels.</p><div><button onClick={() => choose("accepted")}>Accept advertising cookies</button><button className="ad-consent-decline" onClick={() => choose("declined")}>Continue without third-party ads</button></div><Link href="/privacy">Privacy policy</Link></aside>}
+    {consent === "loading" && <aside className="ad-consent" aria-label="Advertising cookie choice"><p>We use Adsterra Native and popunder advertising. It may load third-party advertising cookies and pixels.</p><div><button onClick={() => choose("accepted")}>Accept advertising cookies</button><button className="ad-consent-decline" onClick={() => choose("declined")}>Continue without third-party ads</button></div><Link href="/privacy">Privacy policy</Link></aside>}
   </AdConsentContext.Provider>;
 }
 
