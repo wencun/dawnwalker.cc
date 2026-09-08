@@ -12,7 +12,8 @@ export const metadata: Metadata = {
 
 const cards = [
   ["Quest escape", "Home Sweet Home time loop", "Find the well that ends the repeating dream, avoid the trap and see the reward without a broad walkthrough.", "/home-sweet-home"],
-  ["Visual issue", "Screen flickering or shimmering?", "Use a separate PC and PS5 Pro diagnostic path instead of treating every display symptom as the same bug.", "/flickering-fix"],
+  ["PC flickering", "Flickering lights or screen shimmer?", "Start with the current Frame Generation, Ultra post-processing and FPS-cap checks before trying a mod or driver rollback.", "/flickering-fix"],
+  ["Save lock", "Can't save or “Saving is currently locked”?", "Protect the current run, identify a normal mission lock versus a stuck progression event, and use the separate diagnostic path.", "/cant-save"],
   ["Patch 1.0.2", "What did the latest hotfix fix?", "Check the official quest, controller and known-issue changes before trying an old workaround.", "/patch-notes"],
   ["PC fix", "Crashing or stuttering?", "Match the exact symptom to the official Full Screen workaround or safe crash checks.", "/crash-and-stutter-fix"],
   ["Quest route", "Forge It Anew sword shards", "Follow the illustrated route from St. Mihai's note to all three shards, Uriashi and the ritual.", "/forge-it-anew"],

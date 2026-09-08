@@ -21,6 +21,8 @@ const navigation: Record<Locale, Navigation> = {
         { href: "/crash-and-stutter-fix", label: "Crash & stutter fix" },
         { href: "/can-i-run", label: "Can I run?" },
         { href: "/controller-movement-fix", label: "Controller fix" },
+        { href: "/flickering-fix", label: "Flickering fix" },
+        { href: "/cant-save", label: "Can't save?" },
         { href: "/known-issues", label: "Known issues" },
         { href: "/console-performance", label: "Console performance" },
       ] },

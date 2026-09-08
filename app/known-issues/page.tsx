@@ -2,8 +2,8 @@ import { GuidePage, guideMetadata } from "../guide-page";
 import Link from "next/link";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Known Issues & Launch Fixes",
-  "Track The Blood of Dawnwalker controller bugs, startup crashes, black screens, stutter, 30 FPS cutscenes and evidence-backed community workarounds.",
+  "Blood of Dawnwalker Bugs, Glitches & Known Issues",
+  "Track Blood of Dawnwalker bugs, glitches, crashes, save locks, controller movement issues, flickering and official patches with evidence-labelled workarounds.",
   "/known-issues",
   [
     "The Blood of Dawnwalker known issues",
@@ -12,17 +12,22 @@ export const metadata = guideMetadata(
     "Blood of Dawnwalker stuttering fix",
     "Dawnwalker controller bug",
     "Dawnwalker flickering",
+    "Blood of Dawnwalker bugs",
+    "Blood of Dawnwalker glitch",
+    "Dawnwalker movement bug",
+    "Blood of Dawnwalker bug report",
   ],
 );
 
 export default function KnownIssuesPage() {
   return <GuidePage
     eyebrow="LAUNCH HELP DESK · REPORTS SEPARATED FROM FIXES"
-    title="The Blood of Dawnwalker known issues and launch fixes"
-    dek="Launch reports currently cluster around controller movement, startup or cutscene crashes, stutter and uneven console performance. This tracker separates repeated reports, community workarounds and official fixes."
-    checked="September 4, 2026"
+    title="Blood of Dawnwalker bugs, glitches and known issues"
+    dek="Current reports cluster around controller movement, startup or cutscene crashes, locked saving, flickering, stutter and uneven console performance. This tracker separates official fixes from repeated player reports."
+    checked="September 8, 2026"
     faqs={[
       { question: "Why does my Dawnwalker character stop sprinting with a controller?", answer: "The developer now lists gamepad sprint interruption as a known issue and recommends lowering controller sensitivity from 1.0 to 0.8 temporarily. PC Steam players can also try the separate Square-deadzone workaround." },
+      { question: "What are the current Blood of Dawnwalker bugs and glitches?", answer: "The official Hotfix 1.0.2 lists resolved quest blockers and PC controller-input adjustments, while it still names Windowed/Borderless stutter, shader-compilation crashes and PS5 button mapping as open issues. Save locks and flickering are currently community-reported rather than confirmed universal fixes." },
       { question: "Why does The Blood of Dawnwalker crash during cutscenes?", answer: "Several launch-day players report black screens, startup crashes or repeatable cutscene crashes. No universal cause or official fix was verified when this page was checked. Record the platform, game version and exact cutscene before troubleshooting." },
       { question: "Are Dawnwalker cutscenes limited to 30 FPS?", answer: "Launch players and a PC technical report describe a 30 FPS cinematic cap. This tracker does not recommend modifying game files until an official option or a versioned, reversible method is verified." },
     ]}
@@ -30,6 +35,8 @@ export default function KnownIssuesPage() {
       { label: "Fix controller movement", href: "/controller-movement-fix", description: "Use the illustrated PC deadzone workaround for sprint interruption." },
       { label: "Check PC requirements", href: "/can-i-run", description: "Separate compatibility limits from a launch bug or stutter." },
       { label: "Check console modes", href: "/console-performance", description: "Compare official targets with early player reports." },
+      { label: "Cannot save or saving is locked?", href: "/cant-save", description: "Keep a save-lock diagnosis separate from quest consequences." },
+      { label: "Fix PC flickering", href: "/flickering-fix", description: "Use the current Frame Generation and post-processing tests." },
     ]}
     sources={[
       { label: "Steam — developer Known Issues, fixes and workarounds (September 3)", href: "https://steamcommunity.com/app/3751260/discussions/0/588436698284819211/" },
@@ -42,7 +49,7 @@ export default function KnownIssuesPage() {
     sections={[
       {
         title: "Current launch status",
-        body: <div className="fact-grid"><p><b>Developer acknowledged</b>Gamepad sprint interruption is listed in the September 3 Known Issues thread.</p><p><b>Temporary workaround</b>Lower controller sensitivity from 1.0 to 0.8; PC Steam users can also test Square/Raw input.</p><p><b>Repeated report</b>Some PC players report startup black screens, cutscene crashes or crashes returning on the same scene.</p><p><b>Performance reports</b>Stutter, frame pacing and a 30 FPS cinematic cap are reported; results vary by system.</p><p><b>Visual reports</b>PC shimmer and PS5 Pro flicker reports now have a separate <Link href="/flickering-fix">platform-specific diagnostic guide</Link>.</p></div>,
+        body: <div className="fact-grid"><p><b>Officially fixed</b>Hotfix 1.0.2 addresses three quest blockers and PC controller deadzone/input behavior.</p><p><b>Developer acknowledged</b>Windowed/Borderless stutter, shader-compilation crashes and PS5 button mapping remain in the official known-issue list.</p><p><b>Repeated report</b>Players report startup black screens, cutscene crashes or crashes returning at the same scene.</p><p><b>Save-lock reports</b>Some players report that manual and quick saves remain locked after a progression event; use the separate <Link href="/cant-save">can&apos;t-save diagnostic</Link> before risking more progress.</p><p><b>Performance reports</b>Stutter, frame pacing and a 30 FPS cinematic cap are reported; results vary by system.</p><p><b>Visual reports</b>PC shimmer, light flickering and PS5 Pro VRR reports have a separate <Link href="/flickering-fix">platform-specific diagnostic guide</Link>.</p></div>,
       },
       {
         title: "Controller movement: the clearest reproducible workaround",
