@@ -26,25 +26,11 @@ function AdLabel() {
 function NativeAdFrame() {
   const consent = useAdConsent();
   const hostRef = useRef<HTMLDivElement>(null);
-  const [nearViewport, setNearViewport] = useState(false);
   const [failed, setFailed] = useState(false);
 
   useEffect(() => {
     const host = hostRef.current;
-    if (consent !== "accepted" || !host || nearViewport) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setNearViewport(true);
-        observer.disconnect();
-      }
-    }, { rootMargin: "600px 0px" });
-    observer.observe(host);
-    return () => observer.disconnect();
-  }, [consent, nearViewport]);
-
-  useEffect(() => {
-    const host = hostRef.current;
-    if (consent !== "accepted" || !nearViewport || !host || failed) return;
+    if (consent !== "accepted" || !host || failed) return;
 
     let inspectionTimer: number | undefined;
 
@@ -69,14 +55,13 @@ function NativeAdFrame() {
       host.append(container, script);
       trackAdEvent("ad_slot_requested", "native-content", "native");
     };
-    // Native inventory is the only currently revenue-producing format, so do
-    // not defer it further once it is near the reader's viewport.
+    // Native inventory is requested immediately after advertising consent.
     loadAd();
     return () => {
       if (inspectionTimer) window.clearTimeout(inspectionTimer);
       host.replaceChildren();
     };
-  }, [consent, failed, nearViewport]);
+  }, [consent, failed]);
 
   if (consent !== "accepted" || failed) return null;
   return <div ref={hostRef} className="ad-native-frame" aria-label="Advertisement" />;
@@ -104,17 +89,20 @@ export function PopunderAd() {
   return null;
 }
 
-// The revenue-producing NativeBanner belongs immediately after the opening
-// answer on both mobile and desktop. It is loaded once per page.
-export function ContentAd() {
+// The sole NativeBanner is placed directly below the site navigation by the
+// root layout, and loads as soon as advertising consent is granted.
+export function TopNativeAd() {
   const consent = useAdConsent();
   if (consent !== "accepted") return null;
   return <aside className="ad-slot ad-slot-content"><AdLabel /><NativeAdFrame /></aside>;
 }
 
-// ContentAd now owns the sole NativeBanner placement. This compatibility
-// component keeps existing page templates from requesting the same native unit
-// twice on one page.
+// Existing templates still render this component, but the one global top slot
+// above owns the NativeBanner so pages cannot request duplicate inventory.
+export function ContentAd() {
+  return null;
+}
+
 export function NativeContentAd() {
   return null;
 }
