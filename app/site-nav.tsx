@@ -32,6 +32,8 @@ const navigation: Record<Locale, Navigation> = {
         { href: "/forge-it-anew", label: "Forge It Anew" },
         { href: "/silver-trader", label: "Silver Trader" },
         { href: "/xanthe-boss-guide", label: "Xanthe boss guide" },
+        { href: "/font-of-life", label: "Font of Life" },
+        { href: "/lacra-romance", label: "Lacra romance" },
       ] },
       { label: "Game guide", items: [
         { href: "/release-date", label: "Release date" },
@@ -40,6 +42,7 @@ const navigation: Record<Locale, Navigation> = {
         { href: "/time-system", label: "Time system" },
         { href: "/what-happens-after-30-days", label: "What happens after 30 days" },
         { href: "/new-game-plus", label: "New Game Plus status" },
+        { href: "/trophy-guide", label: "Trophy guide" },
         { href: "/endings", label: "Endings" },
         { href: "/editions", label: "Editions" },
         { href: "/romance", label: "Romance options" },

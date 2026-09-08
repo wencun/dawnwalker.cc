@@ -1,5 +1,6 @@
 import { GuidePage, guideMetadata } from "../guide-page";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata = guideMetadata(
   "The Blood of Dawnwalker Romance Options: Anca, Lacra & Crake",
@@ -19,7 +20,7 @@ export default function RomancePage() {
     eyebrow="ROMANCE GUIDE · ROUTE SPOILERS"
     title="The Blood of Dawnwalker romance options: Anca, Lacra and Crake"
     dek="There are three romance routes: Anca, Lacra and Crake, whose birth name is Marat. Launch-build guides also report that Coen can pursue all three in one playthrough, but optional quest time and late-game scenes still make route planning important."
-    checked="September 4, 2026"
+    checked="September 8, 2026"
     quickAnswer={<div className="answer-visual"><div><span>CONFIRMED ROSTER</span><h2>Three routes: Anca, Lacra and Crake (Marat).</h2><p>You can pursue all three, and each romance primarily advances through that character&apos;s questline.</p></div><Image src="/dawnwalker-coen.png" alt="Coen, the protagonist of The Blood of Dawnwalker" width={1280} height={720} priority /></div>}
     faqs={[
       { question: "Who can you romance in The Blood of Dawnwalker?", answer: "The three romance options are Anca, Lacra and Crake. Crake is also known by his birth name, Marat." },
@@ -29,6 +30,8 @@ export default function RomancePage() {
     ]}
     nextSteps={[
       { label: "Read the route map", href: "#roster", description: "See all three characters and the questlines that begin each romance." },
+      { label: "Romance Lacra", href: "/lacra-romance", description: "Use the dedicated spoiler-marked quest order and Mandrake save point." },
+      { label: "Finish Font of Life", href: "/font-of-life", description: "Use the focused Anca route and inn-conversation save point." },
       { label: "Understand the time system", href: "/time-system", description: "Relationship quests may compete with other time-sensitive choices." },
       { label: "Track launch issues", href: "/known-issues", description: "Check whether a missing trigger is a route choice or a reported bug." },
     ]}
@@ -45,7 +48,7 @@ export default function RomancePage() {
       },
       {
         title: "Reported romance roster",
-        body: <div id="roster" className="romance-routes"><div><span>A</span><b>Anca</b><small>Human · healer</small><p>Begin with her prologue medicine and Page-Turner interactions, then continue Echoes of Silenced Bells, Between the Words and The Font of Life.</p></div><div><span>L</span><b>Lacra</b><small>Vrakhiri · vampire</small><p>Begin through A Friend Like This near Svartrau, form the alliance and continue her optional route before the final sequence.</p></div><div><span>C</span><b>Crake (Marat)</b><small>Human · rebel leader</small><p>Save Mert, follow the trail to the Manumits and continue the connected rebel quests while showing clear romantic interest.</p></div></div>,
+        body: <div id="roster" className="romance-routes"><div><span>A</span><b>Anca</b><small>Human · healer</small><p>Begin with her prologue medicine and Page-Turner interactions, then continue Echoes of Silenced Bells, Between the Words and <Link href="/font-of-life">the Font of Life</Link>.</p></div><div><span>L</span><b>Lacra</b><small>Vrakhiri · vampire</small><p>Begin through A Friend Like This near Svartrau, form the alliance and continue her optional route before the final sequence. Use the dedicated <Link href="/lacra-romance">Lacra romance guide</Link> for the late Mandrake branch.</p></div><div><span>C</span><b>Crake (Marat)</b><small>Human · rebel leader</small><p>Save Mert, follow the trail to the Manumits and continue the connected rebel quests while showing clear romantic interest.</p></div></div>,
       },
       {
         title: "Can you romance all three in one playthrough?",
