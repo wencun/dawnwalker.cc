@@ -146,15 +146,15 @@ export function MiddleAd() {
   return <aside className="ad-slot ad-slot-middle"><AdLabel /><AdFrame unit={compact ? units.mobile : units.leaderboard} /></aside>;
 }
 
-// A single rail is reserved for very wide desktop viewports only. It never
-// appears on mobile or typical laptop widths, where it would compete with the
-// guide content rather than add a genuinely viewable placement.
+// A single rail is reserved for wide desktop viewports only. It never appears
+// on mobile or typical laptop widths, where it would compete with the guide
+// content rather than add a genuinely viewable placement.
 export function DesktopRailAd() {
   const consent = useAdConsent();
   const [wideDesktop, setWideDesktop] = useState<boolean | null>(null);
 
   useEffect(() => {
-    const query = window.matchMedia("(min-width: 1900px)");
+    const query = window.matchMedia("(min-width: 1440px)");
     const update = () => setWideDesktop(query.matches);
     update();
     query.addEventListener("change", update);
