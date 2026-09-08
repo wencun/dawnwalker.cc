@@ -165,28 +165,17 @@ export function DesktopRailAd() {
   return <aside className="ad-slot ad-slot-rail"><AdLabel /><AdFrame unit={units.rail} /></aside>;
 }
 
-// Kept separate from the header ad: this unit belongs immediately after the
-// page's opening answer, where it is visible without delaying the answer.
+// The revenue-producing NativeBanner belongs immediately after the opening
+// answer on both mobile and desktop. It is loaded once per page.
 export function ContentAd() {
   const consent = useAdConsent();
-  const [compact, setCompact] = useState<boolean | null>(null);
-
-  useEffect(() => {
-    const query = window.matchMedia("(max-width: 759px)");
-    const update = () => setCompact(query.matches);
-    update();
-    query.addEventListener("change", update);
-    return () => query.removeEventListener("change", update);
-  }, []);
-
-  if (consent !== "accepted" || compact === null) return null;
-  return <aside className="ad-slot ad-slot-content"><AdLabel /><AdFrame unit={compact ? units.mobile : units.leaderboard} /></aside>;
+  if (consent !== "accepted") return null;
+  return <aside className="ad-slot ad-slot-content"><AdLabel /><NativeAdFrame /></aside>;
 }
 
-// Native inventory gets more room than a fixed banner, so it belongs between
-// substantial guide sections rather than beside the opening answer.
+// ContentAd now owns the sole NativeBanner placement. This compatibility
+// component keeps existing page templates from requesting the same native unit
+// twice on one page.
 export function NativeContentAd() {
-  const consent = useAdConsent();
-  if (consent !== "accepted") return null;
-  return <aside className="ad-slot ad-slot-native"><AdLabel /><NativeAdFrame /></aside>;
+  return null;
 }
