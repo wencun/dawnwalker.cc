@@ -2,8 +2,8 @@ import { GuidePage, guideMetadata } from "../guide-page";
 import Link from "next/link";
 
 export const metadata = guideMetadata(
-  "Blood of Dawnwalker Bugs, Glitches & Known Issues",
-  "Track Blood of Dawnwalker bugs, glitches, crashes, save locks, controller movement issues, flickering and official patches with evidence-labelled workarounds.",
+  "Blood of Dawnwalker Bugs & Known Issues: Fixes",
+  "Current Blood of Dawnwalker bugs: official hotfix status, controller sprint workaround, crashing and stutter checks, flickering tests, and save-lock reports.",
   "/known-issues",
   [
     "The Blood of Dawnwalker known issues",
@@ -22,9 +22,9 @@ export const metadata = guideMetadata(
 export default function KnownIssuesPage() {
   return <GuidePage
     eyebrow="LAUNCH HELP DESK · REPORTS SEPARATED FROM FIXES"
-    title="Blood of Dawnwalker bugs, glitches and known issues"
-    dek="Current reports cluster around controller movement, startup or cutscene crashes, locked saving, flickering, stutter and uneven console performance. This tracker separates official fixes from repeated player reports."
-    checked="September 8, 2026"
+    title="Blood of Dawnwalker bugs and known issues: crashes, flickering and controller fixes"
+    dek="Check the current official hotfix status first, then use symptom-specific steps for controller sprint interruption, crashes, stutter, flickering and save locks. Official fixes and player reports are kept separate."
+    checked="September 9, 2026"
     faqs={[
       { question: "Why does my Dawnwalker character stop sprinting with a controller?", answer: "The developer now lists gamepad sprint interruption as a known issue and recommends lowering controller sensitivity from 1.0 to 0.8 temporarily. PC Steam players can also try the separate Square-deadzone workaround." },
       { question: "What are the current Blood of Dawnwalker bugs and glitches?", answer: "The official Hotfix 1.0.2 lists resolved quest blockers and PC controller-input adjustments, while it still names Windowed/Borderless stutter, shader-compilation crashes and PS5 button mapping as open issues. Save locks and flickering are currently community-reported rather than confirmed universal fixes." },

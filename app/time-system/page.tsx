@@ -1,8 +1,8 @@
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker 30-Day Time Limit: Does Exploration Advance Time?",
-  "How The Blood of Dawnwalker's 30-day time limit works: 8 daytime units, what advances time, whether exploration uses time and if you can complete every quest.",
+  "Dawnwalker 30-Day Time Limit: Does Exploration Advance Time?",
+  "Does time pass while exploring in The Blood of Dawnwalker? See what advances the 30-day limit, how the opening eight daytime parts work, and what is still unconfirmed.",
   "/time-system",
   ["The Blood of Dawnwalker time limit", "Blood of Dawnwalker 30 days", "Blood of Dawnwalker time system", "Blood of Dawnwalker timer free mode", "Does exploration advance time in Blood of Dawnwalker"]
 );
@@ -10,7 +10,7 @@ export const metadata = guideMetadata(
 export default function TimeSystemPage() {
   return <GuidePage
     eyebrow="PLAYER CHOICE · OFFICIAL MECHANICS"
-    title="Does The Blood of Dawnwalker’s 30-day limit make you rush?"
+    title="Dawnwalker 30-day time limit: does exploration advance time?"
     dek="No. It is not a real-world countdown: exploration can be time-neutral, while specific choices and quest actions spend in-game time. The official opening example divides daylight into 8 parts."
     checked="September 3, 2026"
     nativeAdAfter="What advances the in-game time?"

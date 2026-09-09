@@ -3,8 +3,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "Blood of Dawnwalker Patch Notes: Hotfix 1.0.2 Changes",
-  "Blood of Dawnwalker patch notes for Hotfix 1.0.2: quest fixes, PC controller input changes, current known issues and safe update checks.",
+  "Blood of Dawnwalker Patch Notes: Hotfix 1.0.2 & Known Issues",
+  "Official Blood of Dawnwalker Hotfix 1.0.2 patch notes: quest blocker fixes, PC controller input changes, current known issues and what to check after updating.",
   "/patch-notes",
   ["The Blood of Dawnwalker patch notes", "The Blood of Dawnwalker hotfix", "Blood of Dawnwalker update", "Dawnwalker patch 1.0.2", "Dawnwalker hotfix notes"],
 );
@@ -12,9 +12,9 @@ export const metadata = guideMetadata(
 export default function PatchNotesPage() {
   return <GuidePage
     eyebrow="PATCH TRACKER · OFFICIAL NOTES FIRST"
-    title="Blood of Dawnwalker patch notes: Hotfix 1.0.2 changes"
+    title="Blood of Dawnwalker patch notes: official Hotfix 1.0.2 and known issues"
     dek="Hotfix 1.0.2 is live on PC, PlayStation 5 and Xbox Series X|S. It fixes several blocked quest states, adjusts PC controller input and documents the launch issues that still need a workaround."
-    checked="September 8, 2026"
+    checked="September 9, 2026"
     quickAnswer={<div className="answer-visual"><div><span>HOTFIX 1.0.2 · SEPTEMBER 4</span><h2>Update first. Troubleshoot second.</h2><p>The official hotfix resolves three quest blockers and makes PC-specific controller input changes. If your issue is still present, use the symptom cards below instead of applying random launch-day fixes.</p></div><Image src="/dawnwalker-night.png" alt="Coen travelling at night in The Blood of Dawnwalker" width={1440} height={810} priority /></div>}
     faqs={[
       { question: "What is in The Blood of Dawnwalker Hotfix 1.0.2?", answer: "The official September 4 hotfix fixes blocked Farkas, Lunka and Uriashi quest states. On PC it also adjusts deadzone and input behavior related to sprint interruption." },

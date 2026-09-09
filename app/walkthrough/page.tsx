@@ -3,8 +3,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Walkthrough: Quests, Choices & Routes",
-  "A spoiler-aware The Blood of Dawnwalker walkthrough hub for the prologue, quest order, timed choices, romance routes, fixes and exact quest answers.",
+  "The Blood of Dawnwalker Walkthrough: Quest Order & Choices",
+  "A spoiler-aware The Blood of Dawnwalker walkthrough hub: prologue quest order, timed choices, romance routes, quest answers and current patch status.",
   "/walkthrough",
   ["The Blood of Dawnwalker walkthrough", "Blood of Dawnwalker quest guide", "Dawnwalker choices", "Dawnwalker prologue walkthrough", "Dawnwalker quest order"],
 );
@@ -12,7 +12,7 @@ export const metadata = guideMetadata(
 export default function WalkthroughPage() {
   return <GuidePage
     eyebrow="WALKTHROUGH HUB · SPOILER AWARE"
-    title="The Blood of Dawnwalker walkthrough: quests, choices and routes"
+    title="The Blood of Dawnwalker walkthrough: quest order, choices and answers"
     dek="Use this as a route map, not a fake 'complete' guide. Open the exact answer you need, check the spoiler label and return here as verified launch-build quest pages are added."
     checked="September 4, 2026"
     quickAnswer={<div className="answer-visual"><div><span>START HERE</span><h2>Plan the prologue first, then solve one quest or decision at a time.</h2><p>Timed objectives show a clock; actions that consume segments show an hourglass and cost.</p></div><Image src="/dawnwalker-coen.png" alt="Coen in The Blood of Dawnwalker" width={1280} height={720} priority /></div>}

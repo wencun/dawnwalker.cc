@@ -10,8 +10,8 @@ const route = [
 ];
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Prologue Walkthrough & Best Quest Order",
-  "A visual Dawnwalker prologue quest order for all eight daytime segments, what to do before sundown, which quests can wait and how to avoid wasting time.",
+  "Dawnwalker Prologue Walkthrough: Best Quest Order & Time Segments",
+  "The Blood of Dawnwalker prologue walkthrough with the eight daytime segments, a tested quest order, time-sensitive choices and quests that can wait.",
   "/prologue-quest-order",
   ["The Blood of Dawnwalker prologue walkthrough", "Dawnwalker prologue quest order", "what to do before sundown Dawnwalker", "best Dawnwalker quest order", "Dawnwalker prologue time segments"],
 );
@@ -19,7 +19,7 @@ export const metadata = guideMetadata(
 export default function PrologueQuestOrderPage() {
   return <GuidePage
     eyebrow="PROLOGUE WALKTHROUGH · SPOILERS"
-    title="The Blood of Dawnwalker prologue quest order: what to do before sundown"
+    title="Dawnwalker prologue walkthrough: best quest order and eight time segments"
     dek="The prologue gives you eight daytime segments and deliberately does not leave enough time for every marked task. This route prioritizes story consequences and time-sensitive quests; it is a published tested route, not the only valid role-playing choice."
     checked="September 4, 2026"
     quickAnswer={<div className="answer-visual route-hero"><div><span>ROUTE AT A GLANCE</span><h2>Eight segments. Prioritize timed quests; leave non-expiring work for later.</h2><p>Look for the clock on time-sensitive quests and the hourglass cost before confirming an action.</p></div><Image src="/dawnwalker-coen.png" alt="Coen during the opening hours of The Blood of Dawnwalker" width={1280} height={720} priority /></div>}

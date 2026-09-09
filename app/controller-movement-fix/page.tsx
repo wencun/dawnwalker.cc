@@ -4,8 +4,8 @@ import Link from "next/link";
 const youtubeSearch = "https://www.youtube.com/results?search_query=The+Blood+of+Dawnwalker+controller+movement+fix+deadzone";
 
 export const metadata = guideMetadata(
-  "Dawnwalker Controller Movement Bug Fix: Sprint Stops & Deadzone",
-  "Fix The Blood of Dawnwalker controller sprint bug with the developer-listed 0.8 sensitivity workaround, plus illustrated Steam Input deadzone steps for PC.",
+  "Dawnwalker Controller Bug Fix: Sprint Stops & Deadzone",
+  "Fix The Blood of Dawnwalker controller sprint and slow-walk bug: start with the developer-listed 0.8 sensitivity workaround, then test the reversible PC Steam Input deadzone path.",
   "/controller-movement-fix",
   [
     "Dawnwalker controller movement bug fix",
@@ -19,9 +19,9 @@ export const metadata = guideMetadata(
 export default function ControllerMovementFixPage() {
   return <GuidePage
     eyebrow="LAUNCH FIX · CONTROLLER MOVEMENT"
-    title="Dawnwalker controller movement bug: how to stop sprinting and slow-walk issues"
+    title="Dawnwalker controller bug fix: sprint stops, slow walking and deadzone"
     dek="The developer's Known Issues thread now acknowledges sprint interruption on gamepad and recommends lowering controller sensitivity from 1.0 to 0.8 while a fix is being prepared. PC Steam players also report success with a reversible Square-deadzone workaround."
-    checked="September 4, 2026"
+    checked="September 9, 2026"
     faqs={[
       { question: "How do I fix the Dawnwalker controller sprint bug?", answer: "First lower controller sensitivity from 1.0 to 0.8 in the game settings; the developer lists this as a temporary workaround. PC Steam players can also try a Custom, Square left-stick deadzone if diagonal movement still interrupts sprinting." },
       { question: "Why does Coen stop sprinting or walk slowly when moving diagonally?", answer: "Players repeatedly report that diagonal stick input can fall below the game's apparent full-movement threshold. The exact cause has not been confirmed in an official technical notice, so this guide describes the symptom and community workaround rather than claiming a verified root cause." },

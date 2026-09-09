@@ -6,6 +6,10 @@ import { SiteFooter } from "./site-footer";
 
 export type GuideSection = { title: string; body: React.ReactNode };
 export type GuideNextStep = { label: string; href: string; description: string };
+function schemaDate(value: string) {
+  const parsed = Date.parse(value);
+  return Number.isNaN(parsed) ? undefined : new Date(parsed).toISOString().slice(0, 10);
+}
 export function guideMetadata(title: string, description: string, path: string, keywords: string[], polishPath?: string): Metadata {
   return {
     title: { absolute: title }, description, keywords,
@@ -15,7 +19,8 @@ export function guideMetadata(title: string, description: string, path: string, 
   };
 }
 export function GuidePage({ eyebrow, title, dek, checked, sections, sources, faqs, nextSteps, nativeAdAfter, showAds = true, quickAnswer }: { eyebrow: string; title: string; dek: string; checked: string; sections: GuideSection[]; sources: { label: string; href: string }[]; polishPath?: string; faqs?: { question: string; answer: string }[]; nextSteps?: GuideNextStep[]; nativeAdAfter?: string; showAds?: boolean; quickAnswer?: React.ReactNode }) {
-  const schema = { "@context": "https://schema.org", "@type": "Article", headline: title, description: dek, dateModified: checked, author: { "@type": "Organization", name: "Dawnwalker Guide" } };
+  const dateModified = schemaDate(checked);
+  const schema = { "@context": "https://schema.org", "@type": "Article", headline: title, description: dek, ...(dateModified ? { dateModified } : {}), author: { "@type": "Organization", name: "Dawnwalker Guide" } };
   const faqSchema = faqs?.length ? { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(({ question, answer }) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) } : undefined;
   const steps = nextSteps ?? [
     { label: "Check release and unlock times", href: "/release-times", description: "Find the PC or console rule for your region." },
