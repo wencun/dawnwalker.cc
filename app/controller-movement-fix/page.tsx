@@ -21,16 +21,18 @@ export default function ControllerMovementFixPage() {
     eyebrow="LAUNCH FIX · CONTROLLER MOVEMENT"
     title="Dawnwalker controller bug fix: sprint stops, slow walking and deadzone"
     dek="The developer's Known Issues thread now acknowledges sprint interruption on gamepad and recommends lowering controller sensitivity from 1.0 to 0.8 while a fix is being prepared. PC Steam players also report success with a reversible Square-deadzone workaround."
-    checked="September 9, 2026"
+    checked="September 10, 2026"
     faqs={[
       { question: "How do I fix the Dawnwalker controller sprint bug?", answer: "First lower controller sensitivity from 1.0 to 0.8 in the game settings; the developer lists this as a temporary workaround. PC Steam players can also try a Custom, Square left-stick deadzone if diagonal movement still interrupts sprinting." },
       { question: "Why does Coen stop sprinting or walk slowly when moving diagonally?", answer: "Players repeatedly report that diagonal stick input can fall below the game's apparent full-movement threshold. The exact cause has not been confirmed in an official technical notice, so this guide describes the symptom and community workaround rather than claiming a verified root cause." },
       { question: "Does the Square deadzone workaround fix controller menus?", answer: "Not necessarily. Some players say movement improves while menu selection, input switching or button detection remains unreliable. Treat those as separate controller issues." },
+      { question: "Did the 1.0.4 update fix Microsoft GameInput FPS drops?", answer: "On Steam, Hotfix 1.0.4 says connecting controllers with outdated Microsoft GameInput software should no longer cause FPS drops. Update first, then test the same controller connection before using a separate movement workaround." },
       { question: "Is there a PS5 fix for the Dawnwalker sprint bug?", answer: "The developer-listed sensitivity change from 1.0 to 0.8 can be tried in the game's controller settings on console. The separate Steam Input Square-deadzone steps apply only to PC Steam." },
     ]}
     nextSteps={[
       { label: "Apply the PC workaround", href: "#steam-fix", description: "Follow the illustrated Steam Input path and test the left stick." },
       { label: "Check other launch issues", href: "/known-issues", description: "Separate movement trouble from crashes, stutter and menu input bugs." },
+      { label: "Read Hotfix 1.0.4", href: "/patch-notes", description: "See the official Steam GameInput FPS-drop fix and current patch scope." },
       { label: "Compare PC requirements", href: "/can-i-run", description: "Check whether performance trouble may be separate from controller input." },
     ]}
     sources={[
@@ -42,6 +44,10 @@ export default function ControllerMovementFixPage() {
       { label: "Valve — Steam Input source modes and deadzone documentation", href: "https://partner.steamgames.com/doc/features/steam_controller/input_source_modes?language=english" },
     ]}
     sections={[
+      {
+        title: "Update first if connecting a controller drops FPS on Steam",
+        body: <p><b>Hotfix 1.0.4 addresses a separate controller-related problem:</b> the official Steam-only note says outdated Microsoft GameInput software should no longer cause FPS drops when a controller connects. Install the update and test the same controller setup before editing Steam Input. This does not claim to fix every sprint, menu or controller-detection issue.</p>,
+      },
       {
         title: "Try the developer-listed workaround first",
         body: <><div className="sensitivity-fix"><div><small>CONTROLLER SENSITIVITY</small><b>1.0</b><i>→</i><strong>0.8</strong></div><span><i style={{ width: "80%" }} /></span></div><p><b>Open the in-game controller settings and lower sensitivity from 1.0 to 0.8.</b> The September 3 Known Issues thread says the team is working on gamepad sprint interruption and lists this as the temporary workaround. It applies more broadly than Steam Input and should be tested first.</p></>,
