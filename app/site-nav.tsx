@@ -9,12 +9,10 @@ type NavLink = { href: string; label: string };
 type NavGroup = { label: string; items: NavLink[] };
 type Navigation = { primary: NavLink[]; groups: NavGroup[] };
 
-const walkthroughSponsorUrl = "https://www.profitableratecpmnetwork.com/bnpnu0kdv?key=8eccc0b7f81f5d34920dc57c35e9e25c";
-
 const navigation: Record<Locale, Navigation> = {
   en: {
     primary: [
-      { href: walkthroughSponsorUrl, label: "Walkthrough" },
+      { href: "/walkthrough", label: "Walkthrough" },
       { href: "/mods", label: "Mods" },
     ],
     groups: [
