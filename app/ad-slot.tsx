@@ -38,6 +38,21 @@ function NativeAdFrame() {
     if (consent !== "accepted" || !host || failed) return;
 
     let inspectionTimer: number | undefined;
+    const mobileQuery = window.matchMedia("(max-width: 759px)");
+    const keepOnlyFirstMobileCreative = () => {
+      if (!mobileQuery.matches) return;
+
+      const container = host.querySelector(`#${nativeUnit.containerId}`);
+      if (!container) return;
+
+      // Native inventory can return several sibling cards in a single slot.
+      // Keep the first card on phones; desktop retains the provider's layout.
+      const cards = Array.from(container.children).filter((child) => (
+        child instanceof HTMLElement && child.tagName !== "SCRIPT" && child.tagName !== "STYLE"
+      ));
+      cards.slice(1).forEach((card) => card.style.setProperty("display", "none", "important"));
+    };
+    const mobileCreativeObserver = new MutationObserver(keepOnlyFirstMobileCreative);
 
     const loadAd = () => {
       host.replaceChildren();
@@ -48,8 +63,12 @@ function NativeAdFrame() {
       script.dataset.cfasync = "false";
       script.src = nativeUnit.src;
       script.onload = () => {
+        keepOnlyFirstMobileCreative();
+        mobileCreativeObserver.observe(container, { childList: true });
+        mobileQuery.addEventListener("change", keepOnlyFirstMobileCreative);
         trackAdEvent("ad_slot_script_loaded", "native-content", "native");
         inspectionTimer = window.setTimeout(() => {
+          keepOnlyFirstMobileCreative();
           trackAdEvent(host.querySelector("iframe") ? "ad_slot_rendered" : "ad_slot_empty", "native-content", "native");
         }, 1500);
       };
@@ -64,6 +83,8 @@ function NativeAdFrame() {
     loadAd();
     return () => {
       if (inspectionTimer) window.clearTimeout(inspectionTimer);
+      mobileCreativeObserver.disconnect();
+      mobileQuery.removeEventListener("change", keepOnlyFirstMobileCreative);
       host.replaceChildren();
     };
   }, [consent, failed]);

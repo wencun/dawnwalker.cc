@@ -62,7 +62,7 @@
    frame prevents the article from jumping while the third-party cards load. */
 .ad-slot-native{margin:56px 0;padding:18px 0 22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0b0d0e}
 .ad-native-frame{width:100%;min-height:280px}
-@media(max-width:759px){.ad-slot-native{margin:40px 0;padding:14px 0 18px}.ad-native-frame{height:clamp(300px,95vw,390px);min-height:0;overflow:hidden}.ad-native-frame iframe{height:100%!important;max-height:100%!important}}
+@media(max-width:759px){.ad-slot-native{margin:40px 0;padding:14px 0 18px}.ad-native-frame{position:relative;height:clamp(300px,95vw,390px)!important;min-height:0!important;max-height:clamp(300px,95vw,390px)!important;overflow:hidden!important;contain:paint}.ad-native-frame #container-278334cfa83cd5121dbb0c49b86a4a7e>:nth-child(n+2){display:none!important}.ad-native-frame iframe{height:100%!important;max-height:100%!important}}
 
 /* Illustrated controller workaround. These diagrams are HTML/CSS so the steps
    stay legible, responsive and accessible without delaying the page with media. */
