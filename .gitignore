@@ -30,12 +30,18 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.analytics.example
+
+# Private analytics credentials and fetched reporting data
+/secrets/
+/data/private/
 
 # vercel
 .vercel
 
 # typescript
 next-env.d.ts
+*.tsbuildinfo
 /dist/
 /.wrangler/
 /outputs/

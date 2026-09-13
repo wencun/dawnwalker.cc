@@ -14,8 +14,8 @@ export function guideMetadata(title: string, description: string, path: string, 
   return {
     title: { absolute: title }, description, keywords,
     alternates: { canonical: path, languages: polishPath ? { en: path, pl: polishPath, ru: polishPath.replace("/pl", "/ru"), cs: polishPath.replace("/pl", "/cs"), "x-default": path } : undefined },
-    openGraph: { title, description, url: path, images: ["/og.png"] },
-    twitter: { card: "summary_large_image", title, description, images: ["/og.png"] },
+    openGraph: { title, description, url: path, images: ["/og-seo-refresh.png"] },
+    twitter: { card: "summary_large_image", title, description, images: ["/og-seo-refresh.png"] },
   };
 }
 export function GuidePage({ eyebrow, title, dek, checked, sections, sources, faqs, nextSteps, nativeAdAfter, showAds = true, quickAnswer }: { eyebrow: string; title: string; dek: string; checked: string; sections: GuideSection[]; sources: { label: string; href: string }[]; polishPath?: string; faqs?: { question: string; answer: string }[]; nextSteps?: GuideNextStep[]; nativeAdAfter?: string; showAds?: boolean; quickAnswer?: React.ReactNode }) {

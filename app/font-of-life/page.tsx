@@ -2,37 +2,39 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "Blood of Dawnwalker Font of Life: Anca Quest & Romance Trigger",
-  "Blood of Dawnwalker Font of Life guide: where it fits in Anca's route, what happens after the quest, and how to save before the Stronger Than Achilles romance trigger.",
+  "Blood of Dawnwalker Font of Life Choices: Best Outcome for Anca",
+  "The Blood of Dawnwalker Font of Life choices explained: use the Font yourself for the Witchcraft perk, let Anca use it for her outcome, or destroy it for Ancient Greaves.",
   "/font-of-life",
-  ["Blood of Dawnwalker Font of Life", "The Blood of Dawnwalker Font of Life", "Font of Life Anca quest", "Stronger Than Achilles Dawnwalker", "Anca romance Font of Life"],
+  ["Blood of Dawnwalker Font of Life", "The Blood of Dawnwalker Font of Life", "Font of Life choices Dawnwalker", "Should Anca use the Font of Life", "Stronger Than Achilles Dawnwalker", "Anca romance Font of Life"],
 );
 
 export default function FontOfLifePage() {
   return <GuidePage
-    eyebrow="ANCA QUEST ANSWER · ROMANCE SPOILERS"
-    title="Blood of Dawnwalker Font of Life: Anca quest and romance trigger"
-    dek="The Font of Life is part of Anca&apos;s late questline. Current romance routes place it inside Stronger Than Achilles; after dealing with the Font, return to the inn and save before the following conversation if you want to protect Anca&apos;s romance outcome."
-    checked="September 8, 2026"
-    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · FONT OF LIFE</span><p><b>Complete the Font of Life objective in Stronger Than Achilles, then return to the inn.</b> Current route guides identify the following conversation as Anca&apos;s romance trigger. Create a manual save before it if you want a safe branch point.</p></div>}
+    eyebrow="ANCA QUEST CHOICE · SPOILER WARNING"
+    title="Font of Life choices: use it yourself, let Anca use it, or destroy it"
+    dek="At the end of Stronger Than Achilles, the Font of Life is a permanent reward choice. Use it yourself for the Font of Life / Witchcraft perk, let Anca use it for her outcome, or destroy it for the Ancient Greaves. Save before choosing."
+    checked="September 13, 2026"
+    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · BEST FONT OF LIFE CHOICE</span><p><b>Choose based on the reward you want, not an assumed romance lock.</b> Using the Font yourself grants Coen&apos;s Font of Life / Witchcraft health-regeneration perk; letting Anca use it prioritizes her outcome; destroying it grants Ancient Greaves. The three rewards are mutually exclusive, so create a manual save first.</p></div>}
     faqs={[
-      { question: "What is the Font of Life in Blood of Dawnwalker?", answer: "The Font of Life is part of Anca&apos;s late route in Stronger Than Achilles. Current romance guides connect completing that objective and the following inn conversation to her romance scene." },
-      { question: "How do you trigger Anca&apos;s romance in Dawnwalker?", answer: "Complete Anca&apos;s route through Stronger Than Achilles and deal with the Font of Life. Current guides identify the following conversation at the inn as the romance trigger." },
-      { question: "Should I save before the Font of Life quest?", answer: "Yes. Make a separate manual save before the Font objective and another before the inn conversation, especially if you want to preserve an alternate dialogue or romance outcome." },
+      { question: "What happens if you use the Font of Life yourself?", answer: "Current choice guides report that Coen receives the Font of Life / Witchcraft perk, which regenerates human health during the day." },
+      { question: "What happens if you let Anca use the Font of Life?", answer: "It gives Anca the Font outcome rather than Coen&apos;s perk. Use a manual save if you want to compare it with the other permanent reward branches." },
+      { question: "What happens if you destroy the Font of Life?", answer: "Current guides list Ancient Greaves as the destroy-Font reward. It is mutually exclusive with using the Font yourself or letting Anca use it." },
     ]}
     nextSteps={[
-      { label: "See all romance routes", href: "/romance", description: "Compare Anca, Lacra and Crake without mixing their route requirements." },
+      { label: "See all romance routes", href: "/romance", description: "Keep Anca&apos;s broader route separate from this permanent reward choice." },
       { label: "Follow Lacra&apos;s route", href: "/lacra-romance", description: "Use a separate page for the Mandrake decision and Lacra&apos;s quest order." },
       { label: "Protect ending choices", href: "/endings", description: "Use the pre-finale save plan for broader outcome planning." },
     ]}
     sources={[
-      { label: "PowerPyx — Anca romance route, Font of Life and Stronger Than Achilles", href: "https://www.powerpyx.com/the-blood-of-dawnwalker-all-romances-guide/" },
-      { label: "PC Gamer — launch-build romance route context", href: "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-romances/" },
+      { label: "PC Gamer — should you let Anca use the Font?", href: "https://www.pcgamer.com/games/rpg/blood-of-dawnwalker-should-you-let-anca-use-the-font/" },
+      { label: "FinalBoss — Font choices, rewards and Stronger Than Achilles context", href: "https://finalboss.io/the-blood-of-dawnwalker-ancas-font-choices-and-font-of-life-guide" },
+      { label: "KeenGamer — Font of Life choices and outcomes", href: "https://www.keengamer.com/articles/guides/the-blood-of-dawnwalker-all-font-of-life-choices-and-outcomes/" },
     ]}
     sections={[
-      { title: "Where Font of Life fits in Anca&apos;s route", body: <div className="fact-grid"><p><b>Route character</b>Font of Life belongs to Anca&apos;s questline, not Lacra&apos;s or Crake&apos;s.</p><p><b>Late quest</b>Current guides place the objective within Stronger Than Achilles.</p><p><b>Next step</b>After dealing with the Font, return to the inn for the following conversation.</p><p><b>Why save</b>The conversation is cited as the romance trigger, so it is a useful manual-save point.</p></div> },
-      { title: "How do you reach the Font of Life outcome safely?", body: <ol><li><b>Follow Anca&apos;s route in order:</b> complete the required earlier Anca quests rather than entering a late quest from a copied spoiler list.</li><li><b>Confirm Stronger Than Achilles is active:</b> check the quest log before treating a location or object as the Font objective.</li><li><b>Make a manual save before interacting:</b> use a separate slot before resolving the Font of Life step.</li><li><b>Return to the inn:</b> current route guides place the next romance-relevant conversation there.</li><li><b>Save again before dialogue:</b> preserve a branch point before confirming the conversation prompt.</li></ol> },
-      { title: "Font of Life versus the complete Anca romance", body: <p>Finding the Font is not a substitute for the rest of Anca&apos;s questline. It is one late route step connected to Stronger Than Achilles. For the character roster and broader planning, use the <Link href="/romance">romance overview</Link>; this page stays focused on the Font objective and the save point after it.</p> },
+      { title: "Where Font of Life fits in Anca&apos;s route", body: <div className="fact-grid"><p><b>Route character</b>Font of Life belongs to Anca&apos;s late questline, not Lacra&apos;s or Crake&apos;s.</p><p><b>Quest point</b>Current guides place the decision at the end of Stronger Than Achilles.</p><p><b>Permanent fork</b>The Coen perk, Anca outcome and Ancient Greaves are mutually exclusive.</p><p><b>Why save</b>A manual save before the choice lets you compare the reward without replaying the route.</p></div> },
+      { title: "All Font of Life outcomes", body: <table className="editorial-table"><caption>Choice and reward information is based on current walkthrough reporting; recheck after a patch.</caption><thead><tr><th scope="col">Choice</th><th scope="col">Reported result</th></tr></thead><tbody><tr><th scope="row">Use it yourself</th><td>Coen gains the Font of Life / Witchcraft perk, reported to regenerate human health during the day.</td></tr><tr><th scope="row">Let Anca use it</th><td>Prioritizes Anca&apos;s Font outcome instead of awarding Coen&apos;s perk.</td></tr><tr><th scope="row">Destroy it</th><td>Rewards Ancient Greaves instead of either Font outcome.</td></tr></tbody></table> },
+      { title: "How do you choose safely?", body: <ol><li><b>Confirm Stronger Than Achilles is active:</b> use the quest log before interacting with the Font.</li><li><b>Make a manual save:</b> use a separate slot just before the dialogue choice.</li><li><b>Pick the reward you will use:</b> prioritize Coen&apos;s daytime health regeneration, Anca&apos;s story outcome or the Ancient Greaves.</li><li><b>Do not infer a romance lock:</b> the Font choice and Anca&apos;s complete romance route should be treated separately unless a current source proves a specific consequence.</li></ol> },
+      { title: "Font choice versus the complete Anca romance", body: <p>The Font is a late Anca quest decision, but it is not a replacement for her full relationship route. For character order and broader planning, use the <Link href="/romance">romance overview</Link>. This page answers the more specific, high-intent search: which Font reward you receive and why you should save before choosing.</p> },
     ]}
   />;
 }

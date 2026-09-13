@@ -4,10 +4,13 @@ import Link from "next/link";
 const youtubeSearch = "https://www.youtube.com/results?search_query=The+Blood+of+Dawnwalker+controller+movement+fix+deadzone";
 
 export const metadata = guideMetadata(
-  "Dawnwalker Controller Bug Fix: Sprint Stops & Deadzone",
-  "Fix The Blood of Dawnwalker controller sprint and slow-walk bug: start with the developer-listed 0.8 sensitivity workaround, then test the reversible PC Steam Input deadzone path.",
+  "Microsoft GameInput Dawnwalker Fix: FPS Drops, Sprint & Controller",
+  "Fix Microsoft GameInput and controller problems in The Blood of Dawnwalker: install the current Steam hotfix for FPS drops, then use the developer-listed sprint and deadzone checks only if needed.",
   "/controller-movement-fix",
   [
+    "Microsoft GameInput Dawnwalker",
+    "Blood of Dawnwalker Microsoft GameInput",
+    "Dawnwalker controller FPS drops",
     "Dawnwalker controller movement bug fix",
     "Blood of Dawnwalker sprint stops",
     "Dawnwalker controller deadzone",
@@ -18,10 +21,11 @@ export const metadata = guideMetadata(
 
 export default function ControllerMovementFixPage() {
   return <GuidePage
-    eyebrow="LAUNCH FIX · CONTROLLER MOVEMENT"
-    title="Dawnwalker controller bug fix: sprint stops, slow walking and deadzone"
-    dek="The developer's Known Issues thread now acknowledges sprint interruption on gamepad and recommends lowering controller sensitivity from 1.0 to 0.8 while a fix is being prepared. PC Steam players also report success with a reversible Square-deadzone workaround."
-    checked="September 10, 2026"
+    eyebrow="MICROSOFT GAMEINPUT + CONTROLLER FIX"
+    title="Microsoft GameInput Dawnwalker fix: FPS drops, sprint and controller input"
+    dek="On Steam, Hotfix 1.0.4 fixes FPS drops when controllers connect with outdated Microsoft GameInput software. If your FPS is now normal but sprint still stops or movement slows, use the separate 0.8 sensitivity and reversible deadzone checks below."
+    checked="September 13, 2026"
+    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · GAMEINPUT FPS DROP</span><p><b>Install Hotfix 1.0.4 first, then reconnect the same controller and retest the same scene.</b> The official notes target FPS drops caused when an outdated Microsoft GameInput installation connects a controller on Steam. Do not apply a Steam Input remap unless the remaining problem is specifically sprint interruption or diagonal movement.</p></div>}
     faqs={[
       { question: "How do I fix the Dawnwalker controller sprint bug?", answer: "First lower controller sensitivity from 1.0 to 0.8 in the game settings; the developer lists this as a temporary workaround. PC Steam players can also try a Custom, Square left-stick deadzone if diagonal movement still interrupts sprinting." },
       { question: "Why does Coen stop sprinting or walk slowly when moving diagonally?", answer: "Players repeatedly report that diagonal stick input can fall below the game's apparent full-movement threshold. The exact cause has not been confirmed in an official technical notice, so this guide describes the symptom and community workaround rather than claiming a verified root cause." },

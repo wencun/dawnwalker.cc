@@ -21,7 +21,7 @@ export default function BestArmorPage() {
       { question: "Is there legendary armor in the prologue?", answer: "Current launch guides do not verify a fixed legendary armor set in the prologue. Use early loot and upgrades rather than repeatedly reloading for an unconfirmed set." },
     ]}
     nextSteps={[
-      { label: "Finish the Arbiter route", href: "/forge-it-anew", description: "Use the verified sword-shard and blacksmith route first." },
+      { label: "Finish the Arbiter route", href: "/a-bulwark-against-darkness", description: "Find all four armor components and prepare for Uriashi’s ritual." },
       { label: "Plan time costs", href: "/time-system", description: "Avoid treating a long gear route as free exploration." },
       { label: "Protect completion saves", href: "/trophy-guide", description: "Keep a fallback before high-value quest branches." },
     ]}
@@ -34,7 +34,7 @@ export default function BestArmorPage() {
     sections={[
       { title: "Choose armor by build, not a single number", body: <table className="editorial-table"><caption>Use a cited gear route as a starting point; check the current in-game stats before upgrading</caption><thead><tr><th scope="col">Priority</th><th scope="col">What to compare</th></tr></thead><tbody><tr><th scope="row">Sword / parry build</th><td>Stamina, weapon damage and parry-oriented bonuses.</td></tr><tr><th scope="row">Defensive build</th><td>Protection, health and stagger resistance.</td></tr><tr><th scope="row">Vampire build</th><td>Ability, essence, mobility and blood-drain effects.</td></tr><tr><th scope="row">Flexible route</th><td>Arbiter quest rewards are commonly recommended as a balanced target.</td></tr></tbody></table> },
       { title: "What makes the Arbiter route important?", body: <p>Multiple launch guides identify A Bulwark Against Darkness as the route to a high-value armor set. It is a multi-step objective with components and a final forge sequence, so treat it as a planned quest route, not an early detour with guaranteed immediate rewards.</p> },
-      { title: "Avoid misleading early-game advice", body: <p>Do not reload the prologue hunting for a legendary set that current guides do not verify. Early choices should focus on survivability and equipment you can actually obtain. Use <Link href="/forge-it-anew">Forge It Anew</Link> for the separate St. Mihai sword route rather than confusing weapon and armor requirements.</p> },
+      { title: "Avoid misleading early-game advice", body: <p>Do not reload the prologue hunting for a legendary set that current guides do not verify. Early choices should focus on survivability and equipment you can actually obtain. Use <Link href="/a-bulwark-against-darkness">A Bulwark Against Darkness</Link> for the Arbiter armor route, and <Link href="/forge-it-anew">Forge It Anew</Link> for the separate St. Mihai sword route.</p> },
     ]}
   />;
 }

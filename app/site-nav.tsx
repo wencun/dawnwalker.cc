@@ -9,10 +9,12 @@ type NavLink = { href: string; label: string };
 type NavGroup = { label: string; items: NavLink[] };
 type Navigation = { primary: NavLink[]; groups: NavGroup[] };
 
+const walkthroughSponsorUrl = "https://www.profitableratecpmnetwork.com/bnpnu0kdv?key=8eccc0b7f81f5d34920dc57c35e9e25c";
+
 const navigation: Record<Locale, Navigation> = {
   en: {
     primary: [
-      { href: "/walkthrough", label: "Walkthrough" },
+      { href: walkthroughSponsorUrl, label: "Walkthrough" },
       { href: "/mods", label: "Mods" },
     ],
     groups: [
@@ -30,6 +32,8 @@ const navigation: Record<Locale, Navigation> = {
         { href: "/prologue-quest-order", label: "Prologue quest order" },
         { href: "/how-many-spoonfuls-of-herbs", label: "Herbs recipe for Esme" },
         { href: "/forge-it-anew", label: "Forge It Anew" },
+        { href: "/a-bulwark-against-darkness", label: "Arbiter armor" },
+        { href: "/flask-of-quicksilver", label: "Flask of Quicksilver" },
         { href: "/silver-trader", label: "Silver Trader" },
         { href: "/xanthe-boss-guide", label: "Xanthe boss guide" },
         { href: "/font-of-life", label: "Font of Life" },
@@ -115,8 +119,9 @@ export function SiteNav() {
     <a className="brand" href={home}>DAWNWALKER <span>GUIDE</span><small>{subtitle}</small></a>
     <div className="site-nav-links">
       {menu.primary.map((item) => {
-        const active = pathname === item.href;
-        return <a key={item.href} href={item.href} className={`site-nav-direct${active ? " active" : ""}`} aria-current={active ? "page" : undefined}>{item.label}</a>;
+        const external = item.href.startsWith("https://");
+        const active = !external && pathname === item.href;
+        return <a key={item.href} href={item.href} className={`site-nav-direct${active ? " active" : ""}`} aria-current={active ? "page" : undefined} {...(external ? { target: "_blank", rel: "sponsored noopener noreferrer" } : {})}>{item.label}</a>;
       })}
       {menu.groups.map((group) => {
         const active = group.items.some((item) => pathname === item.href);
