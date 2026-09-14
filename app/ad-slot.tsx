@@ -47,7 +47,7 @@ function NativeAdFrame() {
 
       // Native inventory can return several sibling cards in a single slot.
       // Keep the first card on phones; desktop retains the provider's layout.
-      const cards = Array.from(container.children).filter((child) => (
+      const cards = Array.from(container.children).filter((child): child is HTMLElement => (
         child instanceof HTMLElement && child.tagName !== "SCRIPT" && child.tagName !== "STYLE"
       ));
       cards.slice(1).forEach((card) => card.style.setProperty("display", "none", "important"));
