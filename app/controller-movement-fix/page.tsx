@@ -23,8 +23,8 @@ export default function ControllerMovementFixPage() {
   return <GuidePage
     eyebrow="MICROSOFT GAMEINPUT + CONTROLLER FIX"
     title="Microsoft GameInput Dawnwalker fix: FPS drops, sprint and controller input"
-    dek="On Steam, Hotfix 1.0.4 fixes FPS drops when controllers connect with outdated Microsoft GameInput software. If your FPS is now normal but sprint still stops or movement slows, use the separate 0.8 sensitivity and reversible deadzone checks below."
-    checked="September 13, 2026"
+    dek="On Steam, Hotfix 1.0.4 fixes FPS drops when controllers connect with outdated Microsoft GameInput software. Hotfix 1.0.5 is a separate shader-stutter improvement. If FPS is normal but sprint still stops or movement slows, use the 0.8 sensitivity and reversible deadzone checks below."
+    checked="September 14, 2026"
     quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · GAMEINPUT FPS DROP</span><p><b>Install Hotfix 1.0.4 first, then reconnect the same controller and retest the same scene.</b> The official notes target FPS drops caused when an outdated Microsoft GameInput installation connects a controller on Steam. Do not apply a Steam Input remap unless the remaining problem is specifically sprint interruption or diagonal movement.</p></div>}
     faqs={[
       { question: "How do I fix the Dawnwalker controller sprint bug?", answer: "First lower controller sensitivity from 1.0 to 0.8 in the game settings; the developer lists this as a temporary workaround. PC Steam players can also try a Custom, Square left-stick deadzone if diagonal movement still interrupts sprinting." },
@@ -40,6 +40,8 @@ export default function ControllerMovementFixPage() {
       { label: "Compare PC requirements", href: "/can-i-run", description: "Check whether performance trouble may be separate from controller input." },
     ]}
     sources={[
+      { label: "Steam — Hotfix 1.0.5 shader-compilation improvements", href: "https://steamcommunity.com/app/3751260" },
+      { label: "Rebel Wolves — Hotfix 1.0.4 official notes", href: "https://dawnwalkergame.com/pl/en/news/hotfix-104" },
       { label: "Steam — developer Known Issues, fixes and workarounds (September 3)", href: "https://steamcommunity.com/app/3751260/discussions/0/588436698284819211/" },
       { label: "Reddit — repeated diagonal movement report and Square/Raw workaround", href: "https://www.reddit.com/r/DawnwalkerOfficial/comments/1w5q862/movementcontroller_deadzone_problem_and_fix/" },
       { label: "Reddit — exact Steam Controller Configurator steps", href: "https://www.reddit.com/r/DawnwalkerOfficial/comments/1w5t08t/fix_for_the_buggy_controller_movement_on_xbox/" },
@@ -48,6 +50,10 @@ export default function ControllerMovementFixPage() {
       { label: "Valve — Steam Input source modes and deadzone documentation", href: "https://partner.steamgames.com/doc/features/steam_controller/input_source_modes?language=english" },
     ]}
     sections={[
+      {
+        title: "Choose the controller symptom before changing Steam Input",
+        body: <div className="fact-grid"><p><b>FPS falls when a controller connects on Steam</b>Install Hotfix 1.0.4 and retest with the same controller. This is the official Microsoft GameInput fix.</p><p><b>Sprint stops or diagonal movement slows</b>Set controller sensitivity from 1.0 to 0.8 first. Only PC Steam users should then try the Square-deadzone path.</p><p><b>Shader stutter without a controller trigger</b>This is a separate issue. Install Hotfix 1.0.5; do not assume a Steam Input change can fix it.</p><p><b>Menus skip or button prompts are wrong</b>Keep this separate from movement. Restore defaults and test one input setting at a time.</p></div>,
+      },
       {
         title: "Update first if connecting a controller drops FPS on Steam",
         body: <p><b>Hotfix 1.0.4 addresses a separate controller-related problem:</b> the official Steam-only note says outdated Microsoft GameInput software should no longer cause FPS drops when a controller connects. Install the update and test the same controller setup before editing Steam Input. This does not claim to fix every sprint, menu or controller-detection issue.</p>,

@@ -1,9 +1,8 @@
-import Image from "next/image";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Forge It Anew: All Sword Shard Locations",
-  "The Blood of Dawnwalker Forge It Anew walkthrough: where to start, all three sword-shard locations, Uriashi the blacksmith and the final ritual.",
+  "Forge It Anew: 3 Sword Shard Locations and Uriashi Fix",
+  "The Blood of Dawnwalker Forge It Anew walkthrough: start trigger, all three sword-shard locations, Uriashi the blacksmith and the Hotfix 1.0.2 crafting fix.",
   "/forge-it-anew",
   ["The Blood of Dawnwalker Forge It Anew", "Dawnwalker sword shard locations", "Dawnwalker Uriashi blacksmith", "Forge It Anew walkthrough", "Blood of Dawnwalker holy sword"],
 );
@@ -11,10 +10,10 @@ export const metadata = guideMetadata(
 export default function ForgeItAnewPage() {
   return <GuidePage
     eyebrow="QUEST WALKTHROUGH · SWORD SHARD ROUTE"
-    title="The Blood of Dawnwalker Forge It Anew: all sword shard locations"
-    dek="Start by reading St. Mihai&apos;s note in his coffin after the fight, collect three sword shards from marked kobold encounters, then bring them to Uriashi before completing the ritual."
-    checked="September 4, 2026"
-    quickAnswer={<div className="answer-visual route-hero"><div><span>QUEST FLOW · LAUNCH-BUILD DIRECTIONS</span><h2>St. Mihai&apos;s note → 3 shards → Uriashi → ritual.</h2><p>The shortest way to avoid a blocked forge quest is to confirm the note first, track each named enemy encounter, and update to Hotfix 1.0.2 before retrying a crafting issue.</p></div><Image src="/dawnwalker-hero.jpg" alt="The Blood of Dawnwalker artwork" width={1920} height={1080} priority /></div>}
+    title="Forge It Anew: 3 sword shard locations and the Uriashi fix"
+    dek="Read St. Mihai&apos;s coffin note after the fight, then collect three shards from separate kobold encounters before returning to Uriashi. If crafting is unavailable, install Hotfix 1.0.2 before retrying."
+    checked="September 14, 2026"
+    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · QUEST ORDER</span><p><b>Read St. Mihai&apos;s coffin note first, then collect the three shards: northeast Maragir Wealds, north of Rockfalls and south of St. Tyna&apos;s Grove.</b> Bring all three to Uriashi near Uriashi Hermitage. If the relevant holy-sword craft is unavailable, Hotfix 1.0.2 contains the official Uriashi fix.</p></div>}
     faqs={[
       { question: "How do you start Forge It Anew in The Blood of Dawnwalker?", answer: "After defeating St. Mihai, read the note in his coffin. The launch-build walkthrough used here identifies that note as the quest trigger." },
       { question: "How many sword shards are in Forge It Anew?", answer: "The cited launch-build walkthrough identifies three shards, each in a separate kobold-den encounter, before you return to Uriashi the blacksmith." },
@@ -30,6 +29,7 @@ export default function ForgeItAnewPage() {
       { label: "Rebel Wolves — Hotfix 1.0.2 Uriashi crafting fix", href: "https://dawnwalkergame.com/us/en/news/hotfix-102" },
     ]}
     sections={[
+      { title: "All three locations in one route", body: <div className="forge-flow"><div><span>01</span><b>Maragir Wealds</b><small>Upper Maragir shrine, cross the river to the Do Not Disturb den.</small></div><i>→</i><div><span>02</span><b>North of Rockfalls</b><small>East of Westridge Outpost, southwest of Giant&apos;s Pawns.</small></div><i>→</i><div><span>03</span><b>St. Tyna&apos;s Grove</b><small>From Crossroads Inn, take the left uphill road to the kobold nest.</small></div><i>→</i><div><span>04</span><b>Uriashi</b><small>Return near Uriashi Hermitage only after the three shards are complete.</small></div></div> },
       { title: "The route at a glance", body: <div className="forge-flow"><div><span>01</span><b>Defeat St. Mihai</b><small>Read the note inside his coffin to trigger the quest.</small></div><i>→</i><div><span>02</span><b>Collect 3 shards</b><small>Each one comes from a different named kobold-den encounter.</small></div><i>→</i><div><span>03</span><b>Find Uriashi</b><small>Bring the pieces to the blacksmith near Uriashi Hermitage.</small></div><i>→</i><div><span>04</span><b>Complete the ritual</b><small>Finish the next quest steps to obtain the sword.</small></div></div> },
       { title: "Before you chase the shards", body: <div className="fix-callout"><span>QUEST TRIGGER CHECK</span><p><b>Read St. Mihai&apos;s coffin note after defeating him.</b> If the quest is not active, do not assume a shard is missing. Reload before the fight or interaction, confirm the note was read, and make a manual save before leaving the area.</p></div> },
       { title: "Shard 1: northeast Maragir Wealds", body: <div className="quest-route"><span>SHARD 01</span><div><b>Upper Maragir shrine → cross the river → Kobold den</b><p>From the Upper Maragir shrine in northeast Maragir Wealds, cross the nearby river and look for the kobold den tied to <i>Do Not Disturb</i>. The cited guide places the shard at a broken cross after the encounter.</p></div></div> },
