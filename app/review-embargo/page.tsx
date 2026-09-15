@@ -2,18 +2,18 @@ import { GuidePage, guideMetadata } from "../guide-page";
 import Link from "next/link";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Review Embargo Lifted",
-  "The Blood of Dawnwalker review embargo lifted August 31. Read original PC and PS5 reviews with disclosed hardware, test platforms and performance context.",
+  "The Blood of Dawnwalker Reviews: Metacritic, PC and PS5 Context",
+  "The Blood of Dawnwalker reviews hub: use original PC and PS5 reviews, Metacritic's live listing and disclosed hardware or platform context instead of copied score claims.",
   "/review-embargo",
-  ["The Blood of Dawnwalker review embargo", "Blood of Dawnwalker reviews", "When do Blood of Dawnwalker reviews come out", "Blood of Dawnwalker Metacritic"]
+  ["The Blood of Dawnwalker reviews", "Blood of Dawnwalker Metacritic", "The Blood of Dawnwalker IGN review", "Blood of Dawnwalker opinions", "The Blood of Dawnwalker review embargo"]
 );
 
 export default function ReviewEmbargoPage() {
   return <GuidePage
-    eyebrow="REVIEW EMBARGO LIFTED AUGUST 31 · REVIEWS LIVE"
-    title="The Blood of Dawnwalker review embargo lifted: reviews are live"
-    dek="The review embargo lifted on August 31, 2026 at the reported time of 5:00 PM CEST. Compare the original PC and PS5 reviews, disclosed test hardware and the performance conclusions each source can actually support."
-    checked="September 2, 2026"
+    eyebrow="REVIEWS LIVE · METACRITIC AND ORIGINAL OUTLETS"
+    title="The Blood of Dawnwalker reviews: Metacritic, PC and PS5 context"
+    dek="Reviews are live. Compare original PC and PS5 reviews, disclosed test hardware and the performance conclusions each source can actually support; use Metacritic as a live listing rather than a copied score screenshot."
+    checked="September 15, 2026"
     nativeAdAfter="First attributable full reviews"
     nextSteps={[
       { label: "Compare your PC to official requirements", href: "/can-i-run", description: "Use your exact CPU, GPU, RAM and SSD—not a reviewer's result." },
