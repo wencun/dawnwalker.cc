@@ -2,8 +2,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Odd Riddle: Choose Left at Lunar Manor",
-  "The Blood of Dawnwalker Odd Riddle answer: at Lunar Manor during The Lunar Game, choose the left opening to continue safely. Includes a spoiler-light explanation and what the other choices do.",
+  "Odd Riddle Answer: Left, Middle, or Right? | Dawnwalker",
+  "Stuck at the Lunar Manor Odd Riddle? Identify the correct opening, understand the misleading clue, see what the other choices trigger and continue The Lunar Game safely.",
   "/odd-riddle",
   [
     "The Blood of Dawnwalker Odd Riddle",
