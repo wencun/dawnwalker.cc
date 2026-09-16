@@ -2,8 +2,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "Blood of Dawnwalker Flickering Fix: FSR Frame Gen, VRR & PC Settings",
-  "Blood of Dawnwalker flickering on PC? Update to Hotfix 1.0.4 for its FSR Frame Generation V-Sync fix, then test Frame Gen, post processing, FPS caps and VRR safely.",
+  "Dawnwalker Flickering Fix: Post Processing, Frame Gen & VRR",
+  "Screen or light flickering in The Blood of Dawnwalker? Match the symptom first: Ultra/post-processing startup flicker, Frame Generation V-Sync, or PS5 Pro VRR.",
   "/flickering-fix",
   ["Blood of Dawnwalker flickering", "Blood of Dawnwalker flickering PC", "The Blood of Dawnwalker screen flickering", "Blood of Dawnwalker light flickering", "Dawnwalker flicker", "Dawnwalker PS5 Pro VRR flickering"],
 );
@@ -11,12 +11,12 @@ export const metadata = guideMetadata(
 export default function FlickeringFixPage() {
   return <GuidePage
     eyebrow="FLICKERING FIX · FSR FRAME GEN, VRR & PC SETTINGS"
-    title="Blood of Dawnwalker flickering fix: FSR Frame Gen, VRR and PC settings"
-    dek="Hotfix 1.0.4 fixes a PC V-Sync issue with FSR Frame Generation. If flickering remains, isolate Frame Gen, post processing, FPS caps and VRR one reversible setting at a time."
-    checked="September 10, 2026"
-    quickAnswer={<div className="fix-callout"><span>PC FLICKERING: UPDATE, THEN TEST</span><p><b>1.</b> Install Hotfix 1.0.4 if you use FSR Frame Generation; it fixes a V-Sync issue in that setup. <b>2.</b> Turn off Frame Generation and restart. <b>3.</b> If the light flicker began on Ultra, test High or Post Processing on High. <b>4.</b> Compare an FPS cap if frame rate exceeds display refresh. These remaining tests are diagnostic, not a universal fix.</p></div>}
+    title="Dawnwalker flickering fix: PC light flicker, shimmer and VRR"
+    dek="Start with the symptom, not a driver rollback or mod. A repeated PC report links full-screen light flicker to launching on Ultra: start once on High or Post Processing High, restart, then retest. Frame Generation and VRR need separate checks."
+    checked="September 16, 2026"
+    quickAnswer={<div className="fix-callout"><span>PC FULL-SCREEN LIGHT FLICKER: START HERE</span><p><b>1.</b> If flickering began when the game launched on Ultra, select <b>High</b> or set <b>Post Processing to High</b>, fully restart, then retest the same scene. <b>2.</b> Only then test Frame Generation off and restart. <b>3.</b> Use the Hotfix 1.0.4 V-Sync check only when FSR Frame Generation is involved. The High/Post Processing route is a repeated player report, not an official universal fix.</p></div>}
     faqs={[
-      { question: "How do I fix Blood of Dawnwalker flickering on PC?", answer: "If you use FSR Frame Generation, update to Hotfix 1.0.4 first because it fixes a V-Sync issue in that setup. Then turn off Frame Generation and restart, test High or Post Processing on High, and compare a frame cap when FPS exceeds the display refresh rate. The remaining checks are diagnostic tests, not a universal fix." },
+      { question: "How do I fix Blood of Dawnwalker flickering on PC?", answer: "For full-screen light flicker that began on Ultra, first launch once on High or set Post Processing to High, fully restart and repeat the same scene. Then isolate Frame Generation, V-Sync and an FPS cap one at a time. Hotfix 1.0.4 specifically fixes a V-Sync issue when FSR Frame Generation is involved; the High/Post Processing route is community-reported, not an official universal fix." },
       { question: "Does Hotfix 1.0.4 fix Blood of Dawnwalker flickering?", answer: "The official notes fix a PC V-Sync issue when using FSR Frame Generation. They do not claim to fix every flicker, shimmer, HDR or VRR symptom, so retest the same scene and isolate one setting at a time." },
       { question: "Should I turn off VRR to fix Dawnwalker flickering on PS5 Pro?", answer: "One PS5 Pro community report says disabling VRR stopped its flickering. Treat that as a reversible test for that platform, not a universal fix or a PC recommendation." },
       { question: "Should I install a flickering mod for Dawnwalker?", answer: "No. Do not use a visual mod as the first response. A mod can change image quality, introduce new variables and stop working after a patch. First test the in-game settings and record your game version." },

@@ -2,8 +2,8 @@ import { GuidePage, guideMetadata } from "../guide-page";
 import Link from "next/link";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Known Issues: What Hotfix 1.0.5 Fixes",
-  "The current Blood of Dawnwalker known-issues guide: what Hotfix 1.0.5 and 1.0.4 fixed, plus separate checks for shader stutter, saving, controller input, crashes and flickering.",
+  "The Blood of Dawnwalker Known Issues: Hotfixes, Crashes & Saves",
+  "The current Blood of Dawnwalker known-issues guide: what Hotfix 1.0.5 and 1.0.4 fixed, plus separate checks for shader stutter, saving, controller input and repeatable crashes.",
   "/known-issues",
   [
     "The Blood of Dawnwalker known issues",
@@ -11,7 +11,6 @@ export const metadata = guideMetadata(
     "Blood of Dawnwalker black screen",
     "Blood of Dawnwalker stuttering fix",
     "Dawnwalker controller bug",
-    "Dawnwalker flickering",
     "Blood of Dawnwalker bugs",
     "Blood of Dawnwalker glitch",
     "Dawnwalker movement bug",
@@ -22,13 +21,13 @@ export const metadata = guideMetadata(
 export default function KnownIssuesPage() {
   return <GuidePage
     eyebrow="LAUNCH HELP DESK · REPORTS SEPARATED FROM FIXES"
-    title="Blood of Dawnwalker bugs and known issues: crashes, flickering and controller fixes"
-    dek="Install the current hotfix first, then match the exact symptom before trying a workaround. This page separates confirmed patch fixes from player reports for shader stutter, saving, controller input, crashes and flickering."
-    checked="September 14, 2026"
+    title="Blood of Dawnwalker bugs and known issues: crashes, saves and controllers"
+    dek="Install the current hotfix first, then match the exact symptom before trying a workaround. This page separates confirmed patch fixes from player reports for shader stutter, saving, controller input and repeatable crashes; visual symptoms have a dedicated guide."
+    checked="September 16, 2026"
     quickAnswer={<div className="fix-callout"><span>CURRENT ANSWER · HOTFIX 1.0.5</span><p><b>If shader-compilation stutter began at launch, install Hotfix 1.0.5 first.</b> It improves the shader-compilation pipeline for some users. Hotfix 1.0.4 separately fixes a save blocker, quest progression blockers and FPS drops triggered by outdated Microsoft GameInput on Steam. Choose the matching symptom below before changing settings.</p></div>}
     faqs={[
       { question: "Why does my Dawnwalker character stop sprinting with a controller?", answer: "The developer now lists gamepad sprint interruption as a known issue and recommends lowering controller sensitivity from 1.0 to 0.8 temporarily. PC Steam players can also try the separate Square-deadzone workaround." },
-      { question: "What are the current Blood of Dawnwalker bugs and glitches?", answer: "Hotfix 1.0.5 targets shader-compilation stutter for some users. Hotfix 1.0.4 separately fixes one save blocker, several quest-progression blockers and Steam FPS drops caused by outdated Microsoft GameInput when a controller connects. Other crash, flickering and controller reports need to be matched to the exact symptom rather than treated as one bug." },
+      { question: "What are the current Blood of Dawnwalker bugs and glitches?", answer: "Hotfix 1.0.5 targets shader-compilation stutter for some users. Hotfix 1.0.4 separately fixes one save blocker, several quest-progression blockers and Steam FPS drops caused by outdated Microsoft GameInput when a controller connects. Other crash, visual and controller reports need to be matched to the exact symptom rather than treated as one bug." },
       { question: "Why does The Blood of Dawnwalker crash during cutscenes?", answer: "Several launch-day players report black screens, startup crashes or repeatable cutscene crashes. No universal cause or official fix was verified when this page was checked. Record the platform, game version and exact cutscene before troubleshooting." },
       { question: "Are Dawnwalker cutscenes limited to 30 FPS?", answer: "Launch players and a PC technical report describe a 30 FPS cinematic cap. This tracker does not recommend modifying game files until an official option or a versioned, reversible method is verified." },
     ]}
