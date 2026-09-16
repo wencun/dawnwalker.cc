@@ -2,18 +2,18 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Best Sword: St. Mihai Route",
-  "The Blood of Dawnwalker best sword guide: why launch guides recommend the Imbued Sword of St. Mihai, where the quest chain starts and how Forge It Anew fits the route.",
+  "The Blood of Dawnwalker Best Sword: St. Mihai's Silver Sword",
+  "The Blood of Dawnwalker St. Mihai's Silver Sword and best sword guide: why launch guides recommend it, where the quest chain starts and how Forge It Anew fits the route.",
   "/best-sword",
-  ["The Blood of Dawnwalker best sword", "Blood of Dawnwalker best weapon", "Dawnwalker St Mihai sword", "Dawnwalker Imbued Sword of St Mihai", "Forge It Anew best sword"],
+  ["The Blood of Dawnwalker best sword", "Blood of Dawnwalker best weapon", "Blood of Dawnwalker silver sword", "The Blood of Dawnwalker silver sword", "Dawnwalker St Mihai sword", "Dawnwalker Imbued Sword of St Mihai", "Forge It Anew best sword"],
 );
 
 export default function BestSwordPage() {
   return <GuidePage
     eyebrow="WEAPON GUIDE · QUEST-CRAFTED GREAT SWORD"
-    title="The Blood of Dawnwalker best sword: St. Mihai route"
+    title="The Blood of Dawnwalker best sword: St. Mihai's Silver Sword"
     dek="Current launch guides commonly point to the quest-crafted Imbued Sword of St. Mihai as a top late-game sword. It is not a random chest drop: use the St. Mihai / Forge It Anew route and treat “best” as build-dependent."
-    checked="September 15, 2026"
+    checked="September 16, 2026"
     quickAnswer={<div className="fix-callout"><span>QUICK ANSWER</span><p><b>For a direct best-sword answer, chase the Imbued Sword of St. Mihai through the St. Mihai quest chain, then complete Forge It Anew.</b> Launch guides describe it as one of the strongest found weapons, but a greatsword is only “best” if its reach, speed and upgrade path fit your build.</p></div>}
     faqs={[
       { question: "What is the best sword in The Blood of Dawnwalker?", answer: "Launch guides commonly recommend the Imbued Sword of St. Mihai as a top sword to pursue. It is a quest-crafted greatsword, not a universal answer for every build, enemy or preferred weapon speed." },

@@ -29,6 +29,8 @@ const navigation: Record<Locale, Navigation> = {
       { label: "Quest answers", items: [
         { href: "/prologue-quest-order", label: "Prologue quest order" },
         { href: "/how-many-spoonfuls-of-herbs", label: "Herbs recipe for Esme" },
+        { href: "/a-friend-like-this", label: "A Friend Like This" },
+        { href: "/help-the-sanzhani", label: "Help the Sanzhani" },
         { href: "/forge-it-anew", label: "Forge It Anew" },
         { href: "/best-sword", label: "Best sword" },
         { href: "/a-bulwark-against-darkness", label: "Arbiter armor" },
