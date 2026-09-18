@@ -39,6 +39,7 @@ const cards = [
   ["Editions", "Which edition should I buy?", "Compare Standard, Eclipse, Day One and Collector's contents, the pre-order bonus and the shared release date.", "/editions"],
   ["Reviews", "The Blood of Dawnwalker reviews are live", "The review embargo lifted August 31. Compare original PC and PS5 reviews, disclosed hardware and performance context.", "/review-embargo"],
   ["Time limit", "How does the 30-day time limit work?", "Official answers on 8 daytime parts, what advances time, exploration and whether you can complete every quest.", "/time-system"],
+  ["Planning tool", "Build a 30-day quest route", "Choose your run goals, see source-supported prerequisites and keep useful branch saves visible without a fake countdown.", "/route-planner"],
   ["Relationships", "Who can you romance?", "A spoiler-aware guide to the confirmed Anca, Lacra and Crake (Marat) routes, their starting quests and multiple-romance rules.", "/romance"],
   ["Game length", "How long does Dawnwalker take to beat?", "Compare main-story, broader exploration and completion estimates without confusing the 30-day clock with real hours.", "/how-long-to-beat"],
 ];

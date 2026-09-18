@@ -12,7 +12,12 @@ export default function TimeSystemPage() {
     eyebrow="PLAYER CHOICE · OFFICIAL MECHANICS"
     title="Dawnwalker 30-day time limit: does exploration advance time?"
     dek="No. It is not a real-world countdown: exploration can be time-neutral, while specific choices and quest actions spend in-game time. The official opening example divides daylight into 8 parts."
-    checked="September 3, 2026"
+    checked="September 17, 2026"
+    nextSteps={[
+      { label: "Build a quest route", href: "/route-planner", description: "Combine source-supported prerequisites and branch saves without a fake countdown." },
+      { label: "Check the Sanzhani extra-day route", href: "/help-the-sanzhani", description: "Use the hidden Letters to Lunka sequence before treating the objective as stuck." },
+      { label: "Read what happens after 30 days", href: "/what-happens-after-30-days", description: "Keep deadline consequences separate from real-world playtime." },
+    ]}
     nativeAdAfter="What advances the in-game time?"
     faqs={[
       { question: "Is The Blood of Dawnwalker's 30-day limit a real-time countdown?", answer: "No. Official explanations say you can spend unlimited real-world time exploring between time-advancing choices and checkpoints." },
