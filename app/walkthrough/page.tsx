@@ -14,7 +14,7 @@ export default function WalkthroughPage() {
     eyebrow="WALKTHROUGH HUB · SPOILER AWARE"
     title="The Blood of Dawnwalker walkthrough: quest order, choices and answers"
     dek="Use this as a route map, not a fake 'complete' guide. Open the exact answer you need, check the spoiler label and return here as verified launch-build quest pages are added."
-    checked="September 16, 2026"
+    checked="September 20, 2026"
     quickAnswer={<div className="answer-visual"><div><span>START HERE</span><h2>Plan the prologue first, then solve one quest or decision at a time.</h2><p>Timed objectives show a clock; actions that consume segments show an hourglass and cost.</p></div><Image src="/dawnwalker-coen.png" alt="Coen in The Blood of Dawnwalker" width={1280} height={720} priority /></div>}
     nextSteps={[
       { label: "Finish Arbiter armor", href: "/a-bulwark-against-darkness", description: "Collect the four rising armor components and complete the ritual." },

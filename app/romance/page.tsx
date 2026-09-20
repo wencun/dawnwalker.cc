@@ -31,7 +31,7 @@ export default function RomancePage() {
     nextSteps={[
       { label: "Read the route map", href: "#roster", description: "See all three characters and the questlines that begin each romance." },
       { label: "Romance Lacra", href: "/lacra-romance", description: "Use the dedicated spoiler-marked quest order and Mandrake save point." },
-      { label: "Finish Font of Life", href: "/font-of-life", description: "Use the focused Anca route and inn-conversation save point." },
+      { label: "Romance Anca", href: "/anca-romance", description: "Use the dedicated Anca quest order, Font save and inn-conversation guidance." },
       { label: "Understand the time system", href: "/time-system", description: "Relationship quests may compete with other time-sensitive choices." },
       { label: "Track launch issues", href: "/known-issues", description: "Check whether a missing trigger is a route choice or a reported bug." },
     ]}
@@ -48,7 +48,7 @@ export default function RomancePage() {
       },
       {
         title: "Reported romance roster",
-        body: <div id="roster" className="romance-routes"><div><span>A</span><b>Anca</b><small>Human · healer</small><p>Begin with her prologue medicine and Page-Turner interactions, then continue Echoes of Silenced Bells, Between the Words and <Link href="/font-of-life">the Font of Life</Link>.</p></div><div><span>L</span><b>Lacra</b><small>Vrakhiri · vampire</small><p>Begin through <Link href="/a-friend-like-this">A Friend Like This</Link> near Svartrau, form the alliance and continue her optional route before the final sequence. Use the dedicated <Link href="/lacra-romance">Lacra romance guide</Link> for the late Mandrake branch.</p></div><div><span>C</span><b>Crake (Marat)</b><small>Human · rebel leader</small><p>Save Mert, follow the trail to the Manumits and continue the connected rebel quests while showing clear romantic interest.</p></div></div>,
+        body: <div id="roster" className="romance-routes"><div><span>A</span><b>Anca</b><small>Human · healer</small><p>Begin with her prologue medicine and Page-Turner interactions, then continue Echoes of Silenced Bells, Between the Words and <Link href="/font-of-life">the Font of Life</Link>. Use the dedicated <Link href="/anca-romance">Anca romance guide</Link> for route order and the inn conversation.</p></div><div><span>L</span><b>Lacra</b><small>Vrakhiri · vampire</small><p>Begin through <Link href="/a-friend-like-this">A Friend Like This</Link> near Svartrau, form the alliance and continue her optional route before the final sequence. Use the dedicated <Link href="/lacra-romance">Lacra romance guide</Link> for the late Mandrake branch.</p></div><div><span>C</span><b>Crake (Marat)</b><small>Human · rebel leader</small><p>Save Mert, follow the trail to the Manumits and continue the connected rebel quests while showing clear romantic interest.</p></div></div>,
       },
       {
         title: "Can you romance all three in one playthrough?",

@@ -22,6 +22,7 @@ const cards = [
   ["Merchant", "Where can you sell silver?", "Unlock the Silver Trader, find the Svartrau location and avoid making the trip before the prerequisite quest.", "/silver-trader"],
   ["Boss route", "Who is Xanthe and how do you reach her?", "Track the Court route, protect a pre-boss save and understand the Vrakhir-blood choice.", "/xanthe-boss-guide"],
   ["Romance route", "How do you romance Lacra?", "Follow the spoiler-marked quest order, then protect the Mandrake choice with a manual save.", "/lacra-romance"],
+  ["Romance route", "How do you romance Anca?", "Follow Anca's quest order, make a save before Font of Life, and protect the final inn conversation.", "/anca-romance"],
   ["Anca choice", "Font of Life: which choice is best?", "Compare Coen’s Witchcraft perk, Anca’s outcome and the Ancient Greaves before making the permanent decision.", "/font-of-life"],
   ["Arbiter armor", "A Bulwark Against Darkness", "Find all four components—Flask, Silk Threads, saint relic and Lizard’s Moult—then complete the Uriashi ritual.", "/a-bulwark-against-darkness"],
   ["Quest item", "Flask of Quicksilver location", "Finish Home Sweet Home, return to Aurelius’s Tower and collect the key Arbiter armor component.", "/flask-of-quicksilver"],

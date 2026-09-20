@@ -2,8 +2,8 @@ import { GuidePage, guideMetadata } from "../guide-page";
 import Link from "next/link";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Known Issues: Hotfixes, Crashes & Saves",
-  "The current Blood of Dawnwalker known-issues guide: what Hotfix 1.0.5 and 1.0.4 fixed, plus separate checks for shader stutter, saving, controller input and repeatable crashes.",
+  "Blood of Dawnwalker Bugs: Black Screen, Crashes, Saves & Hotfixes",
+  "Blood of Dawnwalker black screen, crash and bug guide: what Hotfix 1.0.5 and 1.0.4 fixed, plus separate checks for shader stutter, saving, controller input and repeatable crashes.",
   "/known-issues",
   [
     "The Blood of Dawnwalker known issues",

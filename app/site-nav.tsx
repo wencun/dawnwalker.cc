@@ -38,6 +38,7 @@ const navigation: Record<Locale, Navigation> = {
         { href: "/silver-trader", label: "Silver Trader" },
         { href: "/xanthe-boss-guide", label: "Xanthe boss guide" },
         { href: "/font-of-life", label: "Font of Life" },
+        { href: "/anca-romance", label: "Anca romance" },
         { href: "/lacra-romance", label: "Lacra romance" },
       ] },
       { label: "Game guide", items: [
