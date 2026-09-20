@@ -2,8 +2,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "How to Romance Lacra in Blood of Dawnwalker: Quest Order",
-  "How to romance Lacra in The Blood of Dawnwalker: the spoiler-marked quest order, the Night of Horrors Mandrake choice, and how to protect the route with a manual save.",
+  "Lacra Romance Guide: Quest Order & Mandrake Choice | Dawnwalker",
+  "Lacra romance guide for The Blood of Dawnwalker: follow the spoiler-marked quest order, protect a manual save before the Night of Horrors Mandrake choice, and verify the current in-game prompt.",
   "/lacra-romance",
   ["Blood of Dawnwalker Lacra romance", "how to romance Lacra Blood of Dawnwalker", "The Blood of Dawnwalker Lacra", "Lacra romance choices Dawnwalker", "Lacra Night of Horrors Mandrake"],
 );
@@ -11,16 +11,17 @@ export const metadata = guideMetadata(
 export default function LacraRomancePage() {
   return <GuidePage
     eyebrow="LACRA ROMANCE ROUTE · SPOILERS"
-    title="How to romance Lacra in The Blood of Dawnwalker"
-    dek="Lacra&apos;s route begins with A Friend Like This and reaches its romance scene during The Night of Horrors. Follow the quest order, protect a manual save before the Mandrake decision, and do not confuse her route with the broader romance roster."
-    checked="September 8, 2026"
-    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · LACRA ROUTE</span><p><b>Complete Lacra&apos;s questline through The Night of Horrors, then make a manual save before the Mandrake decision.</b> Current walkthroughs identify that late quest as the romance trigger; use the exact in-game prompt rather than copying dialogue from an older video.</p></div>}
+    title="Lacra romance guide: quest order and Mandrake choice"
+    dek="Lacra&apos;s route in The Blood of Dawnwalker begins with A Friend Like This and reaches its romance scene during The Night of Horrors. Follow the quest order, protect a manual save before the Mandrake decision, and do not confuse her route with the broader romance roster."
+    checked="September 20, 2026"
+    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · LACRA ROUTE</span><p><b>If you searched for Lacra in The Blood of Dawnwalker: complete her questline through The Night of Horrors, then make a manual save before the Mandrake decision.</b> Current walkthroughs identify that late quest as the romance trigger; use the exact in-game prompt rather than copying dialogue from an older video.</p></div>}
     faqs={[
       { question: "How do you romance Lacra in The Blood of Dawnwalker?", answer: "Follow Lacra&apos;s questline from A Friend Like This through The Night of Horrors. Current route guides identify a Mandrake decision in that late quest as the romance trigger." },
       { question: "Can you romance Lacra and other characters in Dawnwalker?", answer: "Current launch guides report that Lacra, Anca and Crake can all be romanced in one playthrough. Their routes remain separate, so protect saves before late quest choices." },
       { question: "Which quest has Lacra&apos;s romance scene?", answer: "Current walkthroughs place the romance trigger in The Night of Horrors. Complete the preceding Lacra route and make a save before the relevant Mandrake choice." },
     ]}
     nextSteps={[
+      { label: "Start Lacra's route", href: "/a-friend-like-this", description: "Begin with the quest that introduces Lacra before reading the late-route spoiler." },
       { label: "See every romance option", href: "/romance", description: "Compare Lacra with Anca and Crake without mixing their quest routes." },
       { label: "Plan the ending save", href: "/endings", description: "Keep a separate late-game save for outcome variations." },
       { label: "Understand quest time costs", href: "/time-system", description: "Keep optional relationship quests visible alongside the 30-day clock." },

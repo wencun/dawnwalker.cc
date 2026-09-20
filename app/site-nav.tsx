@@ -43,6 +43,7 @@ const navigation: Record<Locale, Navigation> = {
       { label: "Game guide", items: [
         { href: "/release-date", label: "Release date" },
         { href: "/platforms", label: "Platforms" },
+        { href: "/ps5", label: "PS5 guide" },
         { href: "/gameplay", label: "Gameplay" },
         { href: "/time-system", label: "Time system" },
         { href: "/route-planner", label: "30-Day Route Planner" },
