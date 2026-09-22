@@ -143,20 +143,14 @@
 
 公开社区摘要每天抓取最新 20 条标题；这个 40 条样本用于发现需求，不代表全网搜索量。同期没有收到新的站点直接反馈，因此不能把单条帖子包装成“高频”。Google 自动补全也不提供绝对搜索量或严格的 48 小时归因，只作为独立的持续搜索信号。
 
-| 优先级 | 需求簇 | 最近社区信号 | 独立搜索信号 | 决策 |
-|---|---|---|---|---|
-| P1 | 治疗：战斗中、白天、人类形态、中毒 | 9 月 21 日出现 `Help with Healing` | 自动补全同时出现 `how to heal`、`heal during combat`、`heal poison`、`how to heal as human/day` | 先验证游戏内操作和可靠来源，再发布一篇完整治疗指南 |
-| P1 | Corruption / Hunger 后果 | 9 月 21 日玩家直接询问不断屈服于 Hunger 的叙事后果 | 自动补全形成 consequences、endings、downsides、meter、farm 等完整问题簇 | 优先做机制与后果页，但必须区分可逆数值与剧情后果 |
-| P1 | 任务无法开始或推进 | 9 月 20 日 `Can't start the quest?`；9 月 21 日出现任务标记、Forge It Anew bug、Our Rotten Roots 对话问题 | 自动补全包含 quest list/order/rewards/quests to do first/skip/avoid | 扩充具体任务页和已知问题页；没有任务名时不生成泛化“修复器” |
-| P2 | Infamy 等级与升级 | 9 月 21 日出现 `how to get level 9 infamy` | 自动补全出现 infamy、infamy levels、infamy system | 完成等级来源与解锁验证后立项 |
-| P2 | 开局路线与白天 build | 9 月 20 日出现 early game、白天 Witchcraft build、格挡/招架问题 | 自动补全持续出现 fighting tips、combat、quests to do first | 优先加强现有 gameplay/prologue 页面，避免再做无数据的工具 |
+| 候选需求簇 | 40 条社区标题中的出现数 | 自动补全变体数 | 可证明的月搜索量 | 决策 |
+|---|---:|---:|---:|---|
+| 治疗：战斗中、白天、人类形态、中毒 | 1 | 5 个相关具体变体 | 未知 | 不以“高频”立项；等待 GSC 或 Keyword Planner 数量 |
+| Corruption / Hunger 后果 | 1 | 6 个相关具体变体 | 未知 | 仅保留为待验证候选 |
+| 任务无法开始或推进 | 4 | 6 个 quest list/order/priority 变体，但与 bug 意图不完全相同 | 未知 | 只更新已有具体任务页，不建立通用工具 |
+| Infamy 等级与升级 | 1 | 3 个相关具体变体 | 未知 | 仅保留为待验证候选 |
+| 开局路线、白天 build 与战斗 | 3 | 3 个相关具体变体 | 未知 | 只加强已有页面，不新建立项 |
+
+这些数值不是搜索量。社区出现数只是 40 条最新标题中的观察次数；自动补全变体数只证明 Google 能联想到这些查询，不能证明有多少人搜索。当前环境没有 Search Console 凭据、Google Ads Keyword Planner 导出或可审计的第三方关键词数据库，因此不能诚实给出“每天多少”或“每月多少”。在获得 impressions、clicks、CTR 和查询窗口之前，这五类需求全部从 P1/P2 降为候选，不应以“真实高频需求”对外描述。
 
 证据记录：GitHub 自动摘要 [2026-09-20](https://github.com/wencun/dawnwalker.cc/issues/18) 与 [2026-09-21](https://github.com/wencun/dawnwalker.cc/issues/19)。每个社区标题仍需回到原帖、游戏版本和可复现步骤核实；标题本身不能证明答案。
-
-### AdSense 审核前的发布规则
-
-- 暂停第三方 popunder、overlay、social bar 和原生广告；审核期间不让广告遮挡导航或主要内容。
-- 只保留 Google AdSense 所需的站点验证代码与 `ads.txt`，不在审核前预留空白广告框。
-- 不发布仅替换关键词的模板页；每页必须直接回答一个有证据的用户任务，并说明来源、版本、验证日期和不确定项。
-- About、Contact、Privacy、Terms、作者/编辑标准和更正渠道必须从全站导航或页脚可达。
-- 提交审核前逐页检查：无虚构答案、无失效链接、无占位文案、移动端可读、主要内容明显多于导航和广告。
