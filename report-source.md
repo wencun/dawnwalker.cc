@@ -128,3 +128,35 @@
 ## 局限
 
 公开搜索结果不能提供精确搜索量或完整实时排名；Google Trends 的相对热度也不是绝对需求量。社区帖子只用于发现问题，不足以验证游戏机制或修复方案。任何评测、补丁、性能或故障结论都必须在发布当日再次核验。
+
+## 2026-09-22：最近 48 小时需求校验
+
+内容立项不再从“可能有用的工具”反推需求。新页面必须至少满足以下一种证据门槛：
+
+1. Search Console 在最近可用窗口中出现重复查询或明显展示量；
+2. 最近 48 小时公开社区样本中出现重复、具体、可回答的问题，并有第二个独立信号佐证；
+3. Google 自动补全出现同一意图的多个具体变体，同时至少有一条近期玩家提问或站内搜索/反馈佐证。
+
+`30-Day Route Planner` 没有达到这个门槛：现有证据只支持玩家关心 30 天机制，并不能证明玩家需要路线生成器，因此已删除。
+
+### 最近 48 小时可见信号（2026-09-20 至 2026-09-21 UTC）
+
+公开社区摘要每天抓取最新 20 条标题；这个 40 条样本用于发现需求，不代表全网搜索量。同期没有收到新的站点直接反馈，因此不能把单条帖子包装成“高频”。Google 自动补全也不提供绝对搜索量或严格的 48 小时归因，只作为独立的持续搜索信号。
+
+| 优先级 | 需求簇 | 最近社区信号 | 独立搜索信号 | 决策 |
+|---|---|---|---|---|
+| P1 | 治疗：战斗中、白天、人类形态、中毒 | 9 月 21 日出现 `Help with Healing` | 自动补全同时出现 `how to heal`、`heal during combat`、`heal poison`、`how to heal as human/day` | 先验证游戏内操作和可靠来源，再发布一篇完整治疗指南 |
+| P1 | Corruption / Hunger 后果 | 9 月 21 日玩家直接询问不断屈服于 Hunger 的叙事后果 | 自动补全形成 consequences、endings、downsides、meter、farm 等完整问题簇 | 优先做机制与后果页，但必须区分可逆数值与剧情后果 |
+| P1 | 任务无法开始或推进 | 9 月 20 日 `Can't start the quest?`；9 月 21 日出现任务标记、Forge It Anew bug、Our Rotten Roots 对话问题 | 自动补全包含 quest list/order/rewards/quests to do first/skip/avoid | 扩充具体任务页和已知问题页；没有任务名时不生成泛化“修复器” |
+| P2 | Infamy 等级与升级 | 9 月 21 日出现 `how to get level 9 infamy` | 自动补全出现 infamy、infamy levels、infamy system | 完成等级来源与解锁验证后立项 |
+| P2 | 开局路线与白天 build | 9 月 20 日出现 early game、白天 Witchcraft build、格挡/招架问题 | 自动补全持续出现 fighting tips、combat、quests to do first | 优先加强现有 gameplay/prologue 页面，避免再做无数据的工具 |
+
+证据记录：GitHub 自动摘要 [2026-09-20](https://github.com/wencun/dawnwalker.cc/issues/18) 与 [2026-09-21](https://github.com/wencun/dawnwalker.cc/issues/19)。每个社区标题仍需回到原帖、游戏版本和可复现步骤核实；标题本身不能证明答案。
+
+### AdSense 审核前的发布规则
+
+- 暂停第三方 popunder、overlay、social bar 和原生广告；审核期间不让广告遮挡导航或主要内容。
+- 只保留 Google AdSense 所需的站点验证代码与 `ads.txt`，不在审核前预留空白广告框。
+- 不发布仅替换关键词的模板页；每页必须直接回答一个有证据的用户任务，并说明来源、版本、验证日期和不确定项。
+- About、Contact、Privacy、Terms、作者/编辑标准和更正渠道必须从全站导航或页脚可达。
+- 提交审核前逐页检查：无虚构答案、无失效链接、无占位文案、移动端可读、主要内容明显多于导航和广告。

@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
-import { AdConsentProvider } from "./ad-consent";
-import { PopunderAd, SocialBarAd, TopNativeAd } from "./ad-slot";
 import { SiteNav } from "./site-nav";
 
 export const metadata: Metadata = {
@@ -29,6 +27,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return <html lang="en">
     <body>
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-21QC2EJC4L" strategy="afterInteractive" />
+      <Script
+        async
+        crossOrigin="anonymous"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4539826019899948"
+        strategy="afterInteractive"
+      />
       <Script id="google-analytics" strategy="afterInteractive">
         {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -36,7 +40,7 @@ gtag('js', new Date());
 gtag('config', 'G-21QC2EJC4L');`}
       </Script>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }} />
-      <AdConsentProvider><PopunderAd /><SiteNav /><TopNativeAd />{children}<SocialBarAd /></AdConsentProvider>
+      <SiteNav />{children}
     </body>
   </html>;
 }

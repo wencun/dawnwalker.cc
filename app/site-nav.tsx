@@ -47,7 +47,6 @@ const navigation: Record<Locale, Navigation> = {
         { href: "/ps5", label: "PS5 guide" },
         { href: "/gameplay", label: "Gameplay" },
         { href: "/time-system", label: "Time system" },
-        { href: "/route-planner", label: "30-Day Route Planner" },
         { href: "/what-happens-after-30-days", label: "What happens after 30 days" },
         { href: "/new-game-plus", label: "New Game Plus status" },
         { href: "/trophy-guide", label: "Trophy guide" },
