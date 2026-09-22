@@ -1,7 +1,7 @@
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "Forge It Anew: 3 Sword Shard Locations and Uriashi Fix",
+  "Blood of Dawnwalker Sword Shards: Forge It Anew Locations",
   "The Blood of Dawnwalker Forge It Anew walkthrough: start trigger, all three sword-shard locations, Uriashi the blacksmith and the Hotfix 1.0.2 crafting fix.",
   "/forge-it-anew",
   ["The Blood of Dawnwalker Forge It Anew", "Dawnwalker sword shard locations", "Dawnwalker Uriashi blacksmith", "Forge It Anew walkthrough", "Blood of Dawnwalker holy sword"],
@@ -10,7 +10,7 @@ export const metadata = guideMetadata(
 export default function ForgeItAnewPage() {
   return <GuidePage
     eyebrow="QUEST WALKTHROUGH · SWORD SHARD ROUTE"
-    title="Forge It Anew: 3 sword shard locations and the Uriashi fix"
+    title="Blood of Dawnwalker sword shards: Forge It Anew locations"
     dek="Read St. Mihai&apos;s coffin note after the fight, then collect three shards from separate kobold encounters before returning to Uriashi. If crafting is unavailable, install Hotfix 1.0.2 before retrying."
     checked="September 14, 2026"
     quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · QUEST ORDER</span><p><b>Read St. Mihai&apos;s coffin note first, then collect the three shards: northeast Maragir Wealds, north of Rockfalls and south of St. Tyna&apos;s Grove.</b> Bring all three to Uriashi near Uriashi Hermitage. If the relevant holy-sword craft is unavailable, Hotfix 1.0.2 contains the official Uriashi fix.</p></div>}

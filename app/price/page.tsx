@@ -2,21 +2,22 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Price: Steam, PS5 and Xbox Buying Guide",
-  "The Blood of Dawnwalker price guide: official U.S. Steam and PlayStation price snapshot, Standard versus Eclipse, regional price differences and where to buy safely without gray-market key claims.",
+  "The Blood of Dawnwalker Price & Sales: Steam, PS5 and Xbox",
+  "Check The Blood of Dawnwalker price and sales on Steam, PS5 and Xbox, compare Standard versus Eclipse, and verify regional offers on official stores.",
   "/price",
-  ["The Blood of Dawnwalker price", "Blood of Dawnwalker sale", "The Blood of Dawnwalker Steam key", "Blood of Dawnwalker Steam price", "Blood of Dawnwalker PS5 price", "Blood of Dawnwalker collector's edition price"],
+  ["The Blood of Dawnwalker price", "Blood of Dawnwalker sales", "The Blood of Dawnwalker sale", "The Blood of Dawnwalker Steam key", "Blood of Dawnwalker Steam price", "Blood of Dawnwalker PS5 price", "Blood of Dawnwalker collector's edition price"],
 );
 
 export default function PricePage() {
   return <GuidePage
     eyebrow="BUYING GUIDE · OFFICIAL STOREFRONT CHECK"
-    title="The Blood of Dawnwalker price: Steam, PS5 and Xbox guide"
+    title="The Blood of Dawnwalker price and sales: Steam, PS5 and Xbox"
     dek="Use official storefronts for the current local price. At the September 15 check, the U.S. Steam and PlayStation stores list Standard at $69.99 and Eclipse at $79.99; regional currencies, tax and future discounts can differ."
     checked="September 15, 2026"
     quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · U.S. PRICE SNAPSHOT</span><p><b>Standard is listed at $69.99 and Eclipse at $79.99 on the official U.S. Steam and PlayStation stores checked today.</b> Check your own region before buying. This site does not list resale-market keys, giveaway codes or unverified sellers as a “deal.”</p></div>}
     faqs={[
       { question: "How much is The Blood of Dawnwalker?", answer: "At the September 15, 2026 check, the official U.S. Steam and PlayStation stores list Standard at $69.99 and Eclipse at $79.99. Local pricing, currency conversion, tax and later promotions may be different." },
+      { question: "Is The Blood of Dawnwalker on sale?", answer: "Open the official Steam, PlayStation or Xbox listing for your account region to verify a current sale. Discounts, dates and eligible editions can differ by platform and country." },
       { question: "Where can I buy a The Blood of Dawnwalker Steam key safely?", answer: "Use the official Steam listing or the publisher's official buy page for region-specific retailers. Avoid treating a low resale-market code price as an official sale; key region, edition, eligibility and refund protection can differ." },
       { question: "Does the Eclipse Edition include early access?", answer: "No official early-access entitlement is listed in the edition guide. Eclipse adds digital extras; see the editions page for the complete official comparison." },
     ]}

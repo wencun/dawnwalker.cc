@@ -3,7 +3,7 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Patch Notes 1.0.5: Latest Update & Fixes",
+  "Blood of Dawnwalker Update 1.0.5: Latest Patch Notes",
   "Official The Blood of Dawnwalker Hotfix 1.0.5 and 1.0.4 patch notes: shader-compilation stutter, stability, quest progression, saving, Steam Microsoft GameInput and FSR Frame Generation fixes.",
   "/patch-notes",
   ["The Blood of Dawnwalker patch notes", "Blood of Dawnwalker patch notes", "The Blood of Dawnwalker update", "Blood of Dawnwalker update", "Blood of Dawnwalker updates", "The Blood of Dawnwalker 1.0.4", "Dawnwalker patch 1.0.4", "Dawnwalker hotfix notes", "Microsoft GameInput Dawnwalker"],
@@ -12,7 +12,7 @@ export const metadata = guideMetadata(
 export default function PatchNotesPage() {
   return <GuidePage
     eyebrow="PATCH TRACKER · OFFICIAL NOTES FIRST"
-    title="The Blood of Dawnwalker patch notes: Hotfix 1.0.5 and recent fixes"
+    title="Blood of Dawnwalker update: latest patch notes and fixes"
     dek="Hotfix 1.0.5 improves shader compilation to reduce some stutter. The previous 1.0.4 update addresses stability, quest progression, saving and Steam Microsoft GameInput FPS drops."
     checked="September 13, 2026"
     quickAnswer={<div className="answer-visual"><div><span>HOTFIX 1.0.5 · LATEST</span><h2>Update first. Then retest the exact problem.</h2><p>The latest official hotfix improves shader compilation and may reduce related stutter. Hotfix 1.0.4 also fixed stability, blocked quest progress, a saving issue and Steam GameInput FPS drops.</p></div><Image src="/dawnwalker-night.png" alt="Coen travelling at night in The Blood of Dawnwalker" width={1440} height={810} priority /></div>}

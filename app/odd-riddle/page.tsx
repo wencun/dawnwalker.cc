@@ -2,8 +2,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "Odd Riddle Dawnwalker Answer: Choose Left at Lunar Manor",
-  "Odd Riddle Dawnwalker answer: choose the left opening at Lunar Manor during The Lunar Game. Left opens the gate; middle and right trigger the trap.",
+  "Blood of Dawnwalker Odd Riddle Solution: Lunar Manor Choice",
+  "Solve the Odd Riddle in The Blood of Dawnwalker at Lunar Manor. See which left, middle or right opening continues The Lunar Game and what the wrong choices do.",
   "/odd-riddle",
   [
     "The Blood of Dawnwalker Odd Riddle",
@@ -16,7 +16,7 @@ export const metadata = guideMetadata(
 export default function OddRiddlePage() {
   return <GuidePage
     eyebrow="THE LUNAR GAME · SPOILER-LIGHT QUEST ANSWER"
-    title="Odd Riddle Dawnwalker answer: choose the left opening"
+    title="The Blood of Dawnwalker Odd Riddle solution"
     dek="For the Odd Riddle at Lunar Manor during The Lunar Game, choose the left opening. It opens the gate and lets you continue; the middle and right choices trigger the trap."
     checked="September 20, 2026"
     quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · ODD RIDDLE DAWNWALKER</span><p><b>Choose the left opening at Lunar Manor.</b> The riddle deliberately makes the left choice sound dangerous, but it is the correct option for this vampire-hosted trial. The gate opens and the route continues.</p></div>}
