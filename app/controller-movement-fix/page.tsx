@@ -16,6 +16,7 @@ export const metadata = guideMetadata(
     "Dawnwalker controller deadzone",
     "Dawnwalker slow walking fix",
     "Dawnwalker PS5 controller bug",
+    "Blood of Dawnwalker controller or keyboard",
   ],
 );
 
@@ -32,6 +33,7 @@ export default function ControllerMovementFixPage() {
       { question: "Does the Square deadzone workaround fix controller menus?", answer: "Not necessarily. Some players say movement improves while menu selection, input switching or button detection remains unreliable. Treat those as separate controller issues." },
       { question: "Did the 1.0.4 update fix Microsoft GameInput FPS drops?", answer: "On Steam, Hotfix 1.0.4 says connecting controllers with outdated Microsoft GameInput software should no longer cause FPS drops. Update first, then test the same controller connection before using a separate movement workaround." },
       { question: "Is there a PS5 fix for the Dawnwalker sprint bug?", answer: "The developer-listed sensitivity change from 1.0 to 0.8 can be tried in the game's controller settings on console. The separate Steam Input Square-deadzone steps apply only to PC Steam." },
+      { question: "Should I use a controller or keyboard for The Blood of Dawnwalker?", answer: "Choose the input that does not reproduce your current issue. If connecting a controller triggers an FPS drop on Steam, update first because Hotfix 1.0.4 targets outdated Microsoft GameInput. This guide covers controller-specific symptoms; it does not claim that one input method is universally better." },
     ]}
     nextSteps={[
       { label: "Apply the PC workaround", href: "#steam-fix", description: "Follow the illustrated Steam Input path and test the left stick." },

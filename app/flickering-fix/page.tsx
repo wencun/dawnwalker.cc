@@ -2,8 +2,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "Dawnwalker Flickering Fix: Post Processing, Frame Gen & VRR",
-  "Screen or light flickering in The Blood of Dawnwalker? Match the symptom first: Ultra/post-processing startup flicker, Frame Generation V-Sync, or PS5 Pro VRR.",
+  "Blood of Dawnwalker Flickering Fix: Screen, Light & Frame Gen",
+  "Fix Blood of Dawnwalker screen or light flickering: test Post Processing, Frame Generation, V-Sync and VRR one at a time.",
   "/flickering-fix",
   ["Blood of Dawnwalker flickering", "Blood of Dawnwalker flickering PC", "The Blood of Dawnwalker screen flickering", "Blood of Dawnwalker light flickering", "Dawnwalker flicker", "Dawnwalker PS5 Pro VRR flickering"],
 );
@@ -11,7 +11,7 @@ export const metadata = guideMetadata(
 export default function FlickeringFixPage() {
   return <GuidePage
     eyebrow="FLICKERING FIX · FSR FRAME GEN, VRR & PC SETTINGS"
-    title="Dawnwalker flickering fix: PC light flicker, shimmer and VRR"
+    title="Blood of Dawnwalker flickering fix: screen, light and Frame Gen"
     dek="Start with the symptom, not a driver rollback or mod. A repeated PC report links full-screen light flicker to launching on Ultra: start once on High or Post Processing High, restart, then retest. Frame Generation and VRR need separate checks."
     checked="September 16, 2026"
     quickAnswer={<div className="fix-callout"><span>PC FULL-SCREEN LIGHT FLICKER: START HERE</span><p><b>1.</b> If flickering began when the game launched on Ultra, select <b>High</b> or set <b>Post Processing to High</b>, fully restart, then retest the same scene. <b>2.</b> Only then test Frame Generation off and restart. <b>3.</b> Use the Hotfix 1.0.4 V-Sync check only when FSR Frame Generation is involved. The High/Post Processing route is a repeated player report, not an official universal fix.</p></div>}

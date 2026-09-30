@@ -37,6 +37,7 @@ export default function KnownIssuesPage() {
       { label: "Check console modes", href: "/console-performance", description: "Compare official targets with early player reports." },
       { label: "Cannot save or saving is locked?", href: "/cant-save", description: "Keep a save-lock diagnosis separate from quest consequences." },
       { label: "Fix PC flickering", href: "/flickering-fix", description: "Use the current Frame Generation and post-processing tests." },
+      { label: "PS5 crash check", href: "/ps5-crash-fix", description: "Keep a repeatable PS5 crash separate from a display or save symptom." },
     ]}
     sources={[
       { label: "Steam — Hotfix 1.0.5 shader-compilation improvements", href: "https://steamcommunity.com/app/3751260" },

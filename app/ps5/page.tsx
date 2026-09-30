@@ -28,11 +28,13 @@ export default function PS5Page() {
       { question: "How much is The Blood of Dawnwalker on PS5?", answer: "Price, currency, tax, discounts and available editions depend on your PlayStation account region. Use the linked official PlayStation Store listing for the current checkout price." },
       { question: "Can I play The Blood of Dawnwalker offline on PS5?", answer: "The official PlayStation listing says offline play is enabled and lists one player. Check your regional listing for any account or online-service requirements that may apply to your purchase." },
       { question: "Can I remap every PS5 controller button in Dawnwalker?", answer: "Do not assume so. An official Hotfix 1.0.2 note lists a missing option for mapping buttons on a PS5 gamepad as a known issue; read the latest official patch notes before relying on a workaround." },
+      { question: "Why is The Blood of Dawnwalker crashing on PS5?", answer: "Update first, then retry the same save and scene once. Current official notes do not identify one PS5-only cause for every crash, so preserve your save and use the focused PS5 crash check before changing several settings." },
     ]}
     nextSteps={[
       { label: "Compare every platform", href: "/platforms", description: "Check Steam, PS5, Xbox Series X|S and the official Game Pass status." },
       { label: "Read console performance context", href: "/console-performance", description: "Separate official performance targets from later player reports and tests." },
       { label: "Compare editions before checkout", href: "/editions", description: "See the source-based differences without relying on retailer copy." },
+      { label: "Fix a PS5 crash", href: "/ps5-crash-fix", description: "Use the patch-first check and preserve the affected save." },
     ]}
     sources={[
       { label: "Bandai Namco — The Blood of Dawnwalker is now available", href: "https://www.bandainamcoent.com/news/the-blood-of-dawnwalker-is-now-available" },
