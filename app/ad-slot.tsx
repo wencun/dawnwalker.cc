@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAdConsent } from "./ad-consent";
 
 const nativeUnit = {
@@ -28,7 +28,7 @@ function AdLabel() {
   return <span className="ad-label">ADVERTISEMENT</span>;
 }
 
-function NativeAdFrame({ onRendered }: { onRendered: () => void }) {
+function NativeAdFrame() {
   const consent = useAdConsent();
   const hostRef = useRef<HTMLDivElement>(null);
   const [failed, setFailed] = useState(false);
@@ -52,12 +52,7 @@ function NativeAdFrame({ onRendered }: { onRendered: () => void }) {
       ));
       cards.slice(1).forEach((card) => card.style.setProperty("display", "none", "important"));
     };
-    const revealWhenRendered = () => {
-      keepOnlyFirstMobileCreative();
-      const hasCreative = Boolean(host.querySelector("iframe") || host.querySelector(`#${nativeUnit.containerId} > :not(script):not(style)`));
-      if (hasCreative) onRendered();
-    };
-    const mobileCreativeObserver = new MutationObserver(revealWhenRendered);
+    const mobileCreativeObserver = new MutationObserver(keepOnlyFirstMobileCreative);
 
     const loadAd = () => {
       host.replaceChildren();
@@ -67,15 +62,13 @@ function NativeAdFrame({ onRendered }: { onRendered: () => void }) {
       script.async = true;
       script.dataset.cfasync = "false";
       script.src = nativeUnit.src;
-      mobileCreativeObserver.observe(container, { childList: true });
       script.onload = () => {
+        mobileCreativeObserver.observe(container, { childList: true });
         mobileQuery.addEventListener("change", keepOnlyFirstMobileCreative);
         trackAdEvent("ad_slot_script_loaded", "native-content", "native");
         inspectionTimer = window.setTimeout(() => {
-          revealWhenRendered();
-          const rendered = Boolean(host.querySelector("iframe") || host.querySelector(`#${nativeUnit.containerId} > :not(script):not(style)`));
-          trackAdEvent(rendered ? "ad_slot_rendered" : "ad_slot_empty", "native-content", "native");
-          if (rendered) onRendered();
+          keepOnlyFirstMobileCreative();
+          trackAdEvent(host.querySelector("iframe") ? "ad_slot_rendered" : "ad_slot_empty", "native-content", "native");
         }, 1500);
       };
       script.onerror = () => {
@@ -93,7 +86,7 @@ function NativeAdFrame({ onRendered }: { onRendered: () => void }) {
       mobileQuery.removeEventListener("change", keepOnlyFirstMobileCreative);
       host.replaceChildren();
     };
-  }, [consent, failed, onRendered]);
+  }, [consent, failed]);
 
   if (consent !== "accepted" || failed) return null;
   return <div ref={hostRef} className="ad-native-frame" aria-label="Advertisement" />;
@@ -108,14 +101,19 @@ export function PopunderAd() {
   useEffect(() => {
     if (consent !== "accepted" || document.getElementById(popunderUnit.scriptId)) return;
 
-    const script = document.createElement("script");
-    script.id = popunderUnit.scriptId;
-    script.async = true;
-    script.src = popunderUnit.src;
-    script.onload = () => trackAdEvent("ad_slot_script_loaded", "popunder", "popunder");
-    script.onerror = () => trackAdEvent("ad_slot_load_error", "popunder", "popunder");
-    document.head.append(script);
-    trackAdEvent("ad_slot_requested", "popunder", "popunder");
+    const timer = window.setTimeout(() => {
+      if (document.getElementById(popunderUnit.scriptId)) return;
+      const script = document.createElement("script");
+      script.id = popunderUnit.scriptId;
+      script.async = true;
+      script.src = popunderUnit.src;
+      script.onload = () => trackAdEvent("ad_slot_script_loaded", "popunder", "popunder");
+      script.onerror = () => trackAdEvent("ad_slot_load_error", "popunder", "popunder");
+      document.head.append(script);
+      trackAdEvent("ad_slot_requested", "popunder", "popunder");
+    }, 1500);
+
+    return () => window.clearTimeout(timer);
   }, [consent]);
 
   return null;
@@ -129,14 +127,19 @@ export function SocialBarAd() {
   useEffect(() => {
     if (consent !== "accepted" || document.getElementById(socialBarUnit.scriptId)) return;
 
-    const script = document.createElement("script");
-    script.id = socialBarUnit.scriptId;
-    script.async = true;
-    script.src = socialBarUnit.src;
-    script.onload = () => trackAdEvent("ad_slot_script_loaded", "social-bar", "social-bar");
-    script.onerror = () => trackAdEvent("ad_slot_load_error", "social-bar", "social-bar");
-    document.body.append(script);
-    trackAdEvent("ad_slot_requested", "social-bar", "social-bar");
+    const timer = window.setTimeout(() => {
+      if (document.getElementById(socialBarUnit.scriptId)) return;
+      const script = document.createElement("script");
+      script.id = socialBarUnit.scriptId;
+      script.async = true;
+      script.src = socialBarUnit.src;
+      script.onload = () => trackAdEvent("ad_slot_script_loaded", "social-bar", "social-bar");
+      script.onerror = () => trackAdEvent("ad_slot_load_error", "social-bar", "social-bar");
+      document.body.append(script);
+      trackAdEvent("ad_slot_requested", "social-bar", "social-bar");
+    }, 1500);
+
+    return () => window.clearTimeout(timer);
   }, [consent]);
 
   return null;
@@ -146,10 +149,8 @@ export function SocialBarAd() {
 // root layout, and loads as soon as advertising consent is granted.
 export function TopNativeAd() {
   const consent = useAdConsent();
-  const [rendered, setRendered] = useState(false);
-  const markRendered = useCallback(() => setRendered(true), []);
   if (consent !== "accepted") return null;
-  return <aside className={`ad-slot ad-slot-content${rendered ? " ad-slot-ready" : ""}`}><AdLabel /><NativeAdFrame onRendered={markRendered} /></aside>;
+  return <aside className="ad-slot ad-slot-content"><AdLabel /><NativeAdFrame /></aside>;
 }
 
 // Existing templates still render this component, but the one global top slot
