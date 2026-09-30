@@ -54,7 +54,8 @@ function NativeAdFrame({ onRendered }: { onRendered: () => void }) {
     };
     const revealWhenRendered = () => {
       keepOnlyFirstMobileCreative();
-      if (host.querySelector("iframe")) onRendered();
+      const hasCreative = Boolean(host.querySelector("iframe") || host.querySelector(`#${nativeUnit.containerId} > :not(script):not(style)`));
+      if (hasCreative) onRendered();
     };
     const mobileCreativeObserver = new MutationObserver(revealWhenRendered);
 
@@ -66,13 +67,13 @@ function NativeAdFrame({ onRendered }: { onRendered: () => void }) {
       script.async = true;
       script.dataset.cfasync = "false";
       script.src = nativeUnit.src;
+      mobileCreativeObserver.observe(container, { childList: true });
       script.onload = () => {
-          mobileCreativeObserver.observe(container, { childList: true });
-          mobileQuery.addEventListener("change", keepOnlyFirstMobileCreative);
+        mobileQuery.addEventListener("change", keepOnlyFirstMobileCreative);
         trackAdEvent("ad_slot_script_loaded", "native-content", "native");
         inspectionTimer = window.setTimeout(() => {
           revealWhenRendered();
-          const rendered = Boolean(host.querySelector("iframe"));
+          const rendered = Boolean(host.querySelector("iframe") || host.querySelector(`#${nativeUnit.containerId} > :not(script):not(style)`));
           trackAdEvent(rendered ? "ad_slot_rendered" : "ad_slot_empty", "native-content", "native");
           if (rendered) onRendered();
         }, 1500);

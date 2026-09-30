@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type SyntheticEvent } from "react";
 import { LanguageSwitcher } from "./language-switcher";
@@ -120,19 +121,21 @@ export function SiteNav() {
   }, []);
 
   return <nav className="site-nav" aria-label="Main navigation" ref={navRef} onKeyDown={(event) => { if (event.key === "Escape") setOpenGroup(null); }}>
-    <a className="brand" href={home}>DAWNWALKER <span>GUIDE</span><small>{subtitle}</small></a>
+    <Link className="brand" href={home}>DAWNWALKER <span>GUIDE</span><small>{subtitle}</small></Link>
     <div className="site-nav-links">
       {menu.primary.map((item) => {
         const external = item.href.startsWith("https://");
         const active = !external && pathname === item.href;
-        return <a key={item.href} href={item.href} className={`site-nav-direct${active ? " active" : ""}`} aria-current={active ? "page" : undefined} {...(external ? { target: "_blank", rel: "sponsored noopener noreferrer" } : {})}>{item.label}</a>;
+        return external
+          ? <a key={item.href} href={item.href} className={`site-nav-direct${active ? " active" : ""}`} target="_blank" rel="sponsored noopener noreferrer">{item.label}</a>
+          : <Link key={item.href} href={item.href} className={`site-nav-direct${active ? " active" : ""}`} aria-current={active ? "page" : undefined}>{item.label}</Link>;
       })}
       {menu.groups.map((group) => {
         const active = group.items.some((item) => pathname === item.href);
         return <details className={`site-nav-menu${active ? " active" : ""}`} key={group.label} open={openGroup === group.label} onToggle={toggleMenu(group.label)}>
           <summary>{group.label}</summary>
           <div role="menu" aria-label={group.label}>
-            {group.items.map((item) => <a key={item.href} href={item.href} role="menuitem" onClick={closeMenu} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</a>)}
+            {group.items.map((item) => <Link key={item.href} href={item.href} role="menuitem" onClick={closeMenu} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</Link>)}
           </div>
         </details>;
       })}
