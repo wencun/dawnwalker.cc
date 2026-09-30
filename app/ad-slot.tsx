@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useAdConsent } from "./ad-consent";
 
 const nativeUnit = {
@@ -28,7 +28,7 @@ function AdLabel() {
   return <span className="ad-label">ADVERTISEMENT</span>;
 }
 
-function NativeAdFrame() {
+function NativeAdFrame({ onRendered }: { onRendered: () => void }) {
   const consent = useAdConsent();
   const hostRef = useRef<HTMLDivElement>(null);
   const [failed, setFailed] = useState(false);
@@ -52,7 +52,11 @@ function NativeAdFrame() {
       ));
       cards.slice(1).forEach((card) => card.style.setProperty("display", "none", "important"));
     };
-    const mobileCreativeObserver = new MutationObserver(keepOnlyFirstMobileCreative);
+    const revealWhenRendered = () => {
+      keepOnlyFirstMobileCreative();
+      if (host.querySelector("iframe")) onRendered();
+    };
+    const mobileCreativeObserver = new MutationObserver(revealWhenRendered);
 
     const loadAd = () => {
       host.replaceChildren();
@@ -63,13 +67,14 @@ function NativeAdFrame() {
       script.dataset.cfasync = "false";
       script.src = nativeUnit.src;
       script.onload = () => {
-        keepOnlyFirstMobileCreative();
-        mobileCreativeObserver.observe(container, { childList: true });
-        mobileQuery.addEventListener("change", keepOnlyFirstMobileCreative);
+          mobileCreativeObserver.observe(container, { childList: true });
+          mobileQuery.addEventListener("change", keepOnlyFirstMobileCreative);
         trackAdEvent("ad_slot_script_loaded", "native-content", "native");
         inspectionTimer = window.setTimeout(() => {
-          keepOnlyFirstMobileCreative();
-          trackAdEvent(host.querySelector("iframe") ? "ad_slot_rendered" : "ad_slot_empty", "native-content", "native");
+          revealWhenRendered();
+          const rendered = Boolean(host.querySelector("iframe"));
+          trackAdEvent(rendered ? "ad_slot_rendered" : "ad_slot_empty", "native-content", "native");
+          if (rendered) onRendered();
         }, 1500);
       };
       script.onerror = () => {
@@ -87,7 +92,7 @@ function NativeAdFrame() {
       mobileQuery.removeEventListener("change", keepOnlyFirstMobileCreative);
       host.replaceChildren();
     };
-  }, [consent, failed]);
+  }, [consent, failed, onRendered]);
 
   if (consent !== "accepted" || failed) return null;
   return <div ref={hostRef} className="ad-native-frame" aria-label="Advertisement" />;
@@ -140,8 +145,10 @@ export function SocialBarAd() {
 // root layout, and loads as soon as advertising consent is granted.
 export function TopNativeAd() {
   const consent = useAdConsent();
+  const [rendered, setRendered] = useState(false);
+  const markRendered = useCallback(() => setRendered(true), []);
   if (consent !== "accepted") return null;
-  return <aside className="ad-slot ad-slot-content"><AdLabel /><NativeAdFrame /></aside>;
+  return <aside className={`ad-slot ad-slot-content${rendered ? " ad-slot-ready" : ""}`}><AdLabel /><NativeAdFrame onRendered={markRendered} /></aside>;
 }
 
 // Existing templates still render this component, but the one global top slot
