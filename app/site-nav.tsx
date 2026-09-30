@@ -120,6 +120,11 @@ export function SiteNav() {
     return () => document.removeEventListener("pointerdown", closeOnOutsidePointer);
   }, []);
 
+  useEffect(() => {
+    window.history.scrollRestoration = "manual";
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [pathname]);
+
   return <nav className="site-nav" aria-label="Main navigation" ref={navRef} onKeyDown={(event) => { if (event.key === "Escape") setOpenGroup(null); }}>
     <Link className="brand" href={home}>DAWNWALKER <span>GUIDE</span><small>{subtitle}</small></Link>
     <div className="site-nav-links">
