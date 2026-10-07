@@ -3,8 +3,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Crash & Stutter Fix: Frequent Crashes After Updates",
-  "Fix The Blood of Dawnwalker crash, stutter and performance issues with current community crash reports, the developer-listed Full Screen workaround and safe shader-compilation checks.",
+  "Blood of Dawnwalker Crash and Stutter Fix: Safe PC Checks",
+  "Fix Blood of Dawnwalker crashes and stutter with safe update, Full Screen, file verification and shader-compilation checks before risky tweaks.",
   "/crash-and-stutter-fix",
   ["The Blood of Dawnwalker crash", "Dawnwalker frequent crashes", "Dawnwalker crashing after update", "Blood of Dawnwalker stutter fix", "Dawnwalker performance issues", "Blood of Dawnwalker shader compilation crash"],
 );
@@ -12,10 +12,10 @@ export const metadata = guideMetadata(
 export default function CrashAndStutterFixPage() {
   return <GuidePage
     eyebrow="PC PERFORMANCE HELP · OFFICIAL SYMPTOMS"
-    title="The Blood of Dawnwalker crash and stutter fix"
-    dek="Start with the symptom, not a copied tweak list. New player reports describe repeatable crashes after recent updates, while the developer separately lists Full Screen for Windowed or Borderless stutter and higher-risk guidance for some shader-compilation crashes."
+    title="Blood of Dawnwalker crash and stutter fix: safe PC checks first"
+    dek="Start with the exact symptom before changing settings. Use Full Screen for Windowed or Borderless stutter, verify files for repeatable crashes and reserve shader-compilation BIOS guidance for that narrow case only."
     checked="September 15, 2026"
-    quickAnswer={<div className="answer-visual"><div><span>START WITH THE EXACT SYMPTOM</span><h2>Stutter and crashing are not one bug.</h2><p>For repeatable new crashes, update, verify files, disable mods and overlays, then retry the identical scene. Use Full Screen for the documented Windowed/Borderless stutter. BIOS guidance is only relevant to the official shader-compilation symptom.</p></div><Image src="/dawnwalker-hero.jpg" alt="The Blood of Dawnwalker key art" width={1920} height={1080} priority /></div>}
+    quickAnswer={<div className="answer-visual"><div><span>QUICK ANSWER · CRASH OR STUTTER</span><h2>Stutter and crashing are not one bug.</h2><p>For repeatable crashes, update, verify files, disable mods and overlays, then retry the identical scene. For Windowed or Borderless stutter, switch to Full Screen. If the issue is saving, use <Link href="/cant-save">can&apos;t save</Link>; if it is visual flicker, use <Link href="/flickering-fix">flickering fix</Link>; for patch scope, check <Link href="/known-issues">known issues</Link>.</p></div><Image src="/dawnwalker-hero.jpg" alt="The Blood of Dawnwalker key art" width={1920} height={1080} priority /></div>}
     faqs={[
       { question: "How do I fix The Blood of Dawnwalker stutter?", answer: "For stutter in Windowed or Borderless mode, the developer&apos;s current workaround is to switch to Full Screen. Retest the same area after updating the game before changing unrelated settings." },
       { question: "Why does Dawnwalker crash after a recent update?", answer: "A current Steam discussion includes reports of repeatable crashes in cutscenes, a boss fight and when closing inventory after recent updates. That is player evidence, not a confirmed global cause or official fix. Update, verify files, remove unsupported mods and overlays, then report the exact scene if it persists." },

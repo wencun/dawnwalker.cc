@@ -2,8 +2,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "Blood of Dawnwalker Font of Life Choices: Best Outcome for Anca",
-  "The Blood of Dawnwalker Font of Life choices explained: use the Font yourself for the Witchcraft perk, let Anca use it for her outcome, or destroy it for Ancient Greaves.",
+  "Blood of Dawnwalker Font of Life Choice: Best Reward Explained",
+  "Choose the best Font of Life outcome in Blood of Dawnwalker: Coen's Witchcraft perk, Anca's result or Ancient Greaves. Save before deciding.",
   "/font-of-life",
   ["Blood of Dawnwalker Font of Life", "The Blood of Dawnwalker Font of Life", "Font of Life choices Dawnwalker", "Should Anca use the Font of Life", "Stronger Than Achilles Dawnwalker", "Anca romance Font of Life"],
 );
@@ -11,10 +11,10 @@ export const metadata = guideMetadata(
 export default function FontOfLifePage() {
   return <GuidePage
     eyebrow="ANCA QUEST CHOICE · SPOILER WARNING"
-    title="Font of Life choices: use it yourself, let Anca use it, or destroy it"
-    dek="At the end of Stronger Than Achilles, the Font of Life is a permanent reward choice. Use it yourself for the Font of Life / Witchcraft perk, let Anca use it for her outcome, or destroy it for the Ancient Greaves. Save before choosing."
+    title="Font of Life choice: best reward for Coen, Anca or Ancient Greaves"
+    dek="The Font of Life decision is a permanent reward choice. Use it yourself for Coen's Witchcraft perk, let Anca use it for her outcome, or destroy it for Ancient Greaves. Save before choosing."
     checked="September 13, 2026"
-    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · BEST FONT OF LIFE CHOICE</span><p><b>Choose based on the reward you want, not an assumed romance lock.</b> Using the Font yourself grants Coen&apos;s Font of Life / Witchcraft health-regeneration perk; letting Anca use it prioritizes her outcome; destroying it grants Ancient Greaves. The three rewards are mutually exclusive, so create a manual save first.</p></div>}
+    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · BEST FONT OF LIFE CHOICE</span><p><b>Choose the Font of Life reward you will actually use.</b> Use it yourself for Coen&apos;s Font of Life / Witchcraft health-regeneration perk, let Anca use it for her story outcome, or destroy it for Ancient Greaves. The three rewards are mutually exclusive, so make a manual save and check <Link href="/romance">romance routes</Link> or <Link href="/endings">ending planning</Link> before locking it in.</p></div>}
     faqs={[
       { question: "What happens if you use the Font of Life yourself?", answer: "Current choice guides report that Coen receives the Font of Life / Witchcraft perk, which regenerates human health during the day." },
       { question: "What happens if you let Anca use the Font of Life?", answer: "It gives Anca the Font outcome rather than Coen&apos;s perk. Use a manual save if you want to compare it with the other permanent reward branches." },

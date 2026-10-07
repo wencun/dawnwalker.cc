@@ -2,8 +2,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "Help the Sanzhani: Letters to Lunka All 4 Quest Locations",
-  "The Blood of Dawnwalker Help the Sanzhani guide: finish Good Home, unlock Letters to Lunka, find all four hidden Sanzhani quests and claim the extra day reward.",
+  "Help the Sanzhani Guide: All Letters to Lunka Locations",
+  "Complete Help the Sanzhani in Blood of Dawnwalker: finish Good Home, find all four Letters to Lunka quests and claim the extra day reward.",
   "/help-the-sanzhani",
   ["Blood of Dawnwalker Help the Sanzhani", "Dawnwalker Letters to Lunka", "Dawnwalker Good Home", "Dawnwalker Sanzhani locations", "Dawnwalker extra day"],
 );
@@ -11,10 +11,10 @@ export const metadata = guideMetadata(
 export default function HelpTheSanzhaniPage() {
   return <GuidePage
     eyebrow="LETTERS TO LUNKA · HIDDEN QUEST LOCATIONS"
-    title="Help the Sanzhani: Letters to Lunka all 4 quest locations"
-    dek="The Help the Sanzhani objective is deliberately vague. Finish Good Home, unlock Letters to Lunka at the Yawning Burrow, then find four unmarked Sanzhani quests around Vale Sangora to send more letters and earn an extra day."
+    title="Help the Sanzhani guide: all four Letters to Lunka quest locations"
+    dek="Complete Help the Sanzhani by finishing Good Home, unlocking Letters to Lunka at the Yawning Burrow and finding the four hidden Sanzhani favours around Vale Sangora for the extra day reward."
     checked="September 16, 2026"
-    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · NO WAYPOINT IS NORMAL</span><p><b>Finish Good Home first, speak to the Sanzhani Tsarina at the Yawning Burrow, then complete Pearly and Precious, Burrow Sorrows, Tiny Dancer and Come Hither.</b> Return to the Tsarina to send a letter after each favour. The objective does not point to the next fairy on your map until you reach the relevant area.</p></div>}
+    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · NO WAYPOINT IS NORMAL</span><p><b>Finish Good Home, speak to the Sanzhani Tsarina at the Yawning Burrow, then complete Pearly and Precious, Burrow Sorrows, Tiny Dancer and Come Hither.</b> Return to the Tsarina after each favour to send the letter. Use <Link href="/a-bulwark-against-darkness">A Bulwark Against Darkness</Link> for Silk Threads, <Link href="/time-system">time planning</Link> for the extra day and <Link href="/walkthrough">walkthrough</Link> for the next quest.</p></div>}
     faqs={[
       { question: "How do I complete Help the Sanzhani in The Blood of Dawnwalker?", answer: "Finish Good Home, unlock Letters to Lunka with the Sanzhani Tsarina, then complete the four hidden Sanzhani quests: Pearly and Precious, Burrow Sorrows, Tiny Dancer and Come Hither. Return to the Tsarina after each one to send the next letter." },
       { question: "Why does Help the Sanzhani have no quest marker?", answer: "The four follow-up favours are not normally labelled on the map before you approach their start areas. The journal repeats the same objective, so use the location list and confirm the quest title after entering each area." },

@@ -2,8 +2,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "Blood of Dawnwalker Odd Riddle Solution: Lunar Manor Choice",
-  "Solve the Odd Riddle in The Blood of Dawnwalker at Lunar Manor. See which left, middle or right opening continues The Lunar Game and what the wrong choices do.",
+  "Blood of Dawnwalker Odd Riddle Answer: Choose Left",
+  "Odd Riddle answer in Blood of Dawnwalker: choose the left opening at Lunar Manor during The Lunar Game. Middle and right trigger the trap.",
   "/odd-riddle",
   [
     "The Blood of Dawnwalker Odd Riddle",
@@ -16,10 +16,10 @@ export const metadata = guideMetadata(
 export default function OddRiddlePage() {
   return <GuidePage
     eyebrow="THE LUNAR GAME · SPOILER-LIGHT QUEST ANSWER"
-    title="The Blood of Dawnwalker Odd Riddle solution"
-    dek="For the Odd Riddle at Lunar Manor during The Lunar Game, choose the left opening. It opens the gate and lets you continue; the middle and right choices trigger the trap."
+    title="Blood of Dawnwalker Odd Riddle answer: choose left at Lunar Manor"
+    dek="The Odd Riddle solution is the left opening. Choose left during The Lunar Game at Lunar Manor to open the gate; middle and right trigger the trap."
     checked="September 20, 2026"
-    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · ODD RIDDLE DAWNWALKER</span><p><b>Choose the left opening at Lunar Manor.</b> The riddle deliberately makes the left choice sound dangerous, but it is the correct option for this vampire-hosted trial. The gate opens and the route continues.</p></div>}
+    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · ODD RIDDLE</span><p><b>Choose the left opening at Lunar Manor.</b> The Odd Riddle makes the left choice sound dangerous, but it is the correct answer in The Lunar Game. The gate opens and the route continues. For another direct quest answer, use <Link href="/how-many-spoonfuls-of-herbs">the herbs recipe</Link>, <Link href="/help-the-sanzhani">Help the Sanzhani</Link> or the <Link href="/walkthrough">walkthrough hub</Link>.</p></div>}
     faqs={[
       { question: "What is the Odd Riddle answer in The Blood of Dawnwalker?", answer: "Choose the left opening at the Lunar Manor mechanism during The Lunar Game." },
       { question: "Should I choose left, middle or right in the Dawnwalker Odd Riddle?", answer: "Choose left. Published walkthroughs report that left opens the gate, while middle and right activate the trap." },

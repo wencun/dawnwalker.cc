@@ -4,8 +4,8 @@ import { GuidePage, guideMetadata } from "../guide-page";
 const youtubeSearch = "https://www.youtube.com/results?search_query=The+Blood+of+Dawnwalker+how+many+spoonfuls+of+herbs";
 
 export const metadata = guideMetadata(
-  "How Many Spoonfuls of Herbs in The Blood of Dawnwalker?",
-  "For Esme's medicine in The Blood of Dawnwalker's Withering Away quest, use hot water and add three spoonfuls of herbs. See the exact order and spoiler-light consequences.",
+  "Blood of Dawnwalker Herbs Answer: Three Spoonfuls",
+  "Blood of Dawnwalker herbs answer: use hot water, then add three spoonfuls of herbs for Esme's medicine in Withering Away.",
   "/how-many-spoonfuls-of-herbs",
   [
     "Blood of the Dawnwalker how many spoonfuls of herbs",
@@ -19,10 +19,10 @@ export const metadata = guideMetadata(
 export default function HerbsRecipePage() {
   return <GuidePage
     eyebrow="PROLOGUE ANSWER · WITHERING AWAY"
-    title="How many spoonfuls of herbs should you add in The Blood of Dawnwalker?"
-    dek="For Esme's medicine in the Withering Away prologue quest, select hot water and then add three spoonfuls of herbs. Read Anca's instruction note before returning home, because the recipe cannot be reopened at the brewing choice."
+    title="Blood of Dawnwalker herbs answer: use hot water and three spoonfuls"
+    dek="For Esme's medicine in Withering Away, choose hot water first, then add three spoonfuls of herbs. Read Anca's note before brewing because the recipe cannot be reopened at the choice."
     checked="September 3, 2026"
-    quickAnswer={<aside className="recipe-answer" aria-label="Correct medicine recipe"><span>QUICK ANSWER · SPOILER-LIGHT</span><h2>Use hot water, then add three spoonfuls of herbs.</h2><p>This is Anca&apos;s recipe for Esme&apos;s medicine. If you are already at the choice and want to preserve the intended prologue outcome, choose these two options in this order.</p><div className="recipe-card" aria-label="Hot water followed by three spoonfuls of herbs"><div className="recipe-choice"><i aria-hidden="true">♨</i><b>USE HOT WATER</b><small>Not boiling, not cold.</small></div><span className="recipe-arrow" aria-hidden="true">→</span><div className="recipe-choice"><i aria-hidden="true">3×</i><b>THREE SPOONFULS</b><small>Add three herbs.</small></div></div></aside>}
+    quickAnswer={<aside className="recipe-answer" aria-label="Correct medicine recipe"><span>QUICK ANSWER · SPOILER-LIGHT</span><h2>Use hot water, then add three spoonfuls of herbs.</h2><p>This is Anca&apos;s recipe for Esme&apos;s medicine. If you are already at the choice, choose these two options in this order. For the wider prologue route use <Link href="/prologue-quest-order">prologue quest order</Link>, for time pressure use <Link href="/time-system">time system</Link>, and for more exact answers use the <Link href="/walkthrough">walkthrough hub</Link>.</p><div className="recipe-card" aria-label="Hot water followed by three spoonfuls of herbs"><div className="recipe-choice"><i aria-hidden="true">♨</i><b>USE HOT WATER</b><small>Not boiling, not cold.</small></div><span className="recipe-arrow" aria-hidden="true">→</span><div className="recipe-choice"><i aria-hidden="true">3×</i><b>THREE SPOONFULS</b><small>Add three herbs.</small></div></div></aside>}
     faqs={[
       { question: "How many spoonfuls of herbs should I add in The Blood of Dawnwalker?", answer: "For Esme's medicine during Withering Away, select Add three spoonfuls of herbs. The preceding water choice is Use hot water." },
       { question: "What water should I use for Esme's medicine?", answer: "Choose Use hot water, then Add three spoonfuls of herbs. Several launch-week walkthroughs reproduce the same recipe from Anca's note." },

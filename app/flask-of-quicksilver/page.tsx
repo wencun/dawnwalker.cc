@@ -2,8 +2,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "Where to Find a Flask of Quicksilver in Dawnwalker",
-  "Where to find a Flask of Quicksilver in The Blood of Dawnwalker: finish Home Sweet Home, then collect it from Aurelius's Tower upper study.",
+  "Flask of Quicksilver Location in Blood of Dawnwalker",
+  "Find the Flask of Quicksilver in Blood of Dawnwalker: complete Home Sweet Home, return to Aurelius's Tower and loot the upper study table.",
   "/flask-of-quicksilver",
   ["Flask of Quicksilver Dawnwalker", "Dawnwalker Flask of Quicksilver location", "The Blood of Dawnwalker Flask of Quicksilver", "Where to find a Flask of Quicksilver", "Where to get a Flask of Quicksilver", "Aurelius Tower Flask of Quicksilver"],
 );
@@ -11,10 +11,10 @@ export const metadata = guideMetadata(
 export default function FlaskOfQuicksilverPage() {
   return <GuidePage
     eyebrow="ARBITER COMPONENT · AURELIUS’S TOWER"
-    title="Where to find a Flask of Quicksilver in Dawnwalker"
-    dek="The Flask of Quicksilver is on the upper floor of Aurelius’s Tower, southwest of the Silts. Complete Home Sweet Home first, then return upstairs and inspect the low table beside the large wooden table."
+    title="Flask of Quicksilver location: where to find it in Blood of Dawnwalker"
+    dek="The Flask of Quicksilver is in Aurelius's Tower after Home Sweet Home. Return to the upper study, check the low table beside the large wooden table, then use it for the Arbiter armor quest."
     checked="September 13, 2026"
-    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · FLASK LOCATION</span><p><b>Finish Home Sweet Home, leave the loop, then go back to the top floor of Aurelius&apos;s Tower.</b> The Flask of Quicksilver is on a low table beside the larger table in the study. It is one of four components for <Link href="/a-bulwark-against-darkness">A Bulwark Against Darkness</Link>.</p></div>}
+    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · FLASK LOCATION</span><p><b>Finish <Link href="/home-sweet-home">Home Sweet Home</Link>, leave the loop, then return to the top floor of Aurelius&apos;s Tower.</b> The Flask of Quicksilver is on a low table beside the larger study table. It is one of four components for <Link href="/a-bulwark-against-darkness">A Bulwark Against Darkness</Link>; use the <Link href="/walkthrough">walkthrough hub</Link> if another quest is blocking the route.</p></div>}
     faqs={[
       { question: "Where is the Flask of Quicksilver in The Blood of Dawnwalker?", answer: "It is in the upper study of Aurelius's Tower, southwest of the Silts. You need to resolve Home Sweet Home before the accessible-room check makes sense." },
       { question: "Why is the Flask of Quicksilver missing?", answer: "First finish Home Sweet Home and return to the top floor. If the room or pickup is still unavailable, verify the current quest state and patch version rather than assuming a second location exists." },

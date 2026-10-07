@@ -2,8 +2,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "Blood of Dawnwalker Can't Save Fix: Saving Locked After 1.0.4",
-  "Blood of Dawnwalker can't save or says saving is locked after Hotfix 1.0.4? Check the active mission state, protect progress and isolate a remaining save-lock issue.",
+  "Blood of Dawnwalker Can't Save Fix: Saving Is Locked",
+  "Fix Blood of Dawnwalker can't save or saving is locked issues: update, check mission state, protect progress and isolate a persistent save-lock bug.",
   "/cant-save",
   ["Blood of Dawnwalker can't save", "Dawnwalker cant save", "Blood of Dawnwalker saving is locked", "Dawnwalker save bug", "Blood of Dawnwalker save bug"],
 );
@@ -11,10 +11,10 @@ export const metadata = guideMetadata(
 export default function CantSavePage() {
   return <GuidePage
     eyebrow="SAVE-LOCK TROUBLESHOOTING · COMMUNITY REPORTS, NOT AN OFFICIAL FIX"
-    title="Blood of Dawnwalker can&apos;t save: what “Saving is currently locked” can mean"
-    dek="If The Blood of Dawnwalker will not quicksave or manual save, first identify whether saving is temporarily locked during a mission or whether a progression event has failed to trigger. Protect the current run before testing anything."
+    title="Blood of Dawnwalker can't save: fix “Saving is currently locked”"
+    dek="If manual save or quicksave is locked, first separate a normal mission lock from a persistent bug. Update, protect your current run, record the active quest and test only the safe save-lock checks."
     checked="September 14, 2026"
-    quickAnswer={<div className="risk-callout"><span>DO NOT OVERWRITE YOUR ONLY RUN</span><p><b>Update to Hotfix 1.0.4, then retest before changing anything.</b> The official update fixes one issue that blocked players from saving. Hotfix 1.0.5 is a shader-compilation update, so it does not add a new save fix. A remaining “Saving is currently locked” message can still be a mission state or another reproducible bug.</p></div>}
+    quickAnswer={<div className="risk-callout"><span>QUICK ANSWER · DO NOT OVERWRITE YOUR RUN</span><p><b>Update to Hotfix 1.0.4, then retest saving after a normal mission transition.</b> If “Saving is currently locked” remains, record the quest, location, day and last autosave before continuing. Do not apply graphics, mod or crash fixes to a save problem; use <Link href="/known-issues">known issues</Link>, <Link href="/crash-and-stutter-fix">crash fixes</Link> or <Link href="/what-happens-after-30-days">save planning</Link> only for those separate cases.</p></div>}
     faqs={[
       { question: "Why can&apos;t I save in Blood of Dawnwalker after the update?", answer: "Hotfix 1.0.4 fixes one issue that blocked players from saving, but saving can still be temporarily unavailable during particular story or combat states. Check the active mission and exact on-screen message before treating the save as damaged." },
       { question: "How do I fix “Saving is currently locked” in Dawnwalker?", answer: "First preserve the current details: platform, patch version, active quest, in-game day and last autosave. A Steam discussion reports that progressing an overdue Infamy event restored saving for some players, but it is not an official universal fix and may not match your run." },
