@@ -1,8 +1,9 @@
+import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Release Date & Time: PC, PS5 and Xbox",
-  "The Blood of Dawnwalker releases September 3, 2026. Confirmed PC, PS5 and Xbox Series X|S release-date and unlock-time rules, with the current preload status.",
+  "Blood of Dawnwalker Release Date: PC, PS5 and Xbox Times",
+  "Blood of Dawnwalker releases September 3, 2026 on PC, PS5 and Xbox Series X|S. See PC and console unlock-time rules.",
   "/release-date",
   ["The Blood of Dawnwalker release date", "Blood of Dawnwalker release time", "Blood of Dawnwalker preload"],
   "/pl/release-date"
@@ -11,9 +12,10 @@ export const metadata = guideMetadata(
 export default function Page() {
   return <GuidePage
     eyebrow="RELEASE GUIDE · OFFICIAL DETAILS"
-    title="The Blood of Dawnwalker release date and time"
-    dek="The game launches September 3, 2026 on PC, PlayStation 5 and Xbox Series X|S. This is the single source for the release date, PC and console unlock rules, and confirmed preload status."
+    title="Blood of Dawnwalker release date and time for PC, PS5 and Xbox"
+    dek="Blood of Dawnwalker launches September 3, 2026 on PC, PS5 and Xbox Series X|S. PC uses one global unlock; console timing follows local rules with exceptions."
     checked="August 28, 2026"
+    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · RELEASE DATE</span><p><b>Blood of Dawnwalker releases September 3, 2026 for PC, PS5 and Xbox Series X|S.</b> PC unlocks at one global moment, while console unlocks mostly follow local midnight. Use <Link href="/release-times">release times</Link>, <Link href="/platforms">platforms</Link> and <Link href="/editions">editions</Link> for the buying details.</p></div>}
     sources={[
       { label: "Bandai Namco Europe — release announcement", href: "https://en.bandainamcoent.eu/dawnwalker/news/the-blood-of-dawnwalker-will-launch-september-3-rebel-wolves-revealed-key-details" },
       { label: "Official community — global release timings", href: "https://www.reddit.com/r/DawnwalkerOfficial/comments/1vxyko5/dawnwalker_global_release_timings_are_here/" },

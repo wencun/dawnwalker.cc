@@ -2,8 +2,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Volk: Buried Past Quest, Chores & Sword",
-  "The Blood of Dawnwalker Volk guide: start Buried Past, complete the optional help across return visits, find Volk's knife and Pieter's treasure, and avoid the betrayal branch.",
+  "Blood of Dawnwalker Volk Buried Past: Best Route & Sword",
+  "Complete Volk's Buried Past in Blood of Dawnwalker: help on return visits, find the knife and treasure, and avoid the betrayal branch.",
   "/volk-buried-past",
   [
     "The Blood of Dawnwalker Volk",
@@ -17,10 +17,10 @@ export const metadata = guideMetadata(
 export default function VolkBuriedPastPage() {
   return <GuidePage
     eyebrow="VOLK QUEST · BURIED PAST ROUTE"
-    title="The Blood of Dawnwalker Volk: Buried Past quest, chores and sword"
-    dek="For the best-documented Buried Past route, help Volk on each return visit, complete the optional chores and agree to investigate Pieter&apos;s treasure. Keep a save before the final return because the quest branches."
+    title="Blood of Dawnwalker Volk Buried Past: best route, chores and sword"
+    dek="For Volk's best-documented Buried Past route, help on each return visit, complete optional chores and agree to investigate Pieter's treasure before the final branch."
     checked="September 14, 2026"
-    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · VOLK&apos;S BEST-OUTCOME ROUTE</span><p><b>Complete Volk&apos;s optional help on the repeated visits and agree to search for Pieter&apos;s treasure.</b> Launch-build walkthroughs report that this prevents the betrayal branch; after the final wait, inspect the hut for Volk&apos;s Sword and read the letter. Make a manual save before the final return.</p></div>}
+    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · VOLK ROUTE</span><p><b>Help Volk on each repeated visit and agree to search for Pieter&apos;s treasure.</b> Current walkthroughs report that this avoids the betrayal branch. After the final wait, inspect the hut for Volk&apos;s Sword and the letter. Save before the branch, then compare <Link href="/best-sword">best sword</Link>, <Link href="/time-system">time cost</Link> and <Link href="/endings">ending saves</Link>.</p></div>}
     faqs={[
       { question: "How do you complete Volk's Buried Past quest in The Blood of Dawnwalker?", answer: "Help Volk during the repeated visits, including optional chores when available, then agree to investigate Pieter's treasure and complete the follow-up. The route advances over multiple in-game days, so do not expect every objective to appear in one visit." },
       { question: "How do you get Volk's Sword in Dawnwalker?", answer: "Published launch-build routes report that Volk's Sword is left in the hut after the help route resolves and you return following the required wait. In the betrayal branch it can instead be obtained after the ambush, with a different outcome." },

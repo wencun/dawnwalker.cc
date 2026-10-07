@@ -3,8 +3,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "What Happens After 30 Days in The Blood of Dawnwalker?",
-  "What happens after 30 days in The Blood of Dawnwalker: the family outcome, what content remains and a spoiler-safe save plan.",
+  "Blood of Dawnwalker After 30 Days: What Happens?",
+  "After 30 days in Blood of Dawnwalker, the family route is locked. See what remains, what changes and when to save.",
   "/what-happens-after-30-days",
   ["what happens after 30 days The Blood of Dawnwalker", "The Blood of Dawnwalker 30 days", "Blood of Dawnwalker time limit", "Dawnwalker can you save everyone"],
 );
@@ -12,10 +12,10 @@ export const metadata = guideMetadata(
 export default function AfterThirtyDaysPage() {
   return <GuidePage
     eyebrow="TIME LIMIT ANSWER · MAJOR STORY SPOILERS"
-    title="What happens after 30 days in The Blood of Dawnwalker?"
-    dek="If the 30-day limit expires before you rescue Coen&apos;s family, the story can still reach credits—but the family dies during the ceremony. You can continue exploring some side content afterward, while the family main-quest path is gone."
+    title="Blood of Dawnwalker after 30 days: what happens when time runs out?"
+    dek="If the 30-day limit expires before Coen rescues his family, the story can still reach credits, but the family route is locked and needs an earlier save."
     checked="September 4, 2026"
-    quickAnswer={<div className="answer-visual"><div><span>SPOILER ANSWER · DAY 31</span><h2>The run continues. The family route does not.</h2><p>Launch-build guides agree on the key consequence: time running out locks the family rescue outcome. Make a manual save before the finale if you want to test other results without replaying the entire opening.</p></div><Image src="/dawnwalker-coen.png" alt="Coen from The Blood of Dawnwalker" width={1024} height={1024} priority /></div>}
+    quickAnswer={<div className="answer-visual"><div><span>QUICK ANSWER · DAY 31 SPOILERS</span><h2>The run continues. The family route does not.</h2><p>Time running out locks the family-rescue outcome. Make a manual save before the deadline and another before the finale. Use <Link href="/endings">endings</Link>, <Link href="/time-system">time system</Link> and <Link href="/new-game-plus">NG+ status</Link> before testing another result.</p></div><Image src="/dawnwalker-coen.png" alt="Coen from The Blood of Dawnwalker" width={1024} height={1024} priority /></div>}
     faqs={[
       { question: "What happens if you reach day 30 in The Blood of Dawnwalker?", answer: "Launch-build ending guides report that Coen&apos;s family dies during the ceremony if you have not rescued them by the time limit. The game can still reach credits and some side content remains available afterward." },
       { question: "Can you still free roam after 30 days in The Blood of Dawnwalker?", answer: "Third-party launch guides report that side activities and some trophies can still be completed after the timer expires, but family main-quest content is no longer available." },

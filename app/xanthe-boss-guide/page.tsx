@@ -2,8 +2,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "Blood of Dawnwalker Xanthe: Boss Route, Fight & Vrakhir Blood",
-  "Blood of Dawnwalker Xanthe guide: who Xanthe is, how her Court route leads to the boss, and what to verify before choosing whether to drink her Vrakhir blood.",
+  "Blood of Dawnwalker Xanthe Guide: Boss Route & Blood Choice",
+  "Blood of Dawnwalker Xanthe guide: find her Court route, prepare for the boss and save before the Vrakhir blood choice.",
   "/xanthe-boss-guide",
   ["Blood of Dawnwalker Xanthe", "The Blood of Dawnwalker Xanthe", "Dawnwalker Xanthe boss", "how to beat Xanthe Dawnwalker", "Xanthe Vrakhir blood"],
 );
@@ -11,10 +11,10 @@ export const metadata = guideMetadata(
 export default function XantheBossGuidePage() {
   return <GuidePage
     eyebrow="XANTHE GUIDE · BOSS AND QUEST SPOILERS"
-    title="Blood of Dawnwalker Xanthe: boss route and Vrakhir blood guide"
-    dek="Xanthe is the boyaress of southeastern Vale Sangora. This spoiler-marked guide separates her official character background, the Court route that leads to her fight, and the choice to drink Vrakhir blood after defeating her."
+    title="Blood of Dawnwalker Xanthe guide: boss route and Vrakhir blood choice"
+    dek="Xanthe is a Vrakhir ruler tied to Brencis's Court. Track her Court route, save before the boss and verify the blood ability choice before committing."
     checked="September 8, 2026"
-    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · XANTHE</span><p><b>Xanthe is one of the three Vrakhir rulers tied to Brencis&apos;s Court.</b> Current walkthroughs route her fight through her Court progression. After a Vrakhir boss fight, the choice to drink that boss&apos;s blood can unlock an ability; make a save before a major choice.</p></div>}
+    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · XANTHE</span><p><b>Xanthe is one of the Vrakhir rulers tied to Brencis&apos;s Court.</b> Track her Court progression to reach the fight, then save before choosing whether to drink Vrakhir blood. Use <Link href="/walkthrough">walkthrough</Link>, <Link href="/endings">ending saves</Link> and <Link href="/time-system">time planning</Link> before late-route decisions.</p></div>}
     faqs={[
       { question: "Who is Xanthe in The Blood of Dawnwalker?", answer: "Xanthe is a boyaress who controls southeastern Vale Sangora and works for Brencis&apos;s army. She is one of the Vrakhir figures connected to the Court progression." },
       { question: "Is Xanthe a boss in Blood of Dawnwalker?", answer: "Yes. Current walkthroughs identify Xanthe as one of the key Vrakhir boss encounters reached through Court progression." },

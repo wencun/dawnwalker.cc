@@ -2,8 +2,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "Blood of Dawnwalker New Game Plus: No NG+ After the Ending",
-  "Does The Blood of Dawnwalker have New Game Plus? No—NG+ is not confirmed in the launch build. See what happens after credits, what does not carry over and which save to keep.",
+  "Blood of Dawnwalker New Game Plus: Is NG+ Available?",
+  "Blood of Dawnwalker does not have confirmed New Game Plus in the launch build. Keep a pre-finale save before expecting carry-over.",
   "/new-game-plus",
   ["Does The Blood of Dawnwalker have New Game Plus", "Blood of Dawnwalker NG+", "Blood of Dawnwalker post game", "Blood of Dawnwalker New Game Plus"],
 );
@@ -14,7 +14,7 @@ export default function NewGamePlusPage() {
     title="Blood of Dawnwalker New Game Plus: is NG+ available after the ending?"
     dek="No. New Game Plus is not confirmed in the launch build, so finishing the story does not unlock a verified carry-over run. Keep a manual pre-finale save if you want another ending."
     checked="September 8, 2026"
-    quickAnswer={<div className="fix-callout"><span>SHORT ANSWER · AFTER THE ENDING</span><p><b>No—there is no confirmed New Game Plus or verified carry-over mode in the launch build.</b> Do not overwrite a pre-finale save expecting skills, gear or progress to transfer into a new run.</p></div>}
+    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · NEW GAME PLUS</span><p><b>No, Blood of Dawnwalker has no confirmed New Game Plus in the launch build.</b> Do not overwrite a pre-finale save expecting skills, gear or progress to carry over. Use the <Link href="/endings">ending save plan</Link>, check <Link href="/what-happens-after-30-days">day-30 consequences</Link> and keep <Link href="/trophy-guide">trophy cleanup</Link> separate.</p></div>}
     faqs={[
       { question: "Does The Blood of Dawnwalker have New Game Plus after the ending?", answer: "No confirmed New Game Plus mode is available in the launch build as of September 8, 2026. Published guides describe reloading an earlier save or starting fresh rather than a carry-over mode." },
       { question: "Can you keep your gear in a new Dawnwalker playthrough?", answer: "There is no verified launch-build carry-over system for gear, skills or level. Keep a manual save rather than relying on a post-credits unlock." },

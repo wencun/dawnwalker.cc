@@ -2,8 +2,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "A Friend Like This Walkthrough: Lacra, Nish & Song of the Mountain",
-  "The Blood of Dawnwalker A Friend Like This walkthrough: start the Lacra quest in Svartrau, follow the night-only roof trail, resolve the Nish conversation and unlock Song of the Mountain.",
+  "A Friend Like This Walkthrough: Lacra, Nish & Night Trail",
+  "Complete A Friend Like This in Blood of Dawnwalker: start in Svartrau, follow the night roof trail, resolve Nish and unlock Song of the Mountain.",
   "/a-friend-like-this",
   ["The Blood of Dawnwalker A Friend Like This", "Dawnwalker A Friend Like This walkthrough", "Dawnwalker Lacra quest", "Dawnwalker Nish choices", "Dawnwalker Song of the Mountain unlock"],
 );
@@ -11,10 +11,10 @@ export const metadata = guideMetadata(
 export default function AFriendLikeThisPage() {
   return <GuidePage
     eyebrow="LACRA QUEST · NIGHT ROOFTOP ROUTE"
-    title="A Friend Like This walkthrough: Lacra, Nish and the next quest"
-    dek="Start A Friend Like This in Svartrau&apos;s north-east alley, use Focus Mode to follow the signs of struggle, wait for night to cross the roofs, then resolve the Lacra and Nish encounter without closing the alliance route."
+    title="A Friend Like This walkthrough: Lacra, Nish and the night roof trail"
+    dek="Start A Friend Like This in Svartrau's north-east alley, follow the clues with Focus Mode, wait for night to cross the roofs and protect Nish's alliance route."
     checked="September 16, 2026"
-    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · QUEST ROUTE</span><p><b>At the north-east Svartrau alley, inspect the clues with Focus Mode, then wait for night to follow the roof-tile trail.</b> The Lacra fight ends before a kill; cooperate during Nish&apos;s interrogation, protect him, and the route continues to Song of the Mountain.</p></div>}
+    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · QUEST ROUTE</span><p><b>Inspect the north-east Svartrau alley with Focus Mode, then wait for night to follow the roof-tile trail.</b> Fight Lacra until the conversation starts, cooperate during Nish&apos;s interrogation and protect him to continue the route. Use <Link href="/lacra-romance">Lacra romance</Link>, <Link href="/walkthrough">walkthrough</Link> or <Link href="/endings">ending saves</Link> next.</p></div>}
     faqs={[
       { question: "How do I start A Friend Like This in The Blood of Dawnwalker?", answer: "Go to the alley beneath the north-east Svartrau city walls and use Focus Mode on the signs of struggle. Other story leads can point toward Lacra, but the direct investigation route is a reliable start." },
       { question: "Why can't I continue the rooftop trail in A Friend Like This?", answer: "The rooftop portion requires night and vampire mobility. Inspect the fallen roof tile first, wait for darkness if necessary, then use the night form to climb and follow the trail." },

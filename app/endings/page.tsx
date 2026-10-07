@@ -3,8 +3,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Endings: How Many & Save Plan",
-  "The Blood of Dawnwalker endings guide: how many launch-build outcomes are documented, what the 30-day ending changes and a spoiler-marked save plan.",
+  "Blood of Dawnwalker Endings: How Many and Best Save Plan",
+  "Blood of Dawnwalker endings guide: seven documented outcomes, day-30 consequences and the safest manual save plan before the finale.",
   "/endings",
   ["The Blood of Dawnwalker endings", "Blood of Dawnwalker all endings", "Dawnwalker time runs out ending", "Blood of Dawnwalker ending guide", "Dawnwalker how many endings"],
 );
@@ -12,10 +12,10 @@ export const metadata = guideMetadata(
 export default function EndingsPage() {
   return <GuidePage
     eyebrow="ENDING GUIDE · HEAVY SPOILERS AFTER THE SAVE PLAN"
-    title="The Blood of Dawnwalker endings: how many and how to save safely"
+    title="Blood of Dawnwalker endings: how many and how to save safely"
     dek="Launch-build guides document seven endings. The safest way to see alternatives is a manual save before the final story commitment, plus an earlier save before the 30-day family deadline."
     checked="September 4, 2026"
-    quickAnswer={<div className="answer-visual"><div><span>LAUNCH-BUILD GUIDE · SPOILERS</span><h2>Seven documented outcomes, one sensible save plan.</h2><p>Do not replay blind for every result. Save before the final commitment, keep a separate pre-day-30 save, and finish companion routes before expecting their outcome variations.</p></div><Image src="/dawnwalker-hero.jpg" alt="The Blood of Dawnwalker artwork" width={1920} height={1080} priority /></div>}
+    quickAnswer={<div className="answer-visual"><div><span>QUICK ANSWER · ENDINGS</span><h2>Seven documented outcomes, one sensible save plan.</h2><p>Save before the final commitment, keep a separate pre-day-30 save, and finish companion routes before expecting their variations. Check <Link href="/what-happens-after-30-days">day-30 consequences</Link>, <Link href="/romance">romance routes</Link> and <Link href="/new-game-plus">NG+ status</Link> before replaying.</p></div><Image src="/dawnwalker-hero.jpg" alt="The Blood of Dawnwalker artwork" width={1920} height={1080} priority /></div>}
     faqs={[
       { question: "How many endings are in The Blood of Dawnwalker?", answer: "A launch-build PowerPyx guide documents seven endings. Patch changes or further route research could refine requirements, so this page labels its current scope and source." },
       { question: "Can you get the good ending after 30 days in Dawnwalker?", answer: "No. Launch guides report that the family dies if time runs out before their rescue, which locks the family-rescue outcome. Reload a pre-deadline save to pursue that path." },

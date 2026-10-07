@@ -2,8 +2,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Home Sweet Home: Escape the Time Loop",
-  "Home Sweet Home walkthrough for The Blood of Dawnwalker: start the dream quest, use the well to escape the repeating loop, and understand its reward and spoiler-sensitive outcome.",
+  "Blood of Dawnwalker Home Sweet Home: Escape the Loop",
+  "Escape Home Sweet Home in Blood of Dawnwalker: use the village well after the dream repeats and save before testing the alternate outcome.",
   "/home-sweet-home",
   ["The Blood of Dawnwalker Home Sweet Home", "Blood of Dawnwalker Home Sweet Home walkthrough", "Home Sweet Home time loop", "how to escape Home Sweet Home Dawnwalker"],
 );
@@ -11,10 +11,10 @@ export const metadata = guideMetadata(
 export default function HomeSweetHomePage() {
   return <GuidePage
     eyebrow="QUEST ESCAPE · HOME SWEET HOME SPOILERS"
-    title="The Blood of Dawnwalker Home Sweet Home: how to escape the time loop"
-    dek="Stuck repeating the Home Sweet Home dream? Once the sequence starts repeating, make the village well your priority. This spoiler-marked route explains the escape check, the repeat outcome and what to verify before leaving the tower."
+    title="Blood of Dawnwalker Home Sweet Home: how to escape the time loop"
+    dek="Stuck repeating the Home Sweet Home dream? Use the village well after the loop begins, keep a manual save and verify the quest state before leaving the tower."
     checked="September 6, 2026"
-    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · LOOP ESCAPE</span><p>After you have seen the dream repeat, look for and interact with the <b>well in the village</b> rather than completing more identical loops. Published walkthroughs identify it as the route back to the open world; use a manual save before testing a repeat outcome.</p></div>}
+    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · LOOP ESCAPE</span><p><b>After the dream repeats, interact with the village well instead of completing more identical loops.</b> That is the route back to the open world in current walkthroughs. Save first, then use the <Link href="/walkthrough">walkthrough hub</Link>, <Link href="/endings">ending save plan</Link> or <Link href="/flask-of-quicksilver">Flask route</Link> once you leave.</p></div>}
     faqs={[
       { question: "How do you escape Home Sweet Home in The Blood of Dawnwalker?", answer: "When the dream begins repeating, prioritize interacting with the village well. Published walkthroughs identify the well as the escape route back to the open world rather than another full loop." },
       { question: "Where does the Home Sweet Home quest start?", answer: "Published walkthroughs place the quest behind the door at the top of the relevant tower; it can be encountered around the Who Pulls the Strings story context. Confirm your current quest state before using a guide, because entering the tower is the trigger." },

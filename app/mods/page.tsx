@@ -3,8 +3,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Mods: Best Nexus Mods & Install Guide",
-  "Dawnwalker mods on Nexus: find current story-timer, performance and fast-travel mods, then check game version, requirements and save safety before installing.",
+  "Blood of Dawnwalker Mods: Best Nexus Picks & Safe Install",
+  "Find Blood of Dawnwalker Nexus mods for timer, performance and fast travel. Check version, requirements and save safety before installing.",
   "/mods",
   ["Dawnwalker mods", "The Blood of Dawnwalker mods", "Blood of Dawnwalker Nexus Mods", "Dawnwalker Nexus Mods", "Dawnwalker performance mod", "Dawnwalker disable timer mod", "how to install Dawnwalker mods"],
 );
@@ -12,10 +12,10 @@ export const metadata = guideMetadata(
 export default function ModsPage() {
   return <GuidePage
     eyebrow="THE BLOOD OF DAWNWALKER MODS · CURRENT NEXUS PICKS"
-    title="The Blood of Dawnwalker mods: best Nexus Mods and safe install"
-    dek="Looking for Dawnwalker mods on Nexus? Compare current story-timer, performance and fast-travel options before installing, then check the exact game version, requirements and save risk."
+    title="Blood of Dawnwalker mods: best Nexus picks and safe install"
+    dek="Find useful Dawnwalker mods without risking your only save. Compare timer, performance and fast-travel files, then check version, requirements and uninstall steps before installing."
     checked="September 8, 2026"
-    quickAnswer={<div className="answer-visual"><div><span>START HERE · CURRENT NEXUS MODS</span><h2>Which Dawnwalker mod should you inspect first?</h2><p>Start with the live directory, then choose one proven category: more story time, a performance configuration, or fast travel between unlocked shrines. These are third-party files, not official patches.</p><a className="primary" href="https://www.nexusmods.com/games/thebloodofdawnwalker/mods" target="_blank" rel="noreferrer">Open current Dawnwalker mods on Nexus ↗</a></div><Image src="/dawnwalker-night.png" alt="Coen using a vampire traversal ability at night in The Blood of Dawnwalker" width={1280} height={720} priority /></div>}
+    quickAnswer={<div className="answer-visual"><div><span>QUICK ANSWER · MODS</span><h2>Start with Nexus, then install one safe test mod.</h2><p>For Blood of Dawnwalker mods, inspect the live Nexus directory first. The current high-interest categories are story timer changes, performance configs and fast travel. Back up your save, install one file at a time and use the <Link href="/known-issues">known-issues tracker</Link>, <Link href="/time-system">time-system guide</Link> and <Link href="/walkthrough">walkthrough hub</Link> before changing progression.</p><a className="primary" href="https://www.nexusmods.com/games/thebloodofdawnwalker/mods" target="_blank" rel="noreferrer">Open current Dawnwalker mods on Nexus ↗</a></div><Image src="/dawnwalker-night.png" alt="Coen using a vampire traversal ability at night in The Blood of Dawnwalker" width={1280} height={720} priority /></div>}
     nextSteps={[
       { label: "Find current Nexus releases", href: "#current-mods", description: "Use the live directory link and its update-date filters, not an undated download mirror." },
       { label: "Install without guessing", href: "#install", description: "Follow the author page and verify the exact game version." },

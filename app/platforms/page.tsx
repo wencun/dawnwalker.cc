@@ -2,8 +2,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Platforms: Steam PC, PS5, Xbox & Game Pass",
-  "Is The Blood of Dawnwalker on Steam PC, PS5, Xbox or Game Pass? Confirmed store links, regional availability and what has not been officially announced.",
+  "Blood of Dawnwalker Platforms: PC, PS5, Xbox & Game Pass",
+  "See Blood of Dawnwalker platforms: Steam PC, PS5 and Xbox Series X|S are confirmed. Game Pass is not officially announced.",
   "/platforms",
   ["The Blood of Dawnwalker Steam", "The Blood of Dawnwalker Xbox Series X and Series S store", "The Blood of Dawnwalker PlayStation 5 store", "The Blood of Dawnwalker Microsoft Windows Store", "The Blood of Dawnwalker Game Pass", "The Blood of Dawnwalker PS5", "The Blood of Dawnwalker Xbox", "Blood of Dawnwalker platforms"]
 );
@@ -11,9 +11,10 @@ export const metadata = guideMetadata(
 export default function Page() {
   return <GuidePage
     eyebrow="PLATFORM GUIDE · OFFICIAL STORES"
-    title="The Blood of Dawnwalker platforms: Steam PC, PS5 and Xbox"
-    dek="The Blood of Dawnwalker is confirmed for Steam on PC, PlayStation 5 and Xbox Series X|S. Use the official store linked for your account region; platform, edition, language and release countdown can differ by storefront."
+    title="Blood of Dawnwalker platforms: Steam PC, PS5, Xbox and Game Pass status"
+    dek="The Blood of Dawnwalker is confirmed for Steam PC, PlayStation 5 and Xbox Series X|S. Game Pass is not officially announced, so verify your own store region before buying."
     checked="September 20, 2026"
+    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · PLATFORMS</span><p><b>Blood of Dawnwalker is on Steam PC, PS5 and Xbox Series X|S.</b> Game Pass has not been officially announced. Use the store links below for your region, then check <Link href="/release-date">release timing</Link>, <Link href="/can-i-run">PC requirements</Link> or <Link href="/console-performance">console performance</Link> before buying.</p></div>}
     sources={[
       { label: "Official purchase page", href: "https://dawnwalkergame.com/us/en/buy" },
       { label: "Steam — The Blood of Dawnwalker", href: "https://store.steampowered.com/app/3751260/The_Blood_of_Dawnwalker/" },

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "The Blood of Dawnwalker Walkthrough: Quest Order & Choices",
+  "Blood of Dawnwalker Walkthrough: Quest Order, Choices & Answers",
   "A spoiler-aware The Blood of Dawnwalker walkthrough hub: prologue quest order, timed choices, romance routes, quest answers and current patch status.",
   "/walkthrough",
   ["The Blood of Dawnwalker walkthrough", "Blood of Dawnwalker quest guide", "Dawnwalker choices", "Dawnwalker prologue walkthrough", "Dawnwalker quest order"],
@@ -12,10 +12,10 @@ export const metadata = guideMetadata(
 export default function WalkthroughPage() {
   return <GuidePage
     eyebrow="WALKTHROUGH HUB · SPOILER AWARE"
-    title="The Blood of Dawnwalker walkthrough: quest order, choices and answers"
-    dek="Use this as a route map, not a fake 'complete' guide. Open the exact answer you need, check the spoiler label and return here as verified launch-build quest pages are added."
+    title="Blood of Dawnwalker walkthrough: quest order, choices and answers"
+    dek="Use this walkthrough hub to jump to exact quest answers, choice consequences, romance routes and current fixes without reading a full spoiler list."
     checked="September 20, 2026"
-    quickAnswer={<div className="answer-visual"><div><span>START HERE</span><h2>Plan the prologue first, then solve one quest or decision at a time.</h2><p>Timed objectives show a clock; actions that consume segments show an hourglass and cost.</p></div><Image src="/dawnwalker-coen.png" alt="Coen in The Blood of Dawnwalker" width={1280} height={720} priority /></div>}
+    quickAnswer={<div className="answer-visual"><div><span>QUICK ANSWER · WALKTHROUGH HUB</span><h2>Open the exact quest answer you need.</h2><p>Start with <Link href="/prologue-quest-order">prologue order</Link>, then use focused pages for herbs, Lacra, Sanzhani, sword shards, endings and known issues. Timed objectives show a clock; actions that consume segments show an hourglass and cost.</p></div><Image src="/dawnwalker-coen.png" alt="Coen in The Blood of Dawnwalker" width={1280} height={720} priority /></div>}
     nextSteps={[
       { label: "Finish Arbiter armor", href: "/a-bulwark-against-darkness", description: "Collect the four rising armor components and complete the ritual." },
       { label: "Plan the endings", href: "/endings", description: "Protect the deadline and finale save points." },

@@ -2,8 +2,8 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "Anca Romance Guide: Quest Order & Font Choice | Dawnwalker",
-  "Anca romance guide for The Blood of Dawnwalker: a spoiler-marked quest order, the optional early scene, the Font of Life decision and the final inn conversation.",
+  "Blood of Dawnwalker Anca Romance: Quest Order & Font Choice",
+  "Romance Anca in Blood of Dawnwalker: follow her quest order, save before Font of Life and finish the final inn conversation.",
   "/anca-romance",
   ["The Blood of Dawnwalker Anca", "Blood of Dawnwalker Anca", "Anca Blood of the Dawnwalker", "Dawnwalker Anca romance", "how to romance Anca Blood of Dawnwalker", "Anca Font of Life Dawnwalker"],
 );
@@ -11,10 +11,10 @@ export const metadata = guideMetadata(
 export default function AncaRomancePage() {
   return <GuidePage
     eyebrow="ANCA ROMANCE ROUTE · SPOILERS"
-    title="Anca romance guide: quest order, Font choice and final conversation"
-    dek="For Anca in The Blood of Dawnwalker, follow her questline from the prologue and Echoes of Silenced Bells through Stronger Than Achilles. Keep a manual save before the Font of Life and the following inn conversation."
+    title="Blood of Dawnwalker Anca romance: quest order, Font choice and final conversation"
+    dek="To romance Anca, follow her route through Stronger Than Achilles, save before the Font of Life choice and finish the final inn conversation."
     checked="September 20, 2026"
-    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · ANCA ROMANCE</span><p><b>Keep Anca alive, complete her questline through Stronger Than Achilles, then return to the inn for the final conversation.</b> Make a manual save before the Font of Life decision and again before that conversation so the current in-game prompts—not an old dialogue list—remain your authority.</p></div>}
+    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · ANCA ROMANCE</span><p><b>Keep Anca alive, complete her questline through Stronger Than Achilles, then return to the inn for the final conversation.</b> Save before Font of Life and before the inn scene. Use <Link href="/font-of-life">Font rewards</Link>, <Link href="/romance">romance routes</Link> and <Link href="/endings">ending saves</Link> to protect the branch.</p></div>}
     faqs={[
       { question: "How do you romance Anca in The Blood of Dawnwalker?", answer: "Follow Anca's route through Stronger Than Achilles, then complete the final inn conversation after the Font of Life. Current launch guides recommend preserving Anca and keeping saves before late choices." },
       { question: "Does the Font of Life choice lock Anca's romance?", answer: "Current launch-build romance guides report that the Font reward choice and the romance scene are separate. Save before the Font and read the current in-game prompt because patches or route state can matter." },

@@ -1,8 +1,9 @@
+import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
   "Blood of Dawnwalker Sword Shards: Forge It Anew Locations",
-  "The Blood of Dawnwalker Forge It Anew walkthrough: start trigger, all three sword-shard locations, Uriashi the blacksmith and the Hotfix 1.0.2 crafting fix.",
+  "Find all three Forge It Anew sword shards in Blood of Dawnwalker, then return to Uriashi and check the Hotfix 1.0.2 crafting fix.",
   "/forge-it-anew",
   ["The Blood of Dawnwalker Forge It Anew", "Dawnwalker sword shard locations", "Dawnwalker Uriashi blacksmith", "Forge It Anew walkthrough", "Blood of Dawnwalker holy sword"],
 );
@@ -11,9 +12,9 @@ export default function ForgeItAnewPage() {
   return <GuidePage
     eyebrow="QUEST WALKTHROUGH · SWORD SHARD ROUTE"
     title="Blood of Dawnwalker sword shards: Forge It Anew locations"
-    dek="Read St. Mihai&apos;s coffin note after the fight, then collect three shards from separate kobold encounters before returning to Uriashi. If crafting is unavailable, install Hotfix 1.0.2 before retrying."
+    dek="Read St. Mihai's coffin note, collect three sword shards from separate kobold encounters, then return to Uriashi for the holy sword craft."
     checked="September 14, 2026"
-    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · QUEST ORDER</span><p><b>Read St. Mihai&apos;s coffin note first, then collect the three shards: northeast Maragir Wealds, north of Rockfalls and south of St. Tyna&apos;s Grove.</b> Bring all three to Uriashi near Uriashi Hermitage. If the relevant holy-sword craft is unavailable, Hotfix 1.0.2 contains the official Uriashi fix.</p></div>}
+    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · SWORD SHARDS</span><p><b>Read St. Mihai&apos;s coffin note first, then collect the three shards: northeast Maragir Wealds, north of Rockfalls and south of St. Tyna&apos;s Grove.</b> Bring all three to Uriashi near Uriashi Hermitage. Use <Link href="/best-sword">best sword</Link>, <Link href="/walkthrough">walkthrough</Link> and <Link href="/patch-notes">patch notes</Link> if the craft is missing.</p></div>}
     faqs={[
       { question: "How do you start Forge It Anew in The Blood of Dawnwalker?", answer: "After defeating St. Mihai, read the note in his coffin. The launch-build walkthrough used here identifies that note as the quest trigger." },
       { question: "How many sword shards are in Forge It Anew?", answer: "The cited launch-build walkthrough identifies three shards, each in a separate kobold-den encounter, before you return to Uriashi the blacksmith." },

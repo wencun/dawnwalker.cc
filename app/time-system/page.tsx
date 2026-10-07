@@ -1,8 +1,8 @@
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "Dawnwalker 30-Day Time Limit: Does Exploration Advance Time?",
-  "Does time pass while exploring in The Blood of Dawnwalker? See what advances the 30-day limit, how the opening eight daytime parts work, and what is still unconfirmed.",
+  "Blood of Dawnwalker Time Limit: Does Exploration Pass Time?",
+  "Blood of Dawnwalker exploration is not a real-time countdown. See what advances the 30-day limit and how the time system works.",
   "/time-system",
   ["The Blood of Dawnwalker time limit", "Blood of Dawnwalker 30 days", "Blood of Dawnwalker time system", "Blood of Dawnwalker timer free mode", "Does exploration advance time in Blood of Dawnwalker"]
 );
@@ -10,9 +10,10 @@ export const metadata = guideMetadata(
 export default function TimeSystemPage() {
   return <GuidePage
     eyebrow="PLAYER CHOICE · OFFICIAL MECHANICS"
-    title="Dawnwalker 30-day time limit: does exploration advance time?"
-    dek="No. It is not a real-world countdown: exploration can be time-neutral, while specific choices and quest actions spend in-game time. The official opening example divides daylight into 8 parts."
+    title="Blood of Dawnwalker time limit: does exploration advance time?"
+    dek="No. Exploration is not a real-world countdown. Specific quest actions, choices and day-night changes can spend in-game time, while free exploration can be time-neutral."
     checked="September 17, 2026"
+    quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · TIME LIMIT</span><p><b>Exploration does not tick down in real time.</b> Blood of Dawnwalker spends time through specific choices, quest actions and some day-night transitions. Use the <a href="/what-happens-after-30-days">day-30 consequence guide</a>, <a href="/help-the-sanzhani">Sanzhani extra-day route</a> and <a href="/walkthrough">walkthrough hub</a> before committing time.</p></div>}
     nextSteps={[
       { label: "Check the Sanzhani extra-day route", href: "/help-the-sanzhani", description: "Use the hidden Letters to Lunka sequence before treating the objective as stuck." },
       { label: "Read what happens after 30 days", href: "/what-happens-after-30-days", description: "Keep deadline consequences separate from real-world playtime." },
