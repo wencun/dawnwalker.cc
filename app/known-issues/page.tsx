@@ -15,6 +15,8 @@ export const metadata = guideMetadata(
     "Blood of Dawnwalker glitch",
     "Dawnwalker movement bug",
     "Blood of Dawnwalker bug report",
+    "Blood of Dawnwalker torch bug",
+    "Blood of Dawnwalker audio bug",
   ],
 );
 
@@ -23,13 +25,14 @@ export default function KnownIssuesPage() {
     eyebrow="LAUNCH HELP DESK · REPORTS SEPARATED FROM FIXES"
     title="Blood of Dawnwalker known issues: bugs, crashes, saves and controller fixes"
     dek="Use this tracker to match your exact Blood of Dawnwalker problem to the right fix. Start with hotfix status, then choose the crash, save-lock, controller, flickering or stutter guide instead of trying random tweaks."
-    checked="September 16, 2026"
+    checked="October 9, 2026"
     quickAnswer={<div className="fix-callout"><span>CURRENT ANSWER · START HERE</span><p><b>Update first, then pick the guide that matches your symptom.</b> Hotfix 1.0.5 targets shader-compilation stutter for some users. Hotfix 1.0.4 fixes a save blocker, quest progression blockers and Steam FPS drops from outdated Microsoft GameInput. Use <Link href="/cant-save">can&apos;t save</Link>, <Link href="/controller-movement-fix">controller movement</Link>, <Link href="/flickering-fix">flickering</Link> or <Link href="/crash-and-stutter-fix">crash and stutter</Link> only when that symptom matches.</p></div>}
     faqs={[
       { question: "Why does my Dawnwalker character stop sprinting with a controller?", answer: "The developer now lists gamepad sprint interruption as a known issue and recommends lowering controller sensitivity from 1.0 to 0.8 temporarily. PC Steam players can also try the separate Square-deadzone workaround." },
       { question: "What are the current Blood of Dawnwalker bugs and glitches?", answer: "Hotfix 1.0.5 targets shader-compilation stutter for some users. Hotfix 1.0.4 separately fixes one save blocker, several quest-progression blockers and Steam FPS drops caused by outdated Microsoft GameInput when a controller connects. Other crash, visual and controller reports need to be matched to the exact symptom rather than treated as one bug." },
       { question: "Why does The Blood of Dawnwalker crash during cutscenes?", answer: "Several launch-day players report black screens, startup crashes or repeatable cutscene crashes. No universal cause or official fix was verified when this page was checked. Record the platform, game version and exact cutscene before troubleshooting." },
       { question: "Are Dawnwalker cutscenes limited to 30 FPS?", answer: "Launch players and a PC technical report describe a 30 FPS cinematic cap. This tracker does not recommend modifying game files until an official option or a versioned, reversible method is verified." },
+      { question: "How do I report a torch or audio bug in Blood of Dawnwalker?", answer: "Record the exact location, quest state, platform, patch version, output device and a short clip. Avoid treating an isolated report as a universal fix until the developer or repeatable testing confirms it." },
     ]}
     nextSteps={[
       { label: "Fix controller movement", href: "/controller-movement-fix", description: "Use the illustrated PC deadzone workaround for sprint interruption." },
@@ -73,6 +76,10 @@ export default function KnownIssuesPage() {
       {
         title: "Controller menus, wrong button prompts and wireless detection",
         body: <p>These may be separate from the movement deadzone symptom. Players report selections jumping, confirm buttons failing, input switching between mouse/keyboard and controller, Xbox glyphs with DualSense, or wireless detection problems. Test one controller, one connection method and one Steam Input state at a time, and report the exact combination.</p>,
+      },
+      {
+        title: "Torch and audio bugs: report the symptom before changing settings",
+        body: <p>A missing torch effect, incorrect sound, silent dialogue or intermittent audio can come from different systems. Record the exact location, quest state, platform, patch, output device and whether a restart reproduces it. Check the current patch notes before changing unrelated graphics, controller or audio settings, then submit a short reproducible report if it persists.</p>,
       },
       {
         title: "Official fix versus community workaround",
