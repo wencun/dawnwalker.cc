@@ -7,7 +7,7 @@ import { LanguageSwitcher } from "./language-switcher";
 
 type Locale = "en" | "pl" | "ru";
 type NavLink = { href: string; label: string };
-type NavGroup = { label: string; items: NavLink[] };
+type NavGroup = { label: string; items: NavLink[]; moreItems?: NavLink[]; moreLabel?: string };
 type Navigation = { primary: NavLink[]; groups: NavGroup[] };
 
 const navigation: Record<Locale, Navigation> = {
@@ -37,6 +37,7 @@ const navigation: Record<Locale, Navigation> = {
         { href: "/locations", label: "Locations" },
         { href: "/choices", label: "Choices" },
         { href: "/bosses", label: "Bosses" },
+      ], moreLabel: "More quest guides", moreItems: [
         { href: "/best-sword", label: "Best sword" },
         { href: "/a-bulwark-against-darkness", label: "Arbiter armor" },
         { href: "/flask-of-quicksilver", label: "Flask of Quicksilver" },
@@ -47,21 +48,22 @@ const navigation: Record<Locale, Navigation> = {
         { href: "/lacra-romance", label: "Lacra romance" },
       ] },
       { label: "Game guide", items: [
-        { href: "/release-date", label: "Release date" },
-        { href: "/platforms", label: "Platforms" },
-        { href: "/ps5", label: "PS5 guide" },
         { href: "/gameplay", label: "Gameplay" },
         { href: "/best-builds", label: "Best builds" },
         { href: "/best-settings", label: "Best settings" },
         { href: "/combat-how-to", label: "How to play" },
         { href: "/time-system", label: "Time system" },
+        { href: "/endings", label: "Endings" },
+        { href: "/price", label: "Price & buying" },
+        { href: "/romance", label: "Romance options" },
+      ], moreLabel: "More game guides", moreItems: [
+        { href: "/release-date", label: "Release date" },
+        { href: "/platforms", label: "Platforms" },
+        { href: "/ps5", label: "PS5 guide" },
         { href: "/what-happens-after-30-days", label: "What happens after 30 days" },
         { href: "/new-game-plus", label: "New Game Plus status" },
         { href: "/trophy-guide", label: "Trophy guide" },
-        { href: "/endings", label: "Endings" },
         { href: "/editions", label: "Editions" },
-        { href: "/price", label: "Price & buying" },
-        { href: "/romance", label: "Romance options" },
         { href: "/how-long-to-beat", label: "How long to beat" },
         { href: "/review-embargo", label: "Reviews" },
       ] },
@@ -112,16 +114,23 @@ export function SiteNav() {
   const pathname = usePathname() || "/";
   const navRef = useRef<HTMLElement>(null);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
+  const [showMoreFor, setShowMoreFor] = useState<string | null>(null);
   const locale: Locale = pathname === "/pl" || pathname.startsWith("/pl/") ? "pl" : pathname === "/ru" || pathname.startsWith("/ru/") ? "ru" : "en";
   const home = locale === "en" ? "/" : `/${locale}`;
   const subtitle = locale === "en" ? "UNOFFICIAL FAN GUIDE" : locale === "pl" ? "NIEOFICJALNY PORADNIK FANOWSKI" : "НЕОФИЦИАЛЬНЫЙ ФАН-ГИД";
   const menu = navigation[locale];
-  const closeMenu = () => setOpenGroup(null);
-  const toggleMenu = (label: string) => (event: SyntheticEvent<HTMLDetailsElement>) => setOpenGroup(event.currentTarget.open ? label : null);
+  const closeMenu = () => {
+    setOpenGroup(null);
+    setShowMoreFor(null);
+  };
+  const toggleMenu = (label: string) => (event: SyntheticEvent<HTMLDetailsElement>) => {
+    if (event.currentTarget.open) setOpenGroup(label);
+    else closeMenu();
+  };
 
   useEffect(() => {
     const closeOnOutsidePointer = (event: PointerEvent) => {
-      if (!navRef.current?.contains(event.target as Node)) setOpenGroup(null);
+      if (!navRef.current?.contains(event.target as Node)) closeMenu();
     };
     document.addEventListener("pointerdown", closeOnOutsidePointer);
     return () => document.removeEventListener("pointerdown", closeOnOutsidePointer);
@@ -132,7 +141,7 @@ export function SiteNav() {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, [pathname]);
 
-  return <nav className="site-nav" aria-label="Main navigation" ref={navRef} onKeyDown={(event) => { if (event.key === "Escape") setOpenGroup(null); }}>
+  return <nav className="site-nav" aria-label="Main navigation" ref={navRef} onKeyDown={(event) => { if (event.key === "Escape") closeMenu(); }}>
     <Link className="brand" href={home}>DAWNWALKER <span>GUIDE</span><small>{subtitle}</small></Link>
     <div className="site-nav-links">
       {menu.primary.map((item) => {
@@ -143,11 +152,15 @@ export function SiteNav() {
           : <Link key={item.href} href={item.href} className={`site-nav-direct${active ? " active" : ""}`} aria-current={active ? "page" : undefined}>{item.label}</Link>;
       })}
       {menu.groups.map((group) => {
-        const active = group.items.some((item) => pathname === item.href);
+        const allItems = [...group.items, ...(group.moreItems || [])];
+        const active = allItems.some((item) => pathname === item.href);
+        const showingMore = showMoreFor === group.label || group.moreItems?.some((item) => pathname === item.href);
+        const items = showingMore ? group.moreItems || group.items : group.items;
         return <details className={`site-nav-menu${active ? " active" : ""}`} key={group.label} open={openGroup === group.label} onToggle={toggleMenu(group.label)}>
           <summary>{group.label}</summary>
           <div role="menu" aria-label={group.label}>
-            {group.items.map((item) => <Link key={item.href} href={item.href} role="menuitem" onClick={closeMenu} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</Link>)}
+            {items.map((item) => <Link key={item.href} href={item.href} role="menuitem" onClick={closeMenu} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</Link>)}
+            {group.moreItems && <button type="button" className="site-nav-more" onClick={() => setShowMoreFor(showingMore ? null : group.label)}>{showingMore ? "Back to main guides" : group.moreLabel}</button>}
           </div>
         </details>;
       })}
