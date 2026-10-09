@@ -7,7 +7,7 @@ import { LanguageSwitcher } from "./language-switcher";
 
 type Locale = "en" | "pl" | "ru";
 type NavLink = { href: string; label: string };
-type NavGroup = { label: string; items: NavLink[]; moreItems?: NavLink[]; moreLabel?: string };
+type NavGroup = { label: string; items: NavLink[] };
 type Navigation = { primary: NavLink[]; groups: NavGroup[] };
 
 const navigation: Record<Locale, Navigation> = {
@@ -37,7 +37,6 @@ const navigation: Record<Locale, Navigation> = {
         { href: "/locations", label: "Locations" },
         { href: "/choices", label: "Choices" },
         { href: "/bosses", label: "Bosses" },
-      ], moreLabel: "More quest guides", moreItems: [
         { href: "/best-sword", label: "Best sword" },
         { href: "/a-bulwark-against-darkness", label: "Arbiter armor" },
         { href: "/flask-of-quicksilver", label: "Flask of Quicksilver" },
@@ -56,7 +55,6 @@ const navigation: Record<Locale, Navigation> = {
         { href: "/endings", label: "Endings" },
         { href: "/price", label: "Price & buying" },
         { href: "/romance", label: "Romance options" },
-      ], moreLabel: "More game guides", moreItems: [
         { href: "/release-date", label: "Release date" },
         { href: "/platforms", label: "Platforms" },
         { href: "/ps5", label: "PS5 guide" },
@@ -114,14 +112,12 @@ export function SiteNav() {
   const pathname = usePathname() || "/";
   const navRef = useRef<HTMLElement>(null);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
-  const [showMoreFor, setShowMoreFor] = useState<string | null>(null);
   const locale: Locale = pathname === "/pl" || pathname.startsWith("/pl/") ? "pl" : pathname === "/ru" || pathname.startsWith("/ru/") ? "ru" : "en";
   const home = locale === "en" ? "/" : `/${locale}`;
   const subtitle = locale === "en" ? "UNOFFICIAL FAN GUIDE" : locale === "pl" ? "NIEOFICJALNY PORADNIK FANOWSKI" : "НЕОФИЦИАЛЬНЫЙ ФАН-ГИД";
   const menu = navigation[locale];
   const closeMenu = () => {
     setOpenGroup(null);
-    setShowMoreFor(null);
   };
   const toggleMenu = (label: string) => (event: SyntheticEvent<HTMLDetailsElement>) => {
     if (event.currentTarget.open) setOpenGroup(label);
@@ -152,15 +148,11 @@ export function SiteNav() {
           : <Link key={item.href} href={item.href} className={`site-nav-direct${active ? " active" : ""}`} aria-current={active ? "page" : undefined}>{item.label}</Link>;
       })}
       {menu.groups.map((group) => {
-        const allItems = [...group.items, ...(group.moreItems || [])];
-        const active = allItems.some((item) => pathname === item.href);
-        const showingMore = showMoreFor === group.label || group.moreItems?.some((item) => pathname === item.href);
-        const items = showingMore ? group.moreItems || group.items : group.items;
+        const active = group.items.some((item) => pathname === item.href);
         return <details className={`site-nav-menu${active ? " active" : ""}`} key={group.label} open={openGroup === group.label} onToggle={toggleMenu(group.label)}>
           <summary>{group.label}</summary>
           <div role="menu" aria-label={group.label}>
-            {items.map((item) => <Link key={item.href} href={item.href} role="menuitem" onClick={closeMenu} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</Link>)}
-            {group.moreItems && <button type="button" className="site-nav-more" onClick={() => setShowMoreFor(showingMore ? null : group.label)}>{showingMore ? "Back to main guides" : group.moreLabel}</button>}
+            {group.items.map((item) => <Link key={item.href} href={item.href} role="menuitem" onClick={closeMenu} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</Link>)}
           </div>
         </details>;
       })}
