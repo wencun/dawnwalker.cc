@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { useAdConsent } from "./ad-consent";
 
 const topNativeUnit = {
@@ -101,9 +102,10 @@ function NativeAdFrame({ unit, slot }: { unit: typeof topNativeUnit; slot: strin
 // document body and is loaded once only after advertising consent is granted.
 export function SocialBarAd() {
   const consent = useAdConsent();
+  const pathname = usePathname();
 
   useEffect(() => {
-    if (consent !== "accepted" || document.getElementById(socialBarUnit.scriptId)) return;
+    if (pathname === "/dashboard" || consent !== "accepted" || document.getElementById(socialBarUnit.scriptId)) return;
 
     const timer = window.setTimeout(() => {
       if (document.getElementById(socialBarUnit.scriptId)) return;
@@ -118,16 +120,17 @@ export function SocialBarAd() {
     }, 1500);
 
     return () => window.clearTimeout(timer);
-  }, [consent]);
+  }, [consent, pathname]);
 
   return null;
 }
 
 export function AdditionalSocialBarAd() {
   const consent = useAdConsent();
+  const pathname = usePathname();
 
   useEffect(() => {
-    if (consent !== "accepted" || document.getElementById(additionalSocialBarUnit.scriptId)) return;
+    if (pathname === "/dashboard" || consent !== "accepted" || document.getElementById(additionalSocialBarUnit.scriptId)) return;
 
     const timer = window.setTimeout(() => {
       if (document.getElementById(additionalSocialBarUnit.scriptId)) return;
@@ -142,7 +145,7 @@ export function AdditionalSocialBarAd() {
     }, 3000);
 
     return () => window.clearTimeout(timer);
-  }, [consent]);
+  }, [consent, pathname]);
 
   return null;
 }
@@ -151,7 +154,8 @@ export function AdditionalSocialBarAd() {
 // root layout, and loads as soon as advertising consent is granted.
 export function TopNativeAd() {
   const consent = useAdConsent();
-  if (consent !== "accepted") return null;
+  const pathname = usePathname();
+  if (pathname === "/dashboard" || consent !== "accepted") return null;
   return <aside className="ad-slot ad-slot-content"><AdLabel /><NativeAdFrame unit={topNativeUnit} slot="native-top" /></aside>;
 }
 
