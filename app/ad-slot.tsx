@@ -8,17 +8,12 @@ const nativeUnit = {
   src: "https://pl31150408.profitableratecpmnetwork.com/278334cfa83cd5121dbb0c49b86a4a7e/invoke.js",
 };
 
-const popunderUnit = {
-  scriptId: "adsterra-popunder",
-  src: "https://cheflobesofficer.com/6d/d8/a7/6dd8a759aa5970fc5c793dee1d0276d8.js",
-};
-
 const socialBarUnit = {
   scriptId: "adsterra-social-bar",
   src: "https://pl31243885.profitableratecpmnetwork.com/c1/0b/a0/c10ba0ad65df0cc63662c9743af2a3e0.js",
 };
 
-type AdFormat = "native" | "popunder" | "social-bar";
+type AdFormat = "native" | "social-bar";
 
 function trackAdEvent(event: string, slot: string, format: AdFormat) {
   window.gtag?.("event", event, { ad_format: format, ad_slot: slot });
@@ -90,33 +85,6 @@ function NativeAdFrame() {
 
   if (consent !== "accepted" || failed) return null;
   return <div ref={hostRef} className="ad-native-frame" aria-label="Advertisement" />;
-}
-
-// Popunder has no visual placement in the document. It is loaded once from
-// the root layout, after the visitor has accepted advertising cookies, so it
-// cannot occupy or shift reading content on either mobile or desktop.
-export function PopunderAd() {
-  const consent = useAdConsent();
-
-  useEffect(() => {
-    if (consent !== "accepted" || document.getElementById(popunderUnit.scriptId)) return;
-
-    const timer = window.setTimeout(() => {
-      if (document.getElementById(popunderUnit.scriptId)) return;
-      const script = document.createElement("script");
-      script.id = popunderUnit.scriptId;
-      script.async = true;
-      script.src = popunderUnit.src;
-      script.onload = () => trackAdEvent("ad_slot_script_loaded", "popunder", "popunder");
-      script.onerror = () => trackAdEvent("ad_slot_load_error", "popunder", "popunder");
-      document.head.append(script);
-      trackAdEvent("ad_slot_requested", "popunder", "popunder");
-    }, 1500);
-
-    return () => window.clearTimeout(timer);
-  }, [consent]);
-
-  return null;
 }
 
 // Social Bar is a provider-managed overlay. The tag belongs at the end of the
