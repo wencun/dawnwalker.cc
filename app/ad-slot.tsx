@@ -18,6 +18,11 @@ const socialBarUnit = {
   src: "https://pl31243885.profitableratecpmnetwork.com/c1/0b/a0/c10ba0ad65df0cc63662c9743af2a3e0.js",
 };
 
+const additionalSocialBarUnit = {
+  scriptId: "adsterra-social-bar-secondary",
+  src: "https://cheflobesofficer.com/b4/13/1d/b4131d2991296636d3166b0587542bfb.js",
+};
+
 type AdFormat = "native" | "social-bar";
 
 function trackAdEvent(event: string, slot: string, format: AdFormat) {
@@ -111,6 +116,30 @@ export function SocialBarAd() {
       document.body.append(script);
       trackAdEvent("ad_slot_requested", "social-bar", "social-bar");
     }, 1500);
+
+    return () => window.clearTimeout(timer);
+  }, [consent]);
+
+  return null;
+}
+
+export function AdditionalSocialBarAd() {
+  const consent = useAdConsent();
+
+  useEffect(() => {
+    if (consent !== "accepted" || document.getElementById(additionalSocialBarUnit.scriptId)) return;
+
+    const timer = window.setTimeout(() => {
+      if (document.getElementById(additionalSocialBarUnit.scriptId)) return;
+      const script = document.createElement("script");
+      script.id = additionalSocialBarUnit.scriptId;
+      script.async = true;
+      script.src = additionalSocialBarUnit.src;
+      script.onload = () => trackAdEvent("ad_slot_script_loaded", "social-bar-secondary", "social-bar");
+      script.onerror = () => trackAdEvent("ad_slot_load_error", "social-bar-secondary", "social-bar");
+      document.body.append(script);
+      trackAdEvent("ad_slot_requested", "social-bar-secondary", "social-bar");
+    }, 3000);
 
     return () => window.clearTimeout(timer);
   }, [consent]);
