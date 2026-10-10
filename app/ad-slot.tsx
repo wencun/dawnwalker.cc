@@ -126,13 +126,14 @@ export function TopNativeAd() {
   return <aside className="ad-slot ad-slot-content"><AdLabel /><NativeAdFrame unit={topNativeUnit} slot="native-top" /></aside>;
 }
 
-// This 1:1 placement follows each article's heading and introductory copy.
+// Header placements remain in templates for layout consistency, but the 1:1
+// unit is intentionally requested only from the in-content placement below.
 export function ContentAd() {
-  const consent = useAdConsent();
-  if (consent !== "accepted") return null;
-  return <aside className="ad-slot ad-slot-native"><AdLabel /><NativeAdFrame unit={contentNativeUnit} slot="native-content" /></aside>;
+  return null;
 }
 
 export function NativeContentAd() {
-  return null;
+  const consent = useAdConsent();
+  if (consent !== "accepted") return null;
+  return <aside className="ad-slot ad-slot-native"><AdLabel /><NativeAdFrame unit={contentNativeUnit} slot="native-content" /></aside>;
 }

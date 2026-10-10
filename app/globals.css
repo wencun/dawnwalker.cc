@@ -63,7 +63,7 @@
    frame prevents the article from jumping while the third-party cards load. */
 .ad-slot-native{margin:56px 0;padding:18px 0 22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0b0d0e}
 .ad-native-frame{width:100%;min-height:280px}
-@media(min-width:760px){.doc>.ad-slot-native{width:336px;margin:30px 0 34px auto;padding:0;justify-items:stretch;gap:6px;border:0;background:transparent}.doc>.ad-slot-native .ad-label{text-align:left}.doc>.ad-slot-native .ad-native-frame{width:336px;min-height:336px;overflow:hidden}.doc>.ad-slot-native .ad-native-frame>div,.doc>.ad-slot-native .ad-native-frame iframe{width:336px!important;height:336px!important;max-width:336px!important;max-height:336px!important;display:block}}
+@media(min-width:760px){.ad-slot-native{width:336px;margin:42px auto;padding:0;justify-items:stretch;gap:6px;border:0;background:transparent}.ad-slot-native .ad-label{text-align:left}.ad-slot-native .ad-native-frame{width:336px;min-height:336px;overflow:hidden}.ad-slot-native .ad-native-frame>div,.ad-slot-native .ad-native-frame iframe{width:336px!important;height:336px!important;max-width:336px!important;max-height:336px!important;display:block}}
 @media(max-width:759px){.ad-slot-native{margin:40px 0;padding:14px 0 18px}.ad-native-frame{position:relative;height:clamp(300px,95vw,390px)!important;min-height:0!important;max-height:clamp(300px,95vw,390px)!important;overflow:hidden!important;contain:paint}.ad-native-frame [id^="container-"]>:nth-child(n+2){display:none!important}.ad-native-frame iframe{height:100%!important;max-height:100%!important}}
 
 /* Illustrated controller workaround. These diagrams are HTML/CSS so the steps
