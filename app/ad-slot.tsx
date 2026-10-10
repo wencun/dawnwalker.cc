@@ -3,9 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 import { useAdConsent } from "./ad-consent";
 
-const nativeUnit = {
+const topNativeUnit = {
   containerId: "container-278334cfa83cd5121dbb0c49b86a4a7e",
   src: "https://pl31150408.profitableratecpmnetwork.com/278334cfa83cd5121dbb0c49b86a4a7e/invoke.js",
+};
+
+const contentNativeUnit = {
+  containerId: "container-87348b474a60f027559bf4acbcc21036",
+  src: "https://cheflobesofficer.com/87348b474a60f027559bf4acbcc21036/invoke.js",
 };
 
 const socialBarUnit = {
@@ -23,7 +28,7 @@ function AdLabel() {
   return <span className="ad-label">ADVERTISEMENT</span>;
 }
 
-function NativeAdFrame() {
+function NativeAdFrame({ unit, slot }: { unit: typeof topNativeUnit; slot: string }) {
   const consent = useAdConsent();
   const hostRef = useRef<HTMLDivElement>(null);
   const [failed, setFailed] = useState(false);
@@ -37,7 +42,7 @@ function NativeAdFrame() {
     const keepOnlyFirstMobileCreative = () => {
       if (!mobileQuery.matches) return;
 
-      const container = host.querySelector(`#${nativeUnit.containerId}`);
+      const container = host.querySelector(`#${unit.containerId}`);
       if (!container) return;
 
       // Native inventory can return several sibling cards in a single slot.
@@ -52,26 +57,26 @@ function NativeAdFrame() {
     const loadAd = () => {
       host.replaceChildren();
       const container = document.createElement("div");
-      container.id = nativeUnit.containerId;
+      container.id = unit.containerId;
       const script = document.createElement("script");
       script.async = true;
       script.dataset.cfasync = "false";
-      script.src = nativeUnit.src;
+      script.src = unit.src;
       script.onload = () => {
         mobileCreativeObserver.observe(container, { childList: true });
         mobileQuery.addEventListener("change", keepOnlyFirstMobileCreative);
-        trackAdEvent("ad_slot_script_loaded", "native-content", "native");
+        trackAdEvent("ad_slot_script_loaded", slot, "native");
         inspectionTimer = window.setTimeout(() => {
           keepOnlyFirstMobileCreative();
-          trackAdEvent(host.querySelector("iframe") ? "ad_slot_rendered" : "ad_slot_empty", "native-content", "native");
+          trackAdEvent(host.querySelector("iframe") ? "ad_slot_rendered" : "ad_slot_empty", slot, "native");
         }, 1500);
       };
       script.onerror = () => {
-        trackAdEvent("ad_slot_load_error", "native-content", "native");
+        trackAdEvent("ad_slot_load_error", slot, "native");
         setFailed(true);
       };
       host.append(container, script);
-      trackAdEvent("ad_slot_requested", "native-content", "native");
+      trackAdEvent("ad_slot_requested", slot, "native");
     };
     // Native inventory is requested immediately after advertising consent.
     loadAd();
@@ -81,7 +86,7 @@ function NativeAdFrame() {
       mobileQuery.removeEventListener("change", keepOnlyFirstMobileCreative);
       host.replaceChildren();
     };
-  }, [consent, failed]);
+  }, [consent, failed, slot, unit]);
 
   if (consent !== "accepted" || failed) return null;
   return <div ref={hostRef} className="ad-native-frame" aria-label="Advertisement" />;
@@ -118,13 +123,14 @@ export function SocialBarAd() {
 export function TopNativeAd() {
   const consent = useAdConsent();
   if (consent !== "accepted") return null;
-  return <aside className="ad-slot ad-slot-content"><AdLabel /><NativeAdFrame /></aside>;
+  return <aside className="ad-slot ad-slot-content"><AdLabel /><NativeAdFrame unit={topNativeUnit} slot="native-top" /></aside>;
 }
 
-// Existing templates still render this component, but the one global top slot
-// above owns the NativeBanner so pages cannot request duplicate inventory.
+// This 1:1 placement follows each article's heading and introductory copy.
 export function ContentAd() {
-  return null;
+  const consent = useAdConsent();
+  if (consent !== "accepted") return null;
+  return <aside className="ad-slot ad-slot-native"><AdLabel /><NativeAdFrame unit={contentNativeUnit} slot="native-content" /></aside>;
 }
 
 export function NativeContentAd() {
