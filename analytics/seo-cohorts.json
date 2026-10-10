@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "cohorts": [
+    {
+      "id": "2026-10-07-high-opportunity",
+      "commit": "88b040d",
+      "intent": "High-intent issue resolution, item location, quest answer, and choice guidance",
+      "optimizedOn": "2026-10-07",
+      "baselineRange": { "start": "2026-10-03", "end": "2026-10-05" },
+      "pages": [
+        { "path": "/known-issues", "url": "https://www.dawnwalker.cc/known-issues", "intent": "Issue reporting and known-problem status", "baseline": { "clicks": 17, "impressions": 1137, "ctr": 0.015, "position": 6.76 } },
+        { "path": "/flickering-fix", "url": "https://www.dawnwalker.cc/flickering-fix", "intent": "Visual flickering diagnosis", "baseline": { "clicks": 12, "impressions": 671, "ctr": 0.0179, "position": 5.3 } },
+        { "path": "/flask-of-quicksilver", "url": "https://www.dawnwalker.cc/flask-of-quicksilver", "intent": "Item location and acquisition", "baseline": { "clicks": 3, "impressions": 441, "ctr": 0.0068, "position": 7.05 } },
+        { "path": "/font-of-life", "url": "https://www.dawnwalker.cc/font-of-life", "intent": "Choice outcome guidance", "baseline": { "clicks": 5, "impressions": 437, "ctr": 0.0114, "position": 8.52 } },
+        { "path": "/cant-save", "url": "https://www.dawnwalker.cc/cant-save", "intent": "Save-lock diagnosis", "baseline": { "clicks": 3, "impressions": 358, "ctr": 0.0084, "position": 6.2 } },
+        { "path": "/crash-and-stutter-fix", "url": "https://www.dawnwalker.cc/crash-and-stutter-fix", "intent": "PC crash and stutter diagnosis", "baseline": { "clicks": 4, "impressions": 309, "ctr": 0.0129, "position": 6.99 } },
+        { "path": "/controller-movement-fix", "url": "https://www.dawnwalker.cc/controller-movement-fix", "intent": "Controller and GameInput troubleshooting", "baseline": { "clicks": 2, "impressions": 259, "ctr": 0.0077, "position": 7.07 } },
+        { "path": "/help-the-sanzhani", "url": "https://www.dawnwalker.cc/help-the-sanzhani", "intent": "Quest help and location guidance", "baseline": { "clicks": 2, "impressions": 233, "ctr": 0.0086, "position": 6.8 } },
+        { "path": "/how-many-spoonfuls-of-herbs", "url": "https://www.dawnwalker.cc/how-many-spoonfuls-of-herbs", "intent": "Quest answer", "baseline": { "clicks": 0, "impressions": 292, "ctr": 0, "position": 8.31 } },
+        { "path": "/odd-riddle", "url": "https://www.dawnwalker.cc/odd-riddle", "intent": "Riddle solution", "baseline": { "clicks": 0, "impressions": 38, "ctr": 0, "position": 8.34 } }
+      ]
+    },
+    {
+      "id": "2026-10-07-game-state-information",
+      "commit": "c7d83be",
+      "intent": "Game-state, platform, progression, and walkthrough information",
+      "optimizedOn": "2026-10-07",
+      "baselineRange": { "start": "2026-10-03", "end": "2026-10-05" },
+      "pages": [
+        { "path": "/endings", "url": "https://www.dawnwalker.cc/endings", "intent": "Ending requirements and outcomes", "baseline": { "clicks": 0, "impressions": 78, "ctr": 0, "position": 10.3974 } },
+        { "path": "/mods", "url": "https://www.dawnwalker.cc/mods", "intent": "Mod availability and safety", "baseline": { "clicks": 1, "impressions": 194, "ctr": 0.00515, "position": 7.7835 } },
+        { "path": "/new-game-plus", "url": "https://www.dawnwalker.cc/new-game-plus", "intent": "New Game Plus availability and carry-over", "baseline": { "clicks": 1, "impressions": 87, "ctr": 0.01149, "position": 8.4713 } },
+        { "path": "/platforms", "url": "https://www.dawnwalker.cc/platforms", "intent": "Platform availability and Game Pass status", "baseline": { "clicks": 0, "impressions": 58, "ctr": 0, "position": 8.2759 } },
+        { "path": "/release-date", "url": "https://www.dawnwalker.cc/release-date", "intent": "Release date and access timing", "baseline": { "clicks": 0, "impressions": 164, "ctr": 0, "position": 8.9695 } },
+        { "path": "/time-system", "url": "https://www.dawnwalker.cc/time-system", "intent": "30-day system and time consequences", "baseline": { "clicks": 0, "impressions": 134, "ctr": 0, "position": 8.3358 } },
+        { "path": "/walkthrough", "url": "https://www.dawnwalker.cc/walkthrough", "intent": "General walkthrough and quest order", "baseline": { "clicks": 1, "impressions": 36, "ctr": 0.02778, "position": 9.5278 } },
+        { "path": "/what-happens-after-30-days", "url": "https://www.dawnwalker.cc/what-happens-after-30-days", "intent": "30-day deadline outcome", "baseline": { "clicks": 1, "impressions": 91, "ctr": 0.01099, "position": 7.9231 } }
+      ]
+    },
+    {
+      "id": "2026-10-07-quest-choice-guides",
+      "commit": "c7d83be",
+      "intent": "Quest, choice, character, and equipment guidance",
+      "optimizedOn": "2026-10-07",
+      "baselineRange": { "start": "2026-10-03", "end": "2026-10-05" },
+      "pages": [
+        { "path": "/a-friend-like-this", "url": "https://www.dawnwalker.cc/a-friend-like-this", "intent": "A Friend Like This quest walkthrough", "baseline": { "clicks": 3, "impressions": 139, "ctr": 0.02158, "position": 7.554 } },
+        { "path": "/anca-romance", "url": "https://www.dawnwalker.cc/anca-romance", "intent": "Anca romance requirements", "baseline": { "clicks": 1, "impressions": 175, "ctr": 0.00571, "position": 8.2457 } },
+        { "path": "/best-sword", "url": "https://www.dawnwalker.cc/best-sword", "intent": "Best sword comparison", "baseline": { "clicks": 0, "impressions": 94, "ctr": 0, "position": 7.8723 } },
+        { "path": "/forge-it-anew", "url": "https://www.dawnwalker.cc/forge-it-anew", "intent": "Forge It Anew quest guidance", "baseline": { "clicks": 0, "impressions": 84, "ctr": 0, "position": 8.6071 } },
+        { "path": "/home-sweet-home", "url": "https://www.dawnwalker.cc/home-sweet-home", "intent": "Home Sweet Home quest walkthrough", "baseline": { "clicks": 1, "impressions": 151, "ctr": 0.00662, "position": 8.6225 } },
+        { "path": "/volk-buried-past", "url": "https://www.dawnwalker.cc/volk-buried-past", "intent": "Volk's Buried Past choices and item location", "baseline": { "clicks": 2, "impressions": 129, "ctr": 0.0155, "position": 8.0155 } },
+        { "path": "/xanthe-boss-guide", "url": "https://www.dawnwalker.cc/xanthe-boss-guide", "intent": "Xanthe boss and quest guidance", "baseline": { "clicks": 0, "impressions": 58, "ctr": 0, "position": 8.5345 } }
+      ]
+    }
+  ]
+}
