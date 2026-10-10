@@ -15,7 +15,11 @@
     "test": "npm run build && node --test tests/rendered-html.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "analytics:sync": "node --env-file-if-exists=.env.analytics.local scripts/analytics-sync.mjs",
-    "analytics:mcp": "node --env-file-if-exists=.env.analytics.local scripts/analytics-mcp.mjs"
+    "analytics:mcp": "node --env-file-if-exists=.env.analytics.local scripts/analytics-mcp.mjs",
+    "seo:capture": "node --env-file-if-exists=.env.analytics.local scripts/seo-cohorts.mjs capture",
+    "seo:status": "node --env-file-if-exists=.env.analytics.local scripts/seo-cohorts.mjs status",
+    "seo:check": "node --env-file-if-exists=.env.analytics.local scripts/seo-cohorts.mjs check && node scripts/seo-dashboard.mjs",
+    "seo:dashboard": "node scripts/seo-dashboard.mjs"
   },
   "dependencies": {
     "next": "16.2.6",

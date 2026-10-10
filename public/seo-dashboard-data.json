@@ -1,0 +1,1297 @@
+{
+  "generatedAt": "2026-10-10T08:19:00.158Z",
+  "cohorts": [
+    {
+      "id": "2026-10-07-high-opportunity",
+      "intent": "High-intent issue resolution, item location, quest answer, and choice guidance",
+      "optimizedOn": "2026-10-07",
+      "baselineRange": {
+        "start": "2026-10-03",
+        "end": "2026-10-05"
+      },
+      "status": "waiting_for_gsc",
+      "conclusion": null,
+      "pages": [
+        {
+          "path": "/known-issues",
+          "intent": "Issue reporting and known-problem status",
+          "optimization": "区分问题状态与具体修复路径，更新首屏快速答案并补充故障页内链。",
+          "locations": "metadata title/description、H1/摘要、快速答案、故障页内链",
+          "reason": "用户搜索 bugs/bug report 时需要先判断状态，再进入匹配症状的修复页，避免一个总页回答所有问题。",
+          "expected": "提高问题报告词的 CTR；通过症状页内链提升具体故障页的展示和排名。",
+          "before": {
+            "clicks": 17,
+            "impressions": 1137,
+            "ctr": 0.015,
+            "position": 6.76
+          },
+          "after": null,
+          "target": {
+            "clicks": 21,
+            "impressions": 1251,
+            "ctr": 0.018,
+            "position": 5.76
+          },
+          "audit": {
+            "before": {
+              "title": "Blood of Dawnwalker Bugs: Black Screen, Crashes, Saves & Hotfixes",
+              "description": "Blood of Dawnwalker black screen, crash and bug guide: what Hotfix 1.0.5 and 1.0.4 fixed, plus separate checks for shader stutter, saving, controller input and repeatable crashes.",
+              "h1": "Blood of Dawnwalker bugs and known issues: crashes, saves and controllers",
+              "dek": "Install the current hotfix first, then match the exact symptom before trying a workaround. This page separates confirmed patch fixes from player reports for shader stutter, saving, controller input and repeatable crashes; visual symptoms have a dedicated guide.",
+              "keywords": [
+                "The Blood of Dawnwalker known issues",
+                "Blood of Dawnwalker crash fix",
+                "Blood of Dawnwalker black screen",
+                "Blood of Dawnwalker stuttering fix",
+                "Dawnwalker controller bug",
+                "Blood of Dawnwalker bugs",
+                "Blood of Dawnwalker glitch",
+                "Dawnwalker movement bug",
+                "Blood of Dawnwalker bug report"
+              ]
+            },
+            "after": {
+              "title": "Blood of Dawnwalker Known Issues: Bugs, Crashes & Fixes",
+              "description": "See current Blood of Dawnwalker bugs, crashes, save locks and controller issues. Start with the matching hotfix, then use the right troubleshooting guide.",
+              "h1": "Blood of Dawnwalker known issues: bugs, crashes, saves and controller fixes",
+              "dek": "Use this tracker to match your exact Blood of Dawnwalker problem to the right fix. Start with hotfix status, then choose the crash, save-lock, controller, flickering or stutter guide instead of trying random tweaks.",
+              "keywords": [
+                "The Blood of Dawnwalker known issues",
+                "Blood of Dawnwalker crash fix",
+                "Blood of Dawnwalker black screen",
+                "Blood of Dawnwalker stuttering fix",
+                "Dawnwalker controller bug",
+                "Blood of Dawnwalker bugs",
+                "Blood of Dawnwalker glitch",
+                "Dawnwalker movement bug",
+                "Blood of Dawnwalker bug report"
+              ]
+            }
+          }
+        },
+        {
+          "path": "/flickering-fix",
+          "intent": "Visual flickering diagnosis",
+          "optimization": "标题聚焦 screen/light flickering；首段改为分步设置检查，并补充相关内链。",
+          "locations": "metadata title/description、H1/摘要、快速答案、相关故障内链",
+          "reason": "查询核心是 screen/light flickering 的可执行设置路径，而不是泛泛的驱动建议。",
+          "expected": "提高闪烁词 CTR 和排名；将不匹配的 crash 查询导向正确页面。",
+          "before": {
+            "clicks": 12,
+            "impressions": 671,
+            "ctr": 0.0179,
+            "position": 5.3
+          },
+          "after": null,
+          "target": {
+            "clicks": 15,
+            "impressions": 739,
+            "ctr": 0.0209,
+            "position": 4.3
+          },
+          "audit": {
+            "before": {
+              "title": "Blood of Dawnwalker Flickering Fix: Screen, Light & Frame Gen",
+              "description": "Fix Blood of Dawnwalker screen or light flickering: test Post Processing, Frame Generation, V-Sync and VRR one at a time.",
+              "h1": "Blood of Dawnwalker flickering fix: screen, light and Frame Gen",
+              "dek": "Start with the symptom, not a driver rollback or mod. A repeated PC report links full-screen light flicker to launching on Ultra: start once on High or Post Processing High, restart, then retest. Frame Generation and VRR need separate checks.",
+              "keywords": [
+                "Blood of Dawnwalker flickering",
+                "Blood of Dawnwalker flickering PC",
+                "The Blood of Dawnwalker screen flickering",
+                "Blood of Dawnwalker light flickering",
+                "Dawnwalker flicker",
+                "Dawnwalker PS5 Pro VRR flickering"
+              ]
+            },
+            "after": {
+              "title": "Blood of Dawnwalker Flickering Fix: Screen & Light Settings",
+              "description": "Fix Blood of Dawnwalker screen or light flickering with safe Post Processing, Frame Generation, V-Sync and VRR checks before using mods.",
+              "h1": "Blood of Dawnwalker flickering fix: screen, light and Frame Generation settings",
+              "dek": "Fix screen or light flickering by testing one graphics variable at a time. Start with High or Post Processing High, then isolate Frame Generation, V-Sync and VRR before trying any mod or driver rollback.",
+              "keywords": [
+                "Blood of Dawnwalker flickering",
+                "Blood of Dawnwalker flickering PC",
+                "The Blood of Dawnwalker screen flickering",
+                "Blood of Dawnwalker light flickering",
+                "Dawnwalker flicker",
+                "Dawnwalker PS5 Pro VRR flickering"
+              ]
+            }
+          }
+        },
+        {
+          "path": "/flask-of-quicksilver",
+          "intent": "Item location and acquisition",
+          "optimization": "将首屏改为物品位置、前置任务和用途的直接答案；加入任务与 walkthrough 内链。",
+          "locations": "metadata title/description、H1/摘要、快速答案、任务/攻略内链",
+          "reason": "位置词用户需要地点、前置任务和物品用途在首屏一次得到回答。",
+          "expected": "提高 location/find 词 CTR；通过任务内链增加相关页面展示。",
+          "before": {
+            "clicks": 3,
+            "impressions": 441,
+            "ctr": 0.0068,
+            "position": 7.05
+          },
+          "after": null,
+          "target": {
+            "clicks": 4,
+            "impressions": 486,
+            "ctr": 0.0098,
+            "position": 6.05
+          },
+          "audit": {
+            "before": {
+              "title": "Where to Find a Flask of Quicksilver in Dawnwalker",
+              "description": "Where to find a Flask of Quicksilver in The Blood of Dawnwalker: finish Home Sweet Home, then collect it from Aurelius's Tower upper study.",
+              "h1": "Where to find a Flask of Quicksilver in Dawnwalker",
+              "dek": "The Flask of Quicksilver is on the upper floor of Aurelius’s Tower, southwest of the Silts. Complete Home Sweet Home first, then return upstairs and inspect the low table beside the large wooden table.",
+              "keywords": [
+                "Flask of Quicksilver Dawnwalker",
+                "Dawnwalker Flask of Quicksilver location",
+                "The Blood of Dawnwalker Flask of Quicksilver",
+                "Where to find a Flask of Quicksilver",
+                "Where to get a Flask of Quicksilver",
+                "Aurelius Tower Flask of Quicksilver"
+              ]
+            },
+            "after": {
+              "title": "Flask of Quicksilver Location in Blood of Dawnwalker",
+              "description": "Find the Flask of Quicksilver in Blood of Dawnwalker: complete Home Sweet Home, return to Aurelius's Tower and loot the upper study table.",
+              "h1": "Flask of Quicksilver location: where to find it in Blood of Dawnwalker",
+              "dek": "The Flask of Quicksilver is in Aurelius's Tower after Home Sweet Home. Return to the upper study, check the low table beside the large wooden table, then use it for the Arbiter armor quest.",
+              "keywords": [
+                "Flask of Quicksilver Dawnwalker",
+                "Dawnwalker Flask of Quicksilver location",
+                "The Blood of Dawnwalker Flask of Quicksilver",
+                "Where to find a Flask of Quicksilver",
+                "Where to get a Flask of Quicksilver",
+                "Aurelius Tower Flask of Quicksilver"
+              ]
+            }
+          }
+        },
+        {
+          "path": "/font-of-life",
+          "intent": "Choice outcome guidance",
+          "optimization": "重写为奖励选择意图；首屏明确 Coen、Anca 和 Ancient Greaves 三种结果。",
+          "locations": "metadata title/description、H1/摘要、快速答案、romance/endings 内链",
+          "reason": "choice 类查询需要比较三种奖励与后果，而不是只说明物品。",
+          "expected": "提高 choice/best reward 词 CTR 与排名；内链带动结局和恋爱页。",
+          "before": {
+            "clicks": 5,
+            "impressions": 437,
+            "ctr": 0.0114,
+            "position": 8.52
+          },
+          "after": null,
+          "target": {
+            "clicks": 6,
+            "impressions": 481,
+            "ctr": 0.0144,
+            "position": 7.52
+          },
+          "audit": {
+            "before": {
+              "title": "Blood of Dawnwalker Font of Life Choices: Best Outcome for Anca",
+              "description": "The Blood of Dawnwalker Font of Life choices explained: use the Font yourself for the Witchcraft perk, let Anca use it for her outcome, or destroy it for Ancient Greaves.",
+              "h1": "Font of Life choices: use it yourself, let Anca use it, or destroy it",
+              "dek": "At the end of Stronger Than Achilles, the Font of Life is a permanent reward choice. Use it yourself for the Font of Life / Witchcraft perk, let Anca use it for her outcome, or destroy it for the Ancient Greaves. Save before choosing.",
+              "keywords": [
+                "Blood of Dawnwalker Font of Life",
+                "The Blood of Dawnwalker Font of Life",
+                "Font of Life choices Dawnwalker",
+                "Should Anca use the Font of Life",
+                "Stronger Than Achilles Dawnwalker",
+                "Anca romance Font of Life"
+              ]
+            },
+            "after": {
+              "title": "Blood of Dawnwalker Font of Life Choice: Best Reward Explained",
+              "description": "Choose the best Font of Life outcome in Blood of Dawnwalker: Coen's Witchcraft perk, Anca's result or Ancient Greaves. Save before deciding.",
+              "h1": "Font of Life choice: best reward for Coen, Anca or Ancient Greaves",
+              "dek": "The Font of Life decision is a permanent reward choice. Use it yourself for Coen's Witchcraft perk, let Anca use it for her outcome, or destroy it for Ancient Greaves. Save before choosing.",
+              "keywords": [
+                "Blood of Dawnwalker Font of Life",
+                "The Blood of Dawnwalker Font of Life",
+                "Font of Life choices Dawnwalker",
+                "Should Anca use the Font of Life",
+                "Stronger Than Achilles Dawnwalker",
+                "Anca romance Font of Life"
+              ]
+            }
+          }
+        },
+        {
+          "path": "/cant-save",
+          "intent": "Save-lock diagnosis",
+          "optimization": "去除过度绑定补丁版本的标题；区分正常任务锁定与持续 save-lock bug。",
+          "locations": "metadata title/description、H1/摘要、快速答案、问题诊断内链",
+          "reason": "Saving is locked 既可能是正常任务状态，也可能是 bug，必须先消除意图混淆。",
+          "expected": "提高 can’t save/save lock 词 CTR；减少不相关跳出，改善后续排名信号。",
+          "before": {
+            "clicks": 3,
+            "impressions": 358,
+            "ctr": 0.0084,
+            "position": 6.2
+          },
+          "after": null,
+          "target": {
+            "clicks": 4,
+            "impressions": 394,
+            "ctr": 0.0114,
+            "position": 5.2
+          },
+          "audit": {
+            "before": {
+              "title": "Blood of Dawnwalker Can't Save Fix: Saving Locked After 1.0.4",
+              "description": "Blood of Dawnwalker can't save or says saving is locked after Hotfix 1.0.4? Check the active mission state, protect progress and isolate a remaining save-lock issue.",
+              "h1": "Blood of Dawnwalker can&apos;t save: what “Saving is currently locked” can mean",
+              "dek": "If The Blood of Dawnwalker will not quicksave or manual save, first identify whether saving is temporarily locked during a mission or whether a progression event has failed to trigger. Protect the current run before testing anything.",
+              "keywords": [
+                "Blood of Dawnwalker can't save",
+                "Dawnwalker cant save",
+                "Blood of Dawnwalker saving is locked",
+                "Dawnwalker save bug",
+                "Blood of Dawnwalker save bug"
+              ]
+            },
+            "after": {
+              "title": "Blood of Dawnwalker Can't Save Fix: Saving Is Locked",
+              "description": "Fix Blood of Dawnwalker can't save or saving is locked issues: update, check mission state, protect progress and isolate a persistent save-lock bug.",
+              "h1": "Blood of Dawnwalker can't save: fix “Saving is currently locked”",
+              "dek": "If manual save or quicksave is locked, first separate a normal mission lock from a persistent bug. Update, protect your current run, record the active quest and test only the safe save-lock checks.",
+              "keywords": [
+                "Blood of Dawnwalker can't save",
+                "Dawnwalker cant save",
+                "Blood of Dawnwalker saving is locked",
+                "Dawnwalker save bug",
+                "Blood of Dawnwalker save bug"
+              ]
+            }
+          }
+        },
+        {
+          "path": "/crash-and-stutter-fix",
+          "intent": "PC crash and stutter diagnosis",
+          "optimization": "改为安全 PC 检查意图；按崩溃、卡顿和闪烁拆分首屏答案。",
+          "locations": "metadata title/description、H1/摘要、首屏分症状步骤、相关故障内链",
+          "reason": "crash 和 stutter 不是同一问题，搜索者需要风险较低且症状匹配的第一步。",
+          "expected": "提高 crash/stutter 词 CTR；通过更匹配答案提升排名和停留。",
+          "before": {
+            "clicks": 4,
+            "impressions": 309,
+            "ctr": 0.0129,
+            "position": 6.99
+          },
+          "after": null,
+          "target": {
+            "clicks": 5,
+            "impressions": 340,
+            "ctr": 0.0159,
+            "position": 5.99
+          },
+          "audit": {
+            "before": {
+              "title": "The Blood of Dawnwalker Crash & Stutter Fix: Frequent Crashes After Updates",
+              "description": "Fix The Blood of Dawnwalker crash, stutter and performance issues with current community crash reports, the developer-listed Full Screen workaround and safe shader-compilation checks.",
+              "h1": "The Blood of Dawnwalker crash and stutter fix",
+              "dek": "Start with the symptom, not a copied tweak list. New player reports describe repeatable crashes after recent updates, while the developer separately lists Full Screen for Windowed or Borderless stutter and higher-risk guidance for some shader-compilation crashes.",
+              "keywords": [
+                "The Blood of Dawnwalker crash",
+                "Dawnwalker frequent crashes",
+                "Dawnwalker crashing after update",
+                "Blood of Dawnwalker stutter fix",
+                "Dawnwalker performance issues",
+                "Blood of Dawnwalker shader compilation crash"
+              ]
+            },
+            "after": {
+              "title": "Blood of Dawnwalker Crash and Stutter Fix: Safe PC Checks",
+              "description": "Fix Blood of Dawnwalker crashes and stutter with safe update, Full Screen, file verification and shader-compilation checks before risky tweaks.",
+              "h1": "Blood of Dawnwalker crash and stutter fix: safe PC checks first",
+              "dek": "Start with the exact symptom before changing settings. Use Full Screen for Windowed or Borderless stutter, verify files for repeatable crashes and reserve shader-compilation BIOS guidance for that narrow case only.",
+              "keywords": [
+                "The Blood of Dawnwalker crash",
+                "Dawnwalker frequent crashes",
+                "Dawnwalker crashing after update",
+                "Blood of Dawnwalker stutter fix",
+                "Dawnwalker performance issues",
+                "Blood of Dawnwalker shader compilation crash"
+              ]
+            }
+          }
+        },
+        {
+          "path": "/controller-movement-fix",
+          "intent": "Controller and GameInput troubleshooting",
+          "optimization": "标题覆盖 GameInput、FPS、冲刺和移动；提供按症状排序的修复步骤。",
+          "locations": "metadata title/description、H1/摘要、快速答案、故障/配置内链",
+          "reason": "GameInput FPS、冲刺中断和斜向移动是相邻但不同的 controller 意图。",
+          "expected": "提高 controller/GameInput 词 CTR；减少错误修复带来的跳出。",
+          "before": {
+            "clicks": 2,
+            "impressions": 259,
+            "ctr": 0.0077,
+            "position": 7.07
+          },
+          "after": null,
+          "target": {
+            "clicks": 3,
+            "impressions": 285,
+            "ctr": 0.010700000000000001,
+            "position": 6.07
+          },
+          "audit": {
+            "before": {
+              "title": "Microsoft GameInput Dawnwalker Fix: FPS Drops, Sprint & Controller",
+              "description": "Fix Microsoft GameInput and controller problems in The Blood of Dawnwalker: install the current Steam hotfix for FPS drops, then use the developer-listed sprint and deadzone checks only if needed.",
+              "h1": "Microsoft GameInput Dawnwalker fix: FPS drops, sprint and controller input",
+              "dek": "On Steam, Hotfix 1.0.4 fixes FPS drops when controllers connect with outdated Microsoft GameInput software. Hotfix 1.0.5 is a separate shader-stutter improvement. If FPS is normal but sprint still stops or movement slows, use the 0.8 sensitivity and reversible deadzone checks below.",
+              "keywords": [
+                "Microsoft GameInput Dawnwalker",
+                "Blood of Dawnwalker Microsoft GameInput",
+                "Dawnwalker controller FPS drops",
+                "Dawnwalker controller movement bug fix",
+                "Blood of Dawnwalker sprint stops",
+                "Dawnwalker controller deadzone",
+                "Dawnwalker slow walking fix",
+                "Dawnwalker PS5 controller bug",
+                "Blood of Dawnwalker controller or keyboard"
+              ]
+            },
+            "after": {
+              "title": "Blood of Dawnwalker Controller Fix: GameInput, Sprint & FPS",
+              "description": "Fix Blood of Dawnwalker controller issues: update for GameInput FPS drops, lower sensitivity for sprint stops and use Steam deadzone checks if needed.",
+              "h1": "Blood of Dawnwalker controller fix: GameInput FPS drops, sprint and movement",
+              "dek": "Fix controller-related FPS drops and movement issues in the right order. Update first for Microsoft GameInput on Steam, lower sensitivity for sprint interruption, then try the Steam deadzone workaround only if diagonals still slow Coen.",
+              "keywords": [
+                "Microsoft GameInput Dawnwalker",
+                "Blood of Dawnwalker Microsoft GameInput",
+                "Dawnwalker controller FPS drops",
+                "Dawnwalker controller movement bug fix",
+                "Blood of Dawnwalker sprint stops",
+                "Dawnwalker controller deadzone",
+                "Dawnwalker slow walking fix",
+                "Dawnwalker PS5 controller bug",
+                "Blood of Dawnwalker controller or keyboard"
+              ]
+            }
+          }
+        },
+        {
+          "path": "/help-the-sanzhani",
+          "intent": "Quest help and location guidance",
+          "optimization": "明确四个任务地点和额外一天奖励；补充任务顺序和时间系统内链。",
+          "locations": "metadata title/description、H1/摘要、快速答案、时间/攻略内链",
+          "reason": "任务词用户需要四个地点和奖励，且需要知道无导航点是正常状态。",
+          "expected": "提高 quest location 词 CTR；内链增加时间系统与攻略页曝光。",
+          "before": {
+            "clicks": 2,
+            "impressions": 233,
+            "ctr": 0.0086,
+            "position": 6.8
+          },
+          "after": null,
+          "target": {
+            "clicks": 3,
+            "impressions": 257,
+            "ctr": 0.0116,
+            "position": 5.8
+          },
+          "audit": {
+            "before": {
+              "title": "Help the Sanzhani: Letters to Lunka All 4 Quest Locations",
+              "description": "The Blood of Dawnwalker Help the Sanzhani guide: finish Good Home, unlock Letters to Lunka, find all four hidden Sanzhani quests and claim the extra day reward.",
+              "h1": "Help the Sanzhani: Letters to Lunka all 4 quest locations",
+              "dek": "The Help the Sanzhani objective is deliberately vague. Finish Good Home, unlock Letters to Lunka at the Yawning Burrow, then find four unmarked Sanzhani quests around Vale Sangora to send more letters and earn an extra day.",
+              "keywords": [
+                "Blood of Dawnwalker Help the Sanzhani",
+                "Dawnwalker Letters to Lunka",
+                "Dawnwalker Good Home",
+                "Dawnwalker Sanzhani locations",
+                "Dawnwalker extra day"
+              ]
+            },
+            "after": {
+              "title": "Help the Sanzhani Guide: All Letters to Lunka Locations",
+              "description": "Complete Help the Sanzhani in Blood of Dawnwalker: finish Good Home, find all four Letters to Lunka quests and claim the extra day reward.",
+              "h1": "Help the Sanzhani guide: all four Letters to Lunka quest locations",
+              "dek": "Complete Help the Sanzhani by finishing Good Home, unlocking Letters to Lunka at the Yawning Burrow and finding the four hidden Sanzhani favours around Vale Sangora for the extra day reward.",
+              "keywords": [
+                "Blood of Dawnwalker Help the Sanzhani",
+                "Dawnwalker Letters to Lunka",
+                "Dawnwalker Good Home",
+                "Dawnwalker Sanzhani locations",
+                "Dawnwalker extra day"
+              ]
+            }
+          }
+        },
+        {
+          "path": "/how-many-spoonfuls-of-herbs",
+          "intent": "Quest answer",
+          "optimization": "将标题改为直接答案“三勺”；首屏突出 hot water + three spoonfuls。",
+          "locations": "metadata title/description、H1/摘要、配方快速答案、序章/攻略内链",
+          "reason": "该词是明确答案意图，答案“三勺”必须出现在标题和首屏。",
+          "expected": "提高 herb/spoonfuls 词 CTR 和排名；增强长尾答案覆盖。",
+          "before": {
+            "clicks": 0,
+            "impressions": 292,
+            "ctr": 0,
+            "position": 8.31
+          },
+          "after": null,
+          "target": {
+            "clicks": 0,
+            "impressions": 322,
+            "ctr": 0.003,
+            "position": 7.3100000000000005
+          },
+          "audit": {
+            "before": {
+              "title": "How Many Spoonfuls of Herbs in The Blood of Dawnwalker?",
+              "description": "For Esme's medicine in The Blood of Dawnwalker's Withering Away quest, use hot water and add three spoonfuls of herbs. See the exact order and spoiler-light consequences.",
+              "h1": "How many spoonfuls of herbs should you add in The Blood of Dawnwalker?",
+              "dek": "For Esme's medicine in the Withering Away prologue quest, select hot water and then add three spoonfuls of herbs. Read Anca's instruction note before returning home, because the recipe cannot be reopened at the brewing choice.",
+              "keywords": [
+                "Blood of the Dawnwalker how many spoonfuls of herbs",
+                "The Blood of Dawnwalker three spoonfuls of herbs",
+                "Dawnwalker medicine for mother recipe",
+                "Dawnwalker save Esme medicine",
+                "Withering Away herbs answer"
+              ]
+            },
+            "after": {
+              "title": "Blood of Dawnwalker Herbs Answer: Three Spoonfuls",
+              "description": "Blood of Dawnwalker herbs answer: use hot water, then add three spoonfuls of herbs for Esme's medicine in Withering Away.",
+              "h1": "Blood of Dawnwalker herbs answer: use hot water and three spoonfuls",
+              "dek": "For Esme's medicine in Withering Away, choose hot water first, then add three spoonfuls of herbs. Read Anca's note before brewing because the recipe cannot be reopened at the choice.",
+              "keywords": [
+                "Blood of the Dawnwalker how many spoonfuls of herbs",
+                "The Blood of Dawnwalker three spoonfuls of herbs",
+                "Dawnwalker medicine for mother recipe",
+                "Dawnwalker save Esme medicine",
+                "Withering Away herbs answer"
+              ]
+            }
+          }
+        },
+        {
+          "path": "/odd-riddle",
+          "intent": "Riddle solution",
+          "optimization": "重写标题、摘要和快速答案以直接给出谜题解法，并链接任务上下文。",
+          "locations": "metadata title/description、H1/摘要、谜题快速答案、任务内链",
+          "reason": "riddle 查询要求直接解法，同时保留完成谜题所需的任务上下文。",
+          "expected": "提高谜题答案词 CTR；提升相关任务长尾展示。",
+          "before": {
+            "clicks": 0,
+            "impressions": 38,
+            "ctr": 0,
+            "position": 8.34
+          },
+          "after": null,
+          "target": {
+            "clicks": 0,
+            "impressions": 42,
+            "ctr": 0.003,
+            "position": 7.34
+          },
+          "audit": {
+            "before": {
+              "title": "Blood of Dawnwalker Odd Riddle Solution: Lunar Manor Choice",
+              "description": "Solve the Odd Riddle in The Blood of Dawnwalker at Lunar Manor. See which left, middle or right opening continues The Lunar Game and what the wrong choices do.",
+              "h1": "The Blood of Dawnwalker Odd Riddle solution",
+              "dek": "For the Odd Riddle at Lunar Manor during The Lunar Game, choose the left opening. It opens the gate and lets you continue; the middle and right choices trigger the trap.",
+              "keywords": [
+                "The Blood of Dawnwalker Odd Riddle",
+                "Blood of Dawnwalker odd riddle answer",
+                "Dawnwalker Lunar Manor riddle left middle right",
+                "The Lunar Game riddle solution Dawnwalker"
+              ]
+            },
+            "after": {
+              "title": "Blood of Dawnwalker Odd Riddle Answer: Choose Left",
+              "description": "Odd Riddle answer in Blood of Dawnwalker: choose the left opening at Lunar Manor during The Lunar Game. Middle and right trigger the trap.",
+              "h1": "Blood of Dawnwalker Odd Riddle answer: choose left at Lunar Manor",
+              "dek": "The Odd Riddle solution is the left opening. Choose left during The Lunar Game at Lunar Manor to open the gate; middle and right trigger the trap.",
+              "keywords": [
+                "The Blood of Dawnwalker Odd Riddle",
+                "Blood of Dawnwalker odd riddle answer",
+                "Dawnwalker Lunar Manor riddle left middle right",
+                "The Lunar Game riddle solution Dawnwalker"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "2026-10-07-game-state-information",
+      "intent": "Game-state, platform, progression, and walkthrough information",
+      "optimizedOn": "2026-10-07",
+      "baselineRange": {
+        "start": "2026-10-03",
+        "end": "2026-10-05"
+      },
+      "status": "waiting_for_gsc",
+      "conclusion": null,
+      "pages": [
+        {
+          "path": "/endings",
+          "intent": "Ending requirements and outcomes",
+          "optimization": "重写标题和摘要以覆盖结局条件与存档规划；强化首屏直接答案。",
+          "locations": "metadata title/description、H1/摘要、首屏结局与存档答案",
+          "reason": "结局查询的核心是结果、条件和避免重玩的存档策略。",
+          "expected": "提高 ending/how many endings 词 CTR 与排名。",
+          "before": {
+            "clicks": 0,
+            "impressions": 78,
+            "ctr": 0,
+            "position": 10.3974
+          },
+          "after": null,
+          "target": {
+            "clicks": 0,
+            "impressions": 86,
+            "ctr": 0.003,
+            "position": 9.3974
+          },
+          "audit": {
+            "before": {
+              "title": "The Blood of Dawnwalker Endings: How Many & Save Plan",
+              "description": "The Blood of Dawnwalker endings guide: how many launch-build outcomes are documented, what the 30-day ending changes and a spoiler-marked save plan.",
+              "h1": "The Blood of Dawnwalker endings: how many and how to save safely",
+              "dek": "Launch-build guides document seven endings. The safest way to see alternatives is a manual save before the final story commitment, plus an earlier save before the 30-day family deadline.",
+              "keywords": [
+                "The Blood of Dawnwalker endings",
+                "Blood of Dawnwalker all endings",
+                "Dawnwalker time runs out ending",
+                "Blood of Dawnwalker ending guide",
+                "Dawnwalker how many endings"
+              ]
+            },
+            "after": {
+              "title": "Blood of Dawnwalker Endings: How Many and Best Save Plan",
+              "description": "Blood of Dawnwalker endings guide: seven documented outcomes, day-30 consequences and the safest manual save plan before the finale.",
+              "h1": "Blood of Dawnwalker endings: how many and how to save safely",
+              "dek": "Launch-build guides document seven endings. The safest way to see alternatives is a manual save before the final story commitment, plus an earlier save before the 30-day family deadline.",
+              "keywords": [
+                "The Blood of Dawnwalker endings",
+                "Blood of Dawnwalker all endings",
+                "Dawnwalker time runs out ending",
+                "Blood of Dawnwalker ending guide",
+                "Dawnwalker how many endings"
+              ]
+            }
+          }
+        },
+        {
+          "path": "/mods",
+          "intent": "Mod availability and safety",
+          "optimization": "标题聚焦 Nexus、安全安装和热门类别；首屏加入存档保护与相关攻略内链。",
+          "locations": "metadata title/description、H1/摘要、Nexus 首屏入口、存档安全/内链",
+          "reason": "mods 查询需要当前来源和安全安装边界，而不是不稳定的固定推荐列表。",
+          "expected": "提高 mods/Nexus 词 CTR；改善相关时间与问题页的内链发现。",
+          "before": {
+            "clicks": 1,
+            "impressions": 194,
+            "ctr": 0.00515,
+            "position": 7.7835
+          },
+          "after": null,
+          "target": {
+            "clicks": 2,
+            "impressions": 214,
+            "ctr": 0.008150000000000001,
+            "position": 6.7835
+          },
+          "audit": {
+            "before": {
+              "title": "The Blood of Dawnwalker Mods: Best Nexus Mods & Install Guide",
+              "description": "Dawnwalker mods on Nexus: find current story-timer, performance and fast-travel mods, then check game version, requirements and save safety before installing.",
+              "h1": "The Blood of Dawnwalker mods: best Nexus Mods and safe install",
+              "dek": "Looking for Dawnwalker mods on Nexus? Compare current story-timer, performance and fast-travel options before installing, then check the exact game version, requirements and save risk.",
+              "keywords": [
+                "Dawnwalker mods",
+                "The Blood of Dawnwalker mods",
+                "Blood of Dawnwalker Nexus Mods",
+                "Dawnwalker Nexus Mods",
+                "Dawnwalker performance mod",
+                "Dawnwalker disable timer mod",
+                "how to install Dawnwalker mods"
+              ]
+            },
+            "after": {
+              "title": "Blood of Dawnwalker Mods: Best Nexus Picks & Safe Install",
+              "description": "Find Blood of Dawnwalker Nexus mods for timer, performance and fast travel. Check version, requirements and save safety before installing.",
+              "h1": "Blood of Dawnwalker mods: best Nexus picks and safe install",
+              "dek": "Find useful Dawnwalker mods without risking your only save. Compare timer, performance and fast-travel files, then check version, requirements and uninstall steps before installing.",
+              "keywords": [
+                "Dawnwalker mods",
+                "The Blood of Dawnwalker mods",
+                "Blood of Dawnwalker Nexus Mods",
+                "Dawnwalker Nexus Mods",
+                "Dawnwalker performance mod",
+                "Dawnwalker disable timer mod",
+                "how to install Dawnwalker mods"
+              ]
+            }
+          }
+        },
+        {
+          "path": "/new-game-plus",
+          "intent": "New Game Plus availability and carry-over",
+          "optimization": "改为 NG+ 是否可用的明确问答；补充前终局存档和 day-30 内链。",
+          "locations": "metadata title/description、快速答案、结局/day-30/trophy 内链",
+          "reason": "NG+ 查询首先需要明确是否存在及是否可继承，不应让用户误以为已有模式。",
+          "expected": "提高 new game plus/NG+ 词 CTR；减少错误预期造成的跳出。",
+          "before": {
+            "clicks": 1,
+            "impressions": 87,
+            "ctr": 0.01149,
+            "position": 8.4713
+          },
+          "after": null,
+          "target": {
+            "clicks": 2,
+            "impressions": 96,
+            "ctr": 0.01449,
+            "position": 7.471299999999999
+          },
+          "audit": {
+            "before": {
+              "title": "Blood of Dawnwalker New Game Plus: No NG+ After the Ending",
+              "description": "Does The Blood of Dawnwalker have New Game Plus? No—NG+ is not confirmed in the launch build. See what happens after credits, what does not carry over and which save to keep.",
+              "h1": "Blood of Dawnwalker New Game Plus: is NG+ available after the ending?",
+              "dek": "No. New Game Plus is not confirmed in the launch build, so finishing the story does not unlock a verified carry-over run. Keep a manual pre-finale save if you want another ending.",
+              "keywords": [
+                "Does The Blood of Dawnwalker have New Game Plus",
+                "Blood of Dawnwalker NG+",
+                "Blood of Dawnwalker post game",
+                "Blood of Dawnwalker New Game Plus"
+              ]
+            },
+            "after": {
+              "title": "Blood of Dawnwalker New Game Plus: Is NG+ Available?",
+              "description": "Blood of Dawnwalker does not have confirmed New Game Plus in the launch build. Keep a pre-finale save before expecting carry-over.",
+              "h1": "Blood of Dawnwalker New Game Plus: is NG+ available after the ending?",
+              "dek": "No. New Game Plus is not confirmed in the launch build, so finishing the story does not unlock a verified carry-over run. Keep a manual pre-finale save if you want another ending.",
+              "keywords": [
+                "Does The Blood of Dawnwalker have New Game Plus",
+                "Blood of Dawnwalker NG+",
+                "Blood of Dawnwalker post game",
+                "Blood of Dawnwalker New Game Plus"
+              ]
+            }
+          }
+        },
+        {
+          "path": "/platforms",
+          "intent": "Platform availability and Game Pass status",
+          "optimization": "明确 PC、PS5、Xbox 与 Game Pass 状态；新增首屏答案和购买决策内链。",
+          "locations": "metadata title/description、H1/摘要、新增快速答案、发售/性能/配置内链",
+          "reason": "平台和 Game Pass 查询要求明确的支持状态与购买前路径。",
+          "expected": "提高 platform/Game Pass 词 CTR；为发售和性能页带来展示。",
+          "before": {
+            "clicks": 0,
+            "impressions": 58,
+            "ctr": 0,
+            "position": 8.2759
+          },
+          "after": null,
+          "target": {
+            "clicks": 0,
+            "impressions": 64,
+            "ctr": 0.003,
+            "position": 7.2759
+          },
+          "audit": {
+            "before": {
+              "title": "The Blood of Dawnwalker Platforms: Steam PC, PS5, Xbox & Game Pass",
+              "description": "Is The Blood of Dawnwalker on Steam PC, PS5, Xbox or Game Pass? Confirmed store links, regional availability and what has not been officially announced.",
+              "h1": "The Blood of Dawnwalker platforms: Steam PC, PS5 and Xbox",
+              "dek": "The Blood of Dawnwalker is confirmed for Steam on PC, PlayStation 5 and Xbox Series X|S. Use the official store linked for your account region; platform, edition, language and release countdown can differ by storefront.",
+              "keywords": [
+                "The Blood of Dawnwalker Steam",
+                "The Blood of Dawnwalker Xbox Series X and Series S store",
+                "The Blood of Dawnwalker PlayStation 5 store",
+                "The Blood of Dawnwalker Microsoft Windows Store",
+                "The Blood of Dawnwalker Game Pass",
+                "The Blood of Dawnwalker PS5",
+                "The Blood of Dawnwalker Xbox",
+                "Blood of Dawnwalker platforms"
+              ]
+            },
+            "after": {
+              "title": "Blood of Dawnwalker Platforms: PC, PS5, Xbox & Game Pass",
+              "description": "See Blood of Dawnwalker platforms: Steam PC, PS5 and Xbox Series X|S are confirmed. Game Pass is not officially announced.",
+              "h1": "Blood of Dawnwalker platforms: Steam PC, PS5, Xbox and Game Pass status",
+              "dek": "The Blood of Dawnwalker is confirmed for Steam PC, PlayStation 5 and Xbox Series X|S. Game Pass is not officially announced, so verify your own store region before buying.",
+              "keywords": [
+                "The Blood of Dawnwalker Steam",
+                "The Blood of Dawnwalker Xbox Series X and Series S store",
+                "The Blood of Dawnwalker PlayStation 5 store",
+                "The Blood of Dawnwalker Microsoft Windows Store",
+                "The Blood of Dawnwalker Game Pass",
+                "The Blood of Dawnwalker PS5",
+                "The Blood of Dawnwalker Xbox",
+                "Blood of Dawnwalker platforms"
+              ]
+            }
+          }
+        },
+        {
+          "path": "/release-date",
+          "intent": "Release date and access timing",
+          "optimization": "重写为 PC、PS5、Xbox 发售时间意图；新增日期、解锁规则和购买内链。",
+          "locations": "metadata title/description、H1/摘要、新增快速答案、发售时间/版本内链",
+          "reason": "发售日期词需要日期、PC 与主机解锁规则在首屏可见。",
+          "expected": "提高 release date/time 词 CTR 和排名；增加版本页曝光。",
+          "before": {
+            "clicks": 0,
+            "impressions": 164,
+            "ctr": 0,
+            "position": 8.9695
+          },
+          "after": null,
+          "target": {
+            "clicks": 0,
+            "impressions": 181,
+            "ctr": 0.003,
+            "position": 7.9695
+          },
+          "audit": {
+            "before": {
+              "title": "The Blood of Dawnwalker Release Date & Time: PC, PS5 and Xbox",
+              "description": "The Blood of Dawnwalker releases September 3, 2026. Confirmed PC, PS5 and Xbox Series X|S release-date and unlock-time rules, with the current preload status.",
+              "h1": "The Blood of Dawnwalker release date and time",
+              "dek": "The game launches September 3, 2026 on PC, PlayStation 5 and Xbox Series X|S. This is the single source for the release date, PC and console unlock rules, and confirmed preload status.",
+              "keywords": [
+                "The Blood of Dawnwalker release date",
+                "Blood of Dawnwalker release time",
+                "Blood of Dawnwalker preload"
+              ]
+            },
+            "after": {
+              "title": "Blood of Dawnwalker Release Date: PC, PS5 and Xbox Times",
+              "description": "Blood of Dawnwalker releases September 3, 2026 on PC, PS5 and Xbox Series X|S. See PC and console unlock-time rules.",
+              "h1": "Blood of Dawnwalker release date and time for PC, PS5 and Xbox",
+              "dek": "Blood of Dawnwalker launches September 3, 2026 on PC, PS5 and Xbox Series X|S. PC uses one global unlock; console timing follows local rules with exceptions.",
+              "keywords": [
+                "The Blood of Dawnwalker release date",
+                "Blood of Dawnwalker release time",
+                "Blood of Dawnwalker preload"
+              ]
+            }
+          }
+        },
+        {
+          "path": "/time-system",
+          "intent": "30-day system and time consequences",
+          "optimization": "明确探索不会实时消耗时间；新增快速答案并连接 day-30 与 walkthrough。",
+          "locations": "metadata title/description、H1/摘要、新增快速答案、day-30/任务内链",
+          "reason": "用户真正要确认的是探索是否消耗时间及什么行为会推进时钟。",
+          "expected": "提高 30-day/time limit 词 CTR；加强相关任务页内部流量。",
+          "before": {
+            "clicks": 0,
+            "impressions": 134,
+            "ctr": 0,
+            "position": 8.3358
+          },
+          "after": null,
+          "target": {
+            "clicks": 0,
+            "impressions": 148,
+            "ctr": 0.003,
+            "position": 7.335800000000001
+          },
+          "audit": {
+            "before": {
+              "title": "Dawnwalker 30-Day Time Limit: Does Exploration Advance Time?",
+              "description": "Does time pass while exploring in The Blood of Dawnwalker? See what advances the 30-day limit, how the opening eight daytime parts work, and what is still unconfirmed.",
+              "h1": "Dawnwalker 30-day time limit: does exploration advance time?",
+              "dek": "No. It is not a real-world countdown: exploration can be time-neutral, while specific choices and quest actions spend in-game time. The official opening example divides daylight into 8 parts.",
+              "keywords": [
+                "The Blood of Dawnwalker time limit",
+                "Blood of Dawnwalker 30 days",
+                "Blood of Dawnwalker time system",
+                "Blood of Dawnwalker timer free mode",
+                "Does exploration advance time in Blood of Dawnwalker"
+              ]
+            },
+            "after": {
+              "title": "Blood of Dawnwalker Time Limit: Does Exploration Pass Time?",
+              "description": "Blood of Dawnwalker exploration is not a real-time countdown. See what advances the 30-day limit and how the time system works.",
+              "h1": "Blood of Dawnwalker time limit: does exploration advance time?",
+              "dek": "No. Exploration is not a real-world countdown. Specific quest actions, choices and day-night changes can spend in-game time, while free exploration can be time-neutral.",
+              "keywords": [
+                "The Blood of Dawnwalker time limit",
+                "Blood of Dawnwalker 30 days",
+                "Blood of Dawnwalker time system",
+                "Blood of Dawnwalker timer free mode",
+                "Does exploration advance time in Blood of Dawnwalker"
+              ]
+            }
+          }
+        },
+        {
+          "path": "/walkthrough",
+          "intent": "General walkthrough and quest order",
+          "optimization": "调整为具体答案导航中心；首屏列出序章、任务、选择、恋爱与故障入口。",
+          "locations": "metadata title/description、H1/摘要、攻略中心快速答案、深层页面内链",
+          "reason": "宽泛 walkthrough 查询要被导向精确的任务、选择和故障答案。",
+          "expected": "提高 walkthrough 词 CTR；将展示和点击分发给专题页。",
+          "before": {
+            "clicks": 1,
+            "impressions": 36,
+            "ctr": 0.02778,
+            "position": 9.5278
+          },
+          "after": null,
+          "target": {
+            "clicks": 2,
+            "impressions": 40,
+            "ctr": 0.03,
+            "position": 8.5278
+          },
+          "audit": {
+            "before": {
+              "title": "The Blood of Dawnwalker Walkthrough: Quest Order & Choices",
+              "description": "A spoiler-aware The Blood of Dawnwalker walkthrough hub: prologue quest order, timed choices, romance routes, quest answers and current patch status.",
+              "h1": "The Blood of Dawnwalker walkthrough: quest order, choices and answers",
+              "dek": "Use this as a route map, not a fake 'complete' guide. Open the exact answer you need, check the spoiler label and return here as verified launch-build quest pages are added.",
+              "keywords": [
+                "The Blood of Dawnwalker walkthrough",
+                "Blood of Dawnwalker quest guide",
+                "Dawnwalker choices",
+                "Dawnwalker prologue walkthrough",
+                "Dawnwalker quest order"
+              ]
+            },
+            "after": {
+              "title": "Blood of Dawnwalker Walkthrough: Quest Order, Choices & Answers",
+              "description": "A spoiler-aware The Blood of Dawnwalker walkthrough hub: prologue quest order, timed choices, romance routes, quest answers and current patch status.",
+              "h1": "Blood of Dawnwalker walkthrough: quest order, choices and answers",
+              "dek": "Use this walkthrough hub to jump to exact quest answers, choice consequences, romance routes and current fixes without reading a full spoiler list.",
+              "keywords": [
+                "The Blood of Dawnwalker walkthrough",
+                "Blood of Dawnwalker quest guide",
+                "Dawnwalker choices",
+                "Dawnwalker prologue walkthrough",
+                "Dawnwalker quest order"
+              ]
+            }
+          }
+        },
+        {
+          "path": "/what-happens-after-30-days",
+          "intent": "30-day deadline outcome",
+          "optimization": "标题直接回答 30 天后结果；首屏强化 family route 后果与存档建议。",
+          "locations": "metadata title/description、H1/摘要、day-31 快速答案、结局/时间/NG+ 内链",
+          "reason": "该查询寻求倒计时结束后的明确后果与可逆存档建议。",
+          "expected": "提高 after 30 days 词 CTR；带动结局和时间系统页。",
+          "before": {
+            "clicks": 1,
+            "impressions": 91,
+            "ctr": 0.01099,
+            "position": 7.9231
+          },
+          "after": null,
+          "target": {
+            "clicks": 2,
+            "impressions": 101,
+            "ctr": 0.013989999999999999,
+            "position": 6.9231
+          },
+          "audit": {
+            "before": {
+              "title": "What Happens After 30 Days in The Blood of Dawnwalker?",
+              "description": "What happens after 30 days in The Blood of Dawnwalker: the family outcome, what content remains and a spoiler-safe save plan.",
+              "h1": "What happens after 30 days in The Blood of Dawnwalker?",
+              "dek": "If the 30-day limit expires before you rescue Coen&apos;s family, the story can still reach credits—but the family dies during the ceremony. You can continue exploring some side content afterward, while the family main-quest path is gone.",
+              "keywords": [
+                "what happens after 30 days The Blood of Dawnwalker",
+                "The Blood of Dawnwalker 30 days",
+                "Blood of Dawnwalker time limit",
+                "Dawnwalker can you save everyone"
+              ]
+            },
+            "after": {
+              "title": "Blood of Dawnwalker After 30 Days: What Happens?",
+              "description": "After 30 days in Blood of Dawnwalker, the family route is locked. See what remains, what changes and when to save.",
+              "h1": "Blood of Dawnwalker after 30 days: what happens when time runs out?",
+              "dek": "If the 30-day limit expires before Coen rescues his family, the story can still reach credits, but the family route is locked and needs an earlier save.",
+              "keywords": [
+                "what happens after 30 days The Blood of Dawnwalker",
+                "The Blood of Dawnwalker 30 days",
+                "Blood of Dawnwalker time limit",
+                "Dawnwalker can you save everyone"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "2026-10-07-quest-choice-guides",
+      "intent": "Quest, choice, character, and equipment guidance",
+      "optimizedOn": "2026-10-07",
+      "baselineRange": {
+        "start": "2026-10-03",
+        "end": "2026-10-05"
+      },
+      "status": "waiting_for_gsc",
+      "conclusion": null,
+      "pages": [
+        {
+          "path": "/a-friend-like-this",
+          "intent": "A Friend Like This quest walkthrough",
+          "optimization": "重写任务目标、选择和结果的标题与首屏答案，并补充相关任务内链。",
+          "locations": "metadata title/description、H1/摘要、任务快速答案、相关任务内链",
+          "reason": "任务名搜索需要目标、选择和结果的直接路线说明。",
+          "expected": "提高任务名与 walkthrough 长尾词的 CTR 和排名。",
+          "before": {
+            "clicks": 3,
+            "impressions": 139,
+            "ctr": 0.02158,
+            "position": 7.554
+          },
+          "after": null,
+          "target": {
+            "clicks": 4,
+            "impressions": 153,
+            "ctr": 0.024579999999999998,
+            "position": 6.554
+          },
+          "audit": {
+            "before": {
+              "title": "A Friend Like This Walkthrough: Lacra, Nish & Song of the Mountain",
+              "description": "The Blood of Dawnwalker A Friend Like This walkthrough: start the Lacra quest in Svartrau, follow the night-only roof trail, resolve the Nish conversation and unlock Song of the Mountain.",
+              "h1": "A Friend Like This walkthrough: Lacra, Nish and the next quest",
+              "dek": "Start A Friend Like This in Svartrau&apos;s north-east alley, use Focus Mode to follow the signs of struggle, wait for night to cross the roofs, then resolve the Lacra and Nish encounter without closing the alliance route.",
+              "keywords": [
+                "The Blood of Dawnwalker A Friend Like This",
+                "Dawnwalker A Friend Like This walkthrough",
+                "Dawnwalker Lacra quest",
+                "Dawnwalker Nish choices",
+                "Dawnwalker Song of the Mountain unlock"
+              ]
+            },
+            "after": {
+              "title": "A Friend Like This Walkthrough: Lacra, Nish & Night Trail",
+              "description": "Complete A Friend Like This in Blood of Dawnwalker: start in Svartrau, follow the night roof trail, resolve Nish and unlock Song of the Mountain.",
+              "h1": "A Friend Like This walkthrough: Lacra, Nish and the night roof trail",
+              "dek": "Start A Friend Like This in Svartrau's north-east alley, follow the clues with Focus Mode, wait for night to cross the roofs and protect Nish's alliance route.",
+              "keywords": [
+                "The Blood of Dawnwalker A Friend Like This",
+                "Dawnwalker A Friend Like This walkthrough",
+                "Dawnwalker Lacra quest",
+                "Dawnwalker Nish choices",
+                "Dawnwalker Song of the Mountain unlock"
+              ]
+            }
+          }
+        },
+        {
+          "path": "/anca-romance",
+          "intent": "Anca romance requirements",
+          "optimization": "加强 romance 条件、关键选择和存档节点的首屏答案与交叉内链。",
+          "locations": "metadata title/description、H1/摘要、恋爱条件快速答案、选择内链",
+          "reason": "romance 查询需要条件、关键节点和存档时机，而不仅是角色存在与否。",
+          "expected": "提高 Anca romance 词 CTR；增加 choice 页的相关流量。",
+          "before": {
+            "clicks": 1,
+            "impressions": 175,
+            "ctr": 0.00571,
+            "position": 8.2457
+          },
+          "after": null,
+          "target": {
+            "clicks": 2,
+            "impressions": 193,
+            "ctr": 0.008709999999999999,
+            "position": 7.245699999999999
+          },
+          "audit": {
+            "before": {
+              "title": "Anca Romance Guide: Quest Order & Font Choice | Dawnwalker",
+              "description": "Anca romance guide for The Blood of Dawnwalker: a spoiler-marked quest order, the optional early scene, the Font of Life decision and the final inn conversation.",
+              "h1": "Anca romance guide: quest order, Font choice and final conversation",
+              "dek": "For Anca in The Blood of Dawnwalker, follow her questline from the prologue and Echoes of Silenced Bells through Stronger Than Achilles. Keep a manual save before the Font of Life and the following inn conversation.",
+              "keywords": [
+                "The Blood of Dawnwalker Anca",
+                "Blood of Dawnwalker Anca",
+                "Anca Blood of the Dawnwalker",
+                "Dawnwalker Anca romance",
+                "how to romance Anca Blood of Dawnwalker",
+                "Anca Font of Life Dawnwalker"
+              ]
+            },
+            "after": {
+              "title": "Blood of Dawnwalker Anca Romance: Quest Order & Font Choice",
+              "description": "Romance Anca in Blood of Dawnwalker: follow her quest order, save before Font of Life and finish the final inn conversation.",
+              "h1": "Blood of Dawnwalker Anca romance: quest order, Font choice and final conversation",
+              "dek": "To romance Anca, follow her route through Stronger Than Achilles, save before the Font of Life choice and finish the final inn conversation.",
+              "keywords": [
+                "The Blood of Dawnwalker Anca",
+                "Blood of Dawnwalker Anca",
+                "Anca Blood of the Dawnwalker",
+                "Dawnwalker Anca romance",
+                "how to romance Anca Blood of Dawnwalker",
+                "Anca Font of Life Dawnwalker"
+              ]
+            }
+          }
+        },
+        {
+          "path": "/best-sword",
+          "intent": "Best sword comparison",
+          "optimization": "标题与摘要改为 best sword 比较意图，突出获取条件、适用玩法和相关装备内链。",
+          "locations": "metadata title/description、H1/摘要、比较型快速答案、装备内链",
+          "reason": "best sword 查询是比较与获取意图，需要按玩法说明而非单一物品名称。",
+          "expected": "提高 best sword 词 CTR 与排名；促进装备相关页面发现。",
+          "before": {
+            "clicks": 0,
+            "impressions": 94,
+            "ctr": 0,
+            "position": 7.8723
+          },
+          "after": null,
+          "target": {
+            "clicks": 0,
+            "impressions": 104,
+            "ctr": 0.003,
+            "position": 6.8723
+          },
+          "audit": {
+            "before": {
+              "title": "The Blood of Dawnwalker Best Sword: St. Mihai's Silver Sword",
+              "description": "The Blood of Dawnwalker St. Mihai's Silver Sword and best sword guide: why launch guides recommend it, where the quest chain starts and how Forge It Anew fits the route.",
+              "h1": "The Blood of Dawnwalker best sword: St. Mihai's Silver Sword",
+              "dek": "Current launch guides commonly point to the quest-crafted Imbued Sword of St. Mihai as a top late-game sword. It is not a random chest drop: use the St. Mihai / Forge It Anew route and treat “best” as build-dependent.",
+              "keywords": [
+                "The Blood of Dawnwalker best sword",
+                "Blood of Dawnwalker best weapon",
+                "Blood of Dawnwalker silver sword",
+                "The Blood of Dawnwalker silver sword",
+                "Dawnwalker St Mihai sword",
+                "Dawnwalker Imbued Sword of St Mihai",
+                "Forge It Anew best sword"
+              ]
+            },
+            "after": {
+              "title": "Blood of Dawnwalker Best Sword: St. Mihai's Silver Sword",
+              "description": "Find the best sword in Blood of Dawnwalker: pursue St. Mihai's Silver Sword through Forge It Anew and compare it by build.",
+              "h1": "Blood of Dawnwalker best sword: St. Mihai's Silver Sword",
+              "dek": "Current guides point to the quest-crafted Imbued Sword of St. Mihai as a top late-game sword. Follow Forge It Anew and compare it by build.",
+              "keywords": [
+                "The Blood of Dawnwalker best sword",
+                "Blood of Dawnwalker best weapon",
+                "Blood of Dawnwalker silver sword",
+                "The Blood of Dawnwalker silver sword",
+                "Dawnwalker St Mihai sword",
+                "Dawnwalker Imbued Sword of St Mihai",
+                "Forge It Anew best sword"
+              ]
+            }
+          }
+        },
+        {
+          "path": "/forge-it-anew",
+          "intent": "Forge It Anew quest guidance",
+          "optimization": "强化碎片路线、锻造步骤和任务前置条件的首屏答案与 walkthrough 内链。",
+          "locations": "metadata title/description、H1/摘要、碎片路线快速答案、walkthrough 内链",
+          "reason": "任务搜索者需要前置条件、路线和锻造步骤的顺序答案。",
+          "expected": "提高 quest route 长尾词 CTR；带动攻略中心展示。",
+          "before": {
+            "clicks": 0,
+            "impressions": 84,
+            "ctr": 0,
+            "position": 8.6071
+          },
+          "after": null,
+          "target": {
+            "clicks": 0,
+            "impressions": 93,
+            "ctr": 0.003,
+            "position": 7.607100000000001
+          },
+          "audit": {
+            "before": {
+              "title": "Blood of Dawnwalker Sword Shards: Forge It Anew Locations",
+              "description": "The Blood of Dawnwalker Forge It Anew walkthrough: start trigger, all three sword-shard locations, Uriashi the blacksmith and the Hotfix 1.0.2 crafting fix.",
+              "h1": "Blood of Dawnwalker sword shards: Forge It Anew locations",
+              "dek": "Read St. Mihai&apos;s coffin note after the fight, then collect three shards from separate kobold encounters before returning to Uriashi. If crafting is unavailable, install Hotfix 1.0.2 before retrying.",
+              "keywords": [
+                "The Blood of Dawnwalker Forge It Anew",
+                "Dawnwalker sword shard locations",
+                "Dawnwalker Uriashi blacksmith",
+                "Forge It Anew walkthrough",
+                "Blood of Dawnwalker holy sword"
+              ]
+            },
+            "after": {
+              "title": "Blood of Dawnwalker Sword Shards: Forge It Anew Locations",
+              "description": "Find all three Forge It Anew sword shards in Blood of Dawnwalker, then return to Uriashi and check the Hotfix 1.0.2 crafting fix.",
+              "h1": "Blood of Dawnwalker sword shards: Forge It Anew locations",
+              "dek": "Read St. Mihai's coffin note, collect three sword shards from separate kobold encounters, then return to Uriashi for the holy sword craft.",
+              "keywords": [
+                "The Blood of Dawnwalker Forge It Anew",
+                "Dawnwalker sword shard locations",
+                "Dawnwalker Uriashi blacksmith",
+                "Forge It Anew walkthrough",
+                "Blood of Dawnwalker holy sword"
+              ]
+            }
+          }
+        },
+        {
+          "path": "/home-sweet-home",
+          "intent": "Home Sweet Home quest walkthrough",
+          "optimization": "明确时间循环逃脱方法，突出 village well，并添加存档和物品路线内链。",
+          "locations": "metadata title/description、H1/摘要、逃离循环快速答案、存档/物品内链",
+          "reason": "卡关用户需要 village well 这一直接动作及之后可去的路线。",
+          "expected": "提高 time loop/escape 词 CTR；增加物品和结局页内链点击。",
+          "before": {
+            "clicks": 1,
+            "impressions": 151,
+            "ctr": 0.00662,
+            "position": 8.6225
+          },
+          "after": null,
+          "target": {
+            "clicks": 2,
+            "impressions": 167,
+            "ctr": 0.00962,
+            "position": 7.6225000000000005
+          },
+          "audit": {
+            "before": {
+              "title": "The Blood of Dawnwalker Home Sweet Home: Escape the Time Loop",
+              "description": "Home Sweet Home walkthrough for The Blood of Dawnwalker: start the dream quest, use the well to escape the repeating loop, and understand its reward and spoiler-sensitive outcome.",
+              "h1": "The Blood of Dawnwalker Home Sweet Home: how to escape the time loop",
+              "dek": "Stuck repeating the Home Sweet Home dream? Once the sequence starts repeating, make the village well your priority. This spoiler-marked route explains the escape check, the repeat outcome and what to verify before leaving the tower.",
+              "keywords": [
+                "The Blood of Dawnwalker Home Sweet Home",
+                "Blood of Dawnwalker Home Sweet Home walkthrough",
+                "Home Sweet Home time loop",
+                "how to escape Home Sweet Home Dawnwalker"
+              ]
+            },
+            "after": {
+              "title": "Blood of Dawnwalker Home Sweet Home: Escape the Loop",
+              "description": "Escape Home Sweet Home in Blood of Dawnwalker: use the village well after the dream repeats and save before testing the alternate outcome.",
+              "h1": "Blood of Dawnwalker Home Sweet Home: how to escape the time loop",
+              "dek": "Stuck repeating the Home Sweet Home dream? Use the village well after the loop begins, keep a manual save and verify the quest state before leaving the tower.",
+              "keywords": [
+                "The Blood of Dawnwalker Home Sweet Home",
+                "Blood of Dawnwalker Home Sweet Home walkthrough",
+                "Home Sweet Home time loop",
+                "how to escape Home Sweet Home Dawnwalker"
+              ]
+            }
+          }
+        },
+        {
+          "path": "/volk-buried-past",
+          "intent": "Volk's Buried Past choices and item location",
+          "optimization": "标题聚焦最佳路线、选择和剑；首屏加入分支存档与相关攻略内链。",
+          "locations": "metadata title/description、H1/摘要、最佳路线快速答案、装备/结局内链",
+          "reason": "该任务同时含选择、剑与分支，首屏需要给出最佳路线和存档节点。",
+          "expected": "提高 Volk/Buried Past 词 CTR；增加装备与结局长尾曝光。",
+          "before": {
+            "clicks": 2,
+            "impressions": 129,
+            "ctr": 0.0155,
+            "position": 8.0155
+          },
+          "after": null,
+          "target": {
+            "clicks": 3,
+            "impressions": 142,
+            "ctr": 0.0185,
+            "position": 7.015499999999999
+          },
+          "audit": {
+            "before": {
+              "title": "The Blood of Dawnwalker Volk: Buried Past Quest, Chores & Sword",
+              "description": "The Blood of Dawnwalker Volk guide: start Buried Past, complete the optional help across return visits, find Volk's knife and Pieter's treasure, and avoid the betrayal branch.",
+              "h1": "The Blood of Dawnwalker Volk: Buried Past quest, chores and sword",
+              "dek": "For the best-documented Buried Past route, help Volk on each return visit, complete the optional chores and agree to investigate Pieter&apos;s treasure. Keep a save before the final return because the quest branches.",
+              "keywords": [
+                "The Blood of Dawnwalker Volk",
+                "Blood of Dawnwalker Volk quest",
+                "Blood of Dawnwalker Buried Past walkthrough",
+                "Dawnwalker Volk sword location",
+                "Dawnwalker Pieter's Garb"
+              ]
+            },
+            "after": {
+              "title": "Blood of Dawnwalker Volk Buried Past: Best Route & Sword",
+              "description": "Complete Volk's Buried Past in Blood of Dawnwalker: help on return visits, find the knife and treasure, and avoid the betrayal branch.",
+              "h1": "Blood of Dawnwalker Volk Buried Past: best route, chores and sword",
+              "dek": "For Volk's best-documented Buried Past route, help on each return visit, complete optional chores and agree to investigate Pieter's treasure before the final branch.",
+              "keywords": [
+                "The Blood of Dawnwalker Volk",
+                "Blood of Dawnwalker Volk quest",
+                "Blood of Dawnwalker Buried Past walkthrough",
+                "Dawnwalker Volk sword location",
+                "Dawnwalker Pieter's Garb"
+              ]
+            }
+          }
+        },
+        {
+          "path": "/xanthe-boss-guide",
+          "intent": "Xanthe boss and quest guidance",
+          "optimization": "标题聚焦 boss route 与血液选择；首屏加入 Court 路线、存档和后续决策内链。",
+          "locations": "metadata title/description、H1/摘要、boss/blood choice 快速答案、攻略内链",
+          "reason": "Xanthe 查询混合 boss 路线和血液选择，需在首屏明确先后顺序。",
+          "expected": "提高 Xanthe boss/blood choice 词 CTR；加强攻略和结局页内链。",
+          "before": {
+            "clicks": 0,
+            "impressions": 58,
+            "ctr": 0,
+            "position": 8.5345
+          },
+          "after": null,
+          "target": {
+            "clicks": 0,
+            "impressions": 64,
+            "ctr": 0.003,
+            "position": 7.5344999999999995
+          },
+          "audit": {
+            "before": {
+              "title": "Blood of Dawnwalker Xanthe: Boss Route, Fight & Vrakhir Blood",
+              "description": "Blood of Dawnwalker Xanthe guide: who Xanthe is, how her Court route leads to the boss, and what to verify before choosing whether to drink her Vrakhir blood.",
+              "h1": "Blood of Dawnwalker Xanthe: boss route and Vrakhir blood guide",
+              "dek": "Xanthe is the boyaress of southeastern Vale Sangora. This spoiler-marked guide separates her official character background, the Court route that leads to her fight, and the choice to drink Vrakhir blood after defeating her.",
+              "keywords": [
+                "Blood of Dawnwalker Xanthe",
+                "The Blood of Dawnwalker Xanthe",
+                "Dawnwalker Xanthe boss",
+                "how to beat Xanthe Dawnwalker",
+                "Xanthe Vrakhir blood"
+              ]
+            },
+            "after": {
+              "title": "Blood of Dawnwalker Xanthe Guide: Boss Route & Blood Choice",
+              "description": "Blood of Dawnwalker Xanthe guide: find her Court route, prepare for the boss and save before the Vrakhir blood choice.",
+              "h1": "Blood of Dawnwalker Xanthe guide: boss route and Vrakhir blood choice",
+              "dek": "Xanthe is a Vrakhir ruler tied to Brencis's Court. Track her Court route, save before the boss and verify the blood ability choice before committing.",
+              "keywords": [
+                "Blood of Dawnwalker Xanthe",
+                "The Blood of Dawnwalker Xanthe",
+                "Dawnwalker Xanthe boss",
+                "how to beat Xanthe Dawnwalker",
+                "Xanthe Vrakhir blood"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

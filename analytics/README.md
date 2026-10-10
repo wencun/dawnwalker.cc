@@ -16,6 +16,14 @@ Do not put the service-account JSON, Google OAuth tokens, or Adsterra token in G
 
 Run `npm run analytics:sync` to fetch the last 28 completed days. Google Search Console data has a short reporting delay, so the sync intentionally stops three days before today.
 
+## SEO cohorts
+
+`analytics/seo-cohorts.json` defines each optimization batch, its intended search intent, its pages, and its three-day baseline date range. Before editing a new batch's pages, run `npm run seo:capture -- <cohort-id>` to save its exact GSC page and query baseline under `data/private/seo-cohorts.json`. Run `npm run seo:status` to see when batches can be measured. Run `npm run seo:check` once per day: it starts checking on the second day after optimization, waits until three completed GSC days are available, then writes a one-time JSON and Markdown comparison under `data/private/seo-reports/`.
+
+The cohort script never creates pages or changes content. Add a new cohort only after recording its pre-optimization baseline and completing the content update. Keep synonymous queries with their existing page; use Trends or community signals only to nominate a genuinely distinct new intent for human review.
+
+Run `npm run seo:dashboard` to generate `data/private/seo-dashboard.html`. Open that local file to filter cohorts and inspect intent, baseline visibility, page metrics, and every completed before/after comparison. `npm run seo:check` refreshes the dashboard after each daily comparison run.
+
 Run `npm run analytics:mcp` to start the local MCP server. Add it to Codex from this repository:
 
 ```bash
