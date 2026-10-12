@@ -1,0 +1,37 @@
+"use client";
+
+import Link from "next/link";
+import { useMemo, useState } from "react";
+import styles from "./page.module.css";
+
+type Metric = { clicks: number; impressions: number; ctr: number; position: number };
+type Audit = { before: Record<string, string>; after: Record<string, string> };
+type PageRecord = { path: string; intent: string; optimization: string; locations: string; reason: string; before: Metric; after: Metric | null; audit: Audit | null };
+type Cohort = { id: string; intent: string; optimizedOn: string; baselineRange: { start: string; end: string }; status: string; pages: PageRecord[] };
+type SortMetric = keyof Metric;
+type Sort = { source: "before" | "after"; metric: SortMetric; direction: "asc" | "desc" };
+const format = new Intl.NumberFormat("zh-CN");
+const percent = (value: number) => `${(value * 100).toFixed(2)}%`;
+
+export function DashboardTable({ cohorts: rawCohorts }: { cohorts: unknown[] }) {
+  const cohorts = rawCohorts as Cohort[];
+  const [sort, setSort] = useState<Sort>({ source: "before", metric: "impressions", direction: "desc" });
+  const rows = useMemo(() => cohorts.flatMap((cohort) => cohort.pages.map((page) => ({ cohort, page }))).sort((left, right) => {
+    const a = left.page[sort.source]?.[sort.metric];
+    const b = right.page[sort.source]?.[sort.metric];
+    if (a == null && b == null) return 0;
+    if (a == null) return 1;
+    if (b == null) return -1;
+    return sort.direction === "asc" ? a - b : b - a;
+  }), [cohorts, sort]);
+  const changeSort = (source: Sort["source"], metric: SortMetric) => setSort((current) => current.source === source && current.metric === metric ? { ...current, direction: current.direction === "desc" ? "asc" : "desc" } : { source, metric, direction: metric === "position" ? "asc" : "desc" });
+  const indicator = (source: Sort["source"], metric: SortMetric) => sort.source === source && sort.metric === metric ? (sort.direction === "desc" ? " ↓" : " ↑") : "";
+  const heading = (label: string, source: Sort["source"], metric: SortMetric) => <th scope="col"><button type="button" className={styles.sortButton} onClick={() => changeSort(source, metric)}>{label}{indicator(source, metric)}</button></th>;
+  const hasActual = rows.some(({ page }) => page.after);
+
+  return <>
+    <section className={styles.metrics} aria-label="看板总览"><div><span>优化批次</span><strong>{cohorts.length}</strong></div><div><span>追踪页面</span><strong>{rows.length}</strong></div><div><span>实际数据状态</span><strong>{hasActual ? "已更新" : "等待中"}</strong></div><div><span>数据来源</span><strong>GSC</strong></div></section>
+    <section className={styles.intro}><h2>真实数据规则</h2><p>GSC 有报告延迟。实际指标仅在获得完整的优化后数据窗口后显示；不会用预测值或估算值替代。默认按优化前展示量排序，可点击任意指标表头切换排序。</p></section>
+    <section className={styles.cohort}><h2>全部追踪页面</h2><p className={styles.status}>批次与意图保留在同一张表中，便于直接与 GSC 的页面、查询和指标视图对照。</p><div className={styles.tableWrap}><table><caption>页面改动、优化前基线与实际 GSC 数据</caption><thead><tr><th scope="col">页面</th><th scope="col">批次 / 搜索意图</th><th scope="col">本次改动</th><th scope="col" colSpan={4}>优化前 GSC 基线</th><th scope="col" colSpan={4}>实际 GSC 数据</th></tr><tr><th /><th /><th />{heading("点击", "before", "clicks")}{heading("展示", "before", "impressions")}{heading("CTR", "before", "ctr")}{heading("平均排名", "before", "position")}{heading("点击", "after", "clicks")}{heading("展示", "after", "impressions")}{heading("CTR", "after", "ctr")}{heading("平均排名", "after", "position")}</tr></thead><tbody>{rows.map(({ cohort, page }) => <tr key={page.path}><th scope="row"><Link href={page.path}>{page.path}</Link></th><td><b>{cohort.id}</b><small>{page.intent}</small></td><td><b>{page.optimization}</b><small>修改位置：{page.locations}</small><details><summary>查看修改前后内容</summary><p><b>修改原因：</b>{page.reason}</p>{page.audit && <div className={styles.audit}><div><b>修改前</b><small>Title：{page.audit.before.title}</small><small>Description：{page.audit.before.description}</small><small>H1：{page.audit.before.h1}</small></div><div><b>修改后</b><small>Title：{page.audit.after.title}</small><small>Description：{page.audit.after.description}</small><small>H1：{page.audit.after.h1}</small></div></div>}</details></td><td>{format.format(page.before.clicks)}</td><td>{format.format(page.before.impressions)}</td><td>{percent(page.before.ctr)}</td><td>{page.before.position.toFixed(2)}</td>{page.after ? <><td>{format.format(page.after.clicks)}</td><td>{format.format(page.after.impressions)}</td><td>{percent(page.after.ctr)}</td><td>{page.after.position.toFixed(2)}</td></> : <td className={styles.waiting} colSpan={4}>等待完整 GSC 数据</td>}</tr>)}</tbody></table></div></section>
+  </>;
+}
