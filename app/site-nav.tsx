@@ -51,6 +51,8 @@ const navigation: Record<Locale, Navigation> = {
       { label: "Game guide", items: [
         { href: "/gameplay", label: "Gameplay" },
         { href: "/best-builds", label: "Best builds" },
+        { href: "/classes", label: "Classes & playstyles" },
+        { href: "/tier-list", label: "Tier list" },
         { href: "/skills", label: "Skills" },
         { href: "/weapons", label: "Weapons" },
         { href: "/armor-guide", label: "Armor guide" },

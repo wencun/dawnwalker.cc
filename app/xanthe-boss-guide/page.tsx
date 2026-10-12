@@ -2,17 +2,17 @@ import Link from "next/link";
 import { GuidePage, guideMetadata } from "../guide-page";
 
 export const metadata = guideMetadata(
-  "Blood of Dawnwalker Xanthe Guide: Boss Route & Blood Choice",
-  "Blood of Dawnwalker Xanthe guide: find her Court route, prepare for the boss and save before the Vrakhir blood choice.",
+  "Blood of Dawnwalker Xanthe Guide: Court Quests, Boss & Blood Choice",
+  "Blood of Dawnwalker Xanthe guide: follow Court quests, prepare for the boss, find the cathedral route and save before the Vrakhir blood choice.",
   "/xanthe-boss-guide",
-  ["Blood of Dawnwalker Xanthe", "The Blood of Dawnwalker Xanthe", "Dawnwalker Xanthe boss", "how to beat Xanthe Dawnwalker", "Xanthe Vrakhir blood"],
+  ["Blood of Dawnwalker Xanthe", "The Blood of Dawnwalker Xanthe", "Dawnwalker Xanthe boss", "how to beat Xanthe Dawnwalker", "Xanthe Vrakhir blood", "dawnwalker xanthe choice", "dawnwalker xanthe court quests", "dawnwalker xanthe cathedral", "dawnwalker xanthe puzzle"],
 );
 
 export default function XantheBossGuidePage() {
   return <GuidePage
     eyebrow="XANTHE GUIDE · BOSS AND QUEST SPOILERS"
-    title="Blood of Dawnwalker Xanthe guide: boss route and Vrakhir blood choice"
-    dek="Xanthe is a Vrakhir ruler tied to Brencis's Court. Track her Court route, save before the boss and verify the blood ability choice before committing."
+    title="Blood of Dawnwalker Xanthe guide: Court quests, boss and blood choice"
+    dek="Xanthe is a Vrakhir ruler tied to Brencis's Court. Track Court quests and the cathedral route, save before the boss, then verify the blood ability choice before committing."
     checked="September 8, 2026"
     quickAnswer={<div className="fix-callout"><span>QUICK ANSWER · XANTHE</span><p><b>Xanthe is one of the Vrakhir rulers tied to Brencis&apos;s Court.</b> Track her Court progression to reach the fight, then save before choosing whether to drink Vrakhir blood. Use <Link href="/walkthrough">walkthrough</Link>, <Link href="/endings">ending saves</Link> and <Link href="/time-system">time planning</Link> before late-route decisions.</p></div>}
     faqs={[
@@ -34,6 +34,7 @@ export default function XantheBossGuidePage() {
       { title: "Who is Xanthe?", body: <div className="fact-grid"><p><b>Role</b>Xanthe is a boyaress aligned with Brencis.</p><p><b>Territory</b>The official profile places her in the southeastern parts of Vale Sangora.</p><p><b>Story connection</b>She is one of the Vrakhir power figures linked to the Court objectives.</p><p><b>Spoiler note</b>Specific fight phases, dialogue and outcome scenes are intentionally not placed in the opening answer.</p></div> },
       { title: "How does the Xanthe boss route work?", body: <ol><li><b>Track Xanthe&apos;s Court progression:</b> use the Court menu and active quest log rather than searching the map for a random boss marker.</li><li><b>Complete the required route steps:</b> published walkthroughs connect the encounter to the Court sequence and its related operations.</li><li><b>Save before the boss:</b> make a manual save before starting the final encounter so a failed fight or later choice does not cost unrelated progress.</li><li><b>Check the post-fight choice:</b> if the current build presents a Vrakhir-blood option, read it before selecting; guides describe these choices as ability unlocks rather than ordinary loot.</li></ol> },
       { title: "Xanthe&apos;s blood and ability choices", body: <p>Current launch guides group Xanthe with the Vrakhir bosses whose blood can unlock abilities after defeat. That is a different progression path from ordinary skill points. Because patches can alter conditions, verify the prompt shown in your game and do not rely on an old clip for an irreversible choice. If you are trying to see multiple late-game routes, use the <Link href="/endings">ending save plan</Link> first.</p> },
+      { title: "Court quests, cathedral and puzzle searches", body: <p>Use the active Court objective and quest log as the source of truth for Xanthe progression. This page covers cathedral, Court-quest and puzzle searches only where the current route can be verified; it does not invent a location, daughter outcome or puzzle solution from an unrelated branch. Keep a manual save before a dialogue or blood-choice prompt, then report the patch version if the objective behaves differently.</p> },
       { title: "What this guide does not claim", body: <p>This page does not promise one build, one difficulty setting or one boss tactic works for every player. It provides the verified route context and separates official character information from current walkthrough reporting. Add platform, patch version, difficulty and the exact phase if you report a Xanthe fight problem.</p> },
     ]}
   />;
