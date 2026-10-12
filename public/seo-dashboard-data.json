@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T02:25:20.941Z",
+  "generatedAt": "2026-10-12T07:33:17.702Z",
   "cohorts": [
     {
       "id": "2026-10-07-high-opportunity",
@@ -9,6 +9,7 @@
         "start": "2026-10-03",
         "end": "2026-10-05"
       },
+      "actualRange": null,
       "status": "waiting_for_gsc",
       "conclusion": null,
       "pages": [
@@ -534,6 +535,7 @@
         "start": "2026-10-03",
         "end": "2026-10-05"
       },
+      "actualRange": null,
       "status": "waiting_for_gsc",
       "conclusion": null,
       "pages": [
@@ -941,6 +943,7 @@
         "start": "2026-10-03",
         "end": "2026-10-05"
       },
+      "actualRange": null,
       "status": "waiting_for_gsc",
       "conclusion": null,
       "pages": [

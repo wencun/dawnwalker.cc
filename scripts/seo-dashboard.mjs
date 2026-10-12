@@ -121,6 +121,7 @@ async function dashboardData(config, state) {
         intent: cohort.intent,
         optimizedOn: cohort.optimizedOn,
         baselineRange: cohort.baselineRange,
+        actualRange: report?.after ?? null,
         status: report ? "completed" : "waiting_for_gsc",
         conclusion: report?.conclusion ?? null,
         pages: await Promise.all(cohort.pages.map(async (page) => {
