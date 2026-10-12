@@ -11,6 +11,23 @@ export function cooldownUntil(optimizedOn) {
   return optimizedOn ? addDays(optimizedOn, 14) : null;
 }
 
+export function applyIntentReviews(candidates, reviews) {
+  return candidates.map((candidate) => {
+    const review = reviews[candidate.path];
+    return {
+      ...candidate,
+      intentReview: isVerifiedReview(review) ? { ...review, status: "verified" } : { ...review, status: "needs_review" },
+    };
+  });
+}
+
+function isVerifiedReview(review) {
+  return review?.status === "verified"
+    && ["targetQuery", "intentType", "expectedAnswer", "action", "evidenceSummary", "gameVersion", "reviewedAt"].every((key) => Boolean(review[key]))
+    && Array.isArray(review.sourceTypes) && review.sourceTypes.length > 0
+    && Array.isArray(review.platforms) && review.platforms.length > 0;
+}
+
 export function selectCandidates(rows, optimizedPages, today) {
   const candidates = [];
   const excluded = [];

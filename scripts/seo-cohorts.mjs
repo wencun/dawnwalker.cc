@@ -4,12 +4,13 @@ import path from "node:path";
 import { setGlobalProxyFromEnv } from "node:http";
 import { pathToFileURL } from "node:url";
 import { addDays, checkStatus, cohortConclusion, comparison, dateOnly, latestFinalDate, parseArgs } from "./seo-cohort-lib.mjs";
-import { selectCandidates } from "./seo-candidate-lib.mjs";
+import { applyIntentReviews, selectCandidates } from "./seo-candidate-lib.mjs";
 
 const CONFIG_PATH = path.resolve("analytics/seo-cohorts.json");
 const STATE_PATH = path.resolve(process.env.SEO_COHORT_STATE_PATH ?? "data/private/seo-cohorts.json");
 const REPORT_DIR = path.resolve(process.env.SEO_COHORT_REPORT_DIR ?? "data/private/seo-reports");
 const CANDIDATES_PATH = path.resolve(process.env.SEO_CANDIDATES_PUBLIC_PATH ?? "public/seo-candidates.json");
+const INTENT_REVIEWS_PATH = path.resolve(process.env.SEO_INTENT_REVIEWS_PATH ?? "analytics/seo-intent-reviews.json");
 const TOKEN_URL = "https://oauth2.googleapis.com/token";
 const DEFAULT_CREDENTIALS_PATH = "secrets/steady-service-508003-p3-4a71fc17b73e.json";
 const GSC_SCOPE = "https://www.googleapis.com/auth/webmasters.readonly";
@@ -114,17 +115,32 @@ async function generateCandidates(config, today) {
   const end = latestFinalDate(today);
   const range = { start: addDays(end, -6), end };
   const token = await accessToken();
-  const data = await queryGsc(token, { startDate: range.start, endDate: range.end, type: "web", dimensions: ["page"], rowLimit: 1000 });
+  const [data, queryData, reviewData] = await Promise.all([
+    queryGsc(token, { startDate: range.start, endDate: range.end, type: "web", dimensions: ["page"], rowLimit: 1000 }),
+    queryGsc(token, { startDate: range.start, endDate: range.end, type: "web", dimensions: ["page", "query"], rowLimit: 25000 }),
+    loadJson(INTENT_REVIEWS_PATH, { reviews: {} }),
+  ]);
+  const querySignals = new Map();
+  for (const row of queryData.rows ?? []) {
+    try {
+      const pathName = new URL(row.keys[0]).pathname;
+      const signal = { query: row.keys[1], clicks: row.clicks, impressions: row.impressions, ctr: row.ctr, position: row.position };
+      const current = querySignals.get(pathName);
+      if (!current || signal.impressions > current.impressions) querySignals.set(pathName, signal);
+    } catch { /* Ignore malformed GSC rows. */ }
+  }
   const rows = (data.rows ?? []).flatMap((row) => {
     try {
-      return [{ path: new URL(row.keys[0]).pathname, url: row.keys[0], clicks: row.clicks, impressions: row.impressions, ctr: row.ctr, position: row.position }];
+      const pagePath = new URL(row.keys[0]).pathname;
+      return [{ path: pagePath, url: row.keys[0], clicks: row.clicks, impressions: row.impressions, ctr: row.ctr, position: row.position, querySignal: querySignals.get(pagePath) ?? null }];
     } catch { return []; }
   });
   const optimizedPages = new Map(config.cohorts.flatMap((cohort) => cohort.pages.map((page) => [page.path, cohort.optimizedOn])));
   const { candidates, excluded } = selectCandidates(rows, optimizedPages, today);
-  const report = { generatedAt: new Date().toISOString(), range, target: { windowDays: 7, dailyImpressions: 4000, ctr: 0.03 }, candidates, excluded };
+  const reviewedCandidates = applyIntentReviews(candidates, reviewData.reviews ?? {});
+  const report = { generatedAt: new Date().toISOString(), range, target: { windowDays: 7, dailyImpressions: 4000, ctr: 0.03 }, candidates: reviewedCandidates, excluded };
   await writeFile(CANDIDATES_PATH, `${JSON.stringify(report, null, 2)}\n`, "utf8");
-  return { status: "generated", range, candidates: candidates.length, excluded: excluded.length };
+  return { status: "generated", range, candidates: reviewedCandidates.length, excluded: excluded.length };
 }
 
 async function main() {

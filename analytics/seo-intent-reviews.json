@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "reviewTemplate": {
+    "status": "verified",
+    "targetQuery": "exact GSC query to satisfy",
+    "intentType": "troubleshooting | location | quest_answer | mechanic",
+    "expectedAnswer": "the direct answer the searcher should see first",
+    "action": "update_existing | create_new",
+    "sourceTypes": ["official_patch_notes", "reproducible_test", "reddit_signal"],
+    "evidenceSummary": "why the answer is reliable; community-only reports stay labeled as player reports",
+    "gameVersion": "version or patch identifier",
+    "platforms": ["PC"],
+    "reviewedAt": "YYYY-MM-DD"
+  },
+  "reviews": {}
+}
