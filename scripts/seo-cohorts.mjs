@@ -3,11 +3,13 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { setGlobalProxyFromEnv } from "node:http";
 import { pathToFileURL } from "node:url";
-import { checkStatus, cohortConclusion, comparison, dateOnly, parseArgs } from "./seo-cohort-lib.mjs";
+import { addDays, checkStatus, cohortConclusion, comparison, dateOnly, latestFinalDate, parseArgs } from "./seo-cohort-lib.mjs";
+import { selectCandidates } from "./seo-candidate-lib.mjs";
 
 const CONFIG_PATH = path.resolve("analytics/seo-cohorts.json");
 const STATE_PATH = path.resolve(process.env.SEO_COHORT_STATE_PATH ?? "data/private/seo-cohorts.json");
 const REPORT_DIR = path.resolve(process.env.SEO_COHORT_REPORT_DIR ?? "data/private/seo-reports");
+const CANDIDATES_PATH = path.resolve(process.env.SEO_CANDIDATES_PUBLIC_PATH ?? "public/seo-candidates.json");
 const TOKEN_URL = "https://oauth2.googleapis.com/token";
 const DEFAULT_CREDENTIALS_PATH = "secrets/steady-service-508003-p3-4a71fc17b73e.json";
 const GSC_SCOPE = "https://www.googleapis.com/auth/webmasters.readonly";
@@ -108,9 +110,26 @@ async function captureBaseline(cohort, state) {
   return { id: cohort.id, status: "baseline_captured", range: cohort.baselineRange };
 }
 
+async function generateCandidates(config, today) {
+  const end = latestFinalDate(today);
+  const range = { start: addDays(end, -6), end };
+  const token = await accessToken();
+  const data = await queryGsc(token, { startDate: range.start, endDate: range.end, type: "web", dimensions: ["page"], rowLimit: 1000 });
+  const rows = (data.rows ?? []).flatMap((row) => {
+    try {
+      return [{ path: new URL(row.keys[0]).pathname, url: row.keys[0], clicks: row.clicks, impressions: row.impressions, ctr: row.ctr, position: row.position }];
+    } catch { return []; }
+  });
+  const optimizedPages = new Map(config.cohorts.flatMap((cohort) => cohort.pages.map((page) => [page.path, cohort.optimizedOn])));
+  const { candidates, excluded } = selectCandidates(rows, optimizedPages, today);
+  const report = { generatedAt: new Date().toISOString(), range, target: { windowDays: 7, dailyImpressions: 4000, ctr: 0.03 }, candidates, excluded };
+  await writeFile(CANDIDATES_PATH, `${JSON.stringify(report, null, 2)}\n`, "utf8");
+  return { status: "generated", range, candidates: candidates.length, excluded: excluded.length };
+}
+
 async function main() {
   const { command, cohortId, today: cliToday } = parseArgs(process.argv.slice(2));
-  if (!['capture', 'check', 'status'].includes(command)) throw new Error("Usage: seo:(capture|check|status) [cohort-id] [--today YYYY-MM-DD]");
+  if (!['capture', 'check', 'status', 'candidates'].includes(command)) throw new Error("Usage: seo:(capture|check|status|candidates) [cohort-id] [--today YYYY-MM-DD]");
   const config = await loadJson(CONFIG_PATH, null);
   if (!config?.cohorts?.length) throw new Error(`No cohorts found in ${CONFIG_PATH}`);
   const state = await loadJson(STATE_PATH, { completed: {} });
@@ -118,12 +137,14 @@ async function main() {
   const cohorts = cohortId ? config.cohorts.filter((cohort) => cohort.id === cohortId) : config.cohorts;
   if (cohortId && !cohorts.length) throw new Error(`Unknown cohort: ${cohortId}`);
   if (command === "capture" && !cohortId) throw new Error("Capture requires a cohort id.");
-  const results = command === "status"
+  const results = command === "candidates"
+    ? [await generateCandidates(config, today)]
+    : command === "status"
     ? cohorts.map((cohort) => ({ id: cohort.id, ...checkStatus(cohort, today), completed: Boolean(state.completed?.[cohort.id]) }))
     : command === "capture"
       ? await Promise.all(cohorts.map((cohort) => captureBaseline(cohort, state)))
       : await Promise.all(cohorts.map((cohort) => evaluateCohort(cohort, state, today)));
-  if (command !== "status") { await mkdir(path.dirname(STATE_PATH), { recursive: true }); await writeFile(STATE_PATH, `${JSON.stringify(state, null, 2)}\n`, "utf8"); }
+  if (command !== "status" && command !== "candidates") { await mkdir(path.dirname(STATE_PATH), { recursive: true }); await writeFile(STATE_PATH, `${JSON.stringify(state, null, 2)}\n`, "utf8"); }
   console.log(JSON.stringify({ today, results }, null, 2));
 }
 

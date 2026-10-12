@@ -1,0 +1,7 @@
+{
+  "generatedAt": null,
+  "range": null,
+  "target": { "windowDays": 7, "dailyImpressions": 4000, "ctr": 0.03 },
+  "candidates": [],
+  "excluded": []
+}

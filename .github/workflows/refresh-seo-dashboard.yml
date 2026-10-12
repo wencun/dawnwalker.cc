@@ -28,9 +28,9 @@ jobs:
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/gsc-service-account.json
           GSC_SITE_URL: sc-domain:dawnwalker.cc
-        run: npm run seo:check
+        run: npm run seo:check && npm run seo:candidates
       - name: Commit refreshed public data when it changed
         run: |
-          git add public/seo-dashboard-data.json
+          git add public/seo-dashboard-data.json public/seo-candidates.json
           git diff --cached --quiet || git commit -m "Refresh public SEO dashboard data"
           git push
